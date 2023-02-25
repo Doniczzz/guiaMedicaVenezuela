@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "598566306207",
+    "project_id": "guia-medica-venezuela-3805a",
+    "storage_bucket": "guia-medica-venezuela-3805a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598566306207:android:9bb150594185aafdcd3daa",
+        "android_client_info": {
+          "package_name": "com.mindscode.guiamedicave"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "598566306207-saiebpkutpvtpc2tsmhhnemu5rpphj28.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mindscode.guiamedicave",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "598566306207-nb6jp9pc5mrl8p9njue9odvl3umavot3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhcSSv7xDbLZeG6DM7JrKckBFREzriC-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "598566306207-6ol6jg0uj1hq1m5m7t23vnf5vsgm3pqa.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "598566306207-btlqtqifj0mldst3qsm9a5ue1f6njb7v.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mindscode.guiamedicave"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
