@@ -13,6 +13,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'medico_model.dart';
 export 'medico_model.dart';
 
@@ -734,31 +735,82 @@ class _MedicoWidgetState extends State<MedicoWidget>
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              FFButtonWidget(
-                                onPressed: () {
-                                  print('Button pressed ...');
-                                },
-                                text: 'Contacto',
-                                icon: Icon(
-                                  Icons.email_outlined,
-                                  size: 15,
-                                ),
-                                options: FFButtonOptions(
-                                  height: 40,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryColor,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .subtitle2
-                                      .override(
-                                        fontFamily: 'DM Sans',
-                                        color: Colors.white,
+                              StreamBuilder<UsersRecord>(
+                                stream: UsersRecord.getDocument(
+                                    medicoMedicosRecord.parentReference),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50,
+                                        height: 50,
+                                        child: CircularProgressIndicator(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryColor,
+                                        ),
                                       ),
-                                  borderSide: BorderSide(
-                                    color: Colors.transparent,
-                                    width: 1,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
+                                    );
+                                  }
+                                  final buttonUsersRecord = snapshot.data!;
+                                  return FFButtonWidget(
+                                    onPressed: () async {
+                                      await launchUrl(Uri(
+                                          scheme: 'mailto',
+                                          path: buttonUsersRecord.email!,
+                                          query: {
+                                            'subject':
+                                                '¡Necesito información! - Guía Médica Venezuela',
+                                            'body':
+                                                'Soy un paciente de la aplicación Guía Médica Venezuela, contesta este email para poder contactarme contigo.',
+                                          }
+                                              .entries
+                                              .map((MapEntry<String, String>
+                                                      e) =>
+                                                  '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+                                              .join('&')));
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                            'Mensaje enviado.',
+                                            style: TextStyle(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBtnText,
+                                            ),
+                                          ),
+                                          duration:
+                                              Duration(milliseconds: 4000),
+                                          backgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryColor,
+                                        ),
+                                      );
+                                    },
+                                    text: 'Contacto',
+                                    icon: Icon(
+                                      Icons.email_outlined,
+                                      size: 15,
+                                    ),
+                                    options: FFButtonOptions(
+                                      height: 40,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .subtitle2
+                                          .override(
+                                            fontFamily: 'DM Sans',
+                                            color: Colors.white,
+                                          ),
+                                      borderSide: BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                  );
+                                },
                               ),
                             ],
                           ),
