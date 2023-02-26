@@ -239,6 +239,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => NotificacionesWidget(),
             ),
             FFRoute(
+              name: 'seleccionarEspecialidad',
+              path: 'seleccionarEspecialidad',
+              asyncParams: {
+                'medico':
+                    getDoc(['users', 'medicos'], MedicosRecord.serializer),
+              },
+              builder: (context, params) => SeleccionarEspecialidadWidget(
+                medico: params.getParam('medico', ParamType.Document),
+              ),
+            ),
+            FFRoute(
               name: 'crearMedico',
               path: 'crearMedico',
               asyncParams: {
@@ -252,14 +263,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'seleccionarEspecialidad',
-              path: 'seleccionarEspecialidad',
+              name: 'buscarMedicosEspecialidad',
+              path: 'buscarMedicosEspecialidad',
               asyncParams: {
-                'medico':
-                    getDoc(['users', 'medicos'], MedicosRecord.serializer),
+                'especialidad':
+                    getDoc(['especialidades'], EspecialidadesRecord.serializer),
               },
-              builder: (context, params) => SeleccionarEspecialidadWidget(
-                medico: params.getParam('medico', ParamType.Document),
+              builder: (context, params) => BuscarMedicosEspecialidadWidget(
+                especialidad:
+                    params.getParam('especialidad', ParamType.Document),
               ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
@@ -433,13 +445,11 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 50,
-                    height: 50,
-                    child: CircularProgressIndicator(
-                      color: FlutterFlowTheme.of(context).primaryColor,
-                    ),
+              ? Container(
+                  color: Colors.transparent,
+                  child: Image.asset(
+                    'assets/images/paranetry.png',
+                    fit: BoxFit.contain,
                   ),
                 )
               : PushNotificationsHandler(child: page);

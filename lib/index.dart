@@ -22,6 +22,8 @@ export 'paciente_buscado/paciente_buscado_widget.dart'
 export 'ciudades/ciudades_widget.dart' show CiudadesWidget;
 export 'mi_cuenta/mi_cuenta_widget.dart' show MiCuentaWidget;
 export 'notificaciones/notificaciones_widget.dart' show NotificacionesWidget;
-export 'crear_medico/crear_medico_widget.dart' show CrearMedicoWidget;
 export 'seleccionar_especialidad/seleccionar_especialidad_widget.dart'
     show SeleccionarEspecialidadWidget;
+export 'crear_medico/crear_medico_widget.dart' show CrearMedicoWidget;
+export 'buscar_medicos_especialidad/buscar_medicos_especialidad_widget.dart'
+    show BuscarMedicosEspecialidadWidget;

@@ -1169,7 +1169,6 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                               snapshot.data!;
                                           return Container(
                                             width: 100,
-                                            height: 229.2,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)

@@ -14,6 +14,7 @@ import 'schema/medicos_record.dart';
 import 'schema/citas_record.dart';
 import 'schema/especialidades_record.dart';
 import 'schema/notificacion_record.dart';
+import 'schema/admin_record.dart';
 import 'schema/serializers.dart';
 
 export 'dart:async' show StreamSubscription;
@@ -30,6 +31,7 @@ export 'schema/medicos_record.dart';
 export 'schema/citas_record.dart';
 export 'schema/especialidades_record.dart';
 export 'schema/notificacion_record.dart';
+export 'schema/admin_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -501,6 +503,58 @@ Future<FFFirestorePage<NotificacionRecord>> queryNotificacionRecordPage({
     queryCollectionPage(
       NotificacionRecord.collection,
       NotificacionRecord.serializer,
+      queryBuilder: queryBuilder,
+      nextPageMarker: nextPageMarker,
+      pageSize: pageSize,
+      isStream: isStream,
+    );
+
+/// Functions to query AdminRecords (as a Stream and as a Future).
+Future<int> queryAdminRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      AdminRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<AdminRecord>> queryAdminRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      AdminRecord.collection,
+      AdminRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<AdminRecord>> queryAdminRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      AdminRecord.collection,
+      AdminRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<FFFirestorePage<AdminRecord>> queryAdminRecordPage({
+  Query Function(Query)? queryBuilder,
+  DocumentSnapshot? nextPageMarker,
+  required int pageSize,
+  required bool isStream,
+}) =>
+    queryCollectionPage(
+      AdminRecord.collection,
+      AdminRecord.serializer,
       queryBuilder: queryBuilder,
       nextPageMarker: nextPageMarker,
       pageSize: pageSize,

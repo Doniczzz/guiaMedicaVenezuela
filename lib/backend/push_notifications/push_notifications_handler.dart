@@ -77,13 +77,11 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
 
   @override
   Widget build(BuildContext context) => _loading
-      ? Center(
-          child: SizedBox(
-            width: 50,
-            height: 50,
-            child: CircularProgressIndicator(
-              color: FlutterFlowTheme.of(context).primaryColor,
-            ),
+      ? Container(
+          color: Colors.transparent,
+          child: Image.asset(
+            'assets/images/paranetry.png',
+            fit: BoxFit.contain,
           ),
         )
       : widget.child;
@@ -192,16 +190,22 @@ final parametersBuilderMap =
       ),
   'miCuenta': ParameterData.none(),
   'notificaciones': ParameterData.none(),
+  'seleccionarEspecialidad': (data) async => ParameterData(
+        allParams: {
+          'medico': await getDocumentParameter<MedicosRecord>(
+              data, 'medico', MedicosRecord.serializer),
+        },
+      ),
   'crearMedico': (data) async => ParameterData(
         allParams: {
           'medico': await getDocumentParameter<MedicosRecord>(
               data, 'medico', MedicosRecord.serializer),
         },
       ),
-  'seleccionarEspecialidad': (data) async => ParameterData(
+  'buscarMedicosEspecialidad': (data) async => ParameterData(
         allParams: {
-          'medico': await getDocumentParameter<MedicosRecord>(
-              data, 'medico', MedicosRecord.serializer),
+          'especialidad': await getDocumentParameter<EspecialidadesRecord>(
+              data, 'especialidad', EspecialidadesRecord.serializer),
         },
       ),
 };

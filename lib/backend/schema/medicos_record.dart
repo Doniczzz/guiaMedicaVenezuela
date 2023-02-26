@@ -36,6 +36,10 @@ abstract class MedicosRecord
 
   String? get instagram;
 
+  String? get foto;
+
+  String? get email;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -55,7 +59,9 @@ abstract class MedicosRecord
     ..nombre = ''
     ..mostrarWhatsapp = false
     ..whatsapp = ''
-    ..instagram = '';
+    ..instagram = ''
+    ..foto = ''
+    ..email = '';
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
       parent != null
@@ -92,6 +98,8 @@ Map<String, dynamic> createMedicosRecordData({
   bool? mostrarWhatsapp,
   String? whatsapp,
   String? instagram,
+  String? foto,
+  String? email,
 }) {
   final firestoreData = serializers.toFirestore(
     MedicosRecord.serializer,
@@ -109,7 +117,9 @@ Map<String, dynamic> createMedicosRecordData({
         ..nombre = nombre
         ..mostrarWhatsapp = mostrarWhatsapp
         ..whatsapp = whatsapp
-        ..instagram = instagram,
+        ..instagram = instagram
+        ..foto = foto
+        ..email = email,
     ),
   );
 

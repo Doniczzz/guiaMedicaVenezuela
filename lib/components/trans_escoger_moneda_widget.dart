@@ -8,7 +8,14 @@ import 'trans_escoger_moneda_model.dart';
 export 'trans_escoger_moneda_model.dart';
 
 class TransEscogerMonedaWidget extends StatefulWidget {
-  const TransEscogerMonedaWidget({Key? key}) : super(key: key);
+  const TransEscogerMonedaWidget({
+    Key? key,
+    this.moneda1,
+    this.moneda2,
+  }) : super(key: key);
+
+  final String? moneda1;
+  final String? moneda2;
 
   @override
   _TransEscogerMonedaWidgetState createState() =>
@@ -72,30 +79,32 @@ class _TransEscogerMonedaWidgetState extends State<TransEscogerMonedaWidget> {
                 style: FlutterFlowTheme.of(context).subtitle1,
               ),
             ),
-            FFButtonWidget(
-              onPressed: () async {
-                setState(() {
-                  _model.monedaSeleccionada = 'Bolívares';
-                });
-                Navigator.pop(context, _model.monedaSeleccionada);
-              },
-              text: 'Bolívares',
-              options: FFButtonOptions(
-                width: double.infinity,
-                height: 60,
-                color: FlutterFlowTheme.of(context).secondaryColor,
-                textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                    ),
-                borderSide: BorderSide(
-                  color: Colors.transparent,
-                  width: 1,
+            if ((widget.moneda1 == 'Bolívares') ||
+                (widget.moneda2 == 'Bolívares'))
+              FFButtonWidget(
+                onPressed: () async {
+                  setState(() {
+                    _model.monedaSeleccionada = 'Bolívares';
+                  });
+                  Navigator.pop(context, _model.monedaSeleccionada);
+                },
+                text: 'Bolívares',
+                options: FFButtonOptions(
+                  width: double.infinity,
+                  height: 60,
+                  color: FlutterFlowTheme.of(context).secondaryColor,
+                  textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                        fontFamily: 'Lexend Deca',
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                      ),
+                  borderSide: BorderSide(
+                    color: Colors.transparent,
+                    width: 1,
+                  ),
                 ),
               ),
-            ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
               child: InkWell(
@@ -112,42 +121,47 @@ class _TransEscogerMonedaWidgetState extends State<TransEscogerMonedaWidget> {
                     color: FlutterFlowTheme.of(context).secondaryColor,
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
-                        child: Container(
-                          width: 30,
-                          height: 30,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                          ),
-                          child: Image.asset(
-                            'assets/images/zelle-logo-5.png',
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 40, 0),
-                          child: Text(
-                            'Dólares',
-                            textAlign: TextAlign.center,
-                            style:
-                                FlutterFlowTheme.of(context).subtitle2.override(
-                                      fontFamily: 'DM Sans',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBtnText,
-                                      fontWeight: FontWeight.normal,
-                                    ),
+                  child: Visibility(
+                    visible: widget.moneda1 == 'Dólares',
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+                          child: Container(
+                            width: 30,
+                            height: 30,
+                            clipBehavior: Clip.antiAlias,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                            ),
+                            child: Image.asset(
+                              'assets/images/zelle-logo-5.png',
+                              fit: BoxFit.contain,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                        Expanded(
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 40, 0),
+                            child: Text(
+                              'Dólares',
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
+                                  .subtitle2
+                                  .override(
+                                    fontFamily: 'DM Sans',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBtnText,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

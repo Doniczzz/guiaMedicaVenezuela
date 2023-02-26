@@ -1388,7 +1388,14 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                           context)
                                                                       .viewInsets,
                                                                   child:
-                                                                      TransEscogerMonedaWidget(),
+                                                                      TransEscogerMonedaWidget(
+                                                                    moneda1:
+                                                                        pageViewCitasRecord
+                                                                            .moneda,
+                                                                    moneda2:
+                                                                        pageViewCitasRecord
+                                                                            .moneda2,
+                                                                  ),
                                                                 );
                                                               },
                                                             ).then((value) =>

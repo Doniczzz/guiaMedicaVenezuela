@@ -107,6 +107,20 @@ class _$MedicosRecordSerializer implements StructuredSerializer<MedicosRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.foto;
+    if (value != null) {
+      result
+        ..add('foto')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.email;
+    if (value != null) {
+      result
+        ..add('email')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -195,6 +209,14 @@ class _$MedicosRecordSerializer implements StructuredSerializer<MedicosRecord> {
           result.instagram = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'foto':
+          result.foto = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'email':
+          result.email = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -236,6 +258,10 @@ class _$MedicosRecord extends MedicosRecord {
   @override
   final String? instagram;
   @override
+  final String? foto;
+  @override
+  final String? email;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$MedicosRecord([void Function(MedicosRecordBuilder)? updates]) =>
@@ -255,6 +281,8 @@ class _$MedicosRecord extends MedicosRecord {
       this.mostrarWhatsapp,
       this.whatsapp,
       this.instagram,
+      this.foto,
+      this.email,
       this.ffRef})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
@@ -289,6 +317,8 @@ class _$MedicosRecord extends MedicosRecord {
         mostrarWhatsapp == other.mostrarWhatsapp &&
         whatsapp == other.whatsapp &&
         instagram == other.instagram &&
+        foto == other.foto &&
+        email == other.email &&
         ffRef == other.ffRef;
   }
 
@@ -307,20 +337,28 @@ class _$MedicosRecord extends MedicosRecord {
                                             $jc(
                                                 $jc(
                                                     $jc(
-                                                        $jc(0,
-                                                            direccion.hashCode),
-                                                        pagosMovil.hashCode),
-                                                    cuentasBancarias.hashCode),
-                                                cuentaZelle.hashCode),
-                                            citasCreadas.hashCode),
-                                        rating.hashCode),
-                                    ubicacion.hashCode),
-                                ratings.hashCode),
-                            especialidades.hashCode),
-                        nombre.hashCode),
-                    mostrarWhatsapp.hashCode),
-                whatsapp.hashCode),
-            instagram.hashCode),
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    0,
+                                                                    direccion
+                                                                        .hashCode),
+                                                                pagosMovil
+                                                                    .hashCode),
+                                                            cuentasBancarias
+                                                                .hashCode),
+                                                        cuentaZelle.hashCode),
+                                                    citasCreadas.hashCode),
+                                                rating.hashCode),
+                                            ubicacion.hashCode),
+                                        ratings.hashCode),
+                                    especialidades.hashCode),
+                                nombre.hashCode),
+                            mostrarWhatsapp.hashCode),
+                        whatsapp.hashCode),
+                    instagram.hashCode),
+                foto.hashCode),
+            email.hashCode),
         ffRef.hashCode));
   }
 
@@ -340,6 +378,8 @@ class _$MedicosRecord extends MedicosRecord {
           ..add('mostrarWhatsapp', mostrarWhatsapp)
           ..add('whatsapp', whatsapp)
           ..add('instagram', instagram)
+          ..add('foto', foto)
+          ..add('email', email)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -417,6 +457,14 @@ class MedicosRecordBuilder
   String? get instagram => _$this._instagram;
   set instagram(String? instagram) => _$this._instagram = instagram;
 
+  String? _foto;
+  String? get foto => _$this._foto;
+  set foto(String? foto) => _$this._foto = foto;
+
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -441,6 +489,8 @@ class MedicosRecordBuilder
       _mostrarWhatsapp = $v.mostrarWhatsapp;
       _whatsapp = $v.whatsapp;
       _instagram = $v.instagram;
+      _foto = $v.foto;
+      _email = $v.email;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -479,6 +529,8 @@ class MedicosRecordBuilder
               mostrarWhatsapp: mostrarWhatsapp,
               whatsapp: whatsapp,
               instagram: instagram,
+              foto: foto,
+              email: email,
               ffRef: ffRef);
     } catch (_) {
       late String _$failedField;

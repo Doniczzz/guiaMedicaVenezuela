@@ -875,7 +875,12 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                           ),
                           nombre: _model.nombreController.text,
                           mostrarWhatsapp: _model.switchListTileValue,
-                          whatsapp: _model.whatsController.text,
+                          whatsapp: _model.whatsController.text != null &&
+                                  _model.whatsController.text != ''
+                              ? _model.whatsController.text
+                              : currentPhoneNumber,
+                          foto: currentUserPhoto,
+                          email: currentUserEmail,
                         );
                         await widget.medico!.reference
                             .update(medicosUpdateData);

@@ -7,6 +7,7 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
+      ..add(AdminRecord.serializer)
       ..add(CitasRecord.serializer)
       ..add(CiudadesRecord.serializer)
       ..add(CuentasBancariasStruct.serializer)

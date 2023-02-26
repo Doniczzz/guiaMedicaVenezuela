@@ -10,6 +10,7 @@ import 'medicos_record.dart';
 import 'citas_record.dart';
 import 'especialidades_record.dart';
 import 'notificacion_record.dart';
+import 'admin_record.dart';
 
 import 'index.dart';
 
@@ -30,6 +31,7 @@ const kDocumentReferenceField = 'Document__Reference__Field';
   CitasRecord,
   EspecialidadesRecord,
   NotificacionRecord,
+  AdminRecord,
   DatosPersonalesStruct,
   DondeViveStruct,
   InfoPublicidadStruct,

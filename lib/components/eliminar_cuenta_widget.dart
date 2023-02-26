@@ -151,12 +151,15 @@ class _EliminarCuentaWidgetState extends State<EliminarCuentaWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 44),
                     child: FFButtonWidget(
                       onPressed: () async {
+                        Function() _navigate = () {};
                         if (_model.shortBioController.text ==
                             currentUserEmail) {
                           await currentUserReference!.delete();
                           await deleteUser(context);
-
-                          context.pushNamed('entry');
+                          GoRouter.of(context).prepareAuthEvent();
+                          await signOut();
+                          _navigate =
+                              () => context.goNamedAuth('entry', mounted);
                         } else {
                           await showDialog(
                             context: context,
@@ -176,6 +179,8 @@ class _EliminarCuentaWidgetState extends State<EliminarCuentaWidget> {
                             },
                           );
                         }
+
+                        _navigate();
                       },
                       text: 'Borrar mi cuenta',
                       options: FFButtonOptions(

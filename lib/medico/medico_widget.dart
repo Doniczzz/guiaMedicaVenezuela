@@ -184,7 +184,7 @@ class _MedicoWidgetState extends State<MedicoWidget>
                               final imageUsersRecord = snapshot.data!;
                               return Image.network(
                                 valueOrDefault<String>(
-                                  imageUsersRecord.photoUrl,
+                                  medicoMedicosRecord.foto,
                                   'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/guia-medica-venezuela-mnxqj1/assets/xij2t4ymf6c9/isotipo2.png',
                                 ),
                                 width: MediaQuery.of(context).size.width,
@@ -757,7 +757,7 @@ class _MedicoWidgetState extends State<MedicoWidget>
                                     onPressed: () async {
                                       await launchUrl(Uri(
                                           scheme: 'mailto',
-                                          path: buttonUsersRecord.email!,
+                                          path: medicoMedicosRecord.email!,
                                           query: {
                                             'subject':
                                                 '¡Necesito información! - Guía Médica Venezuela',
