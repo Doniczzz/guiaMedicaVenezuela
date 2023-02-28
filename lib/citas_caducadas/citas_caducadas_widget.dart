@@ -1,13 +1,13 @@
-import '../auth/auth_util.dart';
-import '../backend/api_requests/api_calls.dart';
-import '../backend/backend.dart';
-import '../components/borrar_cita_widget.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
-import '../flutter_flow/custom_functions.dart' as functions;
+import '/auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
+import '/backend/backend.dart';
+import '/components/borrar_cita_widget.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -47,8 +47,8 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
       ],
     ),
@@ -60,8 +60,8 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 0),
-          end: Offset(0, 900),
+          begin: Offset(0.0, 0.0),
+          end: Offset(0.0, 900.0),
         ),
       ],
     ),
@@ -73,8 +73,8 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 800),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 800.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -86,8 +86,8 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: 1,
-          end: 0,
+          begin: 1.0,
+          end: 0.0,
         ),
       ],
     ),
@@ -139,8 +139,8 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 50,
-              height: 50,
+              width: 50.0,
+              height: 50.0,
               child: CircularProgressIndicator(
                 color: FlutterFlowTheme.of(context).primaryColor,
               ),
@@ -166,10 +166,10 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).fondoMenu,
                             borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(25),
-                              bottomRight: Radius.circular(25),
-                              topLeft: Radius.circular(0),
-                              topRight: Radius.circular(0),
+                              bottomLeft: Radius.circular(25.0),
+                              bottomRight: Radius.circular(25.0),
+                              topLeft: Radius.circular(0.0),
+                              topRight: Radius.circular(0.0),
                             ),
                           ),
                           child: Column(
@@ -180,14 +180,14 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30,
-                                    borderWidth: 1,
-                                    buttonSize: 60,
+                                    borderRadius: 30.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 60.0,
                                     icon: Icon(
                                       Icons.chevron_left,
                                       color:
                                           FlutterFlowTheme.of(context).gray200,
-                                      size: 30,
+                                      size: 30.0,
                                     ),
                                     onPressed: () async {
                                       context.pop();
@@ -197,7 +197,7 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    10, 20, 10, 0),
+                                    10.0, 20.0, 10.0, 0.0),
                                 child: Builder(
                                   builder: (context) {
                                     final citas =
@@ -213,7 +213,8 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(30, 0, 10, 0),
+                                                    .fromSTEB(
+                                                        30.0, 0.0, 10.0, 0.0),
                                                 child: InkWell(
                                                   onTap: () async {
                                                     setState(() {
@@ -247,7 +248,7 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                               .gray200,
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              25),
+                                                              25.0),
                                                     ),
                                                     child: Column(
                                                       mainAxisSize:
@@ -275,7 +276,7 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Lexend',
-                                                                fontSize: 54,
+                                                                fontSize: 54.0,
                                                               ),
                                                         ),
                                                         Text(
@@ -300,7 +301,8 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                   null)
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(30, 0, 10, 0),
+                                                      .fromSTEB(
+                                                          30.0, 0.0, 10.0, 0.0),
                                                   child: InkWell(
                                                     onTap: () async {
                                                       if (animationsMap[
@@ -335,7 +337,7 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                       decoration: BoxDecoration(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(25),
+                                                                .circular(25.0),
                                                         border: Border.all(
                                                           color: citasItem
                                                                       .reference ==
@@ -349,7 +351,7 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                               : FlutterFlowTheme
                                                                       .of(context)
                                                                   .gray200,
-                                                          width: 4,
+                                                          width: 4.0,
                                                         ),
                                                       ),
                                                     ),
@@ -371,7 +373,7 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                             children: [
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    16, 20, 16, 20),
+                                    16.0, 20.0, 16.0, 20.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -386,8 +388,8 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                         Expanded(
                                           child: Lottie.asset(
                                             'assets/lottie_animations/127049-calendar-lottie-animation.json',
-                                            width: 400,
-                                            height: 400,
+                                            width: 400.0,
+                                            height: 400.0,
                                             fit: BoxFit.contain,
                                             animate: true,
                                           ),
@@ -400,7 +402,7 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                           .title1
                                           .override(
                                             fontFamily: 'Lexend',
-                                            fontSize: 30,
+                                            fontSize: 30.0,
                                           ),
                                     ),
                                   ],
@@ -415,7 +417,7 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                               if (_model.citaSeleccionada != null)
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      16, 25, 16, 10),
+                                      16.0, 25.0, 16.0, 10.0),
                                   child: SingleChildScrollView(
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -467,26 +469,27 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .fondoMenu,
-                                                        fontSize: 22,
+                                                        fontSize: 22.0,
                                                       ),
                                                 ),
                                               ],
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 20, 0, 0),
+                                                  .fromSTEB(
+                                                      0.0, 20.0, 0.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Expanded(
                                                     child: Material(
                                                       color: Colors.transparent,
-                                                      elevation: 4,
+                                                      elevation: 4.0,
                                                       shape:
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(25),
+                                                                .circular(25.0),
                                                       ),
                                                       child: Container(
                                                         width: double.infinity,
@@ -497,16 +500,17 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                               .gray200,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(25),
+                                                                  .circular(
+                                                                      25.0),
                                                         ),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      20,
-                                                                      20,
-                                                                      20,
-                                                                      20),
+                                                                      20.0,
+                                                                      20.0,
+                                                                      20.0,
+                                                                      20.0),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -528,10 +532,10 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            15,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            15.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   _model
                                                                       .citaSeleccionada!
@@ -554,10 +558,10 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          10,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     'Dólares y Bolívares',
                                                                     style: FlutterFlowTheme.of(
@@ -569,10 +573,10 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            10,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -593,10 +597,10 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                                         true)
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            10,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             Icon(
                                                                           Icons
@@ -604,7 +608,7 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryColor,
                                                                           size:
-                                                                              24,
+                                                                              24.0,
                                                                         ),
                                                                       ),
                                                                     if (!_model
@@ -612,10 +616,10 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                                         .aceptaEfectivo!)
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            10,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             Icon(
                                                                           Icons
@@ -623,7 +627,7 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryColor,
                                                                           size:
-                                                                              24,
+                                                                              24.0,
                                                                         ),
                                                                       ),
                                                                   ],
@@ -640,19 +644,20 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 20, 0, 0),
+                                                  .fromSTEB(
+                                                      0.0, 20.0, 0.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Expanded(
                                                     child: Material(
                                                       color: Colors.transparent,
-                                                      elevation: 4,
+                                                      elevation: 4.0,
                                                       shape:
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(25),
+                                                                .circular(25.0),
                                                       ),
                                                       child: Container(
                                                         width: double.infinity,
@@ -663,16 +668,17 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                               .gray200,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(25),
+                                                                  .circular(
+                                                                      25.0),
                                                         ),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      20,
-                                                                      20,
-                                                                      20,
-                                                                      20),
+                                                                      20.0,
+                                                                      20.0,
+                                                                      20.0,
+                                                                      20.0),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -694,10 +700,10 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            15,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            15.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   '${_model.citaSeleccionada!.precio?.toString()} ${() {
                                                                     if (_model
@@ -732,10 +738,10 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          10,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child: FutureBuilder<
                                                                       ApiCallResponse>(
                                                                     future: CambioDolarCall
@@ -750,9 +756,9 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                                           child:
                                                                               SizedBox(
                                                                             width:
-                                                                                50,
+                                                                                50.0,
                                                                             height:
-                                                                                50,
+                                                                                50.0,
                                                                             child:
                                                                                 CircularProgressIndicator(
                                                                               color: FlutterFlowTheme.of(context).primaryColor,
@@ -795,19 +801,20 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 20, 0, 0),
+                                                  .fromSTEB(
+                                                      0.0, 20.0, 0.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Expanded(
                                                     child: Material(
                                                       color: Colors.transparent,
-                                                      elevation: 4,
+                                                      elevation: 4.0,
                                                       shape:
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(25),
+                                                                .circular(25.0),
                                                       ),
                                                       child: Container(
                                                         width: double.infinity,
@@ -818,16 +825,17 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                               .gray200,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(25),
+                                                                  .circular(
+                                                                      25.0),
                                                         ),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      20,
-                                                                      20,
-                                                                      20,
-                                                                      20),
+                                                                      20.0,
+                                                                      20.0,
+                                                                      20.0,
+                                                                      20.0),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -849,10 +857,10 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            15,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            15.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   _model
                                                                       .citaSeleccionada!
@@ -879,19 +887,20 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 20, 0, 0),
+                                                  .fromSTEB(
+                                                      0.0, 20.0, 0.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Expanded(
                                                     child: Material(
                                                       color: Colors.transparent,
-                                                      elevation: 4,
+                                                      elevation: 4.0,
                                                       shape:
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(25),
+                                                                .circular(25.0),
                                                       ),
                                                       child: Container(
                                                         width: double.infinity,
@@ -902,16 +911,17 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                               .gray200,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(25),
+                                                                  .circular(
+                                                                      25.0),
                                                         ),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      20,
-                                                                      20,
-                                                                      20,
-                                                                      20),
+                                                                      20.0,
+                                                                      20.0,
+                                                                      20.0,
+                                                                      20.0),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -933,10 +943,10 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            15,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            15.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: InkWell(
                                                                   onTap:
                                                                       () async {
@@ -988,10 +998,10 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            10,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child:
                                                                     FFButtonWidget(
                                                                   onPressed:
@@ -1022,11 +1032,24 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                                   icon: Icon(
                                                                     Icons
                                                                         .keyboard_arrow_right,
-                                                                    size: 15,
+                                                                    size: 15.0,
                                                                   ),
                                                                   options:
                                                                       FFButtonOptions(
-                                                                    height: 40,
+                                                                    height:
+                                                                        40.0,
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    iconPadding:
+                                                                        EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryColor,
@@ -1043,11 +1066,12 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                                         BorderSide(
                                                                       color: Colors
                                                                           .transparent,
-                                                                      width: 1,
+                                                                      width:
+                                                                          1.0,
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(8),
+                                                                        BorderRadius.circular(
+                                                                            8.0),
                                                                   ),
                                                                 ),
                                                               ),
@@ -1062,7 +1086,8 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 25, 0, 0),
+                                                  .fromSTEB(
+                                                      0.0, 25.0, 0.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -1097,11 +1122,25 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                     text: 'Borrar',
                                                     icon: Icon(
                                                       Icons.warning,
-                                                      size: 15,
+                                                      size: 15.0,
                                                     ),
                                                     options: FFButtonOptions(
-                                                      width: 130,
-                                                      height: 40,
+                                                      width: 130.0,
+                                                      height: 40.0,
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      iconPadding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1119,11 +1158,11 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                       borderSide: BorderSide(
                                                         color:
                                                             Colors.transparent,
-                                                        width: 1,
+                                                        width: 1.0,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8),
+                                                              8.0),
                                                     ),
                                                   ),
                                                 ],
@@ -1148,14 +1187,15 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                     ),
                   if (citasCaducadasCitasRecordList.length == 0)
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 10.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -1163,8 +1203,8 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                 Expanded(
                                   child: Lottie.asset(
                                     'assets/lottie_animations/98121-empty-state.json',
-                                    width: 400,
-                                    height: 400,
+                                    width: 400.0,
+                                    height: 400.0,
                                     fit: BoxFit.contain,
                                     animate: true,
                                   ),
@@ -1173,14 +1213,15 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 8.0),
                             child: Text(
                               'Ninguna cita ha caducado',
                               textAlign: TextAlign.center,
                               style:
                                   FlutterFlowTheme.of(context).title2.override(
                                         fontFamily: 'Lexend',
-                                        fontSize: 25,
+                                        fontSize: 25.0,
                                       ),
                             ),
                           ),
@@ -1190,8 +1231,12 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                             },
                             text: 'Volver',
                             options: FFButtonOptions(
-                              width: 130,
-                              height: 40,
+                              width: 130.0,
+                              height: 40.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
                               color:
                                   FlutterFlowTheme.of(context).secondaryColor,
                               textStyle: FlutterFlowTheme.of(context)
@@ -1202,9 +1247,9 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                   ),
                               borderSide: BorderSide(
                                 color: Colors.transparent,
-                                width: 1,
+                                width: 1.0,
                               ),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(8.0),
                             ),
                           ),
                         ],

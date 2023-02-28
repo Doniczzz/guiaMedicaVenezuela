@@ -1,13 +1,13 @@
-import '../auth/auth_util.dart';
-import '../backend/api_requests/api_calls.dart';
-import '../backend/backend.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_drop_down.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
-import '../flutter_flow/custom_functions.dart' as functions;
+import '/auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/gestures.dart';
@@ -71,7 +71,7 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
         key: _model.formKey,
         autovalidateMode: AutovalidateMode.disabled,
         child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 25),
+          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 25.0),
           child: StreamBuilder<CitasRecord>(
             stream: CitasRecord.getDocument(widget.cita!),
             builder: (context, snapshot) {
@@ -79,8 +79,8 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
               if (!snapshot.hasData) {
                 return Center(
                   child: SizedBox(
-                    width: 50,
-                    height: 50,
+                    width: 50.0,
+                    height: 50.0,
                     child: CircularProgressIndicator(
                       color: FlutterFlowTheme.of(context).primaryColor,
                     ),
@@ -102,13 +102,13 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                         children: [
                           FlutterFlowIconButton(
                             borderColor: Colors.transparent,
-                            borderRadius: 30,
-                            borderWidth: 1,
-                            buttonSize: 60,
+                            borderRadius: 30.0,
+                            borderWidth: 1.0,
+                            buttonSize: 60.0,
                             icon: Icon(
                               Icons.close,
                               color: FlutterFlowTheme.of(context).primaryText,
-                              size: 30,
+                              size: 30.0,
                             ),
                             onPressed: () async {
                               Navigator.pop(context);
@@ -122,7 +122,8 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
                       child: StreamBuilder<MedicosRecord>(
                         stream: MedicosRecord.getDocument(widget.medico!),
                         builder: (context, snapshot) {
@@ -130,8 +131,8 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                           if (!snapshot.hasData) {
                             return Center(
                               child: SizedBox(
-                                width: 50,
-                                height: 50,
+                                width: 50.0,
+                                height: 50.0,
                                 child: CircularProgressIndicator(
                                   color:
                                       FlutterFlowTheme.of(context).primaryColor,
@@ -142,9 +143,9 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                           final containerMedicosRecord = snapshot.data!;
                           return Material(
                             color: Colors.transparent,
-                            elevation: 5,
+                            elevation: 5.0,
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16),
+                              borderRadius: BorderRadius.circular(16.0),
                             ),
                             child: Container(
                               width: double.infinity,
@@ -152,23 +153,23 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                                 color: Colors.white,
                                 boxShadow: [
                                   BoxShadow(
-                                    blurRadius: 4,
+                                    blurRadius: 4.0,
                                     color: Color(0x33000000),
-                                    offset: Offset(0, 2),
+                                    offset: Offset(0.0, 2.0),
                                   )
                                 ],
-                                borderRadius: BorderRadius.circular(16),
+                                borderRadius: BorderRadius.circular(16.0),
                               ),
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    2.0, 2.0, 2.0, 2.0),
                                 child: SingleChildScrollView(
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            16, 12, 16, 0),
+                                            16.0, 12.0, 16.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -191,13 +192,13 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryColor,
-                                                          fontSize: 25,
+                                                          fontSize: 25.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
                                                   ),
                                                   Divider(
-                                                    thickness: 1,
+                                                    thickness: 1.0,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondaryColor,
@@ -210,7 +211,7 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            16, 4, 16, 12),
+                                            16.0, 4.0, 16.0, 12.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -228,8 +229,8 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                                               onChanged: (val) => setState(() =>
                                                   _model.especialidadValue =
                                                       val),
-                                              width: 300,
-                                              height: 35,
+                                              width: 300.0,
+                                              height: 35.0,
                                               textStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyText1
@@ -239,12 +240,13 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                                                       ),
                                               hintText: 'Escoge una opción',
                                               fillColor: Colors.white,
-                                              elevation: 2,
+                                              elevation: 2.0,
                                               borderColor: Colors.transparent,
-                                              borderWidth: 0,
-                                              borderRadius: 0,
+                                              borderWidth: 0.0,
+                                              borderRadius: 0.0,
                                               margin: EdgeInsetsDirectional
-                                                  .fromSTEB(12, 4, 12, 4),
+                                                  .fromSTEB(
+                                                      12.0, 4.0, 12.0, 4.0),
                                               hidesUnderline: true,
                                             ),
                                           ],
@@ -260,12 +262,13 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
                       child: Material(
                         color: Colors.transparent,
-                        elevation: 5,
+                        elevation: 5.0,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
+                          borderRadius: BorderRadius.circular(16.0),
                         ),
                         child: Container(
                           width: double.infinity,
@@ -273,22 +276,23 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                             color: Colors.white,
                             boxShadow: [
                               BoxShadow(
-                                blurRadius: 4,
+                                blurRadius: 4.0,
                                 color: Color(0x33000000),
-                                offset: Offset(0, 2),
+                                offset: Offset(0.0, 2.0),
                               )
                             ],
-                            borderRadius: BorderRadius.circular(16),
+                            borderRadius: BorderRadius.circular(16.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                2.0, 2.0, 2.0, 2.0),
                             child: SingleChildScrollView(
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        16, 12, 16, 0),
+                                        16.0, 12.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -311,13 +315,13 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryColor,
-                                                          fontSize: 25,
+                                                          fontSize: 25.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
                                               ),
                                               Divider(
-                                                thickness: 1,
+                                                thickness: 1.0,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryColor,
@@ -330,7 +334,7 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        16, 4, 16, 12),
+                                        16.0, 4.0, 16.0, 12.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -354,7 +358,7 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                                                   .override(
                                                     fontFamily: 'Lexend Deca',
                                                     color: Color(0xFF57636C),
-                                                    fontSize: 14,
+                                                    fontSize: 14.0,
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
@@ -365,55 +369,56 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                                                   .override(
                                                     fontFamily: 'Lexend Deca',
                                                     color: Color(0xFF57636C),
-                                                    fontSize: 14,
+                                                    fontSize: 14.0,
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0xFFDBE2E7),
-                                                  width: 2,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(40),
+                                                    BorderRadius.circular(40.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00000000),
-                                                  width: 2,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(40),
+                                                    BorderRadius.circular(40.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00000000),
-                                                  width: 2,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(40),
+                                                    BorderRadius.circular(40.0),
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00000000),
-                                                  width: 2,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(40),
+                                                    BorderRadius.circular(40.0),
                                               ),
                                               filled: true,
                                               fillColor: Colors.white,
                                               contentPadding:
                                                   EdgeInsetsDirectional
-                                                      .fromSTEB(24, 24, 20, 24),
+                                                      .fromSTEB(24.0, 24.0,
+                                                          20.0, 24.0),
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText1
                                                 .override(
                                                   fontFamily: 'Lexend Deca',
                                                   color: Color(0xFF1D2429),
-                                                  fontSize: 14,
+                                                  fontSize: 14.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
                                             keyboardType: TextInputType.number,
@@ -437,12 +442,13 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
                       child: Material(
                         color: Colors.transparent,
-                        elevation: 5,
+                        elevation: 5.0,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
+                          borderRadius: BorderRadius.circular(16.0),
                         ),
                         child: Container(
                           width: double.infinity,
@@ -450,22 +456,23 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                             color: Colors.white,
                             boxShadow: [
                               BoxShadow(
-                                blurRadius: 4,
+                                blurRadius: 4.0,
                                 color: Color(0x33000000),
-                                offset: Offset(0, 2),
+                                offset: Offset(0.0, 2.0),
                               )
                             ],
-                            borderRadius: BorderRadius.circular(16),
+                            borderRadius: BorderRadius.circular(16.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                2.0, 2.0, 2.0, 2.0),
                             child: SingleChildScrollView(
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        16, 12, 16, 0),
+                                        16.0, 12.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -488,7 +495,7 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryColor,
-                                                          fontSize: 25,
+                                                          fontSize: 25.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -506,8 +513,8 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                                                 onChanged: (val) => setState(() =>
                                                     _model.dolaresBolivaresValue =
                                                         val),
-                                                width: 300,
-                                                height: 35,
+                                                width: 300.0,
+                                                height: 35.0,
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyText1
@@ -518,16 +525,17 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                                                 hintText:
                                                     '¿Dólares o Bolivares?',
                                                 fillColor: Colors.white,
-                                                elevation: 2,
+                                                elevation: 2.0,
                                                 borderColor: Colors.transparent,
-                                                borderWidth: 0,
-                                                borderRadius: 0,
+                                                borderWidth: 0.0,
+                                                borderRadius: 0.0,
                                                 margin: EdgeInsetsDirectional
-                                                    .fromSTEB(12, 4, 12, 4),
+                                                    .fromSTEB(
+                                                        12.0, 4.0, 12.0, 4.0),
                                                 hidesUnderline: true,
                                               ),
                                               Divider(
-                                                thickness: 1,
+                                                thickness: 1.0,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryColor,
@@ -550,8 +558,8 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                                             if (!snapshot.hasData) {
                                               return Center(
                                                 child: SizedBox(
-                                                  width: 50,
-                                                  height: 50,
+                                                  width: 50.0,
+                                                  height: 50.0,
                                                   child:
                                                       CircularProgressIndicator(
                                                     color: FlutterFlowTheme.of(
@@ -610,7 +618,7 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                                                         .bodyText1
                                                         .override(
                                                           fontFamily: 'DM Sans',
-                                                          fontSize: 18,
+                                                          fontSize: 18.0,
                                                         ),
                                               ),
                                             );
@@ -618,7 +626,7 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                                         ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            16, 4, 16, 12),
+                                            16.0, 4.0, 16.0, 12.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -655,7 +663,7 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                                                               'Lexend Deca',
                                                           color:
                                                               Color(0xFF57636C),
-                                                          fontSize: 14,
+                                                          fontSize: 14.0,
                                                           fontWeight:
                                                               FontWeight.normal,
                                                         ),
@@ -672,7 +680,7 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                                                               'Lexend Deca',
                                                           color:
                                                               Color(0xFF57636C),
-                                                          fontSize: 14,
+                                                          fontSize: 14.0,
                                                           fontWeight:
                                                               FontWeight.normal,
                                                         ),
@@ -681,51 +689,54 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                                                       borderSide: BorderSide(
                                                         color:
                                                             Color(0xFFDBE2E7),
-                                                        width: 2,
+                                                        width: 2.0,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              40),
+                                                              40.0),
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
                                                       borderSide: BorderSide(
                                                         color:
                                                             Color(0x00000000),
-                                                        width: 2,
+                                                        width: 2.0,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              40),
+                                                              40.0),
                                                     ),
                                                     errorBorder:
                                                         OutlineInputBorder(
                                                       borderSide: BorderSide(
                                                         color:
                                                             Color(0x00000000),
-                                                        width: 2,
+                                                        width: 2.0,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              40),
+                                                              40.0),
                                                     ),
                                                     focusedErrorBorder:
                                                         OutlineInputBorder(
                                                       borderSide: BorderSide(
                                                         color:
                                                             Color(0x00000000),
-                                                        width: 2,
+                                                        width: 2.0,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              40),
+                                                              40.0),
                                                     ),
                                                     filled: true,
                                                     fillColor: Colors.white,
                                                     contentPadding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(
-                                                                24, 24, 20, 24),
+                                                                24.0,
+                                                                24.0,
+                                                                20.0,
+                                                                24.0),
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -735,7 +746,7 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                                                             'Lexend Deca',
                                                         color:
                                                             Color(0xFF1D2429),
-                                                        fontSize: 14,
+                                                        fontSize: 14.0,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
@@ -764,7 +775,8 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: SwitchListTile(
                         value: _model.efectivoBooleanValue ??=
                             columnCitasRecord.aceptaEfectivo!,
@@ -782,7 +794,8 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           if (_model.formKey.currentState == null ||
@@ -830,8 +843,12 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                         },
                         text: 'Guardar',
                         options: FFButtonOptions(
-                          width: 130,
-                          height: 40,
+                          width: 130.0,
+                          height: 40.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).secondaryColor,
                           textStyle:
                               FlutterFlowTheme.of(context).subtitle2.override(
@@ -840,9 +857,9 @@ class _EditarCitaWidgetState extends State<EditarCitaWidget>
                                   ),
                           borderSide: BorderSide(
                             color: Colors.transparent,
-                            width: 1,
+                            width: 1.0,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
                     ),

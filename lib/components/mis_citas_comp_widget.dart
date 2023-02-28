@@ -1,8 +1,8 @@
-import '../auth/auth_util.dart';
-import '../backend/backend.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/custom_functions.dart' as functions;
+import '/auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -55,8 +55,8 @@ class _MisCitasCompWidgetState extends State<MisCitasCompWidget> {
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 50,
-              height: 50,
+              width: 50.0,
+              height: 50.0,
               child: CircularProgressIndicator(
                 color: FlutterFlowTheme.of(context).primaryColor,
               ),
@@ -68,7 +68,7 @@ class _MisCitasCompWidgetState extends State<MisCitasCompWidget> {
           width: double.infinity,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(16.0),
             border: Border.all(
               color: Color(0xF2EAEAEA),
             ),
@@ -80,8 +80,8 @@ class _MisCitasCompWidgetState extends State<MisCitasCompWidget> {
               if (!snapshot.hasData) {
                 return Center(
                   child: SizedBox(
-                    width: 50,
-                    height: 50,
+                    width: 50.0,
+                    height: 50.0,
                     child: CircularProgressIndicator(
                       color: FlutterFlowTheme.of(context).primaryColor,
                     ),
@@ -93,7 +93,8 @@ class _MisCitasCompWidgetState extends State<MisCitasCompWidget> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 15),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
                     child: StreamBuilder<UsersRecord>(
                       stream: UsersRecord.getDocument(
                           columnMedicosRecord.parentReference),
@@ -102,8 +103,8 @@ class _MisCitasCompWidgetState extends State<MisCitasCompWidget> {
                         if (!snapshot.hasData) {
                           return Center(
                             child: SizedBox(
-                              width: 50,
-                              height: 50,
+                              width: 50.0,
+                              height: 50.0,
                               child: CircularProgressIndicator(
                                 color:
                                     FlutterFlowTheme.of(context).primaryColor,
@@ -116,8 +117,8 @@ class _MisCitasCompWidgetState extends State<MisCitasCompWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Container(
-                              width: 36,
-                              height: 36,
+                              width: 36.0,
+                              height: 36.0,
                               clipBehavior: Clip.antiAlias,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
@@ -132,8 +133,8 @@ class _MisCitasCompWidgetState extends State<MisCitasCompWidget> {
                             ),
                             Expanded(
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    8.0, 0.0, 0.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -146,7 +147,7 @@ class _MisCitasCompWidgetState extends State<MisCitasCompWidget> {
                                             fontFamily: 'Lexend',
                                             color: FlutterFlowTheme.of(context)
                                                 .fondoMenu,
-                                            fontSize: 16,
+                                            fontSize: 16.0,
                                           ),
                                     ),
                                     Text(
@@ -157,7 +158,7 @@ class _MisCitasCompWidgetState extends State<MisCitasCompWidget> {
                                             fontFamily: 'Lexend',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryColor,
-                                            fontSize: 12,
+                                            fontSize: 12.0,
                                           ),
                                     ),
                                   ],
@@ -176,11 +177,11 @@ class _MisCitasCompWidgetState extends State<MisCitasCompWidget> {
                                     Icons.check_circle,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryColor,
-                                    size: 16,
+                                    size: 16.0,
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        4, 0, 0, 0),
+                                        4.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Aprobado',
                                       style: FlutterFlowTheme.of(context)
@@ -200,11 +201,11 @@ class _MisCitasCompWidgetState extends State<MisCitasCompWidget> {
                                   Icon(
                                     Icons.access_time,
                                     color: Color(0xFF656509),
-                                    size: 16,
+                                    size: 16.0,
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        4, 0, 0, 0),
+                                        4.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'En espera',
                                       style: FlutterFlowTheme.of(context)
@@ -220,18 +221,19 @@ class _MisCitasCompWidgetState extends State<MisCitasCompWidget> {
                   ),
                   Container(
                     width: double.infinity,
-                    height: 40,
+                    height: 40.0,
                     decoration: BoxDecoration(
                       color: Color(0xF2EAEAEA),
                       borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(16),
-                        bottomRight: Radius.circular(16),
-                        topLeft: Radius.circular(0),
-                        topRight: Radius.circular(0),
+                        bottomLeft: Radius.circular(16.0),
+                        bottomRight: Radius.circular(16.0),
+                        topLeft: Radius.circular(0.0),
+                        topRight: Radius.circular(0.0),
                       ),
                     ),
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(12, 0, 12, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -239,10 +241,11 @@ class _MisCitasCompWidgetState extends State<MisCitasCompWidget> {
                           Icon(
                             Icons.calendar_today,
                             color: FlutterFlowTheme.of(context).secondaryColor,
-                            size: 20,
+                            size: 20.0,
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                8.0, 0.0, 0.0, 0.0),
                             child: Text(
                               '${functions.retornarDia(containerCitasRecord.fecha!)}, ${dateTimeFormat(
                                 'd/M',
@@ -254,16 +257,18 @@ class _MisCitasCompWidgetState extends State<MisCitasCompWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                8.0, 0.0, 0.0, 0.0),
                             child: Icon(
                               Icons.timer,
                               color:
                                   FlutterFlowTheme.of(context).secondaryColor,
-                              size: 20,
+                              size: 20.0,
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                8.0, 0.0, 0.0, 0.0),
                             child: Text(
                               dateTimeFormat(
                                 'jm',
@@ -275,13 +280,13 @@ class _MisCitasCompWidgetState extends State<MisCitasCompWidget> {
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                25.0, 0.0, 0.0, 0.0),
                             child: Icon(
                               Icons.keyboard_arrow_right,
                               color:
                                   FlutterFlowTheme.of(context).secondaryColor,
-                              size: 24,
+                              size: 24.0,
                             ),
                           ),
                         ],

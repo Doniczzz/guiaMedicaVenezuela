@@ -1,9 +1,9 @@
-import '../auth/auth_util.dart';
-import '../backend/backend.dart';
-import '../components/loading_widget.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/components/loading_widget.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -74,7 +74,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                   Expanded(
                     child: Container(
                       width: double.infinity,
-                      height: MediaQuery.of(context).size.height * 1,
+                      height: MediaQuery.of(context).size.height * 1.0,
                       child: PageView(
                         physics: const NeverScrollableScrollPhysics(),
                         controller: _model.pageViewController ??=
@@ -82,17 +82,17 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                         scrollDirection: Axis.vertical,
                         children: [
                           Container(
-                            width: 100,
-                            height: 100,
+                            width: 100.0,
+                            height: 100.0,
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
                                 colors: [
                                   FlutterFlowTheme.of(context).primaryColor,
                                   FlutterFlowTheme.of(context).secondaryColor
                                 ],
-                                stops: [0, 1],
-                                begin: AlignmentDirectional(0, -1),
-                                end: AlignmentDirectional(0, 1),
+                                stops: [0.0, 1.0],
+                                begin: AlignmentDirectional(0.0, -1.0),
+                                end: AlignmentDirectional(0, 1.0),
                               ),
                             ),
                             child: Column(
@@ -101,7 +101,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 0, 10, 0),
+                                      10.0, 0.0, 10.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -109,7 +109,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       Expanded(
                                         child: Lottie.asset(
                                           'assets/lottie_animations/22509-globe-animation.json',
-                                          height: 400,
+                                          height: 400.0,
                                           fit: BoxFit.contain,
                                           animate: true,
                                         ),
@@ -123,7 +123,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 0, 20, 8),
+                                            20.0, 0.0, 20.0, 8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -144,7 +144,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 0, 20, 8),
+                                            20.0, 0.0, 20.0, 8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -168,7 +168,14 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                                 FontAwesomeIcons.mapMarker,
                                               ),
                                               options: FFButtonOptions(
-                                                height: 50,
+                                                height: 50.0,
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 0.0),
+                                                iconPadding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
                                                 color: Colors.white,
                                                 textStyle: FlutterFlowTheme.of(
                                                         context)
@@ -176,14 +183,14 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                                     .override(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF262D34),
-                                                      fontSize: 14,
+                                                      fontSize: 14.0,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
-                                                elevation: 1,
+                                                elevation: 1.0,
                                                 borderSide: BorderSide(
                                                   color: Color(0xFFDBE2E7),
-                                                  width: 1,
+                                                  width: 1.0,
                                                 ),
                                               ),
                                             ),
@@ -200,7 +207,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 0, 20, 8),
+                                            20.0, 0.0, 20.0, 8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -219,8 +226,8 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                                     if (!snapshot.hasData) {
                                                       return Center(
                                                         child: SizedBox(
-                                                          width: 50,
-                                                          height: 50,
+                                                          width: 50.0,
+                                                          height: 50.0,
                                                           child:
                                                               CircularProgressIndicator(
                                                             color: FlutterFlowTheme
@@ -275,7 +282,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 0, 20, 8),
+                                            20.0, 0.0, 20.0, 8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -312,7 +319,14 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                                 FontAwesomeIcons.mapMarker,
                                               ),
                                               options: FFButtonOptions(
-                                                height: 50,
+                                                height: 50.0,
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 0.0),
+                                                iconPadding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
                                                 color: Colors.white,
                                                 textStyle: FlutterFlowTheme.of(
                                                         context)
@@ -320,14 +334,14 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                                     .override(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF262D34),
-                                                      fontSize: 14,
+                                                      fontSize: 14.0,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
-                                                elevation: 1,
+                                                elevation: 1.0,
                                                 borderSide: BorderSide(
                                                   color: Color(0xFFDBE2E7),
-                                                  width: 1,
+                                                  width: 1.0,
                                                 ),
                                               ),
                                             ),
@@ -336,7 +350,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            16, 16, 0, 0),
+                                            16.0, 16.0, 0.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
                                             await _model.pageViewController
@@ -348,8 +362,14 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                           },
                                           text: 'Siguiente',
                                           options: FFButtonOptions(
-                                            width: 170,
-                                            height: 50,
+                                            width: 170.0,
+                                            height: 50.0,
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            iconPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
                                             color: Colors.white,
                                             textStyle: FlutterFlowTheme.of(
                                                     context)
@@ -359,13 +379,13 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryColor,
-                                                  fontSize: 16,
+                                                  fontSize: 16.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
-                                            elevation: 2,
+                                            elevation: 2.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
-                                              width: 1,
+                                              width: 1.0,
                                             ),
                                           ),
                                         ),
@@ -376,17 +396,17 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                             ),
                           ),
                           Container(
-                            width: 100,
-                            height: 100,
+                            width: 100.0,
+                            height: 100.0,
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
                                 colors: [
                                   FlutterFlowTheme.of(context).primaryColor,
                                   FlutterFlowTheme.of(context).secondaryColor
                                 ],
-                                stops: [0, 1],
-                                begin: AlignmentDirectional(0, -1),
-                                end: AlignmentDirectional(0, 1),
+                                stops: [0.0, 1.0],
+                                begin: AlignmentDirectional(0.0, -1.0),
+                                end: AlignmentDirectional(0, 1.0),
                               ),
                             ),
                             child: Column(
@@ -399,7 +419,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                   children: [
                                     Lottie.asset(
                                       'assets/lottie_animations/medico1.json',
-                                      height: 330,
+                                      height: 330.0,
                                       fit: BoxFit.cover,
                                       animate: true,
                                     ),
@@ -407,7 +427,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 0, 20, 8),
+                                      20.0, 0.0, 20.0, 8.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -429,7 +449,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 0, 20, 8),
+                                      20.0, 0.0, 20.0, 8.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -452,13 +472,13 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 0, 20, 8),
+                                      20.0, 0.0, 20.0, 8.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 16, 0, 0),
+                                            0.0, 16.0, 0.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
                                             await _model.pageViewController
@@ -470,8 +490,14 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                           },
                                           text: 'Siguiente',
                                           options: FFButtonOptions(
-                                            width: 170,
-                                            height: 50,
+                                            width: 170.0,
+                                            height: 50.0,
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            iconPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
                                             color: Colors.white,
                                             textStyle: FlutterFlowTheme.of(
                                                     context)
@@ -481,13 +507,13 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryColor,
-                                                  fontSize: 16,
+                                                  fontSize: 16.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
-                                            elevation: 2,
+                                            elevation: 2.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
-                                              width: 1,
+                                              width: 1.0,
                                             ),
                                           ),
                                         ),
@@ -499,17 +525,17 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                             ),
                           ),
                           Container(
-                            width: 100,
-                            height: 100,
+                            width: 100.0,
+                            height: 100.0,
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
                                 colors: [
                                   FlutterFlowTheme.of(context).primaryColor,
                                   FlutterFlowTheme.of(context).secondaryColor
                                 ],
-                                stops: [0, 1],
-                                begin: AlignmentDirectional(0, -1),
-                                end: AlignmentDirectional(0, 1),
+                                stops: [0.0, 1.0],
+                                begin: AlignmentDirectional(0.0, -1.0),
+                                end: AlignmentDirectional(0, 1.0),
                               ),
                             ),
                             child: Column(
@@ -522,7 +548,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                   children: [
                                     Lottie.asset(
                                       'assets/lottie_animations/pago.json',
-                                      height: 330,
+                                      height: 330.0,
                                       fit: BoxFit.cover,
                                       animate: true,
                                     ),
@@ -530,7 +556,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 0, 20, 8),
+                                      20.0, 0.0, 20.0, 8.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -552,7 +578,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 0, 20, 8),
+                                      20.0, 0.0, 20.0, 8.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -575,13 +601,13 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 0, 20, 8),
+                                      20.0, 0.0, 20.0, 8.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 16, 0, 0),
+                                            0.0, 16.0, 0.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
                                             final usersUpdateData =
@@ -595,8 +621,14 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                           },
                                           text: '¡Entrar Ahora!',
                                           options: FFButtonOptions(
-                                            width: 170,
-                                            height: 50,
+                                            width: 170.0,
+                                            height: 50.0,
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            iconPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryColor,
                                             textStyle:
@@ -605,14 +637,14 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                                     .override(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Colors.white,
-                                                      fontSize: 16,
+                                                      fontSize: 16.0,
                                                       fontWeight:
                                                           FontWeight.w500,
                                                     ),
-                                            elevation: 2,
+                                            elevation: 2.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
-                                              width: 1,
+                                              width: 1.0,
                                             ),
                                           ),
                                         ),

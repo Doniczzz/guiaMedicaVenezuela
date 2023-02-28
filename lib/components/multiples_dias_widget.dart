@@ -1,10 +1,10 @@
-import '../flutter_flow/flutter_flow_calendar.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
-import '../flutter_flow/custom_functions.dart' as functions;
-import '../flutter_flow/random_data_util.dart' as random_data;
+import '/flutter_flow/flutter_flow_calendar.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
+import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +56,7 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
       children: [
         if (!_model.confirmacion!)
           Container(
-            height: 838,
+            height: 838.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
             ),
@@ -64,7 +64,7 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                   child: Text(
                     'Define a continuación los dias.',
                     textAlign: TextAlign.center,
@@ -72,7 +72,7 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                   ),
                 ),
                 Divider(
-                  thickness: 1,
+                  thickness: 1.0,
                   color: FlutterFlowTheme.of(context).secondaryColor,
                 ),
                 FlutterFlowCalendar(
@@ -119,7 +119,7 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                   },
                   titleStyle: TextStyle(
                     color: FlutterFlowTheme.of(context).primaryText,
-                    fontSize: 25,
+                    fontSize: 25.0,
                   ),
                   dayOfWeekStyle: TextStyle(
                     color: FlutterFlowTheme.of(context).primaryText,
@@ -151,20 +151,21 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                                 final fechasItem = fechas[fechasIndex];
                                 return Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      16, 12, 16, 0),
+                                      16.0, 12.0, 16.0, 0.0),
                                   child: Container(
-                                    width: MediaQuery.of(context).size.width,
+                                    width:
+                                        MediaQuery.of(context).size.width * 1.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                       boxShadow: [
                                         BoxShadow(
-                                          blurRadius: 3,
+                                          blurRadius: 3.0,
                                           color: Color(0x25000000),
-                                          offset: Offset(0, 2),
+                                          offset: Offset(0.0, 2.0),
                                         )
                                       ],
-                                      borderRadius: BorderRadius.circular(8),
+                                      borderRadius: BorderRadius.circular(8.0),
                                     ),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -176,21 +177,23 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(8, 8, 4, 8),
+                                                  .fromSTEB(8.0, 8.0, 4.0, 8.0),
                                               child: Container(
-                                                width: 4,
-                                                height: 90,
+                                                width: 4.0,
+                                                height: 90.0,
                                                 decoration: BoxDecoration(
                                                   color:
                                                       random_data.randomColor(),
                                                   borderRadius:
-                                                      BorderRadius.circular(4),
+                                                      BorderRadius.circular(
+                                                          4.0),
                                                 ),
                                               ),
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(12, 12, 16, 12),
+                                                  .fromSTEB(
+                                                      12.0, 12.0, 16.0, 12.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 crossAxisAlignment:
@@ -206,8 +209,8 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 4, 0, 0),
+                                                            .fromSTEB(0.0, 4.0,
+                                                                0.0, 0.0),
                                                     child: Text(
                                                       '-------',
                                                       style:
@@ -219,8 +222,8 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 4, 0, 0),
+                                                            .fromSTEB(0.0, 4.0,
+                                                                0.0, 0.0),
                                                     child: Text(
                                                       dateTimeFormat(
                                                         'd/M',
@@ -240,7 +243,7 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryColor,
-                                                                fontSize: 20,
+                                                                fontSize: 20.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
@@ -255,18 +258,18 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 20, 0),
+                                                  0.0, 0.0, 20.0, 0.0),
                                           child: FlutterFlowIconButton(
                                             borderColor: Colors.transparent,
-                                            borderRadius: 30,
-                                            borderWidth: 1,
-                                            buttonSize: 60,
+                                            borderRadius: 30.0,
+                                            borderWidth: 1.0,
+                                            buttonSize: 60.0,
                                             icon: FaIcon(
                                               FontAwesomeIcons.trash,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .alternate,
-                                              size: 30,
+                                              size: 30.0,
                                             ),
                                             onPressed: () async {
                                               setState(() {
@@ -290,7 +293,8 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                 ),
                 if (_model.dates.length > 0)
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         final _datePickedTime = await showTimePicker(
@@ -316,11 +320,15 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                       text: 'Definir Hora',
                       icon: Icon(
                         Icons.access_time,
-                        size: 15,
+                        size: 15.0,
                       ),
                       options: FFButtonOptions(
-                        width: 150,
-                        height: 50,
+                        width: 150.0,
+                        height: 50.0,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).secondaryColor,
                         textStyle:
                             FlutterFlowTheme.of(context).subtitle2.override(
@@ -329,9 +337,9 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                                 ),
                         borderSide: BorderSide(
                           color: Colors.transparent,
-                          width: 1,
+                          width: 1.0,
                         ),
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
                   ),
@@ -365,20 +373,21 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                                 final fechasItem = fechas[fechasIndex];
                                 return Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      16, 12, 16, 0),
+                                      16.0, 12.0, 16.0, 0.0),
                                   child: Container(
-                                    width: MediaQuery.of(context).size.width,
+                                    width:
+                                        MediaQuery.of(context).size.width * 1.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                       boxShadow: [
                                         BoxShadow(
-                                          blurRadius: 3,
+                                          blurRadius: 3.0,
                                           color: Color(0x25000000),
-                                          offset: Offset(0, 2),
+                                          offset: Offset(0.0, 2.0),
                                         )
                                       ],
-                                      borderRadius: BorderRadius.circular(8),
+                                      borderRadius: BorderRadius.circular(8.0),
                                     ),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -390,21 +399,23 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(8, 8, 4, 8),
+                                                  .fromSTEB(8.0, 8.0, 4.0, 8.0),
                                               child: Container(
-                                                width: 4,
-                                                height: 90,
+                                                width: 4.0,
+                                                height: 90.0,
                                                 decoration: BoxDecoration(
                                                   color:
                                                       random_data.randomColor(),
                                                   borderRadius:
-                                                      BorderRadius.circular(4),
+                                                      BorderRadius.circular(
+                                                          4.0),
                                                 ),
                                               ),
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(12, 12, 16, 12),
+                                                  .fromSTEB(
+                                                      12.0, 12.0, 16.0, 12.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 crossAxisAlignment:
@@ -420,8 +431,8 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 4, 0, 0),
+                                                            .fromSTEB(0.0, 4.0,
+                                                                0.0, 0.0),
                                                     child: Text(
                                                       '-------',
                                                       style:
@@ -441,13 +452,16 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .secondaryColor,
-                                                        size: 24,
+                                                        size: 24.0,
                                                       ),
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    8, 4, 0, 0),
+                                                                    8.0,
+                                                                    4.0,
+                                                                    0.0,
+                                                                    0.0),
                                                         child: Text(
                                                           dateTimeFormat(
                                                             'd/M',
@@ -465,7 +479,7 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryColor,
-                                                                fontSize: 20,
+                                                                fontSize: 20.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
@@ -475,21 +489,27 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(25, 0,
-                                                                    0, 0),
+                                                                .fromSTEB(
+                                                                    25.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
                                                         child: Icon(
                                                           Icons.access_time,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryColor,
-                                                          size: 24,
+                                                          size: 24.0,
                                                         ),
                                                       ),
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    8, 4, 0, 0),
+                                                                    8.0,
+                                                                    4.0,
+                                                                    0.0,
+                                                                    0.0),
                                                         child: Text(
                                                           dateTimeFormat(
                                                             'jm',
@@ -507,7 +527,7 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryColor,
-                                                                fontSize: 20,
+                                                                fontSize: 20.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
@@ -524,18 +544,18 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 20, 0),
+                                                  0.0, 0.0, 20.0, 0.0),
                                           child: FlutterFlowIconButton(
                                             borderColor: Colors.transparent,
-                                            borderRadius: 30,
-                                            borderWidth: 1,
-                                            buttonSize: 60,
+                                            borderRadius: 30.0,
+                                            borderWidth: 1.0,
+                                            buttonSize: 60.0,
                                             icon: FaIcon(
                                               FontAwesomeIcons.trash,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .alternate,
-                                              size: 30,
+                                              size: 30.0,
                                             ),
                                             onPressed: () async {
                                               setState(() {
@@ -562,7 +582,8 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           setState(() {
@@ -575,8 +596,12 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                           FontAwesomeIcons.edit,
                         ),
                         options: FFButtonOptions(
-                          width: 150,
-                          height: 50,
+                          width: 150.0,
+                          height: 50.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).secondaryColor,
                           textStyle:
                               FlutterFlowTheme.of(context).subtitle2.override(
@@ -585,14 +610,15 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                                   ),
                           borderSide: BorderSide(
                             color: Colors.transparent,
-                            width: 1,
+                            width: 1.0,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           setState(() {
@@ -606,11 +632,15 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                         text: 'Confirmar',
                         icon: Icon(
                           Icons.check,
-                          size: 15,
+                          size: 15.0,
                         ),
                         options: FFButtonOptions(
-                          width: 150,
-                          height: 50,
+                          width: 150.0,
+                          height: 50.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primaryColor,
                           textStyle:
                               FlutterFlowTheme.of(context).subtitle2.override(
@@ -619,9 +649,9 @@ class _MultiplesDiasWidgetState extends State<MultiplesDiasWidget> {
                                   ),
                           borderSide: BorderSide(
                             color: Colors.transparent,
-                            width: 1,
+                            width: 1.0,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
                     ),

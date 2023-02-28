@@ -1,9 +1,9 @@
-import '../auth/auth_util.dart';
-import '../backend/backend.dart';
-import '../backend/push_notifications/push_notifications_util.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +55,7 @@ class _EnviarMensajePacienteWidgetState
     context.watch<FFAppState>();
 
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+      padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
       child: StreamBuilder<UsersRecord>(
         stream: UsersRecord.getDocument(widget.notificacion!.de!),
         builder: (context, snapshot) {
@@ -63,8 +63,8 @@ class _EnviarMensajePacienteWidgetState
           if (!snapshot.hasData) {
             return Center(
               child: SizedBox(
-                width: 50,
-                height: 50,
+                width: 50.0,
+                height: 50.0,
                 child: CircularProgressIndicator(
                   color: FlutterFlowTheme.of(context).primaryColor,
                 ),
@@ -78,22 +78,22 @@ class _EnviarMensajePacienteWidgetState
               color: FlutterFlowTheme.of(context).secondaryBackground,
               boxShadow: [
                 BoxShadow(
-                  blurRadius: 5,
+                  blurRadius: 5.0,
                   color: Color(0x162D3A21),
-                  offset: Offset(0, 3),
+                  offset: Offset(0.0, 3.0),
                 )
               ],
               borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(0),
-                bottomRight: Radius.circular(0),
-                topLeft: Radius.circular(20),
-                topRight: Radius.circular(20),
+                bottomLeft: Radius.circular(0.0),
+                bottomRight: Radius.circular(0.0),
+                topLeft: Radius.circular(20.0),
+                topRight: Radius.circular(20.0),
               ),
             ),
             child: Stack(
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16, 8, 16, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -111,7 +111,8 @@ class _EnviarMensajePacienteWidgetState
                         ],
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(10, 20, 10, 15),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            10.0, 20.0, 10.0, 15.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -123,7 +124,7 @@ class _EnviarMensajePacienteWidgetState
                                     .title3
                                     .override(
                                       fontFamily: 'Lexend',
-                                      fontSize: 14,
+                                      fontSize: 14.0,
                                     ),
                               ),
                             ),
@@ -131,15 +132,16 @@ class _EnviarMensajePacienteWidgetState
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(12, 12, 12, 8),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            12.0, 12.0, 12.0, 8.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Expanded(
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    8.0, 0.0, 0.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.textController,
                                   onChanged: (_) => EasyDebounce.debounce(
@@ -156,7 +158,7 @@ class _EnviarMensajePacienteWidgetState
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
-                                        width: 1,
+                                        width: 1.0,
                                       ),
                                       borderRadius: const BorderRadius.only(
                                         topLeft: Radius.circular(4.0),
@@ -166,7 +168,7 @@ class _EnviarMensajePacienteWidgetState
                                     focusedBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
-                                        width: 1,
+                                        width: 1.0,
                                       ),
                                       borderRadius: const BorderRadius.only(
                                         topLeft: Radius.circular(4.0),
@@ -176,7 +178,7 @@ class _EnviarMensajePacienteWidgetState
                                     errorBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
-                                        width: 1,
+                                        width: 1.0,
                                       ),
                                       borderRadius: const BorderRadius.only(
                                         topLeft: Radius.circular(4.0),
@@ -186,7 +188,7 @@ class _EnviarMensajePacienteWidgetState
                                     focusedErrorBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
-                                        width: 1,
+                                        width: 1.0,
                                       ),
                                       borderRadius: const BorderRadius.only(
                                         topLeft: Radius.circular(4.0),
@@ -195,7 +197,7 @@ class _EnviarMensajePacienteWidgetState
                                     ),
                                     contentPadding:
                                         EdgeInsetsDirectional.fromSTEB(
-                                            16, 0, 8, 12),
+                                            16.0, 0.0, 8.0, 12.0),
                                   ),
                                   style: FlutterFlowTheme.of(context).bodyText1,
                                   maxLines: 3,
@@ -208,12 +210,13 @@ class _EnviarMensajePacienteWidgetState
                         ),
                       ),
                       Divider(
-                        height: 12,
-                        thickness: 2,
+                        height: 12.0,
+                        thickness: 2.0,
                         color: FlutterFlowTheme.of(context).primaryBackground,
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(12, 4, 12, 12),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            12.0, 4.0, 12.0, 12.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -274,8 +277,12 @@ class _EnviarMensajePacienteWidgetState
                               },
                               text: 'Enviar',
                               options: FFButtonOptions(
-                                width: 90,
-                                height: 40,
+                                width: 90.0,
+                                height: 40.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
                                 color:
                                     FlutterFlowTheme.of(context).primaryColor,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -286,7 +293,7 @@ class _EnviarMensajePacienteWidgetState
                                     ),
                                 borderSide: BorderSide(
                                   color: Colors.transparent,
-                                  width: 1,
+                                  width: 1.0,
                                 ),
                               ),
                             ),

@@ -1,6 +1,6 @@
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -46,20 +46,20 @@ class _MostrarQRWidgetState extends State<MostrarQRWidget> {
     context.watch<FFAppState>();
 
     return Container(
-      width: MediaQuery.of(context).size.width,
-      height: 474,
+      width: MediaQuery.of(context).size.width * 1.0,
+      height: 474.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(20.0),
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(4, 4, 4, 4),
+        padding: EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
             Expanded(
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20, 8, 20, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(20.0, 8.0, 20.0, 0.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -67,9 +67,9 @@ class _MostrarQRWidgetState extends State<MostrarQRWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Divider(
-                        thickness: 3,
-                        indent: 150,
-                        endIndent: 150,
+                        thickness: 3.0,
+                        indent: 150.0,
+                        endIndent: 150.0,
                         color: FlutterFlowTheme.of(context).primaryBackground,
                       ),
                       Row(
@@ -78,8 +78,8 @@ class _MostrarQRWidgetState extends State<MostrarQRWidget> {
                         children: [
                           Expanded(
                             child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 4, 16, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 4.0, 16.0, 0.0),
                               child: Text(
                                 'Escanear QR',
                                 style: FlutterFlowTheme.of(context).title2,
@@ -89,22 +89,24 @@ class _MostrarQRWidgetState extends State<MostrarQRWidget> {
                         ],
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Image.network(
                               'https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${widget.referencia}',
-                              width: 300,
-                              height: 300,
+                              width: 300.0,
+                              height: 300.0,
                               fit: BoxFit.cover,
                             ),
                           ],
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 44),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            0.0, 24.0, 0.0, 44.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -115,8 +117,12 @@ class _MostrarQRWidgetState extends State<MostrarQRWidget> {
                               },
                               text: 'Cerrar',
                               options: FFButtonOptions(
-                                width: 130,
-                                height: 40,
+                                width: 130.0,
+                                height: 40.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
                                 color:
                                     FlutterFlowTheme.of(context).secondaryColor,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -127,9 +133,9 @@ class _MostrarQRWidgetState extends State<MostrarQRWidget> {
                                     ),
                                 borderSide: BorderSide(
                                   color: Colors.transparent,
-                                  width: 1,
+                                  width: 1.0,
                                 ),
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(8.0),
                               ),
                             ),
                           ],

@@ -1,8 +1,8 @@
-import '../backend/backend.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/custom_functions.dart' as functions;
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -63,14 +63,15 @@ class _BuscarMedicosEspecialidadWidgetState
               color: FlutterFlowTheme.of(context).secondaryBackground,
             ),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+              padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 20, 16, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 16.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -82,13 +83,13 @@ class _BuscarMedicosEspecialidadWidgetState
                             child: Icon(
                               Icons.chevron_left,
                               color: Colors.black,
-                              size: 40,
+                              size: 40.0,
                             ),
                           ),
                           Expanded(
                             child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  12.0, 0.0, 0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -102,7 +103,7 @@ class _BuscarMedicosEspecialidadWidgetState
                                           fontFamily: 'DM Sans',
                                           color: FlutterFlowTheme.of(context)
                                               .textColor,
-                                          fontSize: 20,
+                                          fontSize: 20.0,
                                         ),
                                   ),
                                 ],
@@ -113,12 +114,13 @@ class _BuscarMedicosEspecialidadWidgetState
                       ),
                     ),
                     Divider(
-                      height: 10,
-                      thickness: 5,
+                      height: 10.0,
+                      thickness: 5.0,
                       color: FlutterFlowTheme.of(context).secondaryColor,
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                       child: Builder(
                         builder: (context) {
                           final medicos =
@@ -133,7 +135,7 @@ class _BuscarMedicosEspecialidadWidgetState
                               final medicosItem = medicos[medicosIndex];
                               return Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    16, 0, 16, 8),
+                                    16.0, 0.0, 16.0, 8.0),
                                 child: StreamBuilder<MedicosRecord>(
                                   stream:
                                       MedicosRecord.getDocument(medicosItem),
@@ -142,8 +144,8 @@ class _BuscarMedicosEspecialidadWidgetState
                                     if (!snapshot.hasData) {
                                       return Center(
                                         child: SizedBox(
-                                          width: 50,
-                                          height: 50,
+                                          width: 50.0,
+                                          height: 50.0,
                                           child: CircularProgressIndicator(
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryColor,
@@ -170,17 +172,17 @@ class _BuscarMedicosEspecialidadWidgetState
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
                                           borderRadius:
-                                              BorderRadius.circular(12),
+                                              BorderRadius.circular(12.0),
                                           border: Border.all(
                                             color: FlutterFlowTheme.of(context)
                                                 .lineColor,
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                         ),
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  5, 5, 5, 5),
+                                                  5.0, 5.0, 5.0, 5.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -191,7 +193,7 @@ class _BuscarMedicosEspecialidadWidgetState
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryColor,
-                                                size: 34,
+                                                size: 34.0,
                                               ),
                                               Expanded(
                                                 child: Container(
@@ -199,13 +201,16 @@ class _BuscarMedicosEspecialidadWidgetState
                                                   decoration: BoxDecoration(
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8),
+                                                            8.0),
                                                   ),
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(
-                                                                12, 12, 12, 12),
+                                                                12.0,
+                                                                12.0,
+                                                                12.0,
+                                                                12.0),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -235,7 +240,7 @@ class _BuscarMedicosEspecialidadWidgetState
                                                                     color: Color(
                                                                         0xFF101213),
                                                                     fontSize:
-                                                                        20,
+                                                                        20.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,

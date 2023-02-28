@@ -1,10 +1,10 @@
-import '../auth/auth_util.dart';
-import '../backend/backend.dart';
-import '../components/cita_widget.dart';
-import '../components/mis_citas_comp_widget.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/custom_functions.dart' as functions;
+import '/auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/components/cita_widget.dart';
+import '/components/mis_citas_comp_widget.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -52,8 +52,8 @@ class _MisCitasWidgetState extends State<MisCitasWidget> {
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 50,
-              height: 50,
+              width: 50.0,
+              height: 50.0,
               child: CircularProgressIndicator(
                 color: FlutterFlowTheme.of(context).primaryColor,
               ),
@@ -74,14 +74,16 @@ class _MisCitasWidgetState extends State<MisCitasWidget> {
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 20, 16, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 20.0, 16.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -93,13 +95,13 @@ class _MisCitasWidgetState extends State<MisCitasWidget> {
                                 child: Icon(
                                   Icons.chevron_left,
                                   color: Colors.black,
-                                  size: 40,
+                                  size: 40.0,
                                 ),
                               ),
                               Expanded(
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      12, 0, 0, 0),
+                                      12.0, 0.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
@@ -115,7 +117,7 @@ class _MisCitasWidgetState extends State<MisCitasWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .textColor,
-                                              fontSize: 20,
+                                              fontSize: 20.0,
                                             ),
                                       ),
                                     ],
@@ -126,8 +128,8 @@ class _MisCitasWidgetState extends State<MisCitasWidget> {
                           ),
                         ),
                         Divider(
-                          height: 10,
-                          thickness: 5,
+                          height: 10.0,
+                          thickness: 5.0,
                           color: FlutterFlowTheme.of(context).secondaryColor,
                         ),
                         if (functions
@@ -136,8 +138,8 @@ class _MisCitasWidgetState extends State<MisCitasWidget> {
                                 .length >
                             0)
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 12.0, 0.0, 0.0),
                             child: Builder(
                               builder: (context) {
                                 final misCitas = functions
@@ -155,7 +157,7 @@ class _MisCitasWidgetState extends State<MisCitasWidget> {
                                         misCitas[misCitasIndex];
                                     return Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 10, 0, 10),
+                                          0.0, 10.0, 0.0, 10.0),
                                       child: StreamBuilder<CitasRecord>(
                                         stream: CitasRecord.getDocument(
                                             misCitasItem),
@@ -164,8 +166,8 @@ class _MisCitasWidgetState extends State<MisCitasWidget> {
                                           if (!snapshot.hasData) {
                                             return Center(
                                               child: SizedBox(
-                                                width: 50,
-                                                height: 50,
+                                                width: 50.0,
+                                                height: 50.0,
                                                 child:
                                                     CircularProgressIndicator(
                                                   color: FlutterFlowTheme.of(
@@ -237,8 +239,8 @@ class _MisCitasWidgetState extends State<MisCitasWidget> {
                                 ),
                                 child: Lottie.asset(
                                   'assets/lottie_animations/98121-empty-state.json',
-                                  width: 150,
-                                  height: 130,
+                                  width: 150.0,
+                                  height: 130.0,
                                   fit: BoxFit.contain,
                                   animate: true,
                                 ),

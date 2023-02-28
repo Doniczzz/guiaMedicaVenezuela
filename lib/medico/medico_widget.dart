@@ -1,11 +1,11 @@
-import '../auth/auth_util.dart';
-import '../backend/backend.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
-import '../flutter_flow/custom_functions.dart' as functions;
+import '/auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -44,8 +44,8 @@ class _MedicoWidgetState extends State<MedicoWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, -450),
-          end: Offset(0, 0),
+          begin: Offset(0.0, -450.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -57,8 +57,8 @@ class _MedicoWidgetState extends State<MedicoWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 0),
-          end: Offset(0, -500),
+          begin: Offset(0.0, 0.0),
+          end: Offset(0.0, -500.0),
         ),
       ],
     ),
@@ -70,8 +70,8 @@ class _MedicoWidgetState extends State<MedicoWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 400),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 400.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -83,8 +83,8 @@ class _MedicoWidgetState extends State<MedicoWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 0),
-          end: Offset(0, 500),
+          begin: Offset(0.0, 0.0),
+          end: Offset(0.0, 500.0),
         ),
       ],
     ),
@@ -121,8 +121,8 @@ class _MedicoWidgetState extends State<MedicoWidget>
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 50,
-              height: 50,
+              width: 50.0,
+              height: 50.0,
               child: CircularProgressIndicator(
                 color: FlutterFlowTheme.of(context).primaryColor,
               ),
@@ -138,13 +138,13 @@ class _MedicoWidgetState extends State<MedicoWidget>
             children: [
               Material(
                 color: Colors.transparent,
-                elevation: 4,
+                elevation: 4.0,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(45),
-                    bottomRight: Radius.circular(45),
-                    topLeft: Radius.circular(0),
-                    topRight: Radius.circular(0),
+                    bottomLeft: Radius.circular(45.0),
+                    bottomRight: Radius.circular(45.0),
+                    topLeft: Radius.circular(0.0),
+                    topRight: Radius.circular(0.0),
                   ),
                 ),
                 child: Container(
@@ -152,18 +152,18 @@ class _MedicoWidgetState extends State<MedicoWidget>
                   decoration: BoxDecoration(
                     color: Color(0xFFF2F2F2),
                     borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(45),
-                      bottomRight: Radius.circular(45),
-                      topLeft: Radius.circular(0),
-                      topRight: Radius.circular(0),
+                      bottomLeft: Radius.circular(45.0),
+                      bottomRight: Radius.circular(45.0),
+                      topLeft: Radius.circular(0.0),
+                      topRight: Radius.circular(0.0),
                     ),
                   ),
                   child: Container(
-                    height: 450,
+                    height: 450.0,
                     child: Stack(
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(0, 0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: StreamBuilder<UsersRecord>(
                             stream: UsersRecord.getDocument(
                                 medicoMedicosRecord.parentReference),
@@ -172,8 +172,8 @@ class _MedicoWidgetState extends State<MedicoWidget>
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 50,
-                                    height: 50,
+                                    width: 50.0,
+                                    height: 50.0,
                                     child: CircularProgressIndicator(
                                       color: FlutterFlowTheme.of(context)
                                           .primaryColor,
@@ -187,8 +187,9 @@ class _MedicoWidgetState extends State<MedicoWidget>
                                   medicoMedicosRecord.foto,
                                   'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/guia-medica-venezuela-mnxqj1/assets/xij2t4ymf6c9/isotipo2.png',
                                 ),
-                                width: MediaQuery.of(context).size.width,
-                                height: MediaQuery.of(context).size.height * 1,
+                                width: MediaQuery.of(context).size.width * 1.0,
+                                height:
+                                    MediaQuery.of(context).size.height * 1.0,
                                 fit: BoxFit.contain,
                               );
                             },
@@ -199,20 +200,20 @@ class _MedicoWidgetState extends State<MedicoWidget>
                           child: Icon(
                             Icons.bookmark_border_outlined,
                             color: FlutterFlowTheme.of(context).secondaryColor,
-                            size: 40,
+                            size: 40.0,
                           ),
                         ),
                         Align(
                           alignment: AlignmentDirectional(-0.96, -0.97),
                           child: FlutterFlowIconButton(
                             borderColor: Colors.transparent,
-                            borderRadius: 30,
-                            buttonSize: 48,
+                            borderRadius: 30.0,
+                            buttonSize: 48.0,
                             icon: Icon(
                               Icons.close,
                               color:
                                   FlutterFlowTheme.of(context).secondaryColor,
-                              size: 40,
+                              size: 40.0,
                             ),
                             onPressed: () async {
                               context.pushNamed('home');
@@ -221,23 +222,23 @@ class _MedicoWidgetState extends State<MedicoWidget>
                         ),
                         if (medicoMedicosRecord.ratings!.toList().length > 0)
                           Align(
-                            alignment: AlignmentDirectional(0, 0.95),
+                            alignment: AlignmentDirectional(0.0, 0.95),
                             child: Material(
                               color: Colors.transparent,
-                              elevation: 4,
+                              elevation: 4.0,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40),
+                                borderRadius: BorderRadius.circular(40.0),
                               ),
                               child: Container(
-                                width: 173,
+                                width: 173.0,
                                 height: 56.4,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).gray200,
-                                  borderRadius: BorderRadius.circular(40),
+                                  borderRadius: BorderRadius.circular(40.0),
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      5, 5, 5, 5),
+                                      5.0, 5.0, 5.0, 5.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -273,7 +274,7 @@ class _MedicoWidgetState extends State<MedicoWidget>
                                           ),
                                           unratedColor: Color(0xFF9E9E9E),
                                           itemCount: 5,
-                                          itemSize: 25,
+                                          itemSize: 25.0,
                                         ),
                                       ),
                                     ],
@@ -294,14 +295,15 @@ class _MedicoWidgetState extends State<MedicoWidget>
                   ),
               Expanded(
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 20.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -320,7 +322,7 @@ class _MedicoWidgetState extends State<MedicoWidget>
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 0, 50),
+                                        0.0, 0.0, 0.0, 40.0),
                                     child: Text(
                                       functions.listaToString(
                                           medicoMedicosRecord.especialidades!
@@ -336,7 +338,7 @@ class _MedicoWidgetState extends State<MedicoWidget>
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 0, 8),
+                                        0.0, 0.0, 0.0, 8.0),
                                     child: Text(
                                       'Selecciona una cita',
                                       style: FlutterFlowTheme.of(context)
@@ -345,7 +347,7 @@ class _MedicoWidgetState extends State<MedicoWidget>
                                             fontFamily: 'DM Sans',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
-                                            fontSize: 18,
+                                            fontSize: 18.0,
                                             fontWeight: FontWeight.w600,
                                           ),
                                     ),
@@ -355,381 +357,396 @@ class _MedicoWidgetState extends State<MedicoWidget>
                             ],
                           ),
                         ),
-                        if (medicoMedicosRecord.citasCreadas!.toList().length >
-                            0)
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 25),
-                            child: StreamBuilder<List<CitasRecord>>(
-                              stream: queryCitasRecord(
-                                queryBuilder: (citasRecord) => citasRecord
-                                    .where('medico', isEqualTo: widget.medico)
-                                    .where('fecha',
-                                        isGreaterThan: getCurrentTimestamp)
-                                    .orderBy('fecha'),
-                              ),
-                              builder: (context, snapshot) {
-                                // Customize what your widget looks like when it's loading.
-                                if (!snapshot.hasData) {
-                                  return Center(
-                                    child: SizedBox(
-                                      width: 50,
-                                      height: 50,
-                                      child: CircularProgressIndicator(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryColor,
-                                      ),
-                                    ),
-                                  );
-                                }
-                                List<CitasRecord> rowCitasRecordList =
-                                    snapshot.data!;
-                                return SingleChildScrollView(
-                                  scrollDirection: Axis.horizontal,
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: List.generate(
-                                        rowCitasRecordList.length, (rowIndex) {
-                                      final rowCitasRecord =
-                                          rowCitasRecordList[rowIndex];
-                                      return Visibility(
-                                        visible: !functions.pacienteEnCita(
-                                                currentUserReference,
-                                                rowCitasRecord.pacientes!
-                                                    .toList())! &&
-                                            (rowCitasRecord.pacientes!
-                                                    .toList()
-                                                    .length <
-                                                rowCitasRecord.maxCitas!),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 15, 0),
-                                          child: InkWell(
-                                            onTap: () async {
-                                              if (animationsMap[
-                                                      'containerOnActionTriggerAnimation'] !=
-                                                  null) {
-                                                animationsMap[
-                                                        'containerOnActionTriggerAnimation']!
-                                                    .controller
-                                                    .forward(from: 0.0);
-                                              }
-                                              if (animationsMap[
-                                                      'columnOnActionTriggerAnimation'] !=
-                                                  null) {
-                                                await animationsMap[
-                                                        'columnOnActionTriggerAnimation']!
-                                                    .controller
-                                                    .forward(from: 0.0);
-                                              }
-
-                                              context.pushNamed(
-                                                'citaCliente',
-                                                queryParams: {
-                                                  'medico': serializeParam(
-                                                    widget.medico,
-                                                    ParamType.DocumentReference,
-                                                  ),
-                                                  'cita': serializeParam(
-                                                    rowCitasRecord.reference,
-                                                    ParamType.DocumentReference,
-                                                  ),
-                                                }.withoutNulls,
-                                              );
-                                            },
-                                            child: Container(
-                                              width: 302.9,
-                                              height: 107.4,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                borderRadius:
-                                                    BorderRadius.circular(16),
-                                                border: Border.all(
-                                                  color: Color(0xF2EAEAEA),
-                                                ),
-                                              ),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.min,
-                                                children: [
-                                                  Padding(
+                        StreamBuilder<List<CitasRecord>>(
+                          stream: queryCitasRecord(
+                            queryBuilder: (citasRecord) => citasRecord
+                                .where('medico', isEqualTo: widget.medico)
+                                .where('fecha',
+                                    isGreaterThan: getCurrentTimestamp)
+                                .orderBy('fecha'),
+                          ),
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 50.0,
+                                  height: 50.0,
+                                  child: CircularProgressIndicator(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryColor,
+                                  ),
+                                ),
+                              );
+                            }
+                            List<CitasRecord> containerCitasRecordList =
+                                snapshot.data!;
+                            return Container(
+                              width: double.infinity,
+                              height: 132.6,
+                              decoration: BoxDecoration(),
+                              child: Stack(
+                                children: [
+                                  if (containerCitasRecordList.length > 0)
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 25.0),
+                                      child: Builder(
+                                        builder: (context) {
+                                          final citasRow =
+                                              containerCitasRecordList.toList();
+                                          return SingleChildScrollView(
+                                            scrollDirection: Axis.horizontal,
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children:
+                                                  List.generate(citasRow.length,
+                                                      (citasRowIndex) {
+                                                final citasRowItem =
+                                                    citasRow[citasRowIndex];
+                                                return Visibility(
+                                                  visible: !functions
+                                                          .pacienteEnCita(
+                                                              currentUserReference,
+                                                              citasRowItem
+                                                                  .pacientes!
+                                                                  .toList())! &&
+                                                      (citasRowItem.pacientes!
+                                                              .toList()
+                                                              .length <
+                                                          citasRowItem
+                                                              .maxCitas!),
+                                                  child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                15, 15, 15, 15),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Icon(
-                                                          Icons
-                                                              .attach_money_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .fondoMenu,
-                                                          size: 34,
-                                                        ),
-                                                        Expanded(
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        8,
-                                                                        0,
-                                                                        0,
-                                                                        0),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .min,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                Text(
-                                                                  '${rowCitasRecord.precio?.toString()}${rowCitasRecord.tipoDeMoneda == 'Bolívares' ? ' Bs.' : ' US\$'}',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .subtitle1
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Lexend',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .fondoMenu,
-                                                                        fontSize:
-                                                                            16,
-                                                                      ),
-                                                                ),
-                                                                if (rowCitasRecord
-                                                                        .tipoDeMoneda ==
-                                                                    'Ambos')
-                                                                  Text(
-                                                                    'Se aceptan Bolívares',
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .subtitle1
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Lexend',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryColor,
-                                                                          fontSize:
-                                                                              12,
-                                                                        ),
-                                                                  ),
-                                                              ],
+                                                            .fromSTEB(0.0, 0.0,
+                                                                15.0, 0.0),
+                                                    child: InkWell(
+                                                      onTap: () async {
+                                                        if (animationsMap[
+                                                                'containerOnActionTriggerAnimation'] !=
+                                                            null) {
+                                                          animationsMap[
+                                                                  'containerOnActionTriggerAnimation']!
+                                                              .controller
+                                                              .forward(
+                                                                  from: 0.0);
+                                                        }
+                                                        if (animationsMap[
+                                                                'columnOnActionTriggerAnimation'] !=
+                                                            null) {
+                                                          await animationsMap[
+                                                                  'columnOnActionTriggerAnimation']!
+                                                              .controller
+                                                              .forward(
+                                                                  from: 0.0);
+                                                        }
+
+                                                        context.pushNamed(
+                                                          'citaCliente',
+                                                          queryParams: {
+                                                            'medico':
+                                                                serializeParam(
+                                                              widget.medico,
+                                                              ParamType
+                                                                  .DocumentReference,
                                                             ),
-                                                          ),
-                                                        ),
-                                                        if (rowCitasRecord
-                                                                .aceptaEfectivo ??
-                                                            true)
-                                                          Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              Text(
-                                                                'Efectivo',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyText1
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'DM Sans',
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .fondoMenu,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold,
-                                                                    ),
-                                                              ),
-                                                              Icon(
-                                                                Icons.check_box,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryColor,
-                                                                size: 24,
-                                                              ),
-                                                            ],
-                                                          ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                  Expanded(
-                                                    child: Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0, 0, 0, 1),
+                                                            'cita':
+                                                                serializeParam(
+                                                              citasRowItem
+                                                                  .reference,
+                                                              ParamType
+                                                                  .DocumentReference,
+                                                            ),
+                                                          }.withoutNulls,
+                                                        );
+                                                      },
                                                       child: Container(
-                                                        width: double.infinity,
-                                                        height: double.infinity,
+                                                        width: 302.9,
+                                                        height: 107.4,
                                                         decoration:
                                                             BoxDecoration(
-                                                          color:
-                                                              Color(0xF2E2E2E2),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
                                                           borderRadius:
-                                                              BorderRadius.only(
-                                                            bottomLeft:
-                                                                Radius.circular(
-                                                                    16),
-                                                            bottomRight:
-                                                                Radius.circular(
-                                                                    16),
-                                                            topLeft:
-                                                                Radius.circular(
-                                                                    0),
-                                                            topRight:
-                                                                Radius.circular(
-                                                                    0),
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      16.0),
+                                                          border: Border.all(
+                                                            color: Color(
+                                                                0xF2EAEAEA),
                                                           ),
                                                         ),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(12,
-                                                                      0, 12, 4),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              Icon(
-                                                                Icons
-                                                                    .calendar_today,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryColor,
-                                                                size: 20,
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            8,
-                                                                            0,
-                                                                            0,
-                                                                            0),
-                                                                child: Text(
-                                                                  '${functions.retornarDia(rowCitasRecord.fecha!)}, ${dateTimeFormat(
-                                                                    'd/M',
-                                                                    rowCitasRecord
-                                                                        .fecha,
-                                                                    locale: FFLocalizations.of(
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.min,
+                                                          children: [
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          15.0,
+                                                                          15.0,
+                                                                          15.0,
+                                                                          15.0),
+                                                              child: Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Icon(
+                                                                    Icons
+                                                                        .attach_money_rounded,
+                                                                    color: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .languageCode,
-                                                                  )}',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyText1,
-                                                                ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            8,
-                                                                            0,
-                                                                            0,
-                                                                            0),
-                                                                child: Icon(
-                                                                  Icons.timer,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryColor,
-                                                                  size: 20,
-                                                                ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            8,
-                                                                            0,
-                                                                            0,
-                                                                            0),
-                                                                child: Text(
-                                                                  dateTimeFormat(
-                                                                    'jm',
-                                                                    rowCitasRecord
-                                                                        .fecha!,
-                                                                    locale: FFLocalizations.of(
-                                                                            context)
-                                                                        .languageCode,
+                                                                        .fondoMenu,
+                                                                    size: 34.0,
                                                                   ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyText1,
-                                                                ),
+                                                                  Expanded(
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          8.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Column(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.min,
+                                                                        crossAxisAlignment:
+                                                                            CrossAxisAlignment.start,
+                                                                        children: [
+                                                                          Text(
+                                                                            '${citasRowItem.precio?.toString()}${citasRowItem.moneda == 'Bolívares' ? ' Bs.' : ' US\$'}',
+                                                                            style: FlutterFlowTheme.of(context).subtitle1.override(
+                                                                                  fontFamily: 'Lexend',
+                                                                                  color: FlutterFlowTheme.of(context).fondoMenu,
+                                                                                  fontSize: 16.0,
+                                                                                ),
+                                                                          ),
+                                                                          if (citasRowItem.tipoDeMoneda ==
+                                                                              'Ambos')
+                                                                            Text(
+                                                                              'Se aceptan Bolívares',
+                                                                              style: FlutterFlowTheme.of(context).subtitle1.override(
+                                                                                    fontFamily: 'Lexend',
+                                                                                    color: FlutterFlowTheme.of(context).primaryColor,
+                                                                                    fontSize: 12.0,
+                                                                                  ),
+                                                                            ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  if (citasRowItem
+                                                                          .aceptaEfectivo ??
+                                                                      true)
+                                                                    Column(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      children: [
+                                                                        Text(
+                                                                          'Efectivo',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyText1
+                                                                              .override(
+                                                                                fontFamily: 'DM Sans',
+                                                                                color: FlutterFlowTheme.of(context).fondoMenu,
+                                                                                fontWeight: FontWeight.bold,
+                                                                              ),
+                                                                        ),
+                                                                        Icon(
+                                                                          Icons
+                                                                              .check_box,
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primaryColor,
+                                                                          size:
+                                                                              24.0,
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                ],
                                                               ),
-                                                              Padding(
+                                                            ),
+                                                            Expanded(
+                                                              child: Padding(
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            25,
-                                                                            0,
-                                                                            0,
-                                                                            0),
-                                                                child: Icon(
-                                                                  Icons
-                                                                      .keyboard_arrow_right,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryColor,
-                                                                  size: 24,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            1.0),
+                                                                child:
+                                                                    Container(
+                                                                  width: double
+                                                                      .infinity,
+                                                                  height: double
+                                                                      .infinity,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: Color(
+                                                                        0xF2E2E2E2),
+                                                                    borderRadius:
+                                                                        BorderRadius
+                                                                            .only(
+                                                                      bottomLeft:
+                                                                          Radius.circular(
+                                                                              16.0),
+                                                                      bottomRight:
+                                                                          Radius.circular(
+                                                                              16.0),
+                                                                      topLeft: Radius
+                                                                          .circular(
+                                                                              0.0),
+                                                                      topRight:
+                                                                          Radius.circular(
+                                                                              0.0),
+                                                                    ),
+                                                                  ),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12.0,
+                                                                            0.0,
+                                                                            12.0,
+                                                                            4.0),
+                                                                    child: Row(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .center,
+                                                                      children: [
+                                                                        Icon(
+                                                                          Icons
+                                                                              .calendar_today,
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryColor,
+                                                                          size:
+                                                                              20.0,
+                                                                        ),
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              8.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Text(
+                                                                            '${functions.retornarDia(citasRowItem.fecha!)}, ${dateTimeFormat(
+                                                                              'd/M',
+                                                                              citasRowItem.fecha,
+                                                                              locale: FFLocalizations.of(context).languageCode,
+                                                                            )}',
+                                                                            style:
+                                                                                FlutterFlowTheme.of(context).bodyText1,
+                                                                          ),
+                                                                        ),
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              8.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Icon(
+                                                                            Icons.timer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryColor,
+                                                                            size:
+                                                                                20.0,
+                                                                          ),
+                                                                        ),
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              8.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Text(
+                                                                            dateTimeFormat(
+                                                                              'jm',
+                                                                              citasRowItem.fecha!,
+                                                                              locale: FFLocalizations.of(context).languageCode,
+                                                                            ),
+                                                                            style:
+                                                                                FlutterFlowTheme.of(context).bodyText1,
+                                                                          ),
+                                                                        ),
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              25.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Icon(
+                                                                            Icons.keyboard_arrow_right,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryColor,
+                                                                            size:
+                                                                                24.0,
+                                                                          ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                  ),
                                                                 ),
                                                               ),
-                                                            ],
-                                                          ),
+                                                            ),
+                                                          ],
                                                         ),
                                                       ),
                                                     ),
                                                   ),
-                                                ],
-                                              ),
+                                                );
+                                              }),
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                    ),
+                                  if (containerCitasRecordList.length == 0)
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 25.0, 0.0, 15.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Expanded(
+                                            child: Text(
+                                              'No hay citas disponibles, intentelo mas tarde.',
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .title3
+                                                      .override(
+                                                        fontFamily: 'Lexend',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryBtnText,
+                                                      ),
                                             ),
                                           ),
-                                        ),
-                                      );
-                                    }),
-                                  ),
-                                );
-                              },
-                            ),
-                          ),
-                        if (medicoMedicosRecord.citasCreadas!.toList().length ==
-                            0)
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 25, 0, 15),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Expanded(
-                                  child: Text(
-                                    'No hay citas disponibles, intentelo mas tarde.',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .title3
-                                        .override(
-                                          fontFamily: 'Lexend',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBtnText,
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
+                                        ],
+                                      ),
+                                    ),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 25, 0, 15),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 25.0, 0.0, 15.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -743,8 +760,8 @@ class _MedicoWidgetState extends State<MedicoWidget>
                                   if (!snapshot.hasData) {
                                     return Center(
                                       child: SizedBox(
-                                        width: 50,
-                                        height: 50,
+                                        width: 50.0,
+                                        height: 50.0,
                                         child: CircularProgressIndicator(
                                           color: FlutterFlowTheme.of(context)
                                               .primaryColor,
@@ -791,10 +808,15 @@ class _MedicoWidgetState extends State<MedicoWidget>
                                     text: 'Contacto',
                                     icon: Icon(
                                       Icons.email_outlined,
-                                      size: 15,
+                                      size: 15.0,
                                     ),
                                     options: FFButtonOptions(
-                                      height: 40,
+                                      height: 40.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryColor,
                                       textStyle: FlutterFlowTheme.of(context)
@@ -805,9 +827,9 @@ class _MedicoWidgetState extends State<MedicoWidget>
                                           ),
                                       borderSide: BorderSide(
                                         color: Colors.transparent,
-                                        width: 1,
+                                        width: 1.0,
                                       ),
-                                      borderRadius: BorderRadius.circular(8),
+                                      borderRadius: BorderRadius.circular(8.0),
                                     ),
                                   );
                                 },

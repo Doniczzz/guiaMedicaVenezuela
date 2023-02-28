@@ -1,5 +1,5 @@
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -52,8 +52,8 @@ class _LoadingWidgetState extends State<LoadingWidget> {
         children: [
           Lottie.asset(
             'assets/lottie_animations/loading.json',
-            width: 300,
-            height: 300,
+            width: 300.0,
+            height: 300.0,
             fit: BoxFit.cover,
             animate: true,
           ),

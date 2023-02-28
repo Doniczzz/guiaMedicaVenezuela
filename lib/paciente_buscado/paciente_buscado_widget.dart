@@ -1,9 +1,9 @@
-import '../backend/backend.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_expanded_image_view.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../custom_code/actions/index.dart' as actions;
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_expanded_image_view.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -60,8 +60,8 @@ class _PacienteBuscadoWidgetState extends State<PacienteBuscadoWidget>
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 50,
-              height: 50,
+              width: 50.0,
+              height: 50.0,
               child: CircularProgressIndicator(
                 color: FlutterFlowTheme.of(context).primaryColor,
               ),
@@ -88,13 +88,14 @@ class _PacienteBuscadoWidgetState extends State<PacienteBuscadoWidget>
                           List.generate(pacientes.length, (pacientesIndex) {
                         final pacientesItem = pacientes[pacientesIndex];
                         return Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 25, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 25.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    16, 0, 16, 0),
+                                    16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -106,7 +107,7 @@ class _PacienteBuscadoWidgetState extends State<PacienteBuscadoWidget>
                                       child: Icon(
                                         Icons.arrow_back_ios,
                                         color: Colors.black,
-                                        size: 34,
+                                        size: 34.0,
                                       ),
                                     ),
                                     Expanded(
@@ -138,26 +139,26 @@ class _PacienteBuscadoWidgetState extends State<PacienteBuscadoWidget>
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    16, 25, 16, 12),
+                                    16.0, 25.0, 16.0, 12.0),
                                 child: Material(
                                   color: Colors.transparent,
-                                  elevation: 2,
+                                  elevation: 2.0,
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(25),
+                                    borderRadius: BorderRadius.circular(25.0),
                                   ),
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      borderRadius: BorderRadius.circular(25),
+                                      borderRadius: BorderRadius.circular(25.0),
                                       border: Border.all(
                                         color: Color(0xFFE0E3E7),
-                                        width: 2,
+                                        width: 2.0,
                                       ),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          12, 12, 12, 12),
+                                          12.0, 12.0, 12.0, 12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         crossAxisAlignment:
@@ -166,7 +167,7 @@ class _PacienteBuscadoWidgetState extends State<PacienteBuscadoWidget>
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 4, 0, 0),
+                                                    0.0, 4.0, 0.0, 0.0),
                                             child: Text(
                                               'Método de pago',
                                               style:
@@ -188,7 +189,7 @@ class _PacienteBuscadoWidgetState extends State<PacienteBuscadoWidget>
                                                 .override(
                                                   fontFamily: 'Outfit',
                                                   color: Color(0xFF101213),
-                                                  fontSize: 20,
+                                                  fontSize: 20.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                           ),
@@ -200,26 +201,26 @@ class _PacienteBuscadoWidgetState extends State<PacienteBuscadoWidget>
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    16, 25, 16, 12),
+                                    16.0, 25.0, 16.0, 12.0),
                                 child: Material(
                                   color: Colors.transparent,
-                                  elevation: 2,
+                                  elevation: 2.0,
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(25),
+                                    borderRadius: BorderRadius.circular(25.0),
                                   ),
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      borderRadius: BorderRadius.circular(25),
+                                      borderRadius: BorderRadius.circular(25.0),
                                       border: Border.all(
                                         color: Color(0xFFE0E3E7),
-                                        width: 2,
+                                        width: 2.0,
                                       ),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          12, 12, 12, 12),
+                                          12.0, 12.0, 12.0, 12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         crossAxisAlignment:
@@ -228,7 +229,7 @@ class _PacienteBuscadoWidgetState extends State<PacienteBuscadoWidget>
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 4, 0, 0),
+                                                    0.0, 4.0, 0.0, 0.0),
                                             child: Text(
                                               'Número de paciente',
                                               style:
@@ -250,7 +251,7 @@ class _PacienteBuscadoWidgetState extends State<PacienteBuscadoWidget>
                                                 .override(
                                                   fontFamily: 'Outfit',
                                                   color: Color(0xFF101213),
-                                                  fontSize: 20,
+                                                  fontSize: 20.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                           ),
@@ -262,26 +263,26 @@ class _PacienteBuscadoWidgetState extends State<PacienteBuscadoWidget>
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    16, 25, 16, 12),
+                                    16.0, 25.0, 16.0, 12.0),
                                 child: Material(
                                   color: Colors.transparent,
-                                  elevation: 2,
+                                  elevation: 2.0,
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(25),
+                                    borderRadius: BorderRadius.circular(25.0),
                                   ),
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      borderRadius: BorderRadius.circular(25),
+                                      borderRadius: BorderRadius.circular(25.0),
                                       border: Border.all(
                                         color: Color(0xFFE0E3E7),
-                                        width: 2,
+                                        width: 2.0,
                                       ),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          12, 12, 12, 12),
+                                          12.0, 12.0, 12.0, 12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         crossAxisAlignment:
@@ -290,7 +291,7 @@ class _PacienteBuscadoWidgetState extends State<PacienteBuscadoWidget>
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 4, 0, 0),
+                                                    0.0, 4.0, 0.0, 0.0),
                                             child: Text(
                                               'Número de referencia',
                                               style:
@@ -312,7 +313,7 @@ class _PacienteBuscadoWidgetState extends State<PacienteBuscadoWidget>
                                                 .override(
                                                   fontFamily: 'Outfit',
                                                   color: Color(0xFF101213),
-                                                  fontSize: 20,
+                                                  fontSize: 20.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                           ),
@@ -324,26 +325,26 @@ class _PacienteBuscadoWidgetState extends State<PacienteBuscadoWidget>
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    16, 25, 16, 12),
+                                    16.0, 25.0, 16.0, 12.0),
                                 child: Material(
                                   color: Colors.transparent,
-                                  elevation: 2,
+                                  elevation: 2.0,
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(25),
+                                    borderRadius: BorderRadius.circular(25.0),
                                   ),
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      borderRadius: BorderRadius.circular(25),
+                                      borderRadius: BorderRadius.circular(25.0),
                                       border: Border.all(
                                         color: Color(0xFFE0E3E7),
-                                        width: 2,
+                                        width: 2.0,
                                       ),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          12, 12, 12, 12),
+                                          12.0, 12.0, 12.0, 12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         crossAxisAlignment:
@@ -352,7 +353,7 @@ class _PacienteBuscadoWidgetState extends State<PacienteBuscadoWidget>
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 4, 0, 0),
+                                                    0.0, 4.0, 0.0, 0.0),
                                             child: Text(
                                               'Motivo de cita',
                                               style:
@@ -374,7 +375,7 @@ class _PacienteBuscadoWidgetState extends State<PacienteBuscadoWidget>
                                                 .override(
                                                   fontFamily: 'Outfit',
                                                   color: Color(0xFF101213),
-                                                  fontSize: 20,
+                                                  fontSize: 20.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                           ),
@@ -387,26 +388,27 @@ class _PacienteBuscadoWidgetState extends State<PacienteBuscadoWidget>
                               if (pacientesItem.metodoPago == 'Transferencia')
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      16, 25, 16, 12),
+                                      16.0, 25.0, 16.0, 12.0),
                                   child: Material(
                                     color: Colors.transparent,
-                                    elevation: 2,
+                                    elevation: 2.0,
                                     shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(25),
+                                      borderRadius: BorderRadius.circular(25.0),
                                     ),
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
-                                        borderRadius: BorderRadius.circular(25),
+                                        borderRadius:
+                                            BorderRadius.circular(25.0),
                                         border: Border.all(
                                           color: Color(0xFFE0E3E7),
-                                          width: 2,
+                                          width: 2.0,
                                         ),
                                       ),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            12, 12, 12, 12),
+                                            12.0, 12.0, 12.0, 12.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           crossAxisAlignment:
@@ -414,7 +416,8 @@ class _PacienteBuscadoWidgetState extends State<PacienteBuscadoWidget>
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 10, 0, 10),
+                                                  .fromSTEB(
+                                                      0.0, 10.0, 0.0, 10.0),
                                               child: Text(
                                                 pacientesItem
                                                     .tipoTransferencia!,
@@ -423,7 +426,7 @@ class _PacienteBuscadoWidgetState extends State<PacienteBuscadoWidget>
                                                         .bodyText1
                                                         .override(
                                                           fontFamily: 'DM Sans',
-                                                          fontSize: 18,
+                                                          fontSize: 18.0,
                                                           fontWeight:
                                                               FontWeight.w600,
                                                         ),

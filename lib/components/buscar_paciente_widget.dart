@@ -1,8 +1,8 @@
-import '../backend/backend.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/custom_functions.dart' as functions;
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -53,19 +53,19 @@ class _BuscarPacienteWidgetState extends State<BuscarPacienteWidget>
 
     return Container(
       width: double.infinity,
-      height: 429,
+      height: 429.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+        padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 16, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 16.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -77,12 +77,13 @@ class _BuscarPacienteWidgetState extends State<BuscarPacienteWidget>
                       child: Icon(
                         Icons.close,
                         color: Colors.black,
-                        size: 40,
+                        size: 40.0,
                       ),
                     ),
                     Expanded(
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -96,7 +97,7 @@ class _BuscarPacienteWidgetState extends State<BuscarPacienteWidget>
                                     fontFamily: 'DM Sans',
                                     color:
                                         FlutterFlowTheme.of(context).textColor,
-                                    fontSize: 20,
+                                    fontSize: 20.0,
                                   ),
                             ),
                           ],
@@ -107,8 +108,8 @@ class _BuscarPacienteWidgetState extends State<BuscarPacienteWidget>
                 ),
               ),
               Divider(
-                height: 10,
-                thickness: 5,
+                height: 10.0,
+                thickness: 5.0,
                 color: FlutterFlowTheme.of(context).secondaryColor,
               ),
               FutureBuilder<List<CitasRecord>>(
@@ -124,8 +125,8 @@ class _BuscarPacienteWidgetState extends State<BuscarPacienteWidget>
                   if (!snapshot.hasData) {
                     return Center(
                       child: SizedBox(
-                        width: 50,
-                        height: 50,
+                        width: 50.0,
+                        height: 50.0,
                         child: CircularProgressIndicator(
                           color: FlutterFlowTheme.of(context).primaryColor,
                         ),
@@ -173,14 +174,14 @@ class _BuscarPacienteWidgetState extends State<BuscarPacienteWidget>
                           },
                           child: Container(
                             width: MediaQuery.of(context).size.width * 0.4,
-                            height: 160,
+                            height: 160.0,
                             decoration: BoxDecoration(
                               color: Color(0xFFF1F4F8),
-                              borderRadius: BorderRadius.circular(24),
+                              borderRadius: BorderRadius.circular(24.0),
                             ),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  12, 12, 12, 12),
+                                  12.0, 12.0, 12.0, 12.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -188,11 +189,11 @@ class _BuscarPacienteWidgetState extends State<BuscarPacienteWidget>
                                   Icon(
                                     Icons.calendar_today,
                                     color: Color(0xFF101213),
-                                    size: 44,
+                                    size: 44.0,
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 12, 0, 4),
+                                        0.0, 12.0, 0.0, 4.0),
                                     child: Text(
                                       functions
                                           .numeroDia(listViewCitasRecord.fecha)
@@ -203,7 +204,7 @@ class _BuscarPacienteWidgetState extends State<BuscarPacienteWidget>
                                           .override(
                                             fontFamily: 'Outfit',
                                             color: Color(0xFF101213),
-                                            fontSize: 32,
+                                            fontSize: 32.0,
                                             fontWeight: FontWeight.w600,
                                           ),
                                     ),
@@ -220,7 +221,7 @@ class _BuscarPacienteWidgetState extends State<BuscarPacienteWidget>
                                         .override(
                                           fontFamily: 'Outfit',
                                           color: Color(0xFF57636C),
-                                          fontSize: 14,
+                                          fontSize: 14.0,
                                           fontWeight: FontWeight.normal,
                                         ),
                                   ),

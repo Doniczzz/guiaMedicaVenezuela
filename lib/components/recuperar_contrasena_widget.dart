@@ -1,6 +1,6 @@
-import '../auth/auth_util.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '/auth/auth_util.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -51,12 +51,12 @@ class _RecuperarContrasenaWidgetState extends State<RecuperarContrasenaWidget> {
         color: FlutterFlowTheme.of(context).secondaryBackground,
         boxShadow: [
           BoxShadow(
-            blurRadius: 3,
+            blurRadius: 3.0,
             color: Color(0x33000000),
-            offset: Offset(0, 1),
+            offset: Offset(0.0, 1.0),
           )
         ],
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(12.0),
         border: Border.all(
           color: FlutterFlowTheme.of(context).lineColor,
         ),
@@ -66,26 +66,26 @@ class _RecuperarContrasenaWidgetState extends State<RecuperarContrasenaWidget> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+            padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Lottie.asset(
                   'assets/lottie_animations/94132-forgot-password.json',
-                  height: 300,
+                  height: 300.0,
                   fit: BoxFit.cover,
                   animate: true,
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                   child: Text(
                     'Recuperar mi contraseña',
                     style: FlutterFlowTheme.of(context).subtitle1,
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -98,7 +98,7 @@ class _RecuperarContrasenaWidgetState extends State<RecuperarContrasenaWidget> {
                                 FlutterFlowTheme.of(context).bodyText1.override(
                                       fontFamily: 'Lexend Deca',
                                       color: Color(0xFF57636C),
-                                      fontSize: 14,
+                                      fontSize: 14.0,
                                       fontWeight: FontWeight.normal,
                                     ),
                             hintText: 'Ingresa tu email',
@@ -106,47 +106,47 @@ class _RecuperarContrasenaWidgetState extends State<RecuperarContrasenaWidget> {
                                 FlutterFlowTheme.of(context).bodyText1.override(
                                       fontFamily: 'Lexend Deca',
                                       color: Color(0xFF57636C),
-                                      fontSize: 14,
+                                      fontSize: 14.0,
                                       fontWeight: FontWeight.normal,
                                     ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0xFFDBE2E7),
-                                width: 2,
+                                width: 2.0,
                               ),
-                              borderRadius: BorderRadius.circular(40),
+                              borderRadius: BorderRadius.circular(40.0),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0x00000000),
-                                width: 2,
+                                width: 2.0,
                               ),
-                              borderRadius: BorderRadius.circular(40),
+                              borderRadius: BorderRadius.circular(40.0),
                             ),
                             errorBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0x00000000),
-                                width: 2,
+                                width: 2.0,
                               ),
-                              borderRadius: BorderRadius.circular(40),
+                              borderRadius: BorderRadius.circular(40.0),
                             ),
                             focusedErrorBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0x00000000),
-                                width: 2,
+                                width: 2.0,
                               ),
-                              borderRadius: BorderRadius.circular(40),
+                              borderRadius: BorderRadius.circular(40.0),
                             ),
                             filled: true,
                             fillColor: Colors.white,
-                            contentPadding:
-                                EdgeInsetsDirectional.fromSTEB(24, 24, 20, 24),
+                            contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                24.0, 24.0, 20.0, 24.0),
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyText1.override(
                                     fontFamily: 'Lexend Deca',
                                     color: Color(0xFF1D2429),
-                                    fontSize: 14,
+                                    fontSize: 14.0,
                                     fontWeight: FontWeight.normal,
                                   ),
                           maxLines: null,
@@ -191,17 +191,17 @@ class _RecuperarContrasenaWidgetState extends State<RecuperarContrasenaWidget> {
             },
             child: Container(
               width: double.infinity,
-              height: 44,
+              height: 44.0,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryColor,
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(12),
-                  bottomRight: Radius.circular(12),
-                  topLeft: Radius.circular(0),
-                  topRight: Radius.circular(0),
+                  bottomLeft: Radius.circular(12.0),
+                  bottomRight: Radius.circular(12.0),
+                  topLeft: Radius.circular(0.0),
+                  topRight: Radius.circular(0.0),
                 ),
               ),
-              alignment: AlignmentDirectional(0, 0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Text(
                 'Enviar Link',
                 style: FlutterFlowTheme.of(context).bodyText1.override(

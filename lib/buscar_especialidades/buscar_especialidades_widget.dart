@@ -1,8 +1,8 @@
-import '../backend/backend.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_autocomplete_options_list.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -64,8 +64,8 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
               if (!snapshot.hasData) {
                 return Center(
                   child: SizedBox(
-                    width: 50,
-                    height: 50,
+                    width: 50.0,
+                    height: 50.0,
                     child: CircularProgressIndicator(
                       color: FlutterFlowTheme.of(context).primaryColor,
                     ),
@@ -81,14 +81,16 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 20, 16, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 20.0, 16.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -100,13 +102,13 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                                 child: Icon(
                                   Icons.chevron_left,
                                   color: Colors.black,
-                                  size: 40,
+                                  size: 40.0,
                                 ),
                               ),
                               Expanded(
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      12, 0, 0, 0),
+                                      12.0, 0.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
@@ -122,7 +124,7 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .textColor,
-                                              fontSize: 20,
+                                              fontSize: 20.0,
                                             ),
                                       ),
                                     ],
@@ -133,39 +135,40 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                           ),
                         ),
                         Divider(
-                          height: 10,
-                          thickness: 5,
+                          height: 10.0,
+                          thickness: 5.0,
                           color: FlutterFlowTheme.of(context).secondaryColor,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              12.0, 8.0, 12.0, 8.0),
                           child: Container(
                             width: double.infinity,
-                            height: 60,
+                            height: 60.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.circular(12.0),
                             ),
                             child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  8.0, 0.0, 8.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        4, 0, 4, 0),
+                                        4.0, 0.0, 4.0, 0.0),
                                     child: Icon(
                                       Icons.search_rounded,
                                       color: Color(0xFFACB9C4),
-                                      size: 24,
+                                      size: 24.0,
                                     ),
                                   ),
                                   Expanded(
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          4, 0, 0, 0),
+                                          4.0, 0.0, 0.0, 0.0),
                                       child: Autocomplete<String>(
                                         initialValue: TextEditingValue(),
                                         optionsBuilder: (textEditingValue) {
@@ -198,14 +201,14 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .bodyText1,
                                             textHighlightStyle: TextStyle(),
-                                            elevation: 4,
+                                            elevation: 4.0,
                                             optionBackgroundColor:
                                                 FlutterFlowTheme.of(context)
                                                     .primaryBackground,
                                             optionHighlightColor:
                                                 FlutterFlowTheme.of(context)
                                                     .secondaryBackground,
-                                            maxHeight: 200,
+                                            maxHeight: 200.0,
                                           );
                                         },
                                         onSelected: (String selection) {
@@ -264,7 +267,7 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                                                   UnderlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00000000),
-                                                  width: 1,
+                                                  width: 1.0,
                                                 ),
                                                 borderRadius:
                                                     const BorderRadius.only(
@@ -277,7 +280,7 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                                                   UnderlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00000000),
-                                                  width: 1,
+                                                  width: 1.0,
                                                 ),
                                                 borderRadius:
                                                     const BorderRadius.only(
@@ -289,7 +292,7 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                                               errorBorder: UnderlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00000000),
-                                                  width: 1,
+                                                  width: 1.0,
                                                 ),
                                                 borderRadius:
                                                     const BorderRadius.only(
@@ -302,7 +305,7 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                                                   UnderlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00000000),
-                                                  width: 1,
+                                                  width: 1.0,
                                                 ),
                                                 borderRadius:
                                                     const BorderRadius.only(
@@ -317,7 +320,7 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                                                 .override(
                                                   fontFamily: 'Outfit',
                                                   color: Color(0xFF95A1AC),
-                                                  fontSize: 14,
+                                                  fontSize: 14.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
                                             validator: _model
@@ -330,7 +333,7 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        4, 0, 4, 0),
+                                        4.0, 0.0, 4.0, 0.0),
                                     child: InkWell(
                                       onTap: () async {
                                         setState(() {
@@ -343,7 +346,7 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                                       child: Icon(
                                         Icons.clear,
                                         color: Color(0xFFACB9C4),
-                                        size: 24,
+                                        size: 24.0,
                                       ),
                                     ),
                                   ),
@@ -354,8 +357,8 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                         ),
                         if (!_model.busqueda)
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 12.0, 0.0, 0.0),
                             child: Builder(
                               builder: (context) {
                                 final especialidades =
@@ -371,7 +374,7 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                                         especialidades[especialidadesIndex];
                                     return Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16, 0, 16, 8),
+                                          16.0, 0.0, 16.0, 8.0),
                                       child: InkWell(
                                         onTap: () async {
                                           context.pushNamed(
@@ -393,18 +396,18 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
                                             borderRadius:
-                                                BorderRadius.circular(12),
+                                                BorderRadius.circular(12.0),
                                             border: Border.all(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .lineColor,
-                                              width: 2,
+                                              width: 2.0,
                                             ),
                                           ),
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    5, 5, 5, 5),
+                                                    5.0, 5.0, 5.0, 5.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -415,7 +418,7 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryColor,
-                                                  size: 34,
+                                                  size: 34.0,
                                                 ),
                                                 Expanded(
                                                   child: Container(
@@ -423,13 +426,16 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                                                     decoration: BoxDecoration(
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8),
+                                                              8.0),
                                                     ),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
-                                                              .fromSTEB(12, 12,
-                                                                  12, 12),
+                                                              .fromSTEB(
+                                                                  12.0,
+                                                                  12.0,
+                                                                  12.0,
+                                                                  12.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -460,7 +466,7 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                                                                       color: Color(
                                                                           0xFF101213),
                                                                       fontSize:
-                                                                          20,
+                                                                          20.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w500,
@@ -499,8 +505,8 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                           ),
                         if (_model.busqueda)
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 12.0, 0.0, 0.0),
                             child: Builder(
                               builder: (context) {
                                 final especialidades =
@@ -516,23 +522,23 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                                         especialidades[especialidadesIndex];
                                     return Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16, 0, 16, 8),
+                                          16.0, 0.0, 16.0, 8.0),
                                       child: Container(
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
                                           borderRadius:
-                                              BorderRadius.circular(12),
+                                              BorderRadius.circular(12.0),
                                           border: Border.all(
                                             color: FlutterFlowTheme.of(context)
                                                 .lineColor,
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                         ),
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  5, 5, 5, 5),
+                                                  5.0, 5.0, 5.0, 5.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -543,7 +549,7 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryColor,
-                                                size: 34,
+                                                size: 34.0,
                                               ),
                                               Expanded(
                                                 child: Container(
@@ -551,13 +557,16 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                                                   decoration: BoxDecoration(
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8),
+                                                            8.0),
                                                   ),
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(
-                                                                12, 12, 12, 12),
+                                                                12.0,
+                                                                12.0,
+                                                                12.0,
+                                                                12.0),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -587,7 +596,7 @@ class _BuscarEspecialidadesWidgetState extends State<BuscarEspecialidadesWidget>
                                                                     color: Color(
                                                                         0xFF101213),
                                                                     fontSize:
-                                                                        20,
+                                                                        20.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,

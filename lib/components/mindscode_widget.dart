@@ -1,5 +1,5 @@
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -57,8 +57,8 @@ class _MindscodeWidgetState extends State<MindscodeWidget> {
             ),
             Image.asset(
               'assets/images/prototipo.png',
-              width: 50,
-              height: 50,
+              width: 50.0,
+              height: 50.0,
               fit: BoxFit.cover,
             ),
           ],

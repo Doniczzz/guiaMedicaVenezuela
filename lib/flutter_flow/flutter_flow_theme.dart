@@ -107,49 +107,49 @@ class ThemeTypography extends Typography {
         'Lexend',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 34,
+        fontSize: 34.0,
       );
   String get title2Family => 'Lexend';
   TextStyle get title2 => GoogleFonts.getFont(
         'Lexend',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
-        fontSize: 28,
+        fontSize: 28.0,
       );
   String get title3Family => 'Lexend';
   TextStyle get title3 => GoogleFonts.getFont(
         'Lexend',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 20,
+        fontSize: 20.0,
       );
   String get subtitle1Family => 'Lexend';
   TextStyle get subtitle1 => GoogleFonts.getFont(
         'Lexend',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
-        fontSize: 18,
+        fontSize: 18.0,
       );
   String get subtitle2Family => 'DM Sans';
   TextStyle get subtitle2 => GoogleFonts.getFont(
         'DM Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 16,
+        fontSize: 16.0,
       );
   String get bodyText1Family => 'DM Sans';
   TextStyle get bodyText1 => GoogleFonts.getFont(
         'DM Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 14,
+        fontSize: 14.0,
       );
   String get bodyText2Family => 'DM Sans';
   TextStyle get bodyText2 => GoogleFonts.getFont(
         'DM Sans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 14,
+        fontSize: 14.0,
       );
 }
 

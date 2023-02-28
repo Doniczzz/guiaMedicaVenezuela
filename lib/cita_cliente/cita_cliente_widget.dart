@@ -1,18 +1,18 @@
-import '../auth/auth_util.dart';
-import '../backend/api_requests/api_calls.dart';
-import '../backend/backend.dart';
-import '../backend/firebase_storage/storage.dart';
-import '../backend/push_notifications/push_notifications_util.dart';
-import '../components/cuentas_bancarias_widget.dart';
-import '../components/pago_movil_widget.dart';
-import '../components/trans_escoger_moneda_widget.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_drop_down.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
-import '../flutter_flow/upload_media.dart';
-import '../flutter_flow/random_data_util.dart' as random_data;
+import '/auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
+import '/backend/backend.dart';
+import '/backend/firebase_storage/storage.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
+import '/components/cuentas_bancarias_widget.dart';
+import '/components/pago_movil_widget.dart';
+import '/components/trans_escoger_moneda_widget.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/upload_media.dart';
+import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/gestures.dart';
@@ -55,8 +55,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, -500),
-          end: Offset(0, 0),
+          begin: Offset(0.0, -500.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -67,8 +67,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 300),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 300.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -79,8 +79,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, -500),
-          end: Offset(0, 0),
+          begin: Offset(0.0, -500.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -91,8 +91,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 300),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 300.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -103,8 +103,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, -500),
-          end: Offset(0, 0),
+          begin: Offset(0.0, -500.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -115,8 +115,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 300),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 300.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -127,8 +127,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, -500),
-          end: Offset(0, 0),
+          begin: Offset(0.0, -500.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -139,8 +139,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 300),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 300.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -151,8 +151,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, -500),
-          end: Offset(0, 0),
+          begin: Offset(0.0, -500.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -163,8 +163,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 300),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 300.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -175,8 +175,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 300),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 300.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -215,8 +215,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
               if (!snapshot.hasData) {
                 return Center(
                   child: SizedBox(
-                    width: 50,
-                    height: 50,
+                    width: 50.0,
+                    height: 50.0,
                     child: CircularProgressIndicator(
                       color: FlutterFlowTheme.of(context).primaryColor,
                     ),
@@ -236,8 +236,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                     if (!snapshot.hasData) {
                       return Center(
                         child: SizedBox(
-                          width: 50,
-                          height: 50,
+                          width: 50.0,
+                          height: 50.0,
                           child: CircularProgressIndicator(
                             color: FlutterFlowTheme.of(context).primaryColor,
                           ),
@@ -249,7 +249,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                       width: double.infinity,
                       height: double.infinity,
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 50),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 50.0),
                         child: PageView(
                           physics: const NeverScrollableScrollPhysics(),
                           controller: _model.pageViewController ??=
@@ -267,15 +268,15 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                     decoration: BoxDecoration(
                                       color: Color(0x86FFFFFF),
                                       borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(35),
-                                        bottomRight: Radius.circular(35),
-                                        topLeft: Radius.circular(0),
-                                        topRight: Radius.circular(0),
+                                        bottomLeft: Radius.circular(35.0),
+                                        bottomRight: Radius.circular(35.0),
+                                        topLeft: Radius.circular(0.0),
+                                        topRight: Radius.circular(0.0),
                                       ),
                                     ),
                                     child: Lottie.asset(
                                       'assets/lottie_animations/91338-medical-app.json',
-                                      height: 100,
+                                      height: 100.0,
                                       fit: BoxFit.contain,
                                       animate: true,
                                     ),
@@ -283,7 +284,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                       'containerOnPageLoadAnimation1']!),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        16, 20, 16, 0),
+                                        16.0, 20.0, 16.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -292,7 +293,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  16, 0, 16, 0),
+                                                  16.0, 0.0, 16.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -318,7 +319,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 10, 0, 0),
+                                                  0.0, 10.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -348,8 +349,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                       curve: Curves.ease,
                                                     );
                                                   },
-                                                  width: 180,
-                                                  height: 50,
+                                                  width: 180.0,
+                                                  height: 50.0,
                                                   textStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .bodyText1
@@ -360,13 +361,14 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                   hintText:
                                                       'Selecciona una opción',
                                                   fillColor: Colors.white,
-                                                  elevation: 2,
+                                                  elevation: 2.0,
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderWidth: 0,
-                                                  borderRadius: 0,
+                                                  borderWidth: 0.0,
+                                                  borderRadius: 0.0,
                                                   margin: EdgeInsetsDirectional
-                                                      .fromSTEB(12, 4, 12, 4),
+                                                      .fromSTEB(
+                                                          12.0, 4.0, 12.0, 4.0),
                                                   hidesUnderline: true,
                                                 ),
                                               ),
@@ -391,22 +393,22 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                     decoration: BoxDecoration(
                                       color: Color(0x86FFFFFF),
                                       borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(35),
-                                        bottomRight: Radius.circular(35),
-                                        topLeft: Radius.circular(0),
-                                        topRight: Radius.circular(0),
+                                        bottomLeft: Radius.circular(35.0),
+                                        bottomRight: Radius.circular(35.0),
+                                        topLeft: Radius.circular(0.0),
+                                        topRight: Radius.circular(0.0),
                                       ),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          5, 5, 5, 10),
+                                          5.0, 5.0, 5.0, 10.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Expanded(
                                             child: Lottie.asset(
                                               'assets/lottie_animations/2.json',
-                                              height: 100,
+                                              height: 100.0,
                                               fit: BoxFit.contain,
                                               animate: true,
                                             ),
@@ -429,7 +431,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                       'containerOnPageLoadAnimation2']!),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        16, 15, 16, 0),
+                                        16.0, 15.0, 16.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -479,7 +481,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                             'Lexend Deca',
                                                         color:
                                                             Color(0xFF57636C),
-                                                        fontSize: 14,
+                                                        fontSize: 14.0,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
@@ -491,7 +493,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                             'Lexend Deca',
                                                         color:
                                                             Color(0xFF57636C),
-                                                        fontSize: 14,
+                                                        fontSize: 14.0,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
@@ -499,48 +501,48 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                       color: Color(0xFFDBE2E7),
-                                                      width: 2,
+                                                      width: 2.0,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8),
+                                                            8.0),
                                                   ),
                                                   focusedBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                       color: Color(0x00000000),
-                                                      width: 2,
+                                                      width: 2.0,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8),
+                                                            8.0),
                                                   ),
                                                   errorBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                       color: Color(0x00000000),
-                                                      width: 2,
+                                                      width: 2.0,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8),
+                                                            8.0),
                                                   ),
                                                   focusedErrorBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                       color: Color(0x00000000),
-                                                      width: 2,
+                                                      width: 2.0,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8),
+                                                            8.0),
                                                   ),
                                                   filled: true,
                                                   fillColor: Colors.white,
                                                   contentPadding:
                                                       EdgeInsetsDirectional
-                                                          .fromSTEB(
-                                                              20, 20, 20, 20),
+                                                          .fromSTEB(20.0, 20.0,
+                                                              20.0, 20.0),
                                                 ),
                                                 style: FlutterFlowTheme.of(
                                                         context)
@@ -548,7 +550,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                     .override(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF1D2429),
-                                                      fontSize: 14,
+                                                      fontSize: 14.0,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
@@ -562,7 +564,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 15, 0, 0),
+                                                  0.0, 15.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -605,7 +607,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                             'Lexend Deca',
                                                         color:
                                                             Color(0xFF57636C),
-                                                        fontSize: 14,
+                                                        fontSize: 14.0,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
@@ -617,7 +619,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                             'Lexend Deca',
                                                         color:
                                                             Color(0xFF57636C),
-                                                        fontSize: 14,
+                                                        fontSize: 14.0,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
@@ -625,48 +627,48 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                       color: Color(0xFFDBE2E7),
-                                                      width: 2,
+                                                      width: 2.0,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8),
+                                                            8.0),
                                                   ),
                                                   focusedBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                       color: Color(0x00000000),
-                                                      width: 2,
+                                                      width: 2.0,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8),
+                                                            8.0),
                                                   ),
                                                   errorBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                       color: Color(0x00000000),
-                                                      width: 2,
+                                                      width: 2.0,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8),
+                                                            8.0),
                                                   ),
                                                   focusedErrorBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                       color: Color(0x00000000),
-                                                      width: 2,
+                                                      width: 2.0,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8),
+                                                            8.0),
                                                   ),
                                                   filled: true,
                                                   fillColor: Colors.white,
                                                   contentPadding:
                                                       EdgeInsetsDirectional
-                                                          .fromSTEB(
-                                                              20, 20, 20, 20),
+                                                          .fromSTEB(20.0, 20.0,
+                                                              20.0, 20.0),
                                                 ),
                                                 style: FlutterFlowTheme.of(
                                                         context)
@@ -674,7 +676,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                     .override(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF1D2429),
-                                                      fontSize: 14,
+                                                      fontSize: 14.0,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
@@ -697,7 +699,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 10, 0, 0),
+                                                    0.0, 10.0, 0.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: !((_model.nombreController
                                                                   .text !=
@@ -724,11 +726,18 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                               text: 'Siguiente',
                                               icon: Icon(
                                                 Icons.navigate_next,
-                                                size: 15,
+                                                size: 15.0,
                                               ),
                                               options: FFButtonOptions(
-                                                width: 130,
-                                                height: 40,
+                                                width: 130.0,
+                                                height: 40.0,
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 0.0),
+                                                iconPadding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryColor,
@@ -741,10 +750,10 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                         ),
                                                 borderSide: BorderSide(
                                                   color: Colors.transparent,
-                                                  width: 1,
+                                                  width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(8),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                             ),
                                           ),
@@ -753,7 +762,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 10, 0, 0),
+                                                    0.0, 10.0, 0.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: _model.cedulaController
                                                               .text ==
@@ -774,11 +783,18 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                               text: 'Siguiente',
                                               icon: Icon(
                                                 Icons.navigate_next,
-                                                size: 15,
+                                                size: 15.0,
                                               ),
                                               options: FFButtonOptions(
-                                                width: 130,
-                                                height: 40,
+                                                width: 130.0,
+                                                height: 40.0,
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 0.0),
+                                                iconPadding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryColor,
@@ -791,10 +807,10 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                         ),
                                                 borderSide: BorderSide(
                                                   color: Colors.transparent,
-                                                  width: 1,
+                                                  width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(8),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                             ),
                                           ),
@@ -816,22 +832,22 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                     decoration: BoxDecoration(
                                       color: Color(0x86FFFFFF),
                                       borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(35),
-                                        bottomRight: Radius.circular(35),
-                                        topLeft: Radius.circular(0),
-                                        topRight: Radius.circular(0),
+                                        bottomLeft: Radius.circular(35.0),
+                                        bottomRight: Radius.circular(35.0),
+                                        topLeft: Radius.circular(0.0),
+                                        topRight: Radius.circular(0.0),
                                       ),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          5, 5, 5, 10),
+                                          5.0, 5.0, 5.0, 10.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Expanded(
                                             child: Lottie.asset(
                                               'assets/lottie_animations/3.json',
-                                              height: 100,
+                                              height: 100.0,
                                               fit: BoxFit.contain,
                                               animate: true,
                                             ),
@@ -854,7 +870,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                       'containerOnPageLoadAnimation3']!),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        16, 15, 16, 0),
+                                        16.0, 15.0, 16.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -898,7 +914,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                     .override(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF57636C),
-                                                      fontSize: 14,
+                                                      fontSize: 14.0,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
@@ -908,7 +924,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                     .override(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF57636C),
-                                                      fontSize: 14,
+                                                      fontSize: 14.0,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
@@ -916,43 +932,47 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                     OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: Color(0xFFDBE2E7),
-                                                    width: 2,
+                                                    width: 2.0,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(8),
+                                                      BorderRadius.circular(
+                                                          8.0),
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: Color(0x00000000),
-                                                    width: 2,
+                                                    width: 2.0,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(8),
+                                                      BorderRadius.circular(
+                                                          8.0),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: Color(0x00000000),
-                                                    width: 2,
+                                                    width: 2.0,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(8),
+                                                      BorderRadius.circular(
+                                                          8.0),
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: Color(0x00000000),
-                                                    width: 2,
+                                                    width: 2.0,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(8),
+                                                      BorderRadius.circular(
+                                                          8.0),
                                                 ),
                                                 filled: true,
                                                 fillColor: Colors.white,
                                                 contentPadding:
                                                     EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            20, 20, 20, 20),
+                                                        .fromSTEB(20.0, 20.0,
+                                                            20.0, 20.0),
                                               ),
                                               style: FlutterFlowTheme.of(
                                                       context)
@@ -960,7 +980,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                   .override(
                                                     fontFamily: 'Lexend Deca',
                                                     color: Color(0xFF1D2429),
-                                                    fontSize: 14,
+                                                    fontSize: 14.0,
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
@@ -975,7 +995,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 10, 0, 0),
+                                                  0.0, 10.0, 0.0, 0.0),
                                           child: FFButtonWidget(
                                             onPressed: _model
                                                             .motivoCitaController
@@ -997,11 +1017,15 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                             text: 'Siguiente',
                                             icon: Icon(
                                               Icons.navigate_next,
-                                              size: 15,
+                                              size: 15.0,
                                             ),
                                             options: FFButtonOptions(
-                                              width: 130,
-                                              height: 40,
+                                              width: 130.0,
+                                              height: 40.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryColor,
@@ -1014,10 +1038,10 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                       ),
                                               borderSide: BorderSide(
                                                 color: Colors.transparent,
-                                                width: 1,
+                                                width: 1.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                           ),
                                         ),
@@ -1038,22 +1062,22 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                     decoration: BoxDecoration(
                                       color: Color(0x86FFFFFF),
                                       borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(35),
-                                        bottomRight: Radius.circular(35),
-                                        topLeft: Radius.circular(0),
-                                        topRight: Radius.circular(0),
+                                        bottomLeft: Radius.circular(35.0),
+                                        bottomRight: Radius.circular(35.0),
+                                        topLeft: Radius.circular(0.0),
+                                        topRight: Radius.circular(0.0),
                                       ),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          5, 5, 5, 10),
+                                          5.0, 5.0, 5.0, 10.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Expanded(
                                             child: Lottie.asset(
                                               'assets/lottie_animations/4.json',
-                                              height: 100,
+                                              height: 100.0,
                                               fit: BoxFit.contain,
                                               animate: true,
                                             ),
@@ -1079,8 +1103,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                 if (!snapshot.hasData) {
                                                   return Center(
                                                     child: SizedBox(
-                                                      width: 50,
-                                                      height: 50,
+                                                      width: 50.0,
+                                                      height: 50.0,
                                                       child:
                                                           CircularProgressIndicator(
                                                         color:
@@ -1113,7 +1137,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                         fontFamily: 'Lexend',
                                                         color:
                                                             Color(0x9C001C2C),
-                                                        fontSize: 16,
+                                                        fontSize: 16.0,
                                                       ),
                                                 );
                                               },
@@ -1125,7 +1149,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                       'containerOnPageLoadAnimation4']!),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        16, 25, 16, 0),
+                                        16.0, 25.0, 16.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -1134,7 +1158,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 0, 25),
+                                                  0.0, 0.0, 0.0, 25.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -1165,7 +1189,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                               ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 10, 0, 0),
+                                                    .fromSTEB(
+                                                        0.0, 10.0, 0.0, 0.0),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -1178,8 +1203,11 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(0, 0,
-                                                                    15, 0),
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    15.0,
+                                                                    0.0),
                                                         child: StreamBuilder<
                                                             UsersRecord>(
                                                           stream: UsersRecord
@@ -1193,8 +1221,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                 .hasData) {
                                                               return Center(
                                                                 child: SizedBox(
-                                                                  width: 50,
-                                                                  height: 50,
+                                                                  width: 50.0,
+                                                                  height: 50.0,
                                                                   child:
                                                                       CircularProgressIndicator(
                                                                     color: FlutterFlowTheme.of(
@@ -1326,8 +1354,22 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                               ),
                                                               options:
                                                                   FFButtonOptions(
-                                                                width: 130,
-                                                                height: 40,
+                                                                width: 130.0,
+                                                                height: 40.0,
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                iconPadding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBtnText,
@@ -1345,12 +1387,12 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                     BorderSide(
                                                                   color: Colors
                                                                       .transparent,
-                                                                  width: 1,
+                                                                  width: 1.0,
                                                                 ),
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            8),
+                                                                            8.0),
                                                               ),
                                                             );
                                                           },
@@ -1359,12 +1401,15 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                     Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0, 0),
+                                                              0.0, 0.0),
                                                       child: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(15, 0,
-                                                                    0, 0),
+                                                                .fromSTEB(
+                                                                    15.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
                                                         child: FFButtonWidget(
                                                           onPressed: () async {
                                                             setState(() {
@@ -1426,11 +1471,25 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                           icon: Icon(
                                                             Icons
                                                                 .compare_arrows,
-                                                            size: 15,
+                                                            size: 15.0,
                                                           ),
                                                           options:
                                                               FFButtonOptions(
-                                                            height: 40,
+                                                            height: 40.0,
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            iconPadding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primaryBtnText,
@@ -1449,12 +1508,12 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                 BorderSide(
                                                               color: Colors
                                                                   .transparent,
-                                                              width: 1,
+                                                              width: 1.0,
                                                             ),
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8),
+                                                                        8.0),
                                                           ),
                                                         ),
                                                       ),
@@ -1483,22 +1542,22 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                     decoration: BoxDecoration(
                                       color: Color(0x86FFFFFF),
                                       borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(35),
-                                        bottomRight: Radius.circular(35),
-                                        topLeft: Radius.circular(0),
-                                        topRight: Radius.circular(0),
+                                        bottomLeft: Radius.circular(35.0),
+                                        bottomRight: Radius.circular(35.0),
+                                        topLeft: Radius.circular(0.0),
+                                        topRight: Radius.circular(0.0),
                                       ),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          5, 5, 5, 10),
+                                          5.0, 5.0, 5.0, 10.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Expanded(
                                             child: Lottie.asset(
                                               'assets/lottie_animations/5.json',
-                                              height: 100,
+                                              height: 100.0,
                                               fit: BoxFit.contain,
                                               animate: true,
                                             ),
@@ -1537,7 +1596,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 10, 0, 0),
+                                                    0.0, 10.0, 0.0, 0.0),
                                             child: StreamBuilder<UsersRecord>(
                                               stream: UsersRecord.getDocument(
                                                   containerMedicosRecord
@@ -1547,8 +1606,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                 if (!snapshot.hasData) {
                                                   return Center(
                                                     child: SizedBox(
-                                                      width: 50,
-                                                      height: 50,
+                                                      width: 50.0,
+                                                      height: 50.0,
                                                       child:
                                                           CircularProgressIndicator(
                                                         color:
@@ -1781,10 +1840,18 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                   text: 'Subir comprobante',
                                                   icon: Icon(
                                                     Icons.cloud_upload,
-                                                    size: 15,
+                                                    size: 15.0,
                                                   ),
                                                   options: FFButtonOptions(
-                                                    height: 40,
+                                                    height: 40.0,
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    iconPadding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryColor,
@@ -1797,11 +1864,11 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                         ),
                                                     borderSide: BorderSide(
                                                       color: Colors.transparent,
-                                                      width: 1,
+                                                      width: 1.0,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8),
+                                                            8.0),
                                                   ),
                                                 );
                                               },
@@ -1818,7 +1885,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  16, 25, 16, 0),
+                                                  16.0, 25.0, 16.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -1826,7 +1893,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(16, 0, 16, 0),
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 0.0),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -1854,7 +1922,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                               ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 10, 0, 0),
+                                                    .fromSTEB(
+                                                        0.0, 10.0, 0.0, 0.0),
                                                 child: FutureBuilder<
                                                     ApiCallResponse>(
                                                   future:
@@ -1864,8 +1933,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                     if (!snapshot.hasData) {
                                                       return Center(
                                                         child: SizedBox(
-                                                          width: 50,
-                                                          height: 50,
+                                                          width: 50.0,
+                                                          height: 50.0,
                                                           child:
                                                               CircularProgressIndicator(
                                                             color: FlutterFlowTheme
@@ -1890,10 +1959,10 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        5),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        5.0),
                                                             child: InkWell(
                                                               onTap: () async {
                                                                 await showModalBottomSheet(
@@ -1943,7 +2012,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                               child: Material(
                                                                 color: Colors
                                                                     .transparent,
-                                                                elevation: 2,
+                                                                elevation: 2.0,
                                                                 child:
                                                                     Container(
                                                                   width: double
@@ -1957,10 +2026,10 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            16,
-                                                                            12,
-                                                                            16,
-                                                                            16),
+                                                                            16.0,
+                                                                            12.0,
+                                                                            16.0,
+                                                                            16.0),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -1976,7 +2045,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                               .override(
                                                                                 fontFamily: 'Roboto',
                                                                                 color: Color(0xFF111417),
-                                                                                fontSize: 18,
+                                                                                fontSize: 18.0,
                                                                                 fontWeight: FontWeight.w500,
                                                                               ),
                                                                         ),
@@ -1986,7 +2055,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                           color:
                                                                               Color(0xFF57636C),
                                                                           size:
-                                                                              24,
+                                                                              24.0,
                                                                         ),
                                                                       ],
                                                                     ),
@@ -1998,8 +2067,11 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      5, 0, 1),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      5.0,
+                                                                      0.0,
+                                                                      1.0),
                                                           child: InkWell(
                                                             onTap: () async {
                                                               await showModalBottomSheet(
@@ -2051,7 +2123,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                             child: Material(
                                                               color: Colors
                                                                   .transparent,
-                                                              elevation: 2,
+                                                              elevation: 2.0,
                                                               child: Container(
                                                                 width: double
                                                                     .infinity,
@@ -2063,10 +2135,10 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          16,
-                                                                          12,
-                                                                          16,
-                                                                          16),
+                                                                          16.0,
+                                                                          12.0,
+                                                                          16.0,
+                                                                          16.0),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -2082,7 +2154,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                             .override(
                                                                               fontFamily: 'Roboto',
                                                                               color: Color(0xFF111417),
-                                                                              fontSize: 18,
+                                                                              fontSize: 18.0,
                                                                               fontWeight: FontWeight.w500,
                                                                             ),
                                                                       ),
@@ -2092,7 +2164,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                         color: Color(
                                                                             0xFF57636C),
                                                                         size:
-                                                                            24,
+                                                                            24.0,
                                                                       ),
                                                                     ],
                                                                   ),
@@ -2114,7 +2186,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  16, 0, 16, 0),
+                                                  16.0, 0.0, 16.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -2122,7 +2194,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(16, 0, 16, 0),
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 0.0),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -2150,10 +2223,11 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                               ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 5, 0, 5),
+                                                    .fromSTEB(
+                                                        0.0, 5.0, 0.0, 5.0),
                                                 child: Container(
-                                                  width: 40,
-                                                  height: 40,
+                                                  width: 40.0,
+                                                  height: 40.0,
                                                   clipBehavior: Clip.antiAlias,
                                                   decoration: BoxDecoration(
                                                     shape: BoxShape.circle,
@@ -2166,7 +2240,8 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                               ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 10, 0, 0),
+                                                    .fromSTEB(
+                                                        0.0, 10.0, 0.0, 0.0),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -2175,7 +2250,10 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 0, 5),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  5.0),
                                                       child: InkWell(
                                                         onTap: () async {
                                                           await Clipboard.setData(
@@ -2209,7 +2287,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                         child: Material(
                                                           color: Colors
                                                               .transparent,
-                                                          elevation: 2,
+                                                          elevation: 2.0,
                                                           child: Container(
                                                             width:
                                                                 double.infinity,
@@ -2222,10 +2300,10 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          16,
-                                                                          12,
-                                                                          16,
-                                                                          16),
+                                                                          16.0,
+                                                                          12.0,
+                                                                          16.0,
+                                                                          16.0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -2239,17 +2317,16 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                         .email_outlined,
                                                                     color: Color(
                                                                         0xFF57636C),
-                                                                    size: 24,
+                                                                    size: 24.0,
                                                                   ),
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              8,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          8.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         containerMedicosRecord
@@ -2260,7 +2337,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                             .override(
                                                                               fontFamily: 'Roboto',
                                                                               color: Color(0xFF111417),
-                                                                              fontSize: 18,
+                                                                              fontSize: 18.0,
                                                                               fontWeight: FontWeight.w500,
                                                                             ),
                                                                       ),
@@ -2271,7 +2348,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                         .content_copy,
                                                                     color: Color(
                                                                         0xFF57636C),
-                                                                    size: 24,
+                                                                    size: 24.0,
                                                                   ),
                                                                 ],
                                                               ),
@@ -2284,7 +2361,10 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 5, 0, 1),
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0,
+                                                                  1.0),
                                                       child: InkWell(
                                                         onTap: () async {
                                                           await Clipboard.setData(
@@ -2318,7 +2398,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                         child: Material(
                                                           color: Colors
                                                               .transparent,
-                                                          elevation: 2,
+                                                          elevation: 2.0,
                                                           child: Container(
                                                             width:
                                                                 double.infinity,
@@ -2331,10 +2411,10 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          16,
-                                                                          12,
-                                                                          16,
-                                                                          16),
+                                                                          16.0,
+                                                                          12.0,
+                                                                          16.0,
+                                                                          16.0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -2348,17 +2428,16 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                         .person,
                                                                     color: Color(
                                                                         0xFF57636C),
-                                                                    size: 24,
+                                                                    size: 24.0,
                                                                   ),
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              8,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          8.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         containerMedicosRecord
@@ -2369,7 +2448,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                             .override(
                                                                               fontFamily: 'Roboto',
                                                                               color: Color(0xFF111417),
-                                                                              fontSize: 18,
+                                                                              fontSize: 18.0,
                                                                               fontWeight: FontWeight.w500,
                                                                             ),
                                                                       ),
@@ -2380,7 +2459,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                         .content_copy,
                                                                     color: Color(
                                                                         0xFF57636C),
-                                                                    size: 24,
+                                                                    size: 24.0,
                                                                   ),
                                                                 ],
                                                               ),
@@ -2411,7 +2490,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
             },
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(15, 15, 0, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 0.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -2422,7 +2501,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                   child: Icon(
                     Icons.close,
                     color: FlutterFlowTheme.of(context).primaryBackground,
-                    size: 45,
+                    size: 45.0,
                   ),
                 ),
               ],

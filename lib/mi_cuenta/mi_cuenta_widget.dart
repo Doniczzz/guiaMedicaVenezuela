@@ -1,13 +1,13 @@
-import '../auth/auth_util.dart';
-import '../backend/backend.dart';
-import '../backend/firebase_storage/storage.dart';
-import '../components/editar_mi_cuenta_widget.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
-import '../flutter_flow/upload_media.dart';
+import '/auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/backend/firebase_storage/storage.dart';
+import '/components/editar_mi_cuenta_widget.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/upload_media.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -56,16 +56,16 @@ class _MiCuentaWidgetState extends State<MiCuentaWidget>
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: false,
         leading: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 12, 0),
+          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
           child: FlutterFlowIconButton(
             borderColor: Colors.transparent,
-            borderRadius: 30,
-            borderWidth: 1,
-            buttonSize: 60,
+            borderRadius: 30.0,
+            borderWidth: 1.0,
+            buttonSize: 60.0,
             icon: Icon(
               Icons.arrow_back_ios_outlined,
               color: Color(0xFF5E5E5E),
-              size: 30,
+              size: 30.0,
             ),
             onPressed: () async {
               context.pushNamed('home');
@@ -74,7 +74,7 @@ class _MiCuentaWidgetState extends State<MiCuentaWidget>
         ),
         actions: [],
         centerTitle: false,
-        elevation: 0,
+        elevation: 0.0,
       ),
       body: SafeArea(
         child: GestureDetector(
@@ -138,8 +138,8 @@ class _MiCuentaWidgetState extends State<MiCuentaWidget>
                     await currentUserReference!.update(usersUpdateData);
                   },
                   child: Container(
-                    width: 120,
-                    height: 120,
+                    width: 120.0,
+                    height: 120.0,
                     clipBehavior: Clip.antiAlias,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
@@ -155,7 +155,7 @@ class _MiCuentaWidgetState extends State<MiCuentaWidget>
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: AuthUserStreamWidget(
                   builder: (context) => Text(
                     currentUserDisplayName,
@@ -164,7 +164,7 @@ class _MiCuentaWidgetState extends State<MiCuentaWidget>
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                 child: Text(
                   currentUserEmail,
                   style: FlutterFlowTheme.of(context).subtitle2.override(
@@ -174,35 +174,36 @@ class _MiCuentaWidgetState extends State<MiCuentaWidget>
                 ),
               ),
               Divider(
-                height: 44,
-                thickness: 1,
-                indent: 24,
-                endIndent: 24,
+                height: 44.0,
+                thickness: 1.0,
+                indent: 24.0,
+                endIndent: 24.0,
                 color: FlutterFlowTheme.of(context).lineColor,
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(12.0),
                     border: Border.all(
                       color: FlutterFlowTheme.of(context).lineColor,
-                      width: 2,
+                      width: 2.0,
                     ),
                   ),
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                    padding: EdgeInsetsDirectional.fromSTEB(2.0, 2.0, 2.0, 2.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              12.0, 0.0, 0.0, 0.0),
                           child: Icon(
                             Icons.power_settings_new_rounded,
                             color: FlutterFlowTheme.of(context).primaryText,
-                            size: 24,
+                            size: 24.0,
                           ),
                         ),
                         Expanded(
@@ -246,8 +247,8 @@ class _MiCuentaWidgetState extends State<MiCuentaWidget>
                               activeTrackColor: Color(0x3439D2C0),
                               dense: false,
                               controlAffinity: ListTileControlAffinity.trailing,
-                              contentPadding:
-                                  EdgeInsetsDirectional.fromSTEB(12, 0, 4, 0),
+                              contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                  12.0, 0.0, 4.0, 0.0),
                             ),
                           ),
                         ),
@@ -257,7 +258,7 @@ class _MiCuentaWidgetState extends State<MiCuentaWidget>
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 12, 16, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                 child: InkWell(
                   onTap: () async {
                     await showModalBottomSheet(
@@ -277,28 +278,30 @@ class _MiCuentaWidgetState extends State<MiCuentaWidget>
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(12.0),
                       border: Border.all(
                         color: FlutterFlowTheme.of(context).lineColor,
-                        width: 2,
+                        width: 2.0,
                       ),
                     ),
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(8, 12, 8, 12),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(8.0, 12.0, 8.0, 12.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                8.0, 0.0, 0.0, 0.0),
                             child: Icon(
                               Icons.account_circle_outlined,
                               color: FlutterFlowTheme.of(context).primaryText,
-                              size: 24,
+                              size: 24.0,
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Editar mis datos',
                               style: FlutterFlowTheme.of(context)
@@ -316,32 +319,35 @@ class _MiCuentaWidgetState extends State<MiCuentaWidget>
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 12, 16, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(12.0),
                     border: Border.all(
                       color: FlutterFlowTheme.of(context).lineColor,
-                      width: 2,
+                      width: 2.0,
                     ),
                   ),
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8, 12, 8, 12),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(8.0, 12.0, 8.0, 12.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              8.0, 0.0, 0.0, 0.0),
                           child: Icon(
                             Icons.settings_outlined,
                             color: FlutterFlowTheme.of(context).primaryText,
-                            size: 24,
+                            size: 24.0,
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Opciones de cuenta (En construcción)',
                             style: FlutterFlowTheme.of(context)
@@ -358,7 +364,7 @@ class _MiCuentaWidgetState extends State<MiCuentaWidget>
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     GoRouter.of(context).prepareAuthEvent();
@@ -368,21 +374,24 @@ class _MiCuentaWidgetState extends State<MiCuentaWidget>
                   },
                   text: 'Salir',
                   options: FFButtonOptions(
-                    width: 150,
-                    height: 44,
+                    width: 150.0,
+                    height: 44.0,
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    iconPadding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: Color(0xFFEC9CA1),
                     textStyle: FlutterFlowTheme.of(context).bodyText2.override(
                           fontFamily: 'DM Sans',
                           color: FlutterFlowTheme.of(context).gray600,
-                          fontSize: 18,
+                          fontSize: 18.0,
                           fontWeight: FontWeight.bold,
                         ),
-                    elevation: 0,
+                    elevation: 0.0,
                     borderSide: BorderSide(
                       color: FlutterFlowTheme.of(context).lineColor,
-                      width: 1,
+                      width: 1.0,
                     ),
-                    borderRadius: BorderRadius.circular(38),
+                    borderRadius: BorderRadius.circular(38.0),
                   ),
                 ),
               ),

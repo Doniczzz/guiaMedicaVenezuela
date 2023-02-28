@@ -1,10 +1,10 @@
-import '../auth/auth_util.dart';
-import '../backend/api_requests/api_calls.dart';
-import '../backend/backend.dart';
-import '../components/eliminar_cuenta_widget.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '/auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
+import '/backend/backend.dart';
+import '/components/eliminar_cuenta_widget.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -36,8 +36,8 @@ class _EditarMiCuentaWidgetState extends State<EditarMiCuentaWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 0),
-          end: Offset(400, 0),
+          begin: Offset(0.0, 0.0),
+          end: Offset(400.0, 0.0),
         ),
       ],
     ),
@@ -49,8 +49,8 @@ class _EditarMiCuentaWidgetState extends State<EditarMiCuentaWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(400, 0),
-          end: Offset(0, 0),
+          begin: Offset(400.0, 0.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -62,8 +62,8 @@ class _EditarMiCuentaWidgetState extends State<EditarMiCuentaWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 0),
-          end: Offset(400, 0),
+          begin: Offset(0.0, 0.0),
+          end: Offset(400.0, 0.0),
         ),
       ],
     ),
@@ -75,8 +75,8 @@ class _EditarMiCuentaWidgetState extends State<EditarMiCuentaWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(400, 0),
-          end: Offset(0, 0),
+          begin: Offset(400.0, 0.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -120,46 +120,48 @@ class _EditarMiCuentaWidgetState extends State<EditarMiCuentaWidget>
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(0),
-          bottomRight: Radius.circular(0),
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
+          bottomLeft: Radius.circular(0.0),
+          bottomRight: Radius.circular(0.0),
+          topLeft: Radius.circular(30.0),
+          topRight: Radius.circular(30.0),
         ),
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 24),
+        padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 24.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               width: double.infinity,
-              height: 60,
+              height: 60.0,
               decoration: BoxDecoration(),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
+                padding: EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
                       color: FlutterFlowTheme.of(context).primaryBackground,
-                      elevation: 0,
+                      elevation: 0.0,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40),
+                        borderRadius: BorderRadius.circular(40.0),
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
                         child: Icon(
                           Icons.person,
                           color: FlutterFlowTheme.of(context).secondaryText,
-                          size: 20,
+                          size: 20.0,
                         ),
                       ),
                     ),
                     Expanded(
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                         child: Stack(
                           children: [
                             InkWell(
@@ -183,7 +185,7 @@ class _EditarMiCuentaWidgetState extends State<EditarMiCuentaWidget>
                               },
                               child: Container(
                                 width: double.infinity,
-                                height: 100,
+                                height: 100.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -207,14 +209,14 @@ class _EditarMiCuentaWidgetState extends State<EditarMiCuentaWidget>
                               width: double.infinity,
                               height: 46.5,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(40),
+                                borderRadius: BorderRadius.circular(40.0),
                                 border: Border.all(
                                   color: Color(0xFFC2C7CC),
                                 ),
                               ),
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    8.0, 8.0, 8.0, 8.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -309,7 +311,7 @@ class _EditarMiCuentaWidgetState extends State<EditarMiCuentaWidget>
                                           Icons.check_circle,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryColor,
-                                          size: 24,
+                                          size: 24.0,
                                         ),
                                       ),
                                     if (_model.nombreController.text == null ||
@@ -347,7 +349,7 @@ class _EditarMiCuentaWidgetState extends State<EditarMiCuentaWidget>
                                         child: Icon(
                                           Icons.arrow_right_outlined,
                                           color: Color(0xFF868E97),
-                                          size: 24,
+                                          size: 24.0,
                                         ),
                                       ),
                                   ],
@@ -367,32 +369,34 @@ class _EditarMiCuentaWidgetState extends State<EditarMiCuentaWidget>
             ),
             Container(
               width: double.infinity,
-              height: 60,
+              height: 60.0,
               decoration: BoxDecoration(),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
+                padding: EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
                       color: FlutterFlowTheme.of(context).primaryBackground,
-                      elevation: 0,
+                      elevation: 0.0,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40),
+                        borderRadius: BorderRadius.circular(40.0),
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
                         child: FaIcon(
                           FontAwesomeIcons.whatsapp,
                           color: FlutterFlowTheme.of(context).primaryColor,
-                          size: 20,
+                          size: 20.0,
                         ),
                       ),
                     ),
                     Expanded(
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                         child: Stack(
                           children: [
                             InkWell(
@@ -416,7 +420,7 @@ class _EditarMiCuentaWidgetState extends State<EditarMiCuentaWidget>
                               },
                               child: Container(
                                 width: double.infinity,
-                                height: 100,
+                                height: 100.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -445,8 +449,8 @@ class _EditarMiCuentaWidgetState extends State<EditarMiCuentaWidget>
                                 if (!snapshot.hasData) {
                                   return Center(
                                     child: SizedBox(
-                                      width: 50,
-                                      height: 50,
+                                      width: 50.0,
+                                      height: 50.0,
                                       child: CircularProgressIndicator(
                                         color: FlutterFlowTheme.of(context)
                                             .primaryColor,
@@ -460,14 +464,14 @@ class _EditarMiCuentaWidgetState extends State<EditarMiCuentaWidget>
                                   width: double.infinity,
                                   height: 46.5,
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(40),
+                                    borderRadius: BorderRadius.circular(40.0),
                                     border: Border.all(
                                       color: Color(0xFFC2C7CC),
                                     ),
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        8, 8, 8, 8),
+                                        8.0, 8.0, 8.0, 8.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -617,7 +621,7 @@ class _EditarMiCuentaWidgetState extends State<EditarMiCuentaWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryColor,
-                                              size: 24,
+                                              size: 24.0,
                                             ),
                                           ),
                                         if (_model.whatsController.text ==
@@ -656,7 +660,7 @@ class _EditarMiCuentaWidgetState extends State<EditarMiCuentaWidget>
                                             child: Icon(
                                               Icons.arrow_right_outlined,
                                               color: Color(0xFF868E97),
-                                              size: 24,
+                                              size: 24.0,
                                             ),
                                           ),
                                       ],
@@ -690,23 +694,23 @@ class _EditarMiCuentaWidgetState extends State<EditarMiCuentaWidget>
               },
               child: Container(
                 width: double.infinity,
-                height: 60,
+                height: 60.0,
                 decoration: BoxDecoration(),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
+                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Card(
                         clipBehavior: Clip.antiAliasWithSaveLayer,
                         color: FlutterFlowTheme.of(context).primaryBackground,
-                        elevation: 0,
+                        elevation: 0.0,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(40),
+                          borderRadius: BorderRadius.circular(40.0),
                         ),
                         child: Container(
-                          width: 30,
-                          height: 30,
+                          width: 30.0,
+                          height: 30.0,
                           clipBehavior: Clip.antiAlias,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
@@ -719,7 +723,8 @@ class _EditarMiCuentaWidgetState extends State<EditarMiCuentaWidget>
                       ),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              12.0, 0.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -754,32 +759,34 @@ class _EditarMiCuentaWidgetState extends State<EditarMiCuentaWidget>
               },
               child: Container(
                 width: double.infinity,
-                height: 60,
+                height: 60.0,
                 decoration: BoxDecoration(),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
+                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Card(
                         clipBehavior: Clip.antiAliasWithSaveLayer,
                         color: FlutterFlowTheme.of(context).primaryBackground,
-                        elevation: 0,
+                        elevation: 0.0,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(40),
+                          borderRadius: BorderRadius.circular(40.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              8.0, 8.0, 8.0, 8.0),
                           child: Icon(
                             Icons.warning,
                             color: FlutterFlowTheme.of(context).alternate,
-                            size: 20,
+                            size: 20.0,
                           ),
                         ),
                       ),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              12.0, 0.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,

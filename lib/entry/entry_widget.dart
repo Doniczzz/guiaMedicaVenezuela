@@ -1,8 +1,8 @@
-import '../components/mindscode_widget.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/components/mindscode_widget.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -37,8 +37,8 @@ class _EntryWidgetState extends State<EntryWidget>
           curve: Curves.easeInOut,
           delay: 1200.ms,
           duration: 1050.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
       ],
     ),
@@ -50,8 +50,8 @@ class _EntryWidgetState extends State<EntryWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 0),
-          end: Offset(0, -100),
+          begin: Offset(0.0, 0.0),
+          end: Offset(0.0, -100.0),
         ),
       ],
     ),
@@ -63,8 +63,8 @@ class _EntryWidgetState extends State<EntryWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 220.ms,
-          begin: 1,
-          end: 0,
+          begin: 1.0,
+          end: 0.0,
         ),
       ],
     ),
@@ -75,8 +75,8 @@ class _EntryWidgetState extends State<EntryWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
       ],
     ),
@@ -87,15 +87,15 @@ class _EntryWidgetState extends State<EntryWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 800.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 800.ms,
-          begin: Offset(0, -100),
-          end: Offset(0, 0),
+          begin: Offset(0.0, -100.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -106,8 +106,8 @@ class _EntryWidgetState extends State<EntryWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
       ],
     ),
@@ -172,7 +172,7 @@ class _EntryWidgetState extends State<EntryWidget>
                                     fontFamily: 'Lexend Deca',
                                     color:
                                         FlutterFlowTheme.of(context).fondoMenu,
-                                    fontSize: 48,
+                                    fontSize: 48.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                               colors: [
@@ -183,8 +183,8 @@ class _EntryWidgetState extends State<EntryWidget>
                               gradientType: GradientType.linear,
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 15.0, 0.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   context.goNamed(
@@ -202,7 +202,11 @@ class _EntryWidgetState extends State<EntryWidget>
                                   FontAwesomeIcons.mapMarkerAlt,
                                 ),
                                 options: FFButtonOptions(
-                                  height: 40,
+                                  height: 40.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -211,12 +215,12 @@ class _EntryWidgetState extends State<EntryWidget>
                                         fontFamily: 'DM Sans',
                                         color: Color(0xFF151515),
                                       ),
-                                  elevation: 5,
+                                  elevation: 5.0,
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                               ).animateOnActionTrigger(
                                 animationsMap[
@@ -238,21 +242,21 @@ class _EntryWidgetState extends State<EntryWidget>
                   child: Stack(
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0, 0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Lottie.asset(
                           'assets/lottie_animations/backgrtound.json',
-                          width: 350,
-                          height: 350,
+                          width: 350.0,
+                          height: 350.0,
                           fit: BoxFit.none,
                           animate: true,
                         ).animateOnPageLoad(animationsMap[
                             'lottieAnimationOnPageLoadAnimation']!),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0, 0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Image.asset(
                           'assets/images/paranetry.png',
-                          width: 300,
+                          width: 300.0,
                           fit: BoxFit.contain,
                         ).animateOnPageLoad(
                             animationsMap['imageOnPageLoadAnimation1']!),
@@ -261,34 +265,35 @@ class _EntryWidgetState extends State<EntryWidget>
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   child: Image.asset(
                     'assets/images/letrasnetry.png',
                     width: double.infinity,
-                    height: 100,
+                    height: 100.0,
                     fit: BoxFit.contain,
                   ).animateOnPageLoad(
                       animationsMap['imageOnPageLoadAnimation2']!),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 80, 0, 25),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 80.0, 0.0, 25.0),
                   child: Material(
                     color: Colors.transparent,
-                    elevation: 4,
+                    elevation: 4.0,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(40),
+                      borderRadius: BorderRadius.circular(40.0),
                     ),
                     child: Container(
                       width: 280.5,
                       height: 70.2,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).fondoMenu,
-                        borderRadius: BorderRadius.circular(40),
+                        borderRadius: BorderRadius.circular(40.0),
                       ),
                       child: Align(
-                        alignment: AlignmentDirectional(0, 0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 10.0),
                           child: wrapWithModel(
                             model: _model.mindscodeModel,
                             updateCallback: () => setState(() {}),

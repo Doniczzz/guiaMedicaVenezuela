@@ -1,8 +1,8 @@
-import '../backend/backend.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -43,8 +43,8 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 0),
-          end: Offset(-400, 0),
+          begin: Offset(0.0, 0.0),
+          end: Offset(-400.0, 0.0),
         ),
       ],
     ),
@@ -56,8 +56,8 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(400, 0),
-          end: Offset(0, 0),
+          begin: Offset(400.0, 0.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -100,8 +100,8 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 50,
-              height: 50,
+              width: 50.0,
+              height: 50.0,
               child: CircularProgressIndicator(
                 color: FlutterFlowTheme.of(context).primaryColor,
               ),
@@ -111,21 +111,22 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
         final containerMedicosRecord = snapshot.data!;
         return Container(
           width: double.infinity,
-          height: 512,
+          height: 512.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryColor,
           ),
           child: Stack(
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 50, 16, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 50.0, 16.0, 0.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 0.0, 16.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -148,10 +149,11 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                       FaIcon(
                         FontAwesomeIcons.mobileAlt,
                         color: FlutterFlowTheme.of(context).primaryBackground,
-                        size: 34,
+                        size: 34.0,
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Builder(
                           builder: (context) {
                             final cuentasPagoMovil =
@@ -164,7 +166,7 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                                     cuentasPagoMovil[cuentasPagoMovilIndex];
                                 return Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 5, 0, 5),
+                                      0.0, 5.0, 0.0, 5.0),
                                   child: InkWell(
                                     onTap: () async {
                                       setState(() {
@@ -190,21 +192,22 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                                     },
                                     child: Material(
                                       color: Colors.transparent,
-                                      elevation: 2,
+                                      elevation: 2.0,
                                       shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(25),
+                                        borderRadius:
+                                            BorderRadius.circular(25.0),
                                       ),
                                       child: Container(
                                         width: double.infinity,
                                         decoration: BoxDecoration(
                                           color: Colors.white,
                                           borderRadius:
-                                              BorderRadius.circular(25),
+                                              BorderRadius.circular(25.0),
                                         ),
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  16, 12, 16, 16),
+                                                  16.0, 12.0, 16.0, 16.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -213,7 +216,8 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                                               Expanded(
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(8, 0, 0, 0),
+                                                      .fromSTEB(
+                                                          8.0, 0.0, 0.0, 0.0),
                                                   child: Text(
                                                     cuentasPagoMovilItem.banco!,
                                                     style: FlutterFlowTheme.of(
@@ -223,7 +227,7 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                                                           fontFamily: 'Roboto',
                                                           color:
                                                               Color(0xFF111417),
-                                                          fontSize: 18,
+                                                          fontSize: 18.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -233,7 +237,7 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                                               Icon(
                                                 Icons.arrow_right,
                                                 color: Color(0xFF57636C),
-                                                size: 24,
+                                                size: 24.0,
                                               ),
                                             ],
                                           ),
@@ -254,14 +258,15 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 50, 16, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 50.0, 16.0, 0.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 0.0, 16.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -284,16 +289,17 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                       FaIcon(
                         FontAwesomeIcons.mobileAlt,
                         color: FlutterFlowTheme.of(context).primaryBackground,
-                        size: 34,
+                        size: 34.0,
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 5, 0, 5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 5.0, 0.0, 5.0),
                               child: InkWell(
                                 onTap: () async {
                                   await Clipboard.setData(ClipboardData(
@@ -317,19 +323,19 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                                 },
                                 child: Material(
                                   color: Colors.transparent,
-                                  elevation: 2,
+                                  elevation: 2.0,
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(25),
+                                    borderRadius: BorderRadius.circular(25.0),
                                   ),
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      borderRadius: BorderRadius.circular(25),
+                                      borderRadius: BorderRadius.circular(25.0),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16, 12, 16, 16),
+                                          16.0, 12.0, 16.0, 16.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -338,12 +344,12 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                                           Icon(
                                             Icons.person,
                                             color: Color(0xFF57636C),
-                                            size: 24,
+                                            size: 24.0,
                                           ),
                                           Expanded(
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(8, 0, 0, 0),
+                                                  .fromSTEB(8.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 valueOrDefault<String>(
                                                   _model.pagoMovilSeleccionado
@@ -357,7 +363,7 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                                                           fontFamily: 'Roboto',
                                                           color:
                                                               Color(0xFF111417),
-                                                          fontSize: 18,
+                                                          fontSize: 18.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -367,7 +373,7 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                                           Icon(
                                             Icons.content_copy,
                                             color: Color(0xFF57636C),
-                                            size: 24,
+                                            size: 24.0,
                                           ),
                                         ],
                                       ),
@@ -377,8 +383,8 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 5, 0, 5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 5.0, 0.0, 5.0),
                               child: InkWell(
                                 onTap: () async {
                                   await Clipboard.setData(ClipboardData(
@@ -402,19 +408,19 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                                 },
                                 child: Material(
                                   color: Colors.transparent,
-                                  elevation: 2,
+                                  elevation: 2.0,
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(25),
+                                    borderRadius: BorderRadius.circular(25.0),
                                   ),
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      borderRadius: BorderRadius.circular(25),
+                                      borderRadius: BorderRadius.circular(25.0),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16, 12, 16, 16),
+                                          16.0, 12.0, 16.0, 16.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -423,12 +429,12 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                                           Icon(
                                             Icons.phone_android_rounded,
                                             color: Color(0xFF57636C),
-                                            size: 24,
+                                            size: 24.0,
                                           ),
                                           Expanded(
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(8, 0, 0, 0),
+                                                  .fromSTEB(8.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 valueOrDefault<String>(
                                                   _model.pagoMovilSeleccionado
@@ -442,7 +448,7 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                                                           fontFamily: 'Roboto',
                                                           color:
                                                               Color(0xFF111417),
-                                                          fontSize: 18,
+                                                          fontSize: 18.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -452,7 +458,7 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                                           Icon(
                                             Icons.content_copy,
                                             color: Color(0xFF57636C),
-                                            size: 24,
+                                            size: 24.0,
                                           ),
                                         ],
                                       ),
@@ -462,8 +468,8 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 5, 0, 5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 5.0, 0.0, 5.0),
                               child: InkWell(
                                 onTap: () async {
                                   await Clipboard.setData(ClipboardData(
@@ -487,19 +493,19 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                                 },
                                 child: Material(
                                   color: Colors.transparent,
-                                  elevation: 2,
+                                  elevation: 2.0,
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(25),
+                                    borderRadius: BorderRadius.circular(25.0),
                                   ),
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      borderRadius: BorderRadius.circular(25),
+                                      borderRadius: BorderRadius.circular(25.0),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16, 12, 16, 16),
+                                          16.0, 12.0, 16.0, 16.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -508,12 +514,12 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                                           FaIcon(
                                             FontAwesomeIcons.university,
                                             color: Color(0xFF57636C),
-                                            size: 24,
+                                            size: 24.0,
                                           ),
                                           Expanded(
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(8, 0, 0, 0),
+                                                  .fromSTEB(8.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 valueOrDefault<String>(
                                                   _model.pagoMovilSeleccionado
@@ -527,7 +533,7 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                                                           fontFamily: 'Roboto',
                                                           color:
                                                               Color(0xFF111417),
-                                                          fontSize: 18,
+                                                          fontSize: 18.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -537,7 +543,7 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                                           Icon(
                                             Icons.content_copy,
                                             color: Color(0xFF57636C),
-                                            size: 24,
+                                            size: 24.0,
                                           ),
                                         ],
                                       ),
@@ -579,15 +585,20 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 25, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             Navigator.pop(context);
                           },
                           text: 'Cerrar',
                           options: FFButtonOptions(
-                            width: 130,
-                            height: 40,
+                            width: 130.0,
+                            height: 40.0,
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primaryColor,
                             textStyle:
                                 FlutterFlowTheme.of(context).subtitle2.override(
@@ -596,9 +607,9 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                                     ),
                             borderSide: BorderSide(
                               color: Colors.transparent,
-                              width: 1,
+                              width: 1.0,
                             ),
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius: BorderRadius.circular(8.0),
                           ),
                         ),
                       ),

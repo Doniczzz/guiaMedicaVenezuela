@@ -1,8 +1,8 @@
-import '../auth/auth_util.dart';
-import '../backend/backend.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -58,19 +58,19 @@ class _AgregarPagoMovilWidgetState extends State<AgregarPagoMovilWidget> {
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(0),
-          bottomRight: Radius.circular(0),
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
+          bottomLeft: Radius.circular(0.0),
+          bottomRight: Radius.circular(0.0),
+          topLeft: Radius.circular(30.0),
+          topRight: Radius.circular(30.0),
         ),
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(8, 20, 0, 0),
+        padding: EdgeInsetsDirectional.fromSTEB(8.0, 20.0, 0.0, 0.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
               child: TextFormField(
                 controller: _model.nombreBancoController,
                 onChanged: (_) => EasyDebounce.debounce(
@@ -83,48 +83,48 @@ class _AgregarPagoMovilWidgetState extends State<AgregarPagoMovilWidget> {
                   labelStyle: FlutterFlowTheme.of(context).bodyText1.override(
                         fontFamily: 'Lexend Deca',
                         color: Color(0xFF57636C),
-                        fontSize: 14,
+                        fontSize: 14.0,
                         fontWeight: FontWeight.normal,
                       ),
                   hintText: 'Nombre del banco',
                   hintStyle: FlutterFlowTheme.of(context).bodyText1.override(
                         fontFamily: 'Lexend Deca',
                         color: Color(0xFF57636C),
-                        fontSize: 14,
+                        fontSize: 14.0,
                         fontWeight: FontWeight.normal,
                       ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Color(0xFFDBE2E7),
-                      width: 2,
+                      width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(40),
+                    borderRadius: BorderRadius.circular(40.0),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Color(0x00000000),
-                      width: 2,
+                      width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(40),
+                    borderRadius: BorderRadius.circular(40.0),
                   ),
                   errorBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Color(0x00000000),
-                      width: 2,
+                      width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(40),
+                    borderRadius: BorderRadius.circular(40.0),
                   ),
                   focusedErrorBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Color(0x00000000),
-                      width: 2,
+                      width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(40),
+                    borderRadius: BorderRadius.circular(40.0),
                   ),
                   filled: true,
                   fillColor: Colors.white,
                   contentPadding:
-                      EdgeInsetsDirectional.fromSTEB(24, 24, 20, 24),
+                      EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 20.0, 24.0),
                   prefixIcon: Icon(
                     Icons.account_balance,
                   ),
@@ -132,7 +132,7 @@ class _AgregarPagoMovilWidgetState extends State<AgregarPagoMovilWidget> {
                 style: FlutterFlowTheme.of(context).bodyText1.override(
                       fontFamily: 'Lexend Deca',
                       color: Color(0xFF1D2429),
-                      fontSize: 14,
+                      fontSize: 14.0,
                       fontWeight: FontWeight.normal,
                     ),
                 maxLines: null,
@@ -152,47 +152,48 @@ class _AgregarPagoMovilWidgetState extends State<AgregarPagoMovilWidget> {
                 labelStyle: FlutterFlowTheme.of(context).bodyText1.override(
                       fontFamily: 'Lexend Deca',
                       color: Color(0xFF57636C),
-                      fontSize: 14,
+                      fontSize: 14.0,
                       fontWeight: FontWeight.normal,
                     ),
                 hintText: 'Teléfono asociado',
                 hintStyle: FlutterFlowTheme.of(context).bodyText1.override(
                       fontFamily: 'Lexend Deca',
                       color: Color(0xFF57636C),
-                      fontSize: 14,
+                      fontSize: 14.0,
                       fontWeight: FontWeight.normal,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: Color(0xFFDBE2E7),
-                    width: 2,
+                    width: 2.0,
                   ),
-                  borderRadius: BorderRadius.circular(40),
+                  borderRadius: BorderRadius.circular(40.0),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: Color(0x00000000),
-                    width: 2,
+                    width: 2.0,
                   ),
-                  borderRadius: BorderRadius.circular(40),
+                  borderRadius: BorderRadius.circular(40.0),
                 ),
                 errorBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: Color(0x00000000),
-                    width: 2,
+                    width: 2.0,
                   ),
-                  borderRadius: BorderRadius.circular(40),
+                  borderRadius: BorderRadius.circular(40.0),
                 ),
                 focusedErrorBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: Color(0x00000000),
-                    width: 2,
+                    width: 2.0,
                   ),
-                  borderRadius: BorderRadius.circular(40),
+                  borderRadius: BorderRadius.circular(40.0),
                 ),
                 filled: true,
                 fillColor: Colors.white,
-                contentPadding: EdgeInsetsDirectional.fromSTEB(24, 24, 20, 24),
+                contentPadding:
+                    EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 20.0, 24.0),
                 prefixIcon: Icon(
                   Icons.phone_android,
                 ),
@@ -200,7 +201,7 @@ class _AgregarPagoMovilWidgetState extends State<AgregarPagoMovilWidget> {
               style: FlutterFlowTheme.of(context).bodyText1.override(
                     fontFamily: 'Lexend Deca',
                     color: Color(0xFF1D2429),
-                    fontSize: 14,
+                    fontSize: 14.0,
                     fontWeight: FontWeight.normal,
                   ),
               maxLines: null,
@@ -209,7 +210,7 @@ class _AgregarPagoMovilWidgetState extends State<AgregarPagoMovilWidget> {
                   _model.telefonoControllerValidator.asValidator(context),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
               child: FFButtonWidget(
                 onPressed: /* NOT RECOMMENDED */ _model
                             .telefonoController.text ==
@@ -234,8 +235,11 @@ class _AgregarPagoMovilWidgetState extends State<AgregarPagoMovilWidget> {
                       },
                 text: 'Guardar',
                 options: FFButtonOptions(
-                  width: 130,
-                  height: 40,
+                  width: 130.0,
+                  height: 40.0,
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  iconPadding:
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).secondaryColor,
                   textStyle: FlutterFlowTheme.of(context).subtitle2.override(
                         fontFamily: 'DM Sans',
@@ -243,9 +247,9 @@ class _AgregarPagoMovilWidgetState extends State<AgregarPagoMovilWidget> {
                       ),
                   borderSide: BorderSide(
                     color: Colors.transparent,
-                    width: 1,
+                    width: 1.0,
                   ),
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(8.0),
                 ),
               ),
             ),

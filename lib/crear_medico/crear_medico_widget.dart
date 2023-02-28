@@ -1,13 +1,13 @@
-import '../auth/auth_util.dart';
-import '../backend/api_requests/api_calls.dart';
-import '../backend/backend.dart';
-import '../components/loading_widget.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
-import '../flutter_flow/random_data_util.dart' as random_data;
+import '/auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
+import '/backend/backend.dart';
+import '/components/loading_widget.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -72,12 +72,12 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
-          borderRadius: 30,
-          buttonSize: 48,
+          borderRadius: 30.0,
+          buttonSize: 48.0,
           icon: Icon(
             Icons.close_rounded,
             color: FlutterFlowTheme.of(context).secondaryText,
-            size: 30,
+            size: 30.0,
           ),
           onPressed: () async {
             showModalBottomSheet(
@@ -106,7 +106,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
         ),
         actions: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 16, 16, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 16.0, 0.0),
             child: InkWell(
               onTap: () async {
                 final especialidadesCreateData = createEspecialidadesRecordData(
@@ -124,7 +124,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
           ),
         ],
         centerTitle: false,
-        elevation: 0,
+        elevation: 0.0,
       ),
       body: SafeArea(
         child: GestureDetector(
@@ -133,14 +133,15 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
             key: _model.formKey,
             autovalidateMode: AutovalidateMode.disabled,
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: SingleChildScrollView(
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -170,26 +171,26 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  16, 25, 16, 12),
+                                  16.0, 25.0, 16.0, 12.0),
                               child: Material(
                                 color: Colors.transparent,
-                                elevation: 2,
+                                elevation: 2.0,
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(25),
+                                  borderRadius: BorderRadius.circular(25.0),
                                 ),
                                 child: Container(
                                   width: double.infinity,
                                   decoration: BoxDecoration(
                                     color: Colors.white,
-                                    borderRadius: BorderRadius.circular(25),
+                                    borderRadius: BorderRadius.circular(25.0),
                                     border: Border.all(
                                       color: Color(0xFFE0E3E7),
-                                      width: 2,
+                                      width: 2.0,
                                     ),
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        12, 12, 12, 12),
+                                        12.0, 12.0, 12.0, 12.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       crossAxisAlignment:
@@ -198,7 +199,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 4, 0, 0),
+                                                  0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             'Nombre para mostrar',
                                             style: FlutterFlowTheme.of(context)
@@ -214,7 +215,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 8, 0, 0),
+                                                  0.0, 8.0, 0.0, 0.0),
                                           child: AuthUserStreamWidget(
                                             builder: (context) => TextFormField(
                                               controller:
@@ -233,7 +234,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                                     .override(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF57636C),
-                                                      fontSize: 14,
+                                                      fontSize: 14.0,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
@@ -243,7 +244,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                                     .override(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF57636C),
-                                                      fontSize: 14,
+                                                      fontSize: 14.0,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
@@ -251,43 +252,47 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                                     OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: Color(0xFFDBE2E7),
-                                                    width: 2,
+                                                    width: 2.0,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(40),
+                                                      BorderRadius.circular(
+                                                          40.0),
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: Color(0x00000000),
-                                                    width: 2,
+                                                    width: 2.0,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(40),
+                                                      BorderRadius.circular(
+                                                          40.0),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: Color(0x00000000),
-                                                    width: 2,
+                                                    width: 2.0,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(40),
+                                                      BorderRadius.circular(
+                                                          40.0),
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: Color(0x00000000),
-                                                    width: 2,
+                                                    width: 2.0,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(40),
+                                                      BorderRadius.circular(
+                                                          40.0),
                                                 ),
                                                 filled: true,
                                                 fillColor: Colors.white,
                                                 contentPadding:
                                                     EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            24, 24, 20, 24),
+                                                        .fromSTEB(24.0, 24.0,
+                                                            20.0, 24.0),
                                                 suffixIcon: _model
                                                         .nombreController!
                                                         .text
@@ -303,7 +308,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                                           Icons.clear,
                                                           color:
                                                               Color(0xFF757575),
-                                                          size: 22,
+                                                          size: 22.0,
                                                         ),
                                                       )
                                                     : null,
@@ -314,7 +319,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                                   .override(
                                                     fontFamily: 'Lexend Deca',
                                                     color: Color(0xFF1D2429),
-                                                    fontSize: 14,
+                                                    fontSize: 14.0,
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
@@ -333,7 +338,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  16, 25, 16, 12),
+                                  16.0, 25.0, 16.0, 12.0),
                               child: FutureBuilder<ApiCallResponse>(
                                 future: VerificarTelefonoCall.call(
                                   phone: _model.whatsController.text,
@@ -343,8 +348,8 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                   if (!snapshot.hasData) {
                                     return Center(
                                       child: SizedBox(
-                                        width: 50,
-                                        height: 50,
+                                        width: 50.0,
+                                        height: 50.0,
                                         child: CircularProgressIndicator(
                                           color: FlutterFlowTheme.of(context)
                                               .primaryColor,
@@ -356,23 +361,24 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                       snapshot.data!;
                                   return Material(
                                     color: Colors.transparent,
-                                    elevation: 2,
+                                    elevation: 2.0,
                                     shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(25),
+                                      borderRadius: BorderRadius.circular(25.0),
                                     ),
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
-                                        borderRadius: BorderRadius.circular(25),
+                                        borderRadius:
+                                            BorderRadius.circular(25.0),
                                         border: Border.all(
                                           color: Color(0xFFE0E3E7),
-                                          width: 2,
+                                          width: 2.0,
                                         ),
                                       ),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            12, 12, 12, 12),
+                                            12.0, 12.0, 12.0, 12.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           crossAxisAlignment:
@@ -380,7 +386,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 4, 0, 0),
+                                                  .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 'Número de whtasapp',
                                                 style:
@@ -396,7 +402,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 8, 0, 0),
+                                                  .fromSTEB(0.0, 8.0, 0.0, 0.0),
                                               child: TextFormField(
                                                 controller:
                                                     _model.whatsController,
@@ -422,7 +428,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                                             'Lexend Deca',
                                                         color:
                                                             Color(0xFF57636C),
-                                                        fontSize: 14,
+                                                        fontSize: 14.0,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
@@ -436,7 +442,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                                             'Lexend Deca',
                                                         color:
                                                             Color(0xFF57636C),
-                                                        fontSize: 14,
+                                                        fontSize: 14.0,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
@@ -444,48 +450,48 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                       color: Color(0xFFDBE2E7),
-                                                      width: 2,
+                                                      width: 2.0,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            40),
+                                                            40.0),
                                                   ),
                                                   focusedBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                       color: Color(0x00000000),
-                                                      width: 2,
+                                                      width: 2.0,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            40),
+                                                            40.0),
                                                   ),
                                                   errorBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                       color: Color(0x00000000),
-                                                      width: 2,
+                                                      width: 2.0,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            40),
+                                                            40.0),
                                                   ),
                                                   focusedErrorBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                       color: Color(0x00000000),
-                                                      width: 2,
+                                                      width: 2.0,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            40),
+                                                            40.0),
                                                   ),
                                                   filled: true,
                                                   fillColor: Colors.white,
                                                   contentPadding:
                                                       EdgeInsetsDirectional
-                                                          .fromSTEB(
-                                                              24, 24, 20, 24),
+                                                          .fromSTEB(24.0, 24.0,
+                                                              20.0, 24.0),
                                                   suffixIcon: _model
                                                           .whatsController!
                                                           .text
@@ -501,7 +507,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                                             Icons.clear,
                                                             color: Color(
                                                                 0xFF757575),
-                                                            size: 22,
+                                                            size: 22.0,
                                                           ),
                                                         )
                                                       : null,
@@ -512,7 +518,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                                     .override(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF1D2429),
-                                                      fontSize: 14,
+                                                      fontSize: 14.0,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
@@ -536,7 +542,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .secondaryColor,
-                                                        fontSize: 16,
+                                                        fontSize: 16.0,
                                                       ),
                                             ),
                                           ],
@@ -549,26 +555,26 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  16, 25, 16, 12),
+                                  16.0, 25.0, 16.0, 12.0),
                               child: Material(
                                 color: Colors.transparent,
-                                elevation: 2,
+                                elevation: 2.0,
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(25),
+                                  borderRadius: BorderRadius.circular(25.0),
                                 ),
                                 child: Container(
                                   width: double.infinity,
                                   decoration: BoxDecoration(
                                     color: Colors.white,
-                                    borderRadius: BorderRadius.circular(25),
+                                    borderRadius: BorderRadius.circular(25.0),
                                     border: Border.all(
                                       color: Color(0xFFE0E3E7),
-                                      width: 2,
+                                      width: 2.0,
                                     ),
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        12, 12, 12, 12),
+                                        12.0, 12.0, 12.0, 12.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       crossAxisAlignment:
@@ -577,7 +583,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 4, 0, 0),
+                                                  0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             'Dirección de tu consultorio',
                                             style: FlutterFlowTheme.of(context)
@@ -593,7 +599,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 8, 0, 0),
+                                                  0.0, 8.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller: _model.calleController,
                                             obscureText: false,
@@ -605,7 +611,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                                   .override(
                                                     fontFamily: 'Lexend Deca',
                                                     color: Color(0xFF57636C),
-                                                    fontSize: 14,
+                                                    fontSize: 14.0,
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
@@ -615,55 +621,56 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                                   .override(
                                                     fontFamily: 'Lexend Deca',
                                                     color: Color(0xFF57636C),
-                                                    fontSize: 14,
+                                                    fontSize: 14.0,
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0xFFDBE2E7),
-                                                  width: 2,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(40),
+                                                    BorderRadius.circular(40.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00000000),
-                                                  width: 2,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(40),
+                                                    BorderRadius.circular(40.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00000000),
-                                                  width: 2,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(40),
+                                                    BorderRadius.circular(40.0),
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00000000),
-                                                  width: 2,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(40),
+                                                    BorderRadius.circular(40.0),
                                               ),
                                               filled: true,
                                               fillColor: Colors.white,
                                               contentPadding:
                                                   EdgeInsetsDirectional
-                                                      .fromSTEB(24, 24, 20, 24),
+                                                      .fromSTEB(24.0, 24.0,
+                                                          20.0, 24.0),
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText1
                                                 .override(
                                                   fontFamily: 'Lexend Deca',
                                                   color: Color(0xFF1D2429),
-                                                  fontSize: 14,
+                                                  fontSize: 14.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
                                             maxLines: null,
@@ -675,7 +682,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 8, 0, 0),
+                                                  0.0, 8.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller: _model.alturaController,
                                             obscureText: false,
@@ -687,7 +694,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                                   .override(
                                                     fontFamily: 'Lexend Deca',
                                                     color: Color(0xFF57636C),
-                                                    fontSize: 14,
+                                                    fontSize: 14.0,
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
@@ -697,55 +704,56 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                                   .override(
                                                     fontFamily: 'Lexend Deca',
                                                     color: Color(0xFF57636C),
-                                                    fontSize: 14,
+                                                    fontSize: 14.0,
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0xFFDBE2E7),
-                                                  width: 2,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(40),
+                                                    BorderRadius.circular(40.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00000000),
-                                                  width: 2,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(40),
+                                                    BorderRadius.circular(40.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00000000),
-                                                  width: 2,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(40),
+                                                    BorderRadius.circular(40.0),
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00000000),
-                                                  width: 2,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(40),
+                                                    BorderRadius.circular(40.0),
                                               ),
                                               filled: true,
                                               fillColor: Colors.white,
                                               contentPadding:
                                                   EdgeInsetsDirectional
-                                                      .fromSTEB(24, 24, 20, 24),
+                                                      .fromSTEB(24.0, 24.0,
+                                                          20.0, 24.0),
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText1
                                                 .override(
                                                   fontFamily: 'Lexend Deca',
                                                   color: Color(0xFF1D2429),
-                                                  fontSize: 14,
+                                                  fontSize: 14.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
                                             maxLines: null,
@@ -757,7 +765,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 8, 0, 0),
+                                                  0.0, 8.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller:
                                                 _model.referenciaController,
@@ -770,7 +778,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                                   .override(
                                                     fontFamily: 'Lexend Deca',
                                                     color: Color(0xFF57636C),
-                                                    fontSize: 14,
+                                                    fontSize: 14.0,
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
@@ -780,55 +788,56 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                                   .override(
                                                     fontFamily: 'Lexend Deca',
                                                     color: Color(0xFF57636C),
-                                                    fontSize: 14,
+                                                    fontSize: 14.0,
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0xFFDBE2E7),
-                                                  width: 2,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(40),
+                                                    BorderRadius.circular(40.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00000000),
-                                                  width: 2,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(40),
+                                                    BorderRadius.circular(40.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00000000),
-                                                  width: 2,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(40),
+                                                    BorderRadius.circular(40.0),
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00000000),
-                                                  width: 2,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(40),
+                                                    BorderRadius.circular(40.0),
                                               ),
                                               filled: true,
                                               fillColor: Colors.white,
                                               contentPadding:
                                                   EdgeInsetsDirectional
-                                                      .fromSTEB(24, 24, 20, 24),
+                                                      .fromSTEB(24.0, 24.0,
+                                                          20.0, 24.0),
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText1
                                                 .override(
                                                   fontFamily: 'Lexend Deca',
                                                   color: Color(0xFF1D2429),
-                                                  fontSize: 14,
+                                                  fontSize: 14.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
                                             maxLines: null,
@@ -849,7 +858,8 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 16),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         showModalBottomSheet(
@@ -909,18 +919,22 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                       },
                       text: 'Guardar Datos',
                       options: FFButtonOptions(
-                        width: 270,
-                        height: 50,
+                        width: 270.0,
+                        height: 50.0,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).secondaryColor,
                         textStyle:
                             FlutterFlowTheme.of(context).subtitle1.override(
                                   fontFamily: 'Lexend',
                                   color: Colors.white,
                                 ),
-                        elevation: 3,
+                        elevation: 3.0,
                         borderSide: BorderSide(
                           color: Colors.transparent,
-                          width: 1,
+                          width: 1.0,
                         ),
                       ),
                     ),

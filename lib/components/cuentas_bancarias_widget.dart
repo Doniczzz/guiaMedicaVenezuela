@@ -1,8 +1,8 @@
-import '../backend/backend.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -42,8 +42,8 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 0),
-          end: Offset(-400, 0),
+          begin: Offset(0.0, 0.0),
+          end: Offset(-400.0, 0.0),
         ),
       ],
     ),
@@ -55,8 +55,8 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(450, 0),
-          end: Offset(0, 0),
+          begin: Offset(450.0, 0.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -99,8 +99,8 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 50,
-              height: 50,
+              width: 50.0,
+              height: 50.0,
               child: CircularProgressIndicator(
                 color: FlutterFlowTheme.of(context).primaryColor,
               ),
@@ -117,14 +117,15 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
           child: Stack(
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 50, 16, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 50.0, 16.0, 0.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 0.0, 16.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -147,10 +148,11 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                       Icon(
                         Icons.account_balance,
                         color: FlutterFlowTheme.of(context).primaryBackground,
-                        size: 34,
+                        size: 34.0,
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Builder(
                           builder: (context) {
                             final bancos = containerMedicosRecord
@@ -163,7 +165,7 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                 final bancosItem = bancos[bancosIndex];
                                 return Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 5, 0, 5),
+                                      0.0, 5.0, 0.0, 5.0),
                                   child: InkWell(
                                     onTap: () async {
                                       setState(() {
@@ -188,21 +190,22 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                     },
                                     child: Material(
                                       color: Colors.transparent,
-                                      elevation: 2,
+                                      elevation: 2.0,
                                       shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(25),
+                                        borderRadius:
+                                            BorderRadius.circular(25.0),
                                       ),
                                       child: Container(
                                         width: double.infinity,
                                         decoration: BoxDecoration(
                                           color: Colors.white,
                                           borderRadius:
-                                              BorderRadius.circular(25),
+                                              BorderRadius.circular(25.0),
                                         ),
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  16, 12, 16, 16),
+                                                  16.0, 12.0, 16.0, 16.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -211,7 +214,8 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                               Expanded(
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(8, 0, 0, 0),
+                                                      .fromSTEB(
+                                                          8.0, 0.0, 0.0, 0.0),
                                                   child: Text(
                                                     bancosItem.banco!,
                                                     style: FlutterFlowTheme.of(
@@ -221,7 +225,7 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                                           fontFamily: 'Roboto',
                                                           color:
                                                               Color(0xFF111417),
-                                                          fontSize: 18,
+                                                          fontSize: 18.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -231,7 +235,7 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                               Icon(
                                                 Icons.arrow_right,
                                                 color: Color(0xFF57636C),
-                                                size: 24,
+                                                size: 24.0,
                                               ),
                                             ],
                                           ),
@@ -252,14 +256,15 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 50, 16, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 50.0, 16.0, 0.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 0.0, 16.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -282,16 +287,17 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                       Icon(
                         Icons.account_balance,
                         color: FlutterFlowTheme.of(context).primaryBackground,
-                        size: 34,
+                        size: 34.0,
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 5, 0, 5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 5.0, 0.0, 5.0),
                               child: InkWell(
                                 onTap: () async {
                                   await Clipboard.setData(ClipboardData(
@@ -314,19 +320,19 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                 },
                                 child: Material(
                                   color: Colors.transparent,
-                                  elevation: 2,
+                                  elevation: 2.0,
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(25),
+                                    borderRadius: BorderRadius.circular(25.0),
                                   ),
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      borderRadius: BorderRadius.circular(25),
+                                      borderRadius: BorderRadius.circular(25.0),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16, 12, 16, 16),
+                                          16.0, 12.0, 16.0, 16.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -335,12 +341,12 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                           Icon(
                                             Icons.person,
                                             color: Color(0xFF57636C),
-                                            size: 24,
+                                            size: 24.0,
                                           ),
                                           Expanded(
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(8, 0, 0, 0),
+                                                  .fromSTEB(8.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 valueOrDefault<String>(
                                                   _model.bancoSeleccionado
@@ -354,7 +360,7 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                                           fontFamily: 'Roboto',
                                                           color:
                                                               Color(0xFF111417),
-                                                          fontSize: 18,
+                                                          fontSize: 18.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -364,7 +370,7 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                           Icon(
                                             Icons.content_copy,
                                             color: Color(0xFF57636C),
-                                            size: 24,
+                                            size: 24.0,
                                           ),
                                         ],
                                       ),
@@ -374,8 +380,8 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 5, 0, 5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 5.0, 0.0, 5.0),
                               child: InkWell(
                                 onTap: () async {
                                   await Clipboard.setData(ClipboardData(
@@ -398,19 +404,19 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                 },
                                 child: Material(
                                   color: Colors.transparent,
-                                  elevation: 2,
+                                  elevation: 2.0,
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(25),
+                                    borderRadius: BorderRadius.circular(25.0),
                                   ),
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      borderRadius: BorderRadius.circular(25),
+                                      borderRadius: BorderRadius.circular(25.0),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16, 12, 16, 16),
+                                          16.0, 12.0, 16.0, 16.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -419,12 +425,12 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                           FaIcon(
                                             FontAwesomeIcons.idCard,
                                             color: Color(0xFF57636C),
-                                            size: 24,
+                                            size: 24.0,
                                           ),
                                           Expanded(
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(8, 0, 0, 0),
+                                                  .fromSTEB(8.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 valueOrDefault<String>(
                                                   _model.bancoSeleccionado
@@ -438,7 +444,7 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                                           fontFamily: 'Roboto',
                                                           color:
                                                               Color(0xFF111417),
-                                                          fontSize: 18,
+                                                          fontSize: 18.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -448,7 +454,7 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                           Icon(
                                             Icons.content_copy,
                                             color: Color(0xFF57636C),
-                                            size: 24,
+                                            size: 24.0,
                                           ),
                                         ],
                                       ),
@@ -458,8 +464,8 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 5, 0, 5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 5.0, 0.0, 5.0),
                               child: InkWell(
                                 onTap: () async {
                                   await Clipboard.setData(ClipboardData(
@@ -484,19 +490,19 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                 },
                                 child: Material(
                                   color: Colors.transparent,
-                                  elevation: 2,
+                                  elevation: 2.0,
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(25),
+                                    borderRadius: BorderRadius.circular(25.0),
                                   ),
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      borderRadius: BorderRadius.circular(25),
+                                      borderRadius: BorderRadius.circular(25.0),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16, 12, 16, 16),
+                                          16.0, 12.0, 16.0, 16.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -506,12 +512,12 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                             Icons
                                                 .account_balance_wallet_rounded,
                                             color: Color(0xFF57636C),
-                                            size: 24,
+                                            size: 24.0,
                                           ),
                                           Expanded(
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(8, 0, 0, 0),
+                                                  .fromSTEB(8.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 valueOrDefault<String>(
                                                   _model.bancoSeleccionado
@@ -526,7 +532,7 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                                           fontFamily: 'Roboto',
                                                           color:
                                                               Color(0xFF111417),
-                                                          fontSize: 18,
+                                                          fontSize: 18.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -536,7 +542,7 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                           Icon(
                                             Icons.content_copy,
                                             color: Color(0xFF57636C),
-                                            size: 24,
+                                            size: 24.0,
                                           ),
                                         ],
                                       ),
@@ -546,8 +552,8 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 5, 0, 5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 5.0, 0.0, 5.0),
                               child: InkWell(
                                 onTap: () async {
                                   await Clipboard.setData(ClipboardData(
@@ -570,19 +576,19 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                 },
                                 child: Material(
                                   color: Colors.transparent,
-                                  elevation: 2,
+                                  elevation: 2.0,
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(25),
+                                    borderRadius: BorderRadius.circular(25.0),
                                   ),
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      borderRadius: BorderRadius.circular(25),
+                                      borderRadius: BorderRadius.circular(25.0),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16, 12, 16, 16),
+                                          16.0, 12.0, 16.0, 16.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -591,12 +597,12 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                           Icon(
                                             Icons.account_balance,
                                             color: Color(0xFF57636C),
-                                            size: 24,
+                                            size: 24.0,
                                           ),
                                           Expanded(
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(8, 0, 0, 0),
+                                                  .fromSTEB(8.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 valueOrDefault<String>(
                                                   _model
@@ -610,7 +616,7 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                                           fontFamily: 'Roboto',
                                                           color:
                                                               Color(0xFF111417),
-                                                          fontSize: 18,
+                                                          fontSize: 18.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -620,7 +626,7 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                           Icon(
                                             Icons.content_copy,
                                             color: Color(0xFF57636C),
-                                            size: 24,
+                                            size: 24.0,
                                           ),
                                         ],
                                       ),
@@ -662,15 +668,20 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 25, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             Navigator.pop(context);
                           },
                           text: 'Cerrar',
                           options: FFButtonOptions(
-                            width: 130,
-                            height: 40,
+                            width: 130.0,
+                            height: 40.0,
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primaryColor,
                             textStyle:
                                 FlutterFlowTheme.of(context).subtitle2.override(
@@ -679,9 +690,9 @@ class _CuentasBancariasWidgetState extends State<CuentasBancariasWidget>
                                     ),
                             borderSide: BorderSide(
                               color: Colors.transparent,
-                              width: 1,
+                              width: 1.0,
                             ),
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius: BorderRadius.circular(8.0),
                           ),
                         ),
                       ),

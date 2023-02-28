@@ -1,10 +1,10 @@
-import '../auth/auth_util.dart';
-import '../backend/backend.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_autocomplete_options_list.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -72,8 +72,8 @@ class _SeleccionarEspecialidadWidgetState
               if (!snapshot.hasData) {
                 return Center(
                   child: SizedBox(
-                    width: 50,
-                    height: 50,
+                    width: 50.0,
+                    height: 50.0,
                     child: CircularProgressIndicator(
                       color: FlutterFlowTheme.of(context).primaryColor,
                     ),
@@ -89,14 +89,16 @@ class _SeleccionarEspecialidadWidgetState
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 20, 16, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 20.0, 16.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -108,13 +110,13 @@ class _SeleccionarEspecialidadWidgetState
                                 child: Icon(
                                   Icons.chevron_left,
                                   color: Colors.black,
-                                  size: 40,
+                                  size: 40.0,
                                 ),
                               ),
                               Expanded(
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      12, 0, 0, 0),
+                                      12.0, 0.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
@@ -130,7 +132,7 @@ class _SeleccionarEspecialidadWidgetState
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .textColor,
-                                              fontSize: 20,
+                                              fontSize: 20.0,
                                             ),
                                       ),
                                     ],
@@ -140,11 +142,11 @@ class _SeleccionarEspecialidadWidgetState
                             ],
                           ),
                         ),
-                        if (_model.especialidades.length > 0)
+                        if (_model.especialidadess.length > 0)
                           FFButtonWidget(
                             onPressed: () async {
                               final medicosUpdateData = {
-                                'especialidades': _model.especialidades,
+                                'especialidades': _model.especialidadess,
                               };
                               await widget.medico!.reference
                                   .update(medicosUpdateData);
@@ -157,7 +159,7 @@ class _SeleccionarEspecialidadWidgetState
                                     ParamType.Document,
                                   ),
                                   'listEspecialidades': serializeParam(
-                                    _model.especialidades,
+                                    _model.especialidadess,
                                     ParamType.String,
                                     true,
                                   ),
@@ -170,11 +172,15 @@ class _SeleccionarEspecialidadWidgetState
                             text: 'Guardar Selección',
                             icon: Icon(
                               Icons.save,
-                              size: 15,
+                              size: 15.0,
                             ),
                             options: FFButtonOptions(
                               width: double.infinity,
-                              height: 40,
+                              height: 40.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
                               color:
                                   FlutterFlowTheme.of(context).secondaryColor,
                               textStyle: FlutterFlowTheme.of(context)
@@ -185,45 +191,46 @@ class _SeleccionarEspecialidadWidgetState
                                   ),
                               borderSide: BorderSide(
                                 color: Colors.transparent,
-                                width: 1,
+                                width: 1.0,
                               ),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(8.0),
                             ),
                           ),
                         Divider(
-                          height: 10,
-                          thickness: 5,
+                          height: 10.0,
+                          thickness: 5.0,
                           color: FlutterFlowTheme.of(context).secondaryColor,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              12.0, 8.0, 12.0, 8.0),
                           child: Container(
                             width: double.infinity,
-                            height: 60,
+                            height: 60.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.circular(12.0),
                             ),
                             child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  8.0, 0.0, 8.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        4, 0, 4, 0),
+                                        4.0, 0.0, 4.0, 0.0),
                                     child: Icon(
                                       Icons.search_rounded,
                                       color: Color(0xFFACB9C4),
-                                      size: 24,
+                                      size: 24.0,
                                     ),
                                   ),
                                   Expanded(
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          4, 0, 0, 0),
+                                          4.0, 0.0, 0.0, 0.0),
                                       child: Autocomplete<String>(
                                         initialValue: TextEditingValue(),
                                         optionsBuilder: (textEditingValue) {
@@ -256,14 +263,14 @@ class _SeleccionarEspecialidadWidgetState
                                                 FlutterFlowTheme.of(context)
                                                     .bodyText1,
                                             textHighlightStyle: TextStyle(),
-                                            elevation: 4,
+                                            elevation: 4.0,
                                             optionBackgroundColor:
                                                 FlutterFlowTheme.of(context)
                                                     .primaryBackground,
                                             optionHighlightColor:
                                                 FlutterFlowTheme.of(context)
                                                     .secondaryBackground,
-                                            maxHeight: 200,
+                                            maxHeight: 200.0,
                                           );
                                         },
                                         onSelected: (String selection) {
@@ -322,7 +329,7 @@ class _SeleccionarEspecialidadWidgetState
                                                   UnderlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00000000),
-                                                  width: 1,
+                                                  width: 1.0,
                                                 ),
                                                 borderRadius:
                                                     const BorderRadius.only(
@@ -335,7 +342,7 @@ class _SeleccionarEspecialidadWidgetState
                                                   UnderlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00000000),
-                                                  width: 1,
+                                                  width: 1.0,
                                                 ),
                                                 borderRadius:
                                                     const BorderRadius.only(
@@ -347,7 +354,7 @@ class _SeleccionarEspecialidadWidgetState
                                               errorBorder: UnderlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00000000),
-                                                  width: 1,
+                                                  width: 1.0,
                                                 ),
                                                 borderRadius:
                                                     const BorderRadius.only(
@@ -360,7 +367,7 @@ class _SeleccionarEspecialidadWidgetState
                                                   UnderlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0x00000000),
-                                                  width: 1,
+                                                  width: 1.0,
                                                 ),
                                                 borderRadius:
                                                     const BorderRadius.only(
@@ -375,7 +382,7 @@ class _SeleccionarEspecialidadWidgetState
                                                 .override(
                                                   fontFamily: 'Outfit',
                                                   color: Color(0xFF95A1AC),
-                                                  fontSize: 14,
+                                                  fontSize: 14.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
                                             validator: _model
@@ -388,7 +395,7 @@ class _SeleccionarEspecialidadWidgetState
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        4, 0, 4, 0),
+                                        4.0, 0.0, 4.0, 0.0),
                                     child: InkWell(
                                       onTap: () async {
                                         setState(() {
@@ -401,7 +408,7 @@ class _SeleccionarEspecialidadWidgetState
                                       child: Icon(
                                         Icons.clear,
                                         color: Color(0xFFACB9C4),
-                                        size: 24,
+                                        size: 24.0,
                                       ),
                                     ),
                                   ),
@@ -412,8 +419,8 @@ class _SeleccionarEspecialidadWidgetState
                         ),
                         if (!_model.busqueda)
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 12.0, 0.0, 0.0),
                             child: Builder(
                               builder: (context) {
                                 final especialidades =
@@ -429,14 +436,14 @@ class _SeleccionarEspecialidadWidgetState
                                         especialidades[especialidadesIndex];
                                     return Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16, 0, 16, 8),
+                                          16.0, 0.0, 16.0, 8.0),
                                       child: InkWell(
                                         onTap: () async {
-                                          if (_model.especialidades.contains(
+                                          if (_model.especialidadess.contains(
                                               especialidadesItem
                                                   .especialidad)) {
                                             setState(() {
-                                              _model.removeFromEspecialidades(
+                                              _model.removeFromEspecialidadess(
                                                   especialidadesItem
                                                       .especialidad!);
                                             });
@@ -450,7 +457,7 @@ class _SeleccionarEspecialidadWidgetState
                                                     especialidadesUpdateData1);
                                           } else {
                                             setState(() {
-                                              _model.addToEspecialidades(
+                                              _model.addToEspecialidadess(
                                                   especialidadesItem
                                                       .especialidad!);
                                             });
@@ -469,18 +476,18 @@ class _SeleccionarEspecialidadWidgetState
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
                                             borderRadius:
-                                                BorderRadius.circular(12),
+                                                BorderRadius.circular(12.0),
                                             border: Border.all(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .lineColor,
-                                              width: 2,
+                                              width: 2.0,
                                             ),
                                           ),
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    5, 5, 5, 5),
+                                                    5.0, 5.0, 5.0, 5.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -491,7 +498,7 @@ class _SeleccionarEspecialidadWidgetState
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryColor,
-                                                  size: 34,
+                                                  size: 34.0,
                                                 ),
                                                 Expanded(
                                                   child: Container(
@@ -499,13 +506,16 @@ class _SeleccionarEspecialidadWidgetState
                                                     decoration: BoxDecoration(
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8),
+                                                              8.0),
                                                     ),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
-                                                              .fromSTEB(12, 12,
-                                                                  12, 12),
+                                                              .fromSTEB(
+                                                                  12.0,
+                                                                  12.0,
+                                                                  12.0,
+                                                                  12.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -536,7 +546,7 @@ class _SeleccionarEspecialidadWidgetState
                                                                       color: Color(
                                                                           0xFF101213),
                                                                       fontSize:
-                                                                          20,
+                                                                          20.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w500,
@@ -549,7 +559,7 @@ class _SeleccionarEspecialidadWidgetState
                                                     ),
                                                   ),
                                                 ),
-                                                if (_model.especialidades
+                                                if (_model.especialidadess
                                                     .contains(especialidadesItem
                                                         .especialidad))
                                                   Icon(
@@ -557,7 +567,7 @@ class _SeleccionarEspecialidadWidgetState
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryColor,
-                                                    size: 24,
+                                                    size: 24.0,
                                                   ),
                                               ],
                                             ),
@@ -572,8 +582,8 @@ class _SeleccionarEspecialidadWidgetState
                           ),
                         if (_model.busqueda)
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 12.0, 0.0, 0.0),
                             child: Builder(
                               builder: (context) {
                                 final especialidades =
@@ -589,14 +599,14 @@ class _SeleccionarEspecialidadWidgetState
                                         especialidades[especialidadesIndex];
                                     return Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16, 0, 16, 8),
+                                          16.0, 0.0, 16.0, 8.0),
                                       child: InkWell(
                                         onTap: () async {
-                                          if (_model.especialidades.contains(
+                                          if (_model.especialidadess.contains(
                                               especialidadesItem
                                                   .especialidad)) {
                                             setState(() {
-                                              _model.removeFromEspecialidades(
+                                              _model.removeFromEspecialidadess(
                                                   especialidadesItem
                                                       .especialidad!);
                                             });
@@ -610,7 +620,7 @@ class _SeleccionarEspecialidadWidgetState
                                                     especialidadesUpdateData1);
                                           } else {
                                             setState(() {
-                                              _model.addToEspecialidades(
+                                              _model.addToEspecialidadess(
                                                   especialidadesItem
                                                       .especialidad!);
                                             });
@@ -629,18 +639,18 @@ class _SeleccionarEspecialidadWidgetState
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
                                             borderRadius:
-                                                BorderRadius.circular(12),
+                                                BorderRadius.circular(12.0),
                                             border: Border.all(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .lineColor,
-                                              width: 2,
+                                              width: 2.0,
                                             ),
                                           ),
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    5, 5, 5, 5),
+                                                    5.0, 5.0, 5.0, 5.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -651,7 +661,7 @@ class _SeleccionarEspecialidadWidgetState
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryColor,
-                                                  size: 34,
+                                                  size: 34.0,
                                                 ),
                                                 Expanded(
                                                   child: Container(
@@ -659,13 +669,16 @@ class _SeleccionarEspecialidadWidgetState
                                                     decoration: BoxDecoration(
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8),
+                                                              8.0),
                                                     ),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
-                                                              .fromSTEB(12, 12,
-                                                                  12, 12),
+                                                              .fromSTEB(
+                                                                  12.0,
+                                                                  12.0,
+                                                                  12.0,
+                                                                  12.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -696,7 +709,7 @@ class _SeleccionarEspecialidadWidgetState
                                                                       color: Color(
                                                                           0xFF101213),
                                                                       fontSize:
-                                                                          20,
+                                                                          20.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w500,
@@ -709,7 +722,7 @@ class _SeleccionarEspecialidadWidgetState
                                                     ),
                                                   ),
                                                 ),
-                                                if (_model.especialidades
+                                                if (_model.especialidadess
                                                     .contains(especialidadesItem
                                                         .especialidad))
                                                   Icon(
@@ -717,7 +730,7 @@ class _SeleccionarEspecialidadWidgetState
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryColor,
-                                                    size: 24,
+                                                    size: 24.0,
                                                   ),
                                               ],
                                             ),

@@ -1,10 +1,10 @@
-import '../auth/auth_util.dart';
-import '../backend/backend.dart';
-import '../components/enviar_mensaje_paciente_widget.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/random_data_util.dart' as random_data;
+import '/auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/components/enviar_mensaje_paciente_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -56,33 +56,33 @@ class _NotificacionesWidgetState extends State<NotificacionesWidget> {
           children: [
             FlutterFlowIconButton(
               borderColor: Colors.transparent,
-              borderRadius: 30,
-              borderWidth: 1,
-              buttonSize: 60,
+              borderRadius: 30.0,
+              borderWidth: 1.0,
+              buttonSize: 60.0,
               icon: Icon(
                 Icons.close,
                 color: FlutterFlowTheme.of(context).primaryText,
-                size: 30,
+                size: 30.0,
               ),
               onPressed: () async {
                 context.pop();
               },
             ),
             Text(
-              'Notificaciones',
+              'Mensajes',
               style: FlutterFlowTheme.of(context).title2,
             ),
           ],
         ),
         actions: [],
         centerTitle: false,
-        elevation: 0,
+        elevation: 0.0,
       ),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
             child: AuthUserStreamWidget(
               builder: (context) => Builder(
                 builder: (context) {
@@ -97,7 +97,8 @@ class _NotificacionesWidgetState extends State<NotificacionesWidget> {
                       final notificacionesItem =
                           notificaciones[notificacionesIndex];
                       return Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                         child: StreamBuilder<NotificacionRecord>(
                           stream: NotificacionRecord.getDocument(
                               notificacionesItem),
@@ -106,8 +107,8 @@ class _NotificacionesWidgetState extends State<NotificacionesWidget> {
                             if (!snapshot.hasData) {
                               return Center(
                                 child: SizedBox(
-                                  width: 50,
-                                  height: 50,
+                                  width: 50.0,
+                                  height: 50.0,
                                   child: CircularProgressIndicator(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryColor,
@@ -143,35 +144,35 @@ class _NotificacionesWidgetState extends State<NotificacionesWidget> {
                                       .secondaryBackground,
                                   boxShadow: [
                                     BoxShadow(
-                                      blurRadius: 0,
+                                      blurRadius: 0.0,
                                       color: FlutterFlowTheme.of(context)
                                           .lineColor,
-                                      offset: Offset(0, 1),
+                                      offset: Offset(0.0, 1.0),
                                     )
                                   ],
-                                  borderRadius: BorderRadius.circular(0),
+                                  borderRadius: BorderRadius.circular(0.0),
                                   shape: BoxShape.rectangle,
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      8, 8, 8, 8),
+                                      8.0, 8.0, 8.0, 8.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Container(
-                                        width: 4,
-                                        height: 50,
+                                        width: 4.0,
+                                        height: 50.0,
                                         decoration: BoxDecoration(
                                           color: random_data.randomColor(),
                                           borderRadius:
-                                              BorderRadius.circular(2),
+                                              BorderRadius.circular(2.0),
                                         ),
                                       ),
                                       Expanded(
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  12, 0, 0, 0),
+                                                  12.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
                                               contentView2NotificacionRecord
@@ -189,7 +190,7 @@ class _NotificacionesWidgetState extends State<NotificacionesWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            12, 0, 0, 0),
+                                            12.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           dateTimeFormat(
                                             'd/M/y',
@@ -204,14 +205,14 @@ class _NotificacionesWidgetState extends State<NotificacionesWidget> {
                                       ),
                                       FlutterFlowIconButton(
                                         borderColor: Colors.transparent,
-                                        borderRadius: 30,
-                                        borderWidth: 1,
-                                        buttonSize: 60,
+                                        borderRadius: 30.0,
+                                        borderWidth: 1.0,
+                                        buttonSize: 60.0,
                                         icon: FaIcon(
                                           FontAwesomeIcons.trash,
                                           color: FlutterFlowTheme.of(context)
                                               .alternate,
-                                          size: 20,
+                                          size: 20.0,
                                         ),
                                         onPressed: () async {
                                           await contentView2NotificacionRecord

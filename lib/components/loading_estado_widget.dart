@@ -1,5 +1,5 @@
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -41,8 +41,8 @@ class _LoadingEstadoWidgetState extends State<LoadingEstadoWidget> {
     context.watch<FFAppState>();
 
     return Container(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height * 1,
+      width: MediaQuery.of(context).size.width * 1.0,
+      height: MediaQuery.of(context).size.height * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
       ),
@@ -52,8 +52,8 @@ class _LoadingEstadoWidgetState extends State<LoadingEstadoWidget> {
         children: [
           Lottie.asset(
             'assets/lottie_animations/9796-shop-loading.json',
-            width: 250,
-            height: 250,
+            width: 250.0,
+            height: 250.0,
             fit: BoxFit.cover,
             animate: true,
           ),

@@ -1,7 +1,7 @@
-import '../backend/backend.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -61,8 +61,8 @@ class _PublicidadWidgetState extends State<PublicidadWidget> {
           if (!snapshot.hasData) {
             return Center(
               child: SizedBox(
-                width: 50,
-                height: 50,
+                width: 50.0,
+                height: 50.0,
                 child: CircularProgressIndicator(
                   color: FlutterFlowTheme.of(context).primaryColor,
                 ),
@@ -75,7 +75,7 @@ class _PublicidadWidgetState extends State<PublicidadWidget> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                 child: InkWell(
                   onTap: () async {
                     Navigator.pop(context);
@@ -84,11 +84,12 @@ class _PublicidadWidgetState extends State<PublicidadWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                         child: Icon(
                           Icons.close,
                           color: Colors.black,
-                          size: 34,
+                          size: 34.0,
                         ),
                       ),
                       Text(
@@ -101,7 +102,7 @@ class _PublicidadWidgetState extends State<PublicidadWidget> {
               ),
               Container(
                 width: double.infinity,
-                height: 442,
+                height: 442.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
@@ -111,7 +112,7 @@ class _PublicidadWidgetState extends State<PublicidadWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10, 12, 10, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 12.0, 10.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -123,10 +124,14 @@ class _PublicidadWidgetState extends State<PublicidadWidget> {
                       text: 'Contacto',
                       icon: Icon(
                         Icons.contact_phone_sharp,
-                        size: 15,
+                        size: 15.0,
                       ),
                       options: FFButtonOptions(
-                        height: 40,
+                        height: 40.0,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primaryColor,
                         textStyle:
                             FlutterFlowTheme.of(context).subtitle2.override(
@@ -135,9 +140,9 @@ class _PublicidadWidgetState extends State<PublicidadWidget> {
                                 ),
                         borderSide: BorderSide(
                           color: Colors.transparent,
-                          width: 1,
+                          width: 1.0,
                         ),
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
                     FFButtonWidget(
@@ -149,7 +154,11 @@ class _PublicidadWidgetState extends State<PublicidadWidget> {
                         FontAwesomeIcons.instagram,
                       ),
                       options: FFButtonOptions(
-                        height: 40,
+                        height: 40.0,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primaryColor,
                         textStyle:
                             FlutterFlowTheme.of(context).subtitle2.override(
@@ -158,9 +167,9 @@ class _PublicidadWidgetState extends State<PublicidadWidget> {
                                 ),
                         borderSide: BorderSide(
                           color: Colors.transparent,
-                          width: 1,
+                          width: 1.0,
                         ),
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
                   ],

@@ -1,10 +1,10 @@
-import '../backend/backend.dart';
-import '../components/enviar_mensaje_medico_widget.dart';
-import '../components/mostrar_q_r_widget.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/backend/backend.dart';
+import '/components/enviar_mensaje_medico_widget.dart';
+import '/components/mostrar_q_r_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -63,8 +63,8 @@ class _CitaWidgetState extends State<CitaWidget> {
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 50,
-              height: 50,
+              width: 50.0,
+              height: 50.0,
               child: CircularProgressIndicator(
                 color: FlutterFlowTheme.of(context).primaryColor,
               ),
@@ -79,7 +79,7 @@ class _CitaWidgetState extends State<CitaWidget> {
             color: FlutterFlowTheme.of(context).secondaryBackground,
           ),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16, 25, 16, 10),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 25.0, 16.0, 10.0),
             child: StreamBuilder<MedicosRecord>(
               stream: MedicosRecord.getDocument(containerCitasRecord.medico!),
               builder: (context, snapshot) {
@@ -87,8 +87,8 @@ class _CitaWidgetState extends State<CitaWidget> {
                 if (!snapshot.hasData) {
                   return Center(
                     child: SizedBox(
-                      width: 50,
-                      height: 50,
+                      width: 50.0,
+                      height: 50.0,
                       child: CircularProgressIndicator(
                         color: FlutterFlowTheme.of(context).primaryColor,
                       ),
@@ -109,14 +109,14 @@ class _CitaWidgetState extends State<CitaWidget> {
                             children: [
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                borderWidth: 1,
-                                buttonSize: 60,
+                                borderRadius: 30.0,
+                                borderWidth: 1.0,
+                                buttonSize: 60.0,
                                 icon: Icon(
                                   Icons.close,
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
-                                  size: 30,
+                                  size: 30.0,
                                 ),
                                 onPressed: () async {
                                   Navigator.pop(context);
@@ -135,8 +135,8 @@ class _CitaWidgetState extends State<CitaWidget> {
                             ],
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 25, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 25.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -148,12 +148,12 @@ class _CitaWidgetState extends State<CitaWidget> {
                                         fontFamily: 'Lexend',
                                         color: FlutterFlowTheme.of(context)
                                             .fondoMenu,
-                                        fontSize: 28,
+                                        fontSize: 28.0,
                                       ),
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      100, 0, 100, 0),
+                                      100.0, 0.0, 100.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -165,15 +165,15 @@ class _CitaWidgetState extends State<CitaWidget> {
                                               .mostrarWhatsapp!)
                                             FlutterFlowIconButton(
                                               borderColor: Colors.transparent,
-                                              borderRadius: 30,
-                                              borderWidth: 1,
-                                              buttonSize: 60,
+                                              borderRadius: 30.0,
+                                              borderWidth: 1.0,
+                                              buttonSize: 60.0,
                                               icon: Icon(
                                                 Icons.near_me,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryColor,
-                                                size: 30,
+                                                size: 30.0,
                                               ),
                                               onPressed: () async {
                                                 await showModalBottomSheet(
@@ -203,15 +203,15 @@ class _CitaWidgetState extends State<CitaWidget> {
                                               true)
                                             FlutterFlowIconButton(
                                               borderColor: Colors.transparent,
-                                              borderRadius: 30,
-                                              borderWidth: 1,
-                                              buttonSize: 60,
+                                              borderRadius: 30.0,
+                                              borderWidth: 1.0,
+                                              buttonSize: 60.0,
                                               icon: FaIcon(
                                                 FontAwesomeIcons.whatsapp,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryColor,
-                                                size: 30,
+                                                size: 30.0,
                                               ),
                                               onPressed: () async {
                                                 await launchURL(
@@ -225,14 +225,14 @@ class _CitaWidgetState extends State<CitaWidget> {
                                       ),
                                       FlutterFlowIconButton(
                                         borderColor: Colors.transparent,
-                                        borderRadius: 30,
-                                        borderWidth: 1,
-                                        buttonSize: 60,
+                                        borderRadius: 30.0,
+                                        borderWidth: 1.0,
+                                        buttonSize: 60.0,
                                         icon: FaIcon(
                                           FontAwesomeIcons.instagram,
                                           color: FlutterFlowTheme.of(context)
                                               .alternate,
-                                          size: 30,
+                                          size: 30.0,
                                         ),
                                         onPressed: () async {
                                           await launchURL(
@@ -246,28 +246,29 @@ class _CitaWidgetState extends State<CitaWidget> {
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 20.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
                                   child: Material(
                                     color: Colors.transparent,
-                                    elevation: 4,
+                                    elevation: 4.0,
                                     shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(25),
+                                      borderRadius: BorderRadius.circular(25.0),
                                     ),
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .gray200,
-                                        borderRadius: BorderRadius.circular(25),
+                                        borderRadius:
+                                            BorderRadius.circular(25.0),
                                       ),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 20, 20, 20),
+                                            20.0, 20.0, 20.0, 20.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -287,7 +288,8 @@ class _CitaWidgetState extends State<CitaWidget> {
                                             if (widget.paciente?.status == 2)
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 15, 0, 0),
+                                                    .fromSTEB(
+                                                        0.0, 15.0, 0.0, 0.0),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -300,13 +302,16 @@ class _CitaWidgetState extends State<CitaWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryColor,
-                                                      size: 34,
+                                                      size: 34.0,
                                                     ),
                                                     Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  5, 0, 0, 0),
+                                                                  5.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       child: Text(
                                                         'Aprobado',
                                                         textAlign:
@@ -330,7 +335,8 @@ class _CitaWidgetState extends State<CitaWidget> {
                                             if (widget.paciente?.status == 1)
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 15, 0, 0),
+                                                    .fromSTEB(
+                                                        0.0, 15.0, 0.0, 0.0),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -343,13 +349,16 @@ class _CitaWidgetState extends State<CitaWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .alternate,
-                                                      size: 34,
+                                                      size: 34.0,
                                                     ),
                                                     Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  5, 0, 0, 0),
+                                                                  5.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       child: Text(
                                                         'En espera',
                                                         textAlign:
@@ -380,28 +389,29 @@ class _CitaWidgetState extends State<CitaWidget> {
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 20.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
                                   child: Material(
                                     color: Colors.transparent,
-                                    elevation: 4,
+                                    elevation: 4.0,
                                     shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(25),
+                                      borderRadius: BorderRadius.circular(25.0),
                                     ),
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .gray200,
-                                        borderRadius: BorderRadius.circular(25),
+                                        borderRadius:
+                                            BorderRadius.circular(25.0),
                                       ),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 20, 20, 20),
+                                            20.0, 20.0, 20.0, 20.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -420,7 +430,8 @@ class _CitaWidgetState extends State<CitaWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 15, 0, 0),
+                                                  .fromSTEB(
+                                                      0.0, 15.0, 0.0, 0.0),
                                               child: Text(
                                                 widget.paciente!.metodoPago!,
                                                 textAlign: TextAlign.center,
@@ -445,28 +456,29 @@ class _CitaWidgetState extends State<CitaWidget> {
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 20.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
                                   child: Material(
                                     color: Colors.transparent,
-                                    elevation: 4,
+                                    elevation: 4.0,
                                     shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(25),
+                                      borderRadius: BorderRadius.circular(25.0),
                                     ),
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .gray200,
-                                        borderRadius: BorderRadius.circular(25),
+                                        borderRadius:
+                                            BorderRadius.circular(25.0),
                                       ),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 20, 20, 20),
+                                            20.0, 20.0, 20.0, 20.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -483,7 +495,8 @@ class _CitaWidgetState extends State<CitaWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 15, 0, 0),
+                                                  .fromSTEB(
+                                                      0.0, 15.0, 0.0, 0.0),
                                               child: Text(
                                                 widget.paciente!.motivoCita!,
                                                 textAlign: TextAlign.center,
@@ -508,28 +521,29 @@ class _CitaWidgetState extends State<CitaWidget> {
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 20.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
                                   child: Material(
                                     color: Colors.transparent,
-                                    elevation: 4,
+                                    elevation: 4.0,
                                     shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(25),
+                                      borderRadius: BorderRadius.circular(25.0),
                                     ),
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .gray200,
-                                        borderRadius: BorderRadius.circular(25),
+                                        borderRadius:
+                                            BorderRadius.circular(25.0),
                                       ),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 20, 20, 20),
+                                            20.0, 20.0, 20.0, 20.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -546,7 +560,8 @@ class _CitaWidgetState extends State<CitaWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 15, 0, 0),
+                                                  .fromSTEB(
+                                                      0.0, 15.0, 0.0, 0.0),
                                               child: Text(
                                                 widget.numeroPaciente
                                                     .toString(),
@@ -572,28 +587,29 @@ class _CitaWidgetState extends State<CitaWidget> {
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 20.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
                                   child: Material(
                                     color: Colors.transparent,
-                                    elevation: 4,
+                                    elevation: 4.0,
                                     shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(25),
+                                      borderRadius: BorderRadius.circular(25.0),
                                     ),
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .gray200,
-                                        borderRadius: BorderRadius.circular(25),
+                                        borderRadius:
+                                            BorderRadius.circular(25.0),
                                       ),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 20, 20, 20),
+                                            20.0, 20.0, 20.0, 20.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -610,7 +626,8 @@ class _CitaWidgetState extends State<CitaWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 15, 0, 0),
+                                                  .fromSTEB(
+                                                      0.0, 15.0, 0.0, 0.0),
                                               child: Text(
                                                 containerCitasRecord
                                                     .especialidad!,
@@ -636,28 +653,29 @@ class _CitaWidgetState extends State<CitaWidget> {
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 20.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
                                   child: Material(
                                     color: Colors.transparent,
-                                    elevation: 4,
+                                    elevation: 4.0,
                                     shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(25),
+                                      borderRadius: BorderRadius.circular(25.0),
                                     ),
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .gray200,
-                                        borderRadius: BorderRadius.circular(25),
+                                        borderRadius:
+                                            BorderRadius.circular(25.0),
                                       ),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 20, 20, 20),
+                                            20.0, 20.0, 20.0, 20.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -674,7 +692,8 @@ class _CitaWidgetState extends State<CitaWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 15, 0, 10),
+                                                  .fromSTEB(
+                                                      0.0, 15.0, 0.0, 10.0),
                                               child: Text(
                                                 widget.paciente!
                                                     .numeroReferencia!,
@@ -715,8 +734,15 @@ class _CitaWidgetState extends State<CitaWidget> {
                                               },
                                               text: 'Mostrar QR',
                                               options: FFButtonOptions(
-                                                width: 130,
-                                                height: 40,
+                                                width: 130.0,
+                                                height: 40.0,
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 0.0),
+                                                iconPadding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryColor,
@@ -729,10 +755,10 @@ class _CitaWidgetState extends State<CitaWidget> {
                                                         ),
                                                 borderSide: BorderSide(
                                                   color: Colors.transparent,
-                                                  width: 1,
+                                                  width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(8),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                             ),
                                           ],

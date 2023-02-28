@@ -1,10 +1,10 @@
-import '../auth/auth_util.dart';
-import '../backend/backend.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_autocomplete_options_list.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -19,11 +19,11 @@ class SeleccionarEspecialidadModel extends FlutterFlowModel {
 
   bool busqueda = false;
 
-  List<String> especialidades = [];
-  void addToEspecialidades(String item) => especialidades.add(item);
-  void removeFromEspecialidades(String item) => especialidades.remove(item);
-  void removeAtIndexFromEspecialidades(int index) =>
-      especialidades.removeAt(index);
+  List<String> especialidadess = [];
+  void addToEspecialidadess(String item) => especialidadess.add(item);
+  void removeFromEspecialidadess(String item) => especialidadess.remove(item);
+  void removeAtIndexFromEspecialidadess(int index) =>
+      especialidadess.removeAt(index);
 
   ///  State fields for stateful widgets in this page.
 

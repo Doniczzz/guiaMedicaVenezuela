@@ -1,11 +1,11 @@
-import '../auth/auth_util.dart';
-import '../backend/backend.dart';
-import '../backend/push_notifications/push_notifications_util.dart';
-import '../flutter_flow/flutter_flow_expanded_image_view.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
-import '../custom_code/actions/index.dart' as actions;
+import '/auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
+import '/flutter_flow/flutter_flow_expanded_image_view.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -62,8 +62,8 @@ class _ComprobanteWidgetState extends State<ComprobanteWidget> {
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 50,
-              height: 50,
+              width: 50.0,
+              height: 50.0,
               child: CircularProgressIndicator(
                 color: FlutterFlowTheme.of(context).primaryColor,
               ),
@@ -77,20 +77,20 @@ class _ComprobanteWidgetState extends State<ComprobanteWidget> {
             color: FlutterFlowTheme.of(context).secondaryBackground,
             boxShadow: [
               BoxShadow(
-                blurRadius: 5,
+                blurRadius: 5.0,
                 color: Color(0x3B1D2429),
-                offset: Offset(0, -3),
+                offset: Offset(0.0, -3.0),
               )
             ],
             borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(0),
-              bottomRight: Radius.circular(0),
-              topLeft: Radius.circular(16),
-              topRight: Radius.circular(16),
+              bottomLeft: Radius.circular(0.0),
+              bottomRight: Radius.circular(0.0),
+              topLeft: Radius.circular(16.0),
+              topRight: Radius.circular(16.0),
             ),
           ),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
             child: StreamBuilder<UsersRecord>(
               stream: UsersRecord.getDocument(widget.paciente!.paciente!),
               builder: (context, snapshot) {
@@ -98,8 +98,8 @@ class _ComprobanteWidgetState extends State<ComprobanteWidget> {
                 if (!snapshot.hasData) {
                   return Center(
                     child: SizedBox(
-                      width: 50,
-                      height: 50,
+                      width: 50.0,
+                      height: 50.0,
                       child: CircularProgressIndicator(
                         color: FlutterFlowTheme.of(context).primaryColor,
                       ),
@@ -146,8 +146,8 @@ class _ComprobanteWidgetState extends State<ComprobanteWidget> {
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 5, 0, 40),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 5.0, 0.0, 40.0),
                             child: InkWell(
                               onTap: () async {
                                 await actions.descargaImagen(
@@ -168,16 +168,16 @@ class _ComprobanteWidgetState extends State<ComprobanteWidget> {
                                           fontFamily: 'DM Sans',
                                           color: FlutterFlowTheme.of(context)
                                               .fondoMenu,
-                                          fontSize: 18,
+                                          fontSize: 18.0,
                                         ),
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        8, 0, 0, 0),
+                                        8.0, 0.0, 0.0, 0.0),
                                     child: FaIcon(
                                       FontAwesomeIcons.download,
                                       color: Colors.black,
-                                      size: 24,
+                                      size: 24.0,
                                     ),
                                   ),
                                 ],
@@ -256,23 +256,28 @@ class _ComprobanteWidgetState extends State<ComprobanteWidget> {
                       text: 'Aceptar',
                       options: FFButtonOptions(
                         width: double.infinity,
-                        height: 60,
+                        height: 60.0,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primaryColor,
                         textStyle:
                             FlutterFlowTheme.of(context).subtitle2.override(
                                   fontFamily: 'Lexend Deca',
                                   color: Colors.white,
-                                  fontSize: 16,
+                                  fontSize: 16.0,
                                   fontWeight: FontWeight.normal,
                                 ),
                         borderSide: BorderSide(
                           color: Colors.transparent,
-                          width: 1,
+                          width: 1.0,
                         ),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           final citasUpdateData = {
@@ -319,24 +324,29 @@ class _ComprobanteWidgetState extends State<ComprobanteWidget> {
                         text: 'Rechazar',
                         options: FFButtonOptions(
                           width: double.infinity,
-                          height: 60,
+                          height: 60.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
                           color: Color(0xFFFF5963),
                           textStyle:
                               FlutterFlowTheme.of(context).subtitle2.override(
                                     fontFamily: 'Lexend Deca',
                                     color: Colors.white,
-                                    fontSize: 16,
+                                    fontSize: 16.0,
                                     fontWeight: FontWeight.normal,
                                   ),
                           borderSide: BorderSide(
                             color: Colors.transparent,
-                            width: 1,
+                            width: 1.0,
                           ),
                         ),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           Navigator.pop(context);
@@ -344,12 +354,16 @@ class _ComprobanteWidgetState extends State<ComprobanteWidget> {
                         text: 'Cerrar',
                         options: FFButtonOptions(
                           width: double.infinity,
-                          height: 60,
+                          height: 60.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primaryBackground,
                           textStyle: FlutterFlowTheme.of(context).subtitle2,
                           borderSide: BorderSide(
                             color: Colors.transparent,
-                            width: 1,
+                            width: 1.0,
                           ),
                         ),
                       ),

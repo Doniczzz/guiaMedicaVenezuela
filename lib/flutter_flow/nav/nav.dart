@@ -446,7 +446,7 @@ class FFRoute {
               : builder(context, ffParams);
           final child = appStateNotifier.loading
               ? Container(
-                  color: Colors.transparent,
+                  color: FlutterFlowTheme.of(context).gray200,
                   child: Image.asset(
                     'assets/images/paranetry.png',
                     fit: BoxFit.contain,
