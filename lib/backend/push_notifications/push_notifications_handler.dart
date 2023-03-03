@@ -78,9 +78,9 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
   @override
   Widget build(BuildContext context) => _loading
       ? Container(
-          color: FlutterFlowTheme.of(context).gray200,
+          color: FlutterFlowTheme.of(context).primaryBtnText,
           child: Image.asset(
-            'assets/images/paranetry.png',
+            'assets/images/1024x500.png',
             fit: BoxFit.contain,
           ),
         )
@@ -147,8 +147,8 @@ final parametersBuilderMap =
           'medico': getParameter<DocumentReference>(data, 'medico'),
         },
       ),
-  'home': ParameterData.none(),
   'buscarEspecialidades': ParameterData.none(),
+  'home': ParameterData.none(),
   'buscarMedicos': (data) async => ParameterData(
         allParams: {
           'ciudad': await getDocumentParameter<CiudadesRecord>(

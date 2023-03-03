@@ -53,12 +53,13 @@ class _MindscodeWidgetState extends State<MindscodeWidget> {
               style: FlutterFlowTheme.of(context).title3.override(
                     fontFamily: 'Lexend',
                     color: FlutterFlowTheme.of(context).primaryBackground,
+                    fontSize: 16.0,
                   ),
             ),
             Image.asset(
               'assets/images/prototipo.png',
-              width: 50.0,
-              height: 50.0,
+              width: 30.0,
+              height: 30.0,
               fit: BoxFit.cover,
             ),
           ],

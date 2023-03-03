@@ -66,143 +66,150 @@ class _SucessWidgetState extends State<SucessWidget> {
           onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(16.0, 25.0, 16.0, 25.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
-                  child: Row(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Lottie.asset(
+                          'assets/lottie_animations/89618-gopay-succesfull-payment.json',
+                          width: 200.0,
+                          height: 200.0,
+                          fit: BoxFit.contain,
+                          frameRate: FrameRate(60.0),
+                          repeat: false,
+                          animate: true,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Text(
+                    'Has agendado una nueva cita con el médico ${widget.medicoNombre}',
+                    textAlign: TextAlign.center,
+                    style: FlutterFlowTheme.of(context).title2.override(
+                          fontFamily: 'Lexend',
+                          color: FlutterFlowTheme.of(context).primaryBtnText,
+                          fontSize: 30.0,
+                        ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                    child: Text(
+                      '¡Gracias por usar nuestra aplicación!',
+                      textAlign: TextAlign.center,
+                      style: FlutterFlowTheme.of(context).subtitle2.override(
+                            fontFamily: 'DM Sans',
+                            color: FlutterFlowTheme.of(context).primaryBtnText,
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w300,
+                          ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 44.0, 0.0, 0.0),
+                    child: FFButtonWidget(
+                      onPressed: () async {
+                        context.pushNamed(
+                          'home',
+                          extra: <String, dynamic>{
+                            kTransitionInfoKey: TransitionInfo(
+                              hasTransition: true,
+                              transitionType: PageTransitionType.leftToRight,
+                            ),
+                          },
+                        );
+                      },
+                      text: 'Aceptar',
+                      options: FFButtonOptions(
+                        width: 130.0,
+                        height: 50.0,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: FlutterFlowTheme.of(context).primaryBtnText,
+                        textStyle: FlutterFlowTheme.of(context)
+                            .subtitle2
+                            .override(
+                              fontFamily: 'DM Sans',
+                              color:
+                                  FlutterFlowTheme.of(context).secondaryColor,
+                            ),
+                        elevation: 3.0,
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                          width: 1.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  if (widget.status == 2)
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                      child: Text(
+                        'Eres el paciente #${widget.numeroPaciente.toString()} en ${widget.especialidad}',
+                        textAlign: TextAlign.center,
+                        style: FlutterFlowTheme.of(context).title2.override(
+                              fontFamily: 'Lexend',
+                              color: Color(0xFF00E539),
+                            ),
+                      ),
+                    ),
+                  if (widget.status == 1)
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                      child: Text(
+                        'Tu pago está revisandose.',
+                        textAlign: TextAlign.center,
+                        style: FlutterFlowTheme.of(context).title2.override(
+                              fontFamily: 'Lexend',
+                              color: Color(0xFFFFFF74),
+                            ),
+                      ),
+                    ),
+                  Row(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Lottie.asset(
-                        'assets/lottie_animations/89618-gopay-succesfull-payment.json',
-                        width: 200.0,
-                        height: 200.0,
-                        fit: BoxFit.contain,
-                        frameRate: FrameRate(60.0),
-                        repeat: false,
-                        animate: true,
+                      Expanded(
+                        child: RichText(
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
+                                text:
+                                    'Muestra este número de referencia al llegar: ',
+                                style: TextStyle(),
+                              ),
+                              TextSpan(
+                                text: widget.nReferencia,
+                                style: TextStyle(
+                                  color: Color(0xFF00E539),
+                                ),
+                              )
+                            ],
+                            style: FlutterFlowTheme.of(context).title2.override(
+                                  fontFamily: 'Lexend',
+                                  color: FlutterFlowTheme.of(context).gray200,
+                                  fontSize: 25.0,
+                                ),
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ],
                   ),
-                ),
-                Text(
-                  'Has agendado una nueva cita con el médico ${widget.medicoNombre}',
-                  textAlign: TextAlign.center,
-                  style: FlutterFlowTheme.of(context).title2.override(
-                        fontFamily: 'Lexend',
-                        color: FlutterFlowTheme.of(context).primaryBtnText,
-                        fontSize: 30.0,
-                      ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                  child: Text(
-                    '¡Gracias por usar nuestra aplicación!',
-                    style: FlutterFlowTheme.of(context).subtitle2.override(
-                          fontFamily: 'DM Sans',
-                          color: FlutterFlowTheme.of(context).primaryBtnText,
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w300,
-                        ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 44.0, 0.0, 0.0),
-                  child: FFButtonWidget(
-                    onPressed: () async {
-                      context.pushNamed(
-                        'home',
-                        extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
-                            hasTransition: true,
-                            transitionType: PageTransitionType.leftToRight,
-                          ),
-                        },
-                      );
-                    },
-                    text: 'Aceptar',
-                    options: FFButtonOptions(
-                      width: 130.0,
-                      height: 50.0,
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primaryBtnText,
-                      textStyle: FlutterFlowTheme.of(context)
-                          .subtitle2
-                          .override(
-                            fontFamily: 'DM Sans',
-                            color: FlutterFlowTheme.of(context).secondaryColor,
-                          ),
-                      elevation: 3.0,
-                      borderSide: BorderSide(
-                        color: Colors.transparent,
-                        width: 1.0,
-                      ),
-                    ),
-                  ),
-                ),
-                if (widget.status == 2)
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                    child: Text(
-                      'Eres el paciente #${widget.numeroPaciente.toString()} en ${widget.especialidad}',
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.of(context).title2.override(
-                            fontFamily: 'Lexend',
-                            color: Color(0xFF00E539),
-                          ),
-                    ),
-                  ),
-                if (widget.status == 1)
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                    child: Text(
-                      'Tu pago está revisandose.',
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.of(context).title2.override(
-                            fontFamily: 'Lexend',
-                            color: Color(0xFFFFFF74),
-                          ),
-                    ),
-                  ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Expanded(
-                      child: RichText(
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                              text:
-                                  'Muestra este número de referencia al llegar: ',
-                              style: TextStyle(),
-                            ),
-                            TextSpan(
-                              text: widget.nReferencia,
-                              style: TextStyle(
-                                color: Color(0xFF00E539),
-                              ),
-                            )
-                          ],
-                          style: FlutterFlowTheme.of(context).title2.override(
-                                fontFamily: 'Lexend',
-                                color: FlutterFlowTheme.of(context).gray200,
-                                fontSize: 25.0,
-                              ),
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

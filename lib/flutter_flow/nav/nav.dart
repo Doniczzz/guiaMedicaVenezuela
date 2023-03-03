@@ -151,14 +151,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'home',
-              path: 'home',
-              builder: (context, params) => HomeWidget(),
-            ),
-            FFRoute(
               name: 'buscarEspecialidades',
               path: 'buscarEspecialidades',
               builder: (context, params) => BuscarEspecialidadesWidget(),
+            ),
+            FFRoute(
+              name: 'home',
+              path: 'home',
+              builder: (context, params) => HomeWidget(),
             ),
             FFRoute(
               name: 'buscarMedicos',
@@ -446,9 +446,9 @@ class FFRoute {
               : builder(context, ffParams);
           final child = appStateNotifier.loading
               ? Container(
-                  color: FlutterFlowTheme.of(context).gray200,
+                  color: FlutterFlowTheme.of(context).primaryBtnText,
                   child: Image.asset(
-                    'assets/images/paranetry.png',
+                    'assets/images/1024x500.png',
                     fit: BoxFit.contain,
                   ),
                 )

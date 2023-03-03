@@ -79,259 +79,268 @@ class _ListaEstadosWidgetState extends State<ListaEstadosWidget>
         centerTitle: false,
         elevation: 0.0,
       ),
-      body: GestureDetector(
-        onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
-        child: Stack(
-          children: [
-            Column(
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-                  child: LinearPercentIndicator(
-                    percent: 1.0,
-                    width: MediaQuery.of(context).size.width * 1.0,
-                    lineHeight: 12.0,
-                    animation: true,
-                    progressColor: FlutterFlowTheme.of(context).secondaryColor,
-                    backgroundColor: FlutterFlowTheme.of(context).lineColor,
-                    barRadius: Radius.circular(0.0),
-                    padding: EdgeInsets.zero,
+      body: SafeArea(
+        child: GestureDetector(
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+          child: Stack(
+            children: [
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                    child: LinearPercentIndicator(
+                      percent: 1.0,
+                      width: MediaQuery.of(context).size.width * 1.0,
+                      lineHeight: 12.0,
+                      animation: true,
+                      progressColor:
+                          FlutterFlowTheme.of(context).secondaryColor,
+                      backgroundColor: FlutterFlowTheme.of(context).lineColor,
+                      barRadius: Radius.circular(0.0),
+                      padding: EdgeInsets.zero,
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                  child: StreamBuilder<List<EstadosRecord>>(
-                    stream: queryEstadosRecord(),
-                    builder: (context, snapshot) {
-                      // Customize what your widget looks like when it's loading.
-                      if (!snapshot.hasData) {
-                        return Center(
-                          child: SizedBox(
-                            width: 50.0,
-                            height: 50.0,
-                            child: CircularProgressIndicator(
-                              color: FlutterFlowTheme.of(context).primaryColor,
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                    child: StreamBuilder<List<EstadosRecord>>(
+                      stream: queryEstadosRecord(),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 50.0,
+                              height: 50.0,
+                              child: CircularProgressIndicator(
+                                color:
+                                    FlutterFlowTheme.of(context).primaryColor,
+                              ),
                             ),
-                          ),
-                        );
-                      }
-                      List<EstadosRecord> listViewEstadosRecordList =
-                          snapshot.data!;
-                      return ListView.builder(
-                        padding: EdgeInsets.zero,
-                        shrinkWrap: true,
-                        scrollDirection: Axis.vertical,
-                        itemCount: listViewEstadosRecordList.length,
-                        itemBuilder: (context, listViewIndex) {
-                          final listViewEstadosRecord =
-                              listViewEstadosRecordList[listViewIndex];
-                          return Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 10.0),
-                            child: InkWell(
-                              onTap: () async {
-                                context.pushNamed(
-                                  'listaCiudades',
-                                  queryParams: {
-                                    'estado': serializeParam(
-                                      listViewEstadosRecord.reference,
-                                      ParamType.DocumentReference,
-                                    ),
-                                    'editandoPerfil': serializeParam(
-                                      widget.editandoPerfil,
-                                      ParamType.bool,
-                                    ),
-                                  }.withoutNulls,
-                                );
-                              },
-                              child: Container(
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      blurRadius: 0.0,
-                                      color: Color(0xFFE0E3E7),
-                                      offset: Offset(0.0, 1.0),
-                                    )
-                                  ],
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      8.0, 8.0, 8.0, 8.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Icon(
-                                        Icons.terrain_outlined,
-                                        color: Colors.black,
-                                        size: 40.0,
+                          );
+                        }
+                        List<EstadosRecord> listViewEstadosRecordList =
+                            snapshot.data!;
+                        return ListView.builder(
+                          padding: EdgeInsets.zero,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                          itemCount: listViewEstadosRecordList.length,
+                          itemBuilder: (context, listViewIndex) {
+                            final listViewEstadosRecord =
+                                listViewEstadosRecordList[listViewIndex];
+                            return Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 10.0, 0.0, 10.0),
+                              child: InkWell(
+                                onTap: () async {
+                                  context.pushNamed(
+                                    'listaCiudades',
+                                    queryParams: {
+                                      'estado': serializeParam(
+                                        listViewEstadosRecord.reference,
+                                        ParamType.DocumentReference,
                                       ),
-                                      Expanded(
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  10.0, 0.0, 0.0, 0.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                listViewEstadosRecord.estado!,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .subtitle1
-                                                        .override(
-                                                          fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF101213),
-                                                          fontSize: 18.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                              ),
-                                              FutureBuilder<int>(
-                                                future:
-                                                    queryCiudadesRecordCount(
-                                                  parent: listViewEstadosRecord
-                                                      .reference,
-                                                ),
-                                                builder: (context, snapshot) {
-                                                  // Customize what your widget looks like when it's loading.
-                                                  if (!snapshot.hasData) {
-                                                    return Center(
-                                                      child: SizedBox(
-                                                        width: 50.0,
-                                                        height: 50.0,
-                                                        child:
-                                                            CircularProgressIndicator(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryColor,
-                                                        ),
+                                      'editandoPerfil': serializeParam(
+                                        widget.editandoPerfil,
+                                        ParamType.bool,
+                                      ),
+                                    }.withoutNulls,
+                                  );
+                                },
+                                child: Container(
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 0.0,
+                                        color: Color(0xFFE0E3E7),
+                                        offset: Offset(0.0, 1.0),
+                                      )
+                                    ],
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        8.0, 8.0, 8.0, 8.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.terrain_outlined,
+                                          color: Colors.black,
+                                          size: 40.0,
+                                        ),
+                                        Expanded(
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    10.0, 0.0, 0.0, 0.0),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  listViewEstadosRecord.estado!,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .subtitle1
+                                                      .override(
+                                                        fontFamily: 'Outfit',
+                                                        color:
+                                                            Color(0xFF101213),
+                                                        fontSize: 18.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
                                                       ),
-                                                    );
-                                                  }
-                                                  int richTextCount =
-                                                      snapshot.data!;
-                                                  return RichText(
-                                                    text: TextSpan(
-                                                      children: [
-                                                        TextSpan(
-                                                          text: 'Ciudades:  ',
-                                                          style: TextStyle(),
-                                                        ),
-                                                        TextSpan(
-                                                          text: richTextCount
-                                                              .toString(),
-                                                          style: TextStyle(
+                                                ),
+                                                FutureBuilder<int>(
+                                                  future:
+                                                      queryCiudadesRecordCount(
+                                                    parent:
+                                                        listViewEstadosRecord
+                                                            .reference,
+                                                  ),
+                                                  builder: (context, snapshot) {
+                                                    // Customize what your widget looks like when it's loading.
+                                                    if (!snapshot.hasData) {
+                                                      return Center(
+                                                        child: SizedBox(
+                                                          width: 50.0,
+                                                          height: 50.0,
+                                                          child:
+                                                              CircularProgressIndicator(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primaryColor,
                                                           ),
-                                                        )
-                                                      ],
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyText1,
-                                                    ),
-                                                  );
-                                                },
-                                              ),
-                                            ],
+                                                        ),
+                                                      );
+                                                    }
+                                                    int richTextCount =
+                                                        snapshot.data!;
+                                                    return RichText(
+                                                      text: TextSpan(
+                                                        children: [
+                                                          TextSpan(
+                                                            text: 'Ciudades:  ',
+                                                            style: TextStyle(),
+                                                          ),
+                                                          TextSpan(
+                                                            text: richTextCount
+                                                                .toString(),
+                                                            style: TextStyle(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryColor,
+                                                            ),
+                                                          )
+                                                        ],
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyText1,
+                                                      ),
+                                                    );
+                                                  },
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      Card(
-                                        clipBehavior:
-                                            Clip.antiAliasWithSaveLayer,
-                                        color: Color(0xFFF1F4F8),
-                                        elevation: 1.0,
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(40.0),
-                                        ),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  4.0, 4.0, 4.0, 4.0),
-                                          child: Icon(
-                                            Icons.keyboard_arrow_right_rounded,
-                                            color: Color(0xFF57636C),
-                                            size: 24.0,
+                                        Card(
+                                          clipBehavior:
+                                              Clip.antiAliasWithSaveLayer,
+                                          color: Color(0xFFF1F4F8),
+                                          elevation: 1.0,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    4.0, 4.0, 4.0, 4.0),
+                                            child: Icon(
+                                              Icons
+                                                  .keyboard_arrow_right_rounded,
+                                              color: Color(0xFF57636C),
+                                              size: 24.0,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          );
-                        },
-                      );
-                    },
-                  ),
-                ),
-              ],
-            ),
-            Align(
-              alignment: AlignmentDirectional(0.0, 1.0),
-              child: Container(
-                width: double.infinity,
-                height: 140.0,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Color(0x001D2429),
-                      FlutterFlowTheme.of(context).secondaryBackground
-                    ],
-                    stops: [0.0, 1.0],
-                    begin: AlignmentDirectional(0.0, -1.0),
-                    end: AlignmentDirectional(0, 1.0),
-                  ),
-                ),
-                alignment: AlignmentDirectional(0.0, 0.0),
-                child: FFButtonWidget(
-                  onPressed: () async {
-                    await showModalBottomSheet(
-                      isScrollControlled: true,
-                      backgroundColor: Colors.transparent,
-                      enableDrag: false,
-                      context: context,
-                      builder: (context) {
-                        return Padding(
-                          padding: MediaQuery.of(context).viewInsets,
-                          child: SoporteEstadoWidget(),
+                            );
+                          },
                         );
                       },
-                    ).then((value) => setState(() {}));
-                  },
-                  text: '¿Tu Estado no está en la lista?',
-                  options: FFButtonOptions(
-                    height: 50.0,
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primaryColor,
-                    textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                          fontFamily: 'DM Sans',
-                          color: Colors.white,
-                        ),
-                    borderSide: BorderSide(
-                      color: Colors.transparent,
-                      width: 1.0,
                     ),
-                    borderRadius: BorderRadius.circular(50.0),
+                  ),
+                ],
+              ),
+              Align(
+                alignment: AlignmentDirectional(0.0, 1.0),
+                child: Container(
+                  width: double.infinity,
+                  height: 140.0,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Color(0x001D2429),
+                        FlutterFlowTheme.of(context).secondaryBackground
+                      ],
+                      stops: [0.0, 1.0],
+                      begin: AlignmentDirectional(0.0, -1.0),
+                      end: AlignmentDirectional(0, 1.0),
+                    ),
+                  ),
+                  alignment: AlignmentDirectional(0.0, 0.0),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      await showModalBottomSheet(
+                        isScrollControlled: true,
+                        backgroundColor: Colors.transparent,
+                        enableDrag: false,
+                        context: context,
+                        builder: (context) {
+                          return Padding(
+                            padding: MediaQuery.of(context).viewInsets,
+                            child: SoporteEstadoWidget(),
+                          );
+                        },
+                      ).then((value) => setState(() {}));
+                    },
+                    text: '¿Tu Estado no está en la lista?',
+                    options: FFButtonOptions(
+                      height: 50.0,
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      iconPadding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: FlutterFlowTheme.of(context).primaryColor,
+                      textStyle:
+                          FlutterFlowTheme.of(context).subtitle2.override(
+                                fontFamily: 'DM Sans',
+                                color: Colors.white,
+                              ),
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                        width: 1.0,
+                      ),
+                      borderRadius: BorderRadius.circular(50.0),
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

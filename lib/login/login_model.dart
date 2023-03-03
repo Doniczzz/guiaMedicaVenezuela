@@ -1,6 +1,5 @@
 import '/auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/mindscode_widget.dart';
 import '/components/recuperar_contrasena_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -35,15 +34,12 @@ class LoginModel extends FlutterFlowModel {
   TextEditingController? passwordCreateController;
   late bool passwordCreateVisibility;
   String? Function(BuildContext, String?)? passwordCreateControllerValidator;
-  // Model for mindscode component.
-  late MindscodeModel mindscodeModel;
 
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {
     passwordVisibility = false;
     passwordCreateVisibility = false;
-    mindscodeModel = createModel(context, () => MindscodeModel());
   }
 
   void dispose() {
@@ -52,7 +48,6 @@ class LoginModel extends FlutterFlowModel {
     displayNameController?.dispose();
     emailAddressCreateController?.dispose();
     passwordCreateController?.dispose();
-    mindscodeModel.dispose();
   }
 
   /// Additional helper methods are added here.

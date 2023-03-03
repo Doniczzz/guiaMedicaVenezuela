@@ -202,9 +202,8 @@ class _EntryWidgetState extends State<EntryWidget>
                                   FontAwesomeIcons.mapMarkerAlt,
                                 ),
                                 options: FFButtonOptions(
-                                  height: 40.0,
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
+                                      20.0, 20.0, 20.0, 20.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context)
@@ -241,16 +240,21 @@ class _EntryWidgetState extends State<EntryWidget>
                 Expanded(
                   child: Stack(
                     children: [
-                      Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
-                        child: Lottie.asset(
-                          'assets/lottie_animations/backgrtound.json',
-                          width: 350.0,
-                          height: 350.0,
-                          fit: BoxFit.none,
-                          animate: true,
-                        ).animateOnPageLoad(animationsMap[
-                            'lottieAnimationOnPageLoadAnimation']!),
+                      Container(
+                        width: double.infinity,
+                        height: 288.3,
+                        decoration: BoxDecoration(),
+                        child: Align(
+                          alignment: AlignmentDirectional(0.0, 0.0),
+                          child: Lottie.asset(
+                            'assets/lottie_animations/backgrtound.json',
+                            width: 350.0,
+                            height: 350.0,
+                            fit: BoxFit.contain,
+                            animate: true,
+                          ).animateOnPageLoad(animationsMap[
+                              'lottieAnimationOnPageLoadAnimation']!),
+                        ),
                       ),
                       Align(
                         alignment: AlignmentDirectional(0.0, 0.0),
@@ -283,8 +287,8 @@ class _EntryWidgetState extends State<EntryWidget>
                       borderRadius: BorderRadius.circular(40.0),
                     ),
                     child: Container(
-                      width: 280.5,
-                      height: 70.2,
+                      width: 210.2,
+                      height: 46.3,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).fondoMenu,
                         borderRadius: BorderRadius.circular(40.0),
