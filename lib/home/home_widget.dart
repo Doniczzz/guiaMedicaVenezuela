@@ -306,7 +306,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                 currentUserPhoto == ''))
                           AuthUserStreamWidget(
                             builder: (context) => Text(
-                              'Te faltan datos en tu cuenta.',
+                              'Te falta especificar tu número.',
                               style: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
@@ -604,6 +604,82 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       ),
                                     ),
                                   ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 18.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: double.infinity,
+                                      height: 50.0,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFF375D77),
+                                        borderRadius:
+                                            BorderRadius.circular(18.0),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 8.0, 8.0, 8.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Expanded(
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        18.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  'Whatsapp',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .title3
+                                                      .override(
+                                                        fontFamily: 'Lexend',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        fontSize: 20.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                            Switch(
+                                              value: _model.switchValue ??=
+                                                  columnMedicosRecord!
+                                                      .mostrarWhatsapp!,
+                                              onChanged: (newValue) async {
+                                                setState(() => _model
+                                                    .switchValue = newValue!);
+                                                if (newValue!) {
+                                                  final medicosUpdateData =
+                                                      createMedicosRecordData(
+                                                    mostrarWhatsapp: true,
+                                                  );
+                                                  await columnMedicosRecord!
+                                                      .reference
+                                                      .update(
+                                                          medicosUpdateData);
+                                                } else {
+                                                  final medicosUpdateData =
+                                                      createMedicosRecordData(
+                                                    mostrarWhatsapp: false,
+                                                  );
+                                                  await columnMedicosRecord!
+                                                      .reference
+                                                      .update(
+                                                          medicosUpdateData);
+                                                }
+                                              },
+                                              activeColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiaryColor,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                                 ],
                               );
                             },
@@ -733,7 +809,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
-                                                          fontSize: 20.0,
+                                                          fontSize: 17.0,
                                                         ),
                                                   ),
                                                 ),
@@ -1184,7 +1260,6 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                               containerPublicidadesRecordList =
                                               snapshot.data!;
                                           return Container(
-                                            width: 100.0,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -1197,10 +1272,10 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                       0,
                                               child: Container(
                                                 width: double.infinity,
-                                                height: 250.0,
+                                                height: 200.0,
                                                 child: custom_widgets.Test(
                                                   width: double.infinity,
-                                                  height: 250.0,
+                                                  height: 200.0,
                                                   imgLista: functions
                                                       .listaImagenes(
                                                           containerPublicidadesRecordList
@@ -1888,6 +1963,14 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                       ),
                     ),
                   ),
+                Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  child: custom_widgets.Upgrader(
+                    width: double.infinity,
+                    height: double.infinity,
+                  ),
+                ),
               ],
             ),
           ),

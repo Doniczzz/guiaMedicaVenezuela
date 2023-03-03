@@ -83,75 +83,107 @@ class _MiCuentaWidgetState extends State<MiCuentaWidget>
             mainAxisSize: MainAxisSize.max,
             children: [
               AuthUserStreamWidget(
-                builder: (context) => InkWell(
-                  onTap: () async {
-                    final selectedMedia =
-                        await selectMediaWithSourceBottomSheet(
-                      context: context,
-                      allowPhoto: true,
-                    );
-                    if (selectedMedia != null &&
-                        selectedMedia.every((m) =>
-                            validateFileFormat(m.storagePath, context))) {
-                      setState(() => _model.isMediaUploading = true);
-                      var selectedUploadedFiles = <FFUploadedFile>[];
-                      var downloadUrls = <String>[];
-                      try {
-                        selectedUploadedFiles = selectedMedia
-                            .map((m) => FFUploadedFile(
-                                  name: m.storagePath.split('/').last,
-                                  bytes: m.bytes,
-                                  height: m.dimensions?.height,
-                                  width: m.dimensions?.width,
-                                ))
-                            .toList();
-
-                        downloadUrls = (await Future.wait(
-                          selectedMedia.map(
-                            (m) async =>
-                                await uploadData(m.storagePath, m.bytes),
-                          ),
-                        ))
-                            .where((u) => u != null)
-                            .map((u) => u!)
-                            .toList();
-                      } finally {
-                        _model.isMediaUploading = false;
-                      }
-                      if (selectedUploadedFiles.length ==
-                              selectedMedia.length &&
-                          downloadUrls.length == selectedMedia.length) {
-                        setState(() {
-                          _model.uploadedLocalFile =
-                              selectedUploadedFiles.first;
-                          _model.uploadedFileUrl = downloadUrls.first;
-                        });
-                      } else {
-                        setState(() {});
-                        return;
-                      }
-                    }
-
-                    final usersUpdateData = createUsersRecordData(
-                      photoUrl: _model.uploadedFileUrl,
-                    );
-                    await currentUserReference!.update(usersUpdateData);
-                  },
-                  child: Container(
-                    width: 120.0,
-                    height: 120.0,
-                    clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                    ),
-                    child: Image.network(
-                      valueOrDefault<String>(
-                        currentUserPhoto,
-                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/guia-medica-venezuela-mnxqj1/assets/xij2t4ymf6c9/isotipo2.png',
-                      ),
-                      fit: BoxFit.contain,
-                    ),
+                builder: (context) => StreamBuilder<List<MedicosRecord>>(
+                  stream: queryMedicosRecord(
+                    parent: currentUserReference,
+                    singleRecord: true,
                   ),
+                  builder: (context, snapshot) {
+                    // Customize what your widget looks like when it's loading.
+                    if (!snapshot.hasData) {
+                      return Center(
+                        child: SizedBox(
+                          width: 50.0,
+                          height: 50.0,
+                          child: CircularProgressIndicator(
+                            color: FlutterFlowTheme.of(context).primaryColor,
+                          ),
+                        ),
+                      );
+                    }
+                    List<MedicosRecord> circleImageMedicosRecordList =
+                        snapshot.data!;
+                    final circleImageMedicosRecord =
+                        circleImageMedicosRecordList.isNotEmpty
+                            ? circleImageMedicosRecordList.first
+                            : null;
+                    return InkWell(
+                      onTap: () async {
+                        final selectedMedia =
+                            await selectMediaWithSourceBottomSheet(
+                          context: context,
+                          allowPhoto: true,
+                        );
+                        if (selectedMedia != null &&
+                            selectedMedia.every((m) =>
+                                validateFileFormat(m.storagePath, context))) {
+                          setState(() => _model.isMediaUploading = true);
+                          var selectedUploadedFiles = <FFUploadedFile>[];
+                          var downloadUrls = <String>[];
+                          try {
+                            selectedUploadedFiles = selectedMedia
+                                .map((m) => FFUploadedFile(
+                                      name: m.storagePath.split('/').last,
+                                      bytes: m.bytes,
+                                      height: m.dimensions?.height,
+                                      width: m.dimensions?.width,
+                                    ))
+                                .toList();
+
+                            downloadUrls = (await Future.wait(
+                              selectedMedia.map(
+                                (m) async =>
+                                    await uploadData(m.storagePath, m.bytes),
+                              ),
+                            ))
+                                .where((u) => u != null)
+                                .map((u) => u!)
+                                .toList();
+                          } finally {
+                            _model.isMediaUploading = false;
+                          }
+                          if (selectedUploadedFiles.length ==
+                                  selectedMedia.length &&
+                              downloadUrls.length == selectedMedia.length) {
+                            setState(() {
+                              _model.uploadedLocalFile =
+                                  selectedUploadedFiles.first;
+                              _model.uploadedFileUrl = downloadUrls.first;
+                            });
+                          } else {
+                            setState(() {});
+                            return;
+                          }
+                        }
+
+                        final usersUpdateData = createUsersRecordData(
+                          photoUrl: _model.uploadedFileUrl,
+                        );
+                        await currentUserReference!.update(usersUpdateData);
+
+                        final medicosUpdateData = createMedicosRecordData(
+                          foto: _model.uploadedFileUrl,
+                        );
+                        await circleImageMedicosRecord!.reference
+                            .update(medicosUpdateData);
+                      },
+                      child: Container(
+                        width: 120.0,
+                        height: 120.0,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
+                        child: Image.network(
+                          valueOrDefault<String>(
+                            currentUserPhoto,
+                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/guia-medica-venezuela-mnxqj1/assets/xij2t4ymf6c9/isotipo2.png',
+                          ),
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    );
+                  },
                 ),
               ),
               Padding(

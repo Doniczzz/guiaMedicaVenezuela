@@ -229,14 +229,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'miCuenta',
-              path: 'miCuenta',
-              builder: (context, params) => MiCuentaWidget(),
-            ),
-            FFRoute(
               name: 'notificaciones',
               path: 'notificaciones',
               builder: (context, params) => NotificacionesWidget(),
+            ),
+            FFRoute(
+              name: 'miCuenta',
+              path: 'miCuenta',
+              builder: (context, params) => MiCuentaWidget(),
             ),
             FFRoute(
               name: 'seleccionarEspecialidad',
@@ -446,9 +446,9 @@ class FFRoute {
               : builder(context, ffParams);
           final child = appStateNotifier.loading
               ? Container(
-                  color: FlutterFlowTheme.of(context).primaryBtnText,
+                  color: Colors.transparent,
                   child: Image.asset(
-                    'assets/images/1024x500.png',
+                    'assets/images/splash.png',
                     fit: BoxFit.contain,
                   ),
                 )

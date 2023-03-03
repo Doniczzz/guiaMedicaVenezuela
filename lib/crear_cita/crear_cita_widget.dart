@@ -1374,7 +1374,10 @@ class _CrearCitaWidgetState extends State<CrearCitaWidget>
                                                               ),
                                                       minLines: 1,
                                                       keyboardType:
-                                                          TextInputType.number,
+                                                          const TextInputType
+                                                                  .numberWithOptions(
+                                                              signed: true,
+                                                              decimal: true),
                                                       validator: _model
                                                           .precioPacienteUsControllerValidator
                                                           .asValidator(context),
