@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/components/shimmer_v_widget.dart';
 import '/components/soporte_estado_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -9,6 +10,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
@@ -113,14 +115,7 @@ class _EstadosWidgetState extends State<EstadosWidget>
                         // Customize what your widget looks like when it's loading.
                         if (!snapshot.hasData) {
                           return Center(
-                            child: SizedBox(
-                              width: 50.0,
-                              height: 50.0,
-                              child: CircularProgressIndicator(
-                                color:
-                                    FlutterFlowTheme.of(context).primaryColor,
-                              ),
-                            ),
+                            child: ShimmerVWidget(),
                           );
                         }
                         List<EstadosRecord> listViewEstadosRecordList =
@@ -210,10 +205,11 @@ class _EstadosWidgetState extends State<EstadosWidget>
                                                           width: 50.0,
                                                           height: 50.0,
                                                           child:
-                                                              CircularProgressIndicator(
+                                                              SpinKitFoldingCube(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
-                                                                .primaryColor,
+                                                                .secondaryColor,
+                                                            size: 50.0,
                                                           ),
                                                         ),
                                                       );

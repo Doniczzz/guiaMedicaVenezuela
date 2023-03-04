@@ -5,6 +5,7 @@ import 'serialization_util.dart';
 import '../backend.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
 import '../../flutter_flow/flutter_flow_util.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
@@ -78,7 +79,7 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
   @override
   Widget build(BuildContext context) => _loading
       ? Container(
-          color: Colors.transparent,
+          color: FlutterFlowTheme.of(context).primaryBtnText,
           child: Image.asset(
             'assets/images/splash.png',
             fit: BoxFit.contain,
@@ -120,15 +121,15 @@ final parametersBuilderMap =
           'editandoPerfil': getParameter<bool>(data, 'editandoPerfil'),
         },
       ),
+  'citasCreadas': (data) async => ParameterData(
+        allParams: {
+          'medico': getParameter<DocumentReference>(data, 'medico'),
+        },
+      ),
   'listaCiudades': (data) async => ParameterData(
         allParams: {
           'estado': getParameter<DocumentReference>(data, 'estado'),
           'editandoPerfil': getParameter<bool>(data, 'editandoPerfil'),
-        },
-      ),
-  'citasCreadas': (data) async => ParameterData(
-        allParams: {
-          'medico': getParameter<DocumentReference>(data, 'medico'),
         },
       ),
   'crearCita': (data) async => ParameterData(

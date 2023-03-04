@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import '../flutter_flow_theme.dart';
@@ -105,6 +106,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
+              name: 'citasCreadas',
+              path: 'citasCreadas',
+              builder: (context, params) => CitasCreadasWidget(
+                medico: params.getParam('medico', ParamType.DocumentReference,
+                    false, ['users', 'medicos']),
+              ),
+            ),
+            FFRoute(
               name: 'listaCiudades',
               path: 'listaCiudades',
               builder: (context, params) => ListaCiudadesWidget(
@@ -112,14 +121,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     'estado', ParamType.DocumentReference, false, ['estados']),
                 editandoPerfil:
                     params.getParam('editandoPerfil', ParamType.bool),
-              ),
-            ),
-            FFRoute(
-              name: 'citasCreadas',
-              path: 'citasCreadas',
-              builder: (context, params) => CitasCreadasWidget(
-                medico: params.getParam('medico', ParamType.DocumentReference,
-                    false, ['users', 'medicos']),
               ),
             ),
             FFRoute(
@@ -446,7 +447,7 @@ class FFRoute {
               : builder(context, ffParams);
           final child = appStateNotifier.loading
               ? Container(
-                  color: Colors.transparent,
+                  color: FlutterFlowTheme.of(context).primaryBtnText,
                   child: Image.asset(
                     'assets/images/splash.png',
                     fit: BoxFit.contain,

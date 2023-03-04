@@ -7,6 +7,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'buscar_paciente_model.dart';
@@ -127,8 +128,9 @@ class _BuscarPacienteWidgetState extends State<BuscarPacienteWidget>
                       child: SizedBox(
                         width: 50.0,
                         height: 50.0,
-                        child: CircularProgressIndicator(
-                          color: FlutterFlowTheme.of(context).primaryColor,
+                        child: SpinKitFoldingCube(
+                          color: FlutterFlowTheme.of(context).secondaryColor,
+                          size: 50.0,
                         ),
                       ),
                     );

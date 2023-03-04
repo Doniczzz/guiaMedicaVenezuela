@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
@@ -183,7 +184,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                 tag: 'loginLogo',
                                                 transitionOnUserGestures: true,
                                                 child: Image.asset(
-                                                  'assets/images/paranetry.png',
+                                                  'assets/images/entry.png',
                                                   width: 160.0,
                                                   height: 160.0,
                                                   fit: BoxFit.contain,

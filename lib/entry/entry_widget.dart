@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -259,7 +260,7 @@ class _EntryWidgetState extends State<EntryWidget>
                       Align(
                         alignment: AlignmentDirectional(0.0, 0.0),
                         child: Image.asset(
-                          'assets/images/paranetry.png',
+                          'assets/images/entry.png',
                           width: 300.0,
                           fit: BoxFit.contain,
                         ).animateOnPageLoad(

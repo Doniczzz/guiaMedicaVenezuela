@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'soporte_estado_model.dart';
@@ -61,8 +62,9 @@ class _SoporteEstadoWidgetState extends State<SoporteEstadoWidget> {
               child: SizedBox(
                 width: 50.0,
                 height: 50.0,
-                child: CircularProgressIndicator(
-                  color: FlutterFlowTheme.of(context).primaryColor,
+                child: SpinKitFoldingCube(
+                  color: FlutterFlowTheme.of(context).secondaryColor,
+                  size: 50.0,
                 ),
               ),
             );

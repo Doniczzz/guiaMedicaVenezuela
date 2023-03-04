@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -123,8 +124,9 @@ class _MedicoWidgetState extends State<MedicoWidget>
             child: SizedBox(
               width: 50.0,
               height: 50.0,
-              child: CircularProgressIndicator(
-                color: FlutterFlowTheme.of(context).primaryColor,
+              child: SpinKitFoldingCube(
+                color: FlutterFlowTheme.of(context).secondaryColor,
+                size: 50.0,
               ),
             ),
           );
@@ -179,9 +181,10 @@ class _MedicoWidgetState extends State<MedicoWidget>
                                       child: SizedBox(
                                         width: 50.0,
                                         height: 50.0,
-                                        child: CircularProgressIndicator(
+                                        child: SpinKitFoldingCube(
                                           color: FlutterFlowTheme.of(context)
-                                              .primaryColor,
+                                              .secondaryColor,
+                                          size: 50.0,
                                         ),
                                       ),
                                     );
@@ -190,7 +193,7 @@ class _MedicoWidgetState extends State<MedicoWidget>
                                   return Image.network(
                                     valueOrDefault<String>(
                                       medicoMedicosRecord.foto,
-                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/guia-medica-venezuela-mnxqj1/assets/xij2t4ymf6c9/isotipo2.png',
+                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/guia-medica-venezuela-mnxqj1/assets/6ktpgk4rkwis/perfil.png',
                                     ),
                                     fit: BoxFit.contain,
                                   );
@@ -408,9 +411,10 @@ class _MedicoWidgetState extends State<MedicoWidget>
                                   child: SizedBox(
                                     width: 50.0,
                                     height: 50.0,
-                                    child: CircularProgressIndicator(
+                                    child: SpinKitFoldingCube(
                                       color: FlutterFlowTheme.of(context)
-                                          .primaryColor,
+                                          .secondaryColor,
+                                      size: 50.0,
                                     ),
                                   ),
                                 );
@@ -784,9 +788,10 @@ class _MedicoWidgetState extends State<MedicoWidget>
                                         child: SizedBox(
                                           width: 50.0,
                                           height: 50.0,
-                                          child: CircularProgressIndicator(
+                                          child: SpinKitFoldingCube(
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryColor,
+                                                .secondaryColor,
+                                            size: 50.0,
                                           ),
                                         ),
                                       );

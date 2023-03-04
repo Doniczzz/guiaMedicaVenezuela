@@ -13,6 +13,7 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -33,6 +34,9 @@ class CrearMedicoModel extends FlutterFlowModel {
   // State field(s) for nombre widget.
   TextEditingController? nombreController;
   String? Function(BuildContext, String?)? nombreControllerValidator;
+  // State field(s) for instagram widget.
+  TextEditingController? instagramController;
+  String? Function(BuildContext, String?)? instagramControllerValidator;
   // State field(s) for whats widget.
   TextEditingController? whatsController;
   String? Function(BuildContext, String?)? whatsControllerValidator;
@@ -52,6 +56,7 @@ class CrearMedicoModel extends FlutterFlowModel {
 
   void dispose() {
     nombreController?.dispose();
+    instagramController?.dispose();
     whatsController?.dispose();
     calleController?.dispose();
     alturaController?.dispose();

@@ -20,6 +20,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -224,8 +225,9 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                         child: SizedBox(
                           width: 50.0,
                           height: 50.0,
-                          child: CircularProgressIndicator(
-                            color: FlutterFlowTheme.of(context).primaryColor,
+                          child: SpinKitFoldingCube(
+                            color: FlutterFlowTheme.of(context).secondaryColor,
+                            size: 50.0,
                           ),
                         ),
                       );
@@ -245,9 +247,10 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                               child: SizedBox(
                                 width: 50.0,
                                 height: 50.0,
-                                child: CircularProgressIndicator(
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryColor,
+                                child: SpinKitFoldingCube(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryColor,
+                                  size: 50.0,
                                 ),
                               ),
                             );
@@ -1266,10 +1269,11 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                             width: 50.0,
                                                             height: 50.0,
                                                             child:
-                                                                CircularProgressIndicator(
+                                                                SpinKitFoldingCube(
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .primaryColor,
+                                                                  .secondaryColor,
+                                                              size: 50.0,
                                                             ),
                                                           ),
                                                         );
@@ -1396,9 +1400,11 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                         height:
                                                                             50.0,
                                                                         child:
-                                                                            CircularProgressIndicator(
+                                                                            SpinKitFoldingCube(
                                                                           color:
-                                                                              FlutterFlowTheme.of(context).primaryColor,
+                                                                              FlutterFlowTheme.of(context).secondaryColor,
+                                                                          size:
+                                                                              50.0,
                                                                         ),
                                                                       ),
                                                                     );
@@ -1763,10 +1769,11 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                             width: 50.0,
                                                             height: 50.0,
                                                             child:
-                                                                CircularProgressIndicator(
+                                                                SpinKitFoldingCube(
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .primaryColor,
+                                                                  .secondaryColor,
+                                                              size: 50.0,
                                                             ),
                                                           ),
                                                         );
@@ -2123,10 +2130,11 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                 width: 50.0,
                                                                 height: 50.0,
                                                                 child:
-                                                                    CircularProgressIndicator(
+                                                                    SpinKitFoldingCube(
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .primaryColor,
+                                                                      .secondaryColor,
+                                                                  size: 50.0,
                                                                 ),
                                                               ),
                                                             );

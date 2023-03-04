@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'mis_citas_comp_model.dart';
@@ -57,8 +58,9 @@ class _MisCitasCompWidgetState extends State<MisCitasCompWidget> {
             child: SizedBox(
               width: 50.0,
               height: 50.0,
-              child: CircularProgressIndicator(
-                color: FlutterFlowTheme.of(context).primaryColor,
+              child: SpinKitFoldingCube(
+                color: FlutterFlowTheme.of(context).secondaryColor,
+                size: 50.0,
               ),
             ),
           );
@@ -82,8 +84,9 @@ class _MisCitasCompWidgetState extends State<MisCitasCompWidget> {
                   child: SizedBox(
                     width: 50.0,
                     height: 50.0,
-                    child: CircularProgressIndicator(
-                      color: FlutterFlowTheme.of(context).primaryColor,
+                    child: SpinKitFoldingCube(
+                      color: FlutterFlowTheme.of(context).secondaryColor,
+                      size: 50.0,
                     ),
                   ),
                 );
@@ -105,9 +108,10 @@ class _MisCitasCompWidgetState extends State<MisCitasCompWidget> {
                             child: SizedBox(
                               width: 50.0,
                               height: 50.0,
-                              child: CircularProgressIndicator(
+                              child: SpinKitFoldingCube(
                                 color:
-                                    FlutterFlowTheme.of(context).primaryColor,
+                                    FlutterFlowTheme.of(context).secondaryColor,
+                                size: 50.0,
                               ),
                             ),
                           );
@@ -126,7 +130,7 @@ class _MisCitasCompWidgetState extends State<MisCitasCompWidget> {
                               child: Image.network(
                                 valueOrDefault<String>(
                                   rowUsersRecord.photoUrl,
-                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/guia-medica-venezuela-mnxqj1/assets/xij2t4ymf6c9/isotipo2.png',
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/guia-medica-venezuela-mnxqj1/assets/6ktpgk4rkwis/perfil.png',
                                 ),
                                 fit: BoxFit.contain,
                               ),

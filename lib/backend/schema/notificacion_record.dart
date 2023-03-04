@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:from_css_color/from_css_color.dart';
+
 import 'index.dart';
 import 'serializers.dart';
 import 'package:built_value/built_value.dart';
@@ -36,6 +38,32 @@ abstract class NotificacionRecord
   static Future<NotificacionRecord> getDocumentOnce(DocumentReference ref) =>
       ref.get().then(
           (s) => serializers.deserializeWith(serializer, serializedData(s))!);
+
+  static NotificacionRecord fromAlgolia(AlgoliaObjectSnapshot snapshot) =>
+      NotificacionRecord(
+        (c) => c
+          ..de = safeGet(() => toRef(snapshot.data['de']))
+          ..para = safeGet(() => toRef(snapshot.data['para']))
+          ..mensaje = snapshot.data['mensaje']
+          ..fecha = safeGet(
+              () => DateTime.fromMillisecondsSinceEpoch(snapshot.data['fecha']))
+          ..ffRef = NotificacionRecord.collection.doc(snapshot.objectID),
+      );
+
+  static Future<List<NotificacionRecord>> search(
+          {String? term,
+          FutureOr<LatLng>? location,
+          int? maxResults,
+          double? searchRadiusMeters}) =>
+      FFAlgoliaManager.instance
+          .algoliaQuery(
+            index: 'notificacion',
+            term: term,
+            maxResults: maxResults,
+            location: location,
+            searchRadiusMeters: searchRadiusMeters,
+          )
+          .then((r) => r.map(fromAlgolia).toList());
 
   NotificacionRecord._();
   factory NotificacionRecord(

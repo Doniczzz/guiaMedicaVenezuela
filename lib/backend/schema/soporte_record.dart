@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:from_css_color/from_css_color.dart';
+
 import 'index.dart';
 import 'serializers.dart';
 import 'package:built_value/built_value.dart';
@@ -31,6 +33,29 @@ abstract class SoporteRecord
   static Future<SoporteRecord> getDocumentOnce(DocumentReference ref) => ref
       .get()
       .then((s) => serializers.deserializeWith(serializer, serializedData(s))!);
+
+  static SoporteRecord fromAlgolia(AlgoliaObjectSnapshot snapshot) =>
+      SoporteRecord(
+        (c) => c
+          ..texto = snapshot.data['texto']
+          ..usuario = safeGet(() => toRef(snapshot.data['usuario']))
+          ..ffRef = SoporteRecord.collection.doc(snapshot.objectID),
+      );
+
+  static Future<List<SoporteRecord>> search(
+          {String? term,
+          FutureOr<LatLng>? location,
+          int? maxResults,
+          double? searchRadiusMeters}) =>
+      FFAlgoliaManager.instance
+          .algoliaQuery(
+            index: 'soporte',
+            term: term,
+            maxResults: maxResults,
+            location: location,
+            searchRadiusMeters: searchRadiusMeters,
+          )
+          .then((r) => r.map(fromAlgolia).toList());
 
   SoporteRecord._();
   factory SoporteRecord([void Function(SoporteRecordBuilder) updates]) =
