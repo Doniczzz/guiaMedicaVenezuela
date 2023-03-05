@@ -47,6 +47,13 @@ class _$PagosMovilesStructSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.cedula;
+    if (value != null) {
+      result
+        ..add('cedula')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -74,6 +81,10 @@ class _$PagosMovilesStructSerializer
           result.banco = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'cedula':
+          result.cedula = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
         case 'firestoreUtilData':
           result.firestoreUtilData = serializers.deserialize(value,
                   specifiedType: const FullType(FirestoreUtilData))!
@@ -94,6 +105,8 @@ class _$PagosMovilesStruct extends PagosMovilesStruct {
   @override
   final String? banco;
   @override
+  final String? cedula;
+  @override
   final FirestoreUtilData firestoreUtilData;
 
   factory _$PagosMovilesStruct(
@@ -101,7 +114,11 @@ class _$PagosMovilesStruct extends PagosMovilesStruct {
       (new PagosMovilesStructBuilder()..update(updates))._build();
 
   _$PagosMovilesStruct._(
-      {this.nombre, this.telefono, this.banco, required this.firestoreUtilData})
+      {this.nombre,
+      this.telefono,
+      this.banco,
+      this.cedula,
+      required this.firestoreUtilData})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         firestoreUtilData, r'PagosMovilesStruct', 'firestoreUtilData');
@@ -123,13 +140,17 @@ class _$PagosMovilesStruct extends PagosMovilesStruct {
         nombre == other.nombre &&
         telefono == other.telefono &&
         banco == other.banco &&
+        cedula == other.cedula &&
         firestoreUtilData == other.firestoreUtilData;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, nombre.hashCode), telefono.hashCode), banco.hashCode),
+        $jc(
+            $jc($jc($jc(0, nombre.hashCode), telefono.hashCode),
+                banco.hashCode),
+            cedula.hashCode),
         firestoreUtilData.hashCode));
   }
 
@@ -139,6 +160,7 @@ class _$PagosMovilesStruct extends PagosMovilesStruct {
           ..add('nombre', nombre)
           ..add('telefono', telefono)
           ..add('banco', banco)
+          ..add('cedula', cedula)
           ..add('firestoreUtilData', firestoreUtilData))
         .toString();
   }
@@ -160,6 +182,10 @@ class PagosMovilesStructBuilder
   String? get banco => _$this._banco;
   set banco(String? banco) => _$this._banco = banco;
 
+  String? _cedula;
+  String? get cedula => _$this._cedula;
+  set cedula(String? cedula) => _$this._cedula = cedula;
+
   FirestoreUtilData? _firestoreUtilData;
   FirestoreUtilData? get firestoreUtilData => _$this._firestoreUtilData;
   set firestoreUtilData(FirestoreUtilData? firestoreUtilData) =>
@@ -175,6 +201,7 @@ class PagosMovilesStructBuilder
       _nombre = $v.nombre;
       _telefono = $v.telefono;
       _banco = $v.banco;
+      _cedula = $v.cedula;
       _firestoreUtilData = $v.firestoreUtilData;
       _$v = null;
     }
@@ -201,6 +228,7 @@ class PagosMovilesStructBuilder
             nombre: nombre,
             telefono: telefono,
             banco: banco,
+            cedula: cedula,
             firestoreUtilData: BuiltValueNullFieldError.checkNotNull(
                 firestoreUtilData, r'PagosMovilesStruct', 'firestoreUtilData'));
     replace(_$result);

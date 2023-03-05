@@ -629,7 +629,7 @@ class _CitaWidgetState extends State<CitaWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Text(
-                                              'Número en la cola de pacientes',
+                                              'Turno para la cita',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .subtitle1
@@ -695,7 +695,7 @@ class _CitaWidgetState extends State<CitaWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Text(
-                                              'Hora aproximada de llegada',
+                                              'Hora aproximada de la cita',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .subtitle1

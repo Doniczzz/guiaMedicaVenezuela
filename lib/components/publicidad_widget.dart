@@ -79,7 +79,7 @@ class _PublicidadWidgetState extends State<PublicidadWidget> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 0.0),
                   child: InkWell(
                     onTap: () async {
                       Navigator.pop(context);
@@ -104,15 +104,20 @@ class _PublicidadWidgetState extends State<PublicidadWidget> {
                     ),
                   ),
                 ),
-                Container(
-                  width: double.infinity,
-                  height: 442.0,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                  ),
-                  child: Image.network(
-                    columnPublicidadesRecord.img!,
-                    fit: BoxFit.contain,
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
+                  child: Container(
+                    width: 400.0,
+                    height: 200.0,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                    ),
+                    child: Image.network(
+                      columnPublicidadesRecord.img!,
+                      width: 400.0,
+                      height: 200.0,
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
                 Padding(

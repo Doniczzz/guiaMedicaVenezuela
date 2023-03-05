@@ -173,14 +173,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'medico',
-              path: 'medico',
-              builder: (context, params) => MedicoWidget(
-                medico: params.getParam('medico', ParamType.DocumentReference,
-                    false, ['users', 'medicos']),
-              ),
-            ),
-            FFRoute(
               name: 'sucess',
               path: 'sucess',
               builder: (context, params) => SucessWidget(
@@ -190,6 +182,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 medicoNombre: params.getParam('medicoNombre', ParamType.String),
                 nReferencia: params.getParam('nReferencia', ParamType.String),
                 status: params.getParam('status', ParamType.int),
+              ),
+            ),
+            FFRoute(
+              name: 'medico',
+              path: 'medico',
+              builder: (context, params) => MedicoWidget(
+                medico: params.getParam('medico', ParamType.DocumentReference,
+                    false, ['users', 'medicos']),
               ),
             ),
             FFRoute(

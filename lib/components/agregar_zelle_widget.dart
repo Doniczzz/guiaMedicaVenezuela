@@ -39,6 +39,7 @@ class _AgregarZelleWidgetState extends State<AgregarZelleWidget> {
     _model = createModel(context, () => AgregarZelleModel());
 
     _model.emailAddressController ??= TextEditingController();
+    _model.nombreController ??= TextEditingController();
   }
 
   @override
@@ -54,7 +55,7 @@ class _AgregarZelleWidgetState extends State<AgregarZelleWidget> {
 
     return Container(
       width: double.infinity,
-      height: 153.3,
+      height: 227.3,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
         borderRadius: BorderRadius.only(
@@ -138,6 +139,77 @@ class _AgregarZelleWidgetState extends State<AgregarZelleWidget> {
                   _model.emailAddressControllerValidator.asValidator(context),
             ),
             Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+              child: TextFormField(
+                controller: _model.nombreController,
+                onChanged: (_) => EasyDebounce.debounce(
+                  '_model.nombreController',
+                  Duration(milliseconds: 1000),
+                  () => setState(() {}),
+                ),
+                obscureText: false,
+                decoration: InputDecoration(
+                  labelStyle: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Lexend Deca',
+                        color: Color(0xFF57636C),
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.normal,
+                      ),
+                  hintText: 'Nombre del titular',
+                  hintStyle: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Lexend Deca',
+                        color: Color(0xFF57636C),
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.normal,
+                      ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFFDBE2E7),
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(40.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(40.0),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(40.0),
+                  ),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(40.0),
+                  ),
+                  filled: true,
+                  fillColor: Colors.white,
+                  contentPadding:
+                      EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 20.0, 24.0),
+                  prefixIcon: Icon(
+                    Icons.person,
+                  ),
+                ),
+                style: FlutterFlowTheme.of(context).bodyText1.override(
+                      fontFamily: 'Lexend Deca',
+                      color: Color(0xFF1D2429),
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.normal,
+                    ),
+                maxLines: null,
+                validator:
+                    _model.nombreControllerValidator.asValidator(context),
+              ),
+            ),
+            Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
               child: FFButtonWidget(
                 onPressed: /* NOT RECOMMENDED */ _model
@@ -147,7 +219,7 @@ class _AgregarZelleWidgetState extends State<AgregarZelleWidget> {
                     : () async {
                         final medicosUpdateData = createMedicosRecordData(
                           cuentaZelle: createZelleStruct(
-                            nombre: currentUserDisplayName,
+                            nombre: _model.nombreController.text,
                             correo: _model.emailAddressController.text,
                             clearUnsetFields: false,
                           ),

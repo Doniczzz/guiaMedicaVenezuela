@@ -17,6 +17,8 @@ abstract class PagosMovilesStruct
 
   String? get banco;
 
+  String? get cedula;
+
   /// Utility class for Firestore updates
   FirestoreUtilData get firestoreUtilData;
 
@@ -24,6 +26,7 @@ abstract class PagosMovilesStruct
     ..nombre = ''
     ..telefono = ''
     ..banco = ''
+    ..cedula = ''
     ..firestoreUtilData = FirestoreUtilData();
 
   PagosMovilesStruct._();
@@ -36,6 +39,7 @@ PagosMovilesStruct createPagosMovilesStruct({
   String? nombre,
   String? telefono,
   String? banco,
+  String? cedula,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
@@ -46,6 +50,7 @@ PagosMovilesStruct createPagosMovilesStruct({
         ..nombre = nombre
         ..telefono = telefono
         ..banco = banco
+        ..cedula = cedula
         ..firestoreUtilData = FirestoreUtilData(
           clearUnsetFields: clearUnsetFields,
           create: create,

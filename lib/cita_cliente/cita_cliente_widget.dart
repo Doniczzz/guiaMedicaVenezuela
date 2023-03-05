@@ -2259,111 +2259,113 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                     ),
                                                                   ),
                                                                 ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0,
-                                                                            1.0),
-                                                                child: InkWell(
-                                                                  onTap:
-                                                                      () async {
-                                                                    await showModalBottomSheet(
-                                                                      isScrollControlled:
-                                                                          true,
-                                                                      backgroundColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      isDismissible:
-                                                                          false,
-                                                                      enableDrag:
-                                                                          false,
-                                                                      context:
-                                                                          context,
-                                                                      builder:
-                                                                          (context) {
-                                                                        return Padding(
-                                                                          padding:
-                                                                              MediaQuery.of(context).viewInsets,
-                                                                          child:
-                                                                              CuentasBancariasWidget(
-                                                                            medico:
-                                                                                widget.medico,
-                                                                            totalPagar:
-                                                                                valueOrDefault<double>(
-                                                                              pageViewCitasRecord.tipoDeMoneda == 'Bolívares'
-                                                                                  ? pageViewCitasRecord.precio
-                                                                                  : (CambioDolarCall.precio(
-                                                                                        columnCambioDolarResponse.jsonBody,
-                                                                                      ) *
-                                                                                      pageViewCitasRecord.precio!),
-                                                                              0.0,
-                                                                            ),
-                                                                          ),
-                                                                        );
-                                                                      },
-                                                                    ).then((value) =>
-                                                                        setState(
-                                                                            () {}));
-
-                                                                    setState(
-                                                                        () {
-                                                                      _model.tipoTransferencia =
-                                                                          'Transferencia bancaria';
-                                                                    });
-                                                                  },
+                                                              if (containerMedicosRecord
+                                                                      .cuentasBancarias!
+                                                                      .toList()
+                                                                      .length >
+                                                                  0)
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0,
+                                                                          1.0),
                                                                   child:
-                                                                      Material(
-                                                                    color: Colors
-                                                                        .transparent,
-                                                                    elevation:
-                                                                        2.0,
+                                                                      InkWell(
+                                                                    onTap:
+                                                                        () async {
+                                                                      await showModalBottomSheet(
+                                                                        isScrollControlled:
+                                                                            true,
+                                                                        backgroundColor:
+                                                                            Colors.transparent,
+                                                                        isDismissible:
+                                                                            false,
+                                                                        enableDrag:
+                                                                            false,
+                                                                        context:
+                                                                            context,
+                                                                        builder:
+                                                                            (context) {
+                                                                          return Padding(
+                                                                            padding:
+                                                                                MediaQuery.of(context).viewInsets,
+                                                                            child:
+                                                                                CuentasBancariasWidget(
+                                                                              medico: widget.medico,
+                                                                              totalPagar: valueOrDefault<double>(
+                                                                                pageViewCitasRecord.tipoDeMoneda == 'Bolívares'
+                                                                                    ? pageViewCitasRecord.precio
+                                                                                    : (CambioDolarCall.precio(
+                                                                                          columnCambioDolarResponse.jsonBody,
+                                                                                        ) *
+                                                                                        pageViewCitasRecord.precio!),
+                                                                                0.0,
+                                                                              ),
+                                                                            ),
+                                                                          );
+                                                                        },
+                                                                      ).then((value) =>
+                                                                          setState(
+                                                                              () {}));
+
+                                                                      setState(
+                                                                          () {
+                                                                        _model.tipoTransferencia =
+                                                                            'Transferencia bancaria';
+                                                                      });
+                                                                    },
                                                                     child:
-                                                                        Container(
-                                                                      width: double
-                                                                          .infinity,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: Colors
-                                                                            .white,
-                                                                      ),
+                                                                        Material(
+                                                                      color: Colors
+                                                                          .transparent,
+                                                                      elevation:
+                                                                          2.0,
                                                                       child:
-                                                                          Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            16.0,
-                                                                            12.0,
-                                                                            16.0,
-                                                                            16.0),
+                                                                          Container(
+                                                                        width: double
+                                                                            .infinity,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          color:
+                                                                              Colors.white,
+                                                                        ),
                                                                         child:
-                                                                            Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.spaceBetween,
-                                                                          children: [
-                                                                            Text(
-                                                                              'Transferencia Bancaria',
-                                                                              style: FlutterFlowTheme.of(context).subtitle1.override(
-                                                                                    fontFamily: 'Roboto',
-                                                                                    color: Color(0xFF111417),
-                                                                                    fontSize: 18.0,
-                                                                                    fontWeight: FontWeight.w500,
-                                                                                  ),
-                                                                            ),
-                                                                            Icon(
-                                                                              Icons.chevron_right_rounded,
-                                                                              color: Color(0xFF57636C),
-                                                                              size: 24.0,
-                                                                            ),
-                                                                          ],
+                                                                            Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              16.0,
+                                                                              12.0,
+                                                                              16.0,
+                                                                              16.0),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.spaceBetween,
+                                                                            children: [
+                                                                              Text(
+                                                                                'Transferencia Bancaria',
+                                                                                style: FlutterFlowTheme.of(context).subtitle1.override(
+                                                                                      fontFamily: 'Roboto',
+                                                                                      color: Color(0xFF111417),
+                                                                                      fontSize: 18.0,
+                                                                                      fontWeight: FontWeight.w500,
+                                                                                    ),
+                                                                              ),
+                                                                              Icon(
+                                                                                Icons.chevron_right_rounded,
+                                                                                color: Color(0xFF57636C),
+                                                                                size: 24.0,
+                                                                              ),
+                                                                            ],
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     ),
                                                                   ),
                                                                 ),
-                                                              ),
                                                             ],
                                                           );
                                                         },

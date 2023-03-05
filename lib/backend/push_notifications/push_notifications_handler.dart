@@ -156,11 +156,6 @@ final parametersBuilderMap =
               data, 'ciudad', CiudadesRecord.serializer),
         },
       ),
-  'medico': (data) async => ParameterData(
-        allParams: {
-          'medico': getParameter<DocumentReference>(data, 'medico'),
-        },
-      ),
   'sucess': (data) async => ParameterData(
         allParams: {
           'numeroPaciente': getParameter<int>(data, 'numeroPaciente'),
@@ -168,6 +163,11 @@ final parametersBuilderMap =
           'medicoNombre': getParameter<String>(data, 'medicoNombre'),
           'nReferencia': getParameter<String>(data, 'nReferencia'),
           'status': getParameter<int>(data, 'status'),
+        },
+      ),
+  'medico': (data) async => ParameterData(
+        allParams: {
+          'medico': getParameter<DocumentReference>(data, 'medico'),
         },
       ),
   'citaCliente': (data) async => ParameterData(

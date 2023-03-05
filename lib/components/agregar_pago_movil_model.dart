@@ -19,6 +19,9 @@ class AgregarPagoMovilModel extends FlutterFlowModel {
   // State field(s) for telefono widget.
   TextEditingController? telefonoController;
   String? Function(BuildContext, String?)? telefonoControllerValidator;
+  // State field(s) for cedula widget.
+  TextEditingController? cedulaController;
+  String? Function(BuildContext, String?)? cedulaControllerValidator;
 
   /// Initialization and disposal methods.
 
@@ -27,6 +30,7 @@ class AgregarPagoMovilModel extends FlutterFlowModel {
   void dispose() {
     nombreBancoController?.dispose();
     telefonoController?.dispose();
+    cedulaController?.dispose();
   }
 
   /// Additional helper methods are added here.

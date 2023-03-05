@@ -16,6 +16,9 @@ class AgregarZelleModel extends FlutterFlowModel {
   // State field(s) for emailAddress widget.
   TextEditingController? emailAddressController;
   String? Function(BuildContext, String?)? emailAddressControllerValidator;
+  // State field(s) for nombre widget.
+  TextEditingController? nombreController;
+  String? Function(BuildContext, String?)? nombreControllerValidator;
 
   /// Initialization and disposal methods.
 
@@ -23,6 +26,7 @@ class AgregarZelleModel extends FlutterFlowModel {
 
   void dispose() {
     emailAddressController?.dispose();
+    nombreController?.dispose();
   }
 
   /// Additional helper methods are added here.

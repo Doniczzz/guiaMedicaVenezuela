@@ -1132,6 +1132,29 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                         animationsMap[
                                             'containerOnActionTriggerAnimation3']!,
                                       ),
+                                      Container(
+                                        width: 78.0,
+                                        height: 67.4,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        child: Stack(
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 10.0, 10.0, 10.0),
+                                              child: Image.asset(
+                                                'assets/images/perfil.png',
+                                                width: 100.0,
+                                                height: 100.0,
+                                                fit: BoxFit.contain,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
                                       InkWell(
                                         onTap: () async {
                                           context.pushNamed('notificaciones');

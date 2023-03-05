@@ -40,6 +40,7 @@ class _AgregarPagoMovilWidgetState extends State<AgregarPagoMovilWidget> {
 
     _model.nombreBancoController ??= TextEditingController();
     _model.telefonoController ??= TextEditingController();
+    _model.cedulaController ??= TextEditingController();
   }
 
   @override
@@ -55,7 +56,7 @@ class _AgregarPagoMovilWidgetState extends State<AgregarPagoMovilWidget> {
 
     return Container(
       width: double.infinity,
-      height: 227.5,
+      height: 306.1,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
         borderRadius: BorderRadius.only(
@@ -211,6 +212,78 @@ class _AgregarPagoMovilWidgetState extends State<AgregarPagoMovilWidget> {
                   _model.telefonoControllerValidator.asValidator(context),
             ),
             Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+              child: TextFormField(
+                controller: _model.cedulaController,
+                onChanged: (_) => EasyDebounce.debounce(
+                  '_model.cedulaController',
+                  Duration(milliseconds: 1000),
+                  () => setState(() {}),
+                ),
+                obscureText: false,
+                decoration: InputDecoration(
+                  labelStyle: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Lexend Deca',
+                        color: Color(0xFF57636C),
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.normal,
+                      ),
+                  hintText: 'Cédula',
+                  hintStyle: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Lexend Deca',
+                        color: Color(0xFF57636C),
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.normal,
+                      ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFFDBE2E7),
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(40.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(40.0),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(40.0),
+                  ),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(40.0),
+                  ),
+                  filled: true,
+                  fillColor: Colors.white,
+                  contentPadding:
+                      EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 20.0, 24.0),
+                  prefixIcon: Icon(
+                    Icons.assignment_ind,
+                  ),
+                ),
+                style: FlutterFlowTheme.of(context).bodyText1.override(
+                      fontFamily: 'Lexend Deca',
+                      color: Color(0xFF1D2429),
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.normal,
+                    ),
+                maxLines: null,
+                keyboardType: TextInputType.phone,
+                validator:
+                    _model.cedulaControllerValidator.asValidator(context),
+              ),
+            ),
+            Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
               child: FFButtonWidget(
                 onPressed: /* NOT RECOMMENDED */ _model
@@ -225,6 +298,7 @@ class _AgregarPagoMovilWidgetState extends State<AgregarPagoMovilWidget> {
                                 nombre: currentUserDisplayName,
                                 telefono: _model.telefonoController.text,
                                 banco: _model.nombreBancoController.text,
+                                cedula: _model.cedulaController.text,
                                 clearUnsetFields: false,
                               ),
                               true,

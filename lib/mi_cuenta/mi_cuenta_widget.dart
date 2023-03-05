@@ -158,16 +158,13 @@ class _MiCuentaWidgetState extends State<MiCuentaWidget>
                           }
                         }
 
-                        final usersUpdateData = createUsersRecordData(
-                          photoUrl: _model.uploadedFileUrl,
-                        );
-                        await currentUserReference!.update(usersUpdateData);
-
-                        final medicosUpdateData = createMedicosRecordData(
-                          foto: _model.uploadedFileUrl,
-                        );
-                        await circleImageMedicosRecord!.reference
-                            .update(medicosUpdateData);
+                        if (_model.uploadedFileUrl != null &&
+                            _model.uploadedFileUrl != '') {
+                          final usersUpdateData = createUsersRecordData(
+                            photoUrl: _model.uploadedFileUrl,
+                          );
+                          await currentUserReference!.update(usersUpdateData);
+                        }
                       },
                       child: Container(
                         width: 120.0,

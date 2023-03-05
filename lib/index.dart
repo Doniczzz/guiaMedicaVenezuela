@@ -12,8 +12,8 @@ export '/buscar_especialidades/buscar_especialidades_widget.dart'
     show BuscarEspecialidadesWidget;
 export '/home/home_widget.dart' show HomeWidget;
 export '/buscar_medicos/buscar_medicos_widget.dart' show BuscarMedicosWidget;
-export '/medico/medico_widget.dart' show MedicoWidget;
 export '/sucess/sucess_widget.dart' show SucessWidget;
+export '/medico/medico_widget.dart' show MedicoWidget;
 export '/cita_cliente/cita_cliente_widget.dart' show CitaClienteWidget;
 export '/mis_citas/mis_citas_widget.dart' show MisCitasWidget;
 export '/estados/estados_widget.dart' show EstadosWidget;

@@ -113,9 +113,15 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
         final containerMedicosRecord = snapshot.data!;
         return Container(
           width: double.infinity,
-          height: 512.0,
+          height: 603.6,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryColor,
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(0.0),
+              bottomRight: Radius.circular(0.0),
+              topLeft: Radius.circular(25.0),
+              topRight: Radius.circular(25.0),
+            ),
           ),
           child: Stack(
             children: [
@@ -526,6 +532,91 @@ class _PagoMovilWidgetState extends State<PagoMovilWidget>
                                                 valueOrDefault<String>(
                                                   _model.pagoMovilSeleccionado
                                                       ?.banco,
+                                                  'Sin definir',
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .subtitle1
+                                                        .override(
+                                                          fontFamily: 'Roboto',
+                                                          color:
+                                                              Color(0xFF111417),
+                                                          fontSize: 18.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                              ),
+                                            ),
+                                          ),
+                                          Icon(
+                                            Icons.content_copy,
+                                            color: Color(0xFF57636C),
+                                            size: 24.0,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 5.0, 0.0, 5.0),
+                              child: InkWell(
+                                onTap: () async {
+                                  await Clipboard.setData(ClipboardData(
+                                      text: _model
+                                          .pagoMovilSeleccionado!.banco!));
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        'Banco copiado.',
+                                        style: TextStyle(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBtnText,
+                                        ),
+                                      ),
+                                      duration: Duration(milliseconds: 4000),
+                                      backgroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryColor,
+                                    ),
+                                  );
+                                },
+                                child: Material(
+                                  color: Colors.transparent,
+                                  elevation: 2.0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(25.0),
+                                  ),
+                                  child: Container(
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(25.0),
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 12.0, 16.0, 16.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          Icon(
+                                            Icons.assignment_ind,
+                                            color: Color(0xFF57636C),
+                                            size: 24.0,
+                                          ),
+                                          Expanded(
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(8.0, 0.0, 0.0, 0.0),
+                                              child: Text(
+                                                valueOrDefault<String>(
+                                                  _model.pagoMovilSeleccionado
+                                                      ?.cedula,
                                                   'Sin definir',
                                                 ),
                                                 style:
