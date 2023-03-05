@@ -87,6 +87,12 @@ class _$PacientesStructSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.numeroPaciente;
+    if (value != null) {
+      result
+        ..add('numeroPaciente')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     return result;
   }
 
@@ -140,6 +146,10 @@ class _$PacientesStructSerializer
           result.nombrePaciente = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'numeroPaciente':
+          result.numeroPaciente = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
         case 'firestoreUtilData':
           result.firestoreUtilData = serializers.deserialize(value,
                   specifiedType: const FullType(FirestoreUtilData))!
@@ -172,6 +182,8 @@ class _$PacientesStruct extends PacientesStruct {
   @override
   final String? nombrePaciente;
   @override
+  final int? numeroPaciente;
+  @override
   final FirestoreUtilData firestoreUtilData;
 
   factory _$PacientesStruct([void Function(PacientesStructBuilder)? updates]) =>
@@ -187,6 +199,7 @@ class _$PacientesStruct extends PacientesStruct {
       this.motivoCita,
       this.tipoTransferencia,
       this.nombrePaciente,
+      this.numeroPaciente,
       required this.firestoreUtilData})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
@@ -214,6 +227,7 @@ class _$PacientesStruct extends PacientesStruct {
         motivoCita == other.motivoCita &&
         tipoTransferencia == other.tipoTransferencia &&
         nombrePaciente == other.nombrePaciente &&
+        numeroPaciente == other.numeroPaciente &&
         firestoreUtilData == other.firestoreUtilData;
   }
 
@@ -227,15 +241,17 @@ class _$PacientesStruct extends PacientesStruct {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc($jc(0, paciente.hashCode),
-                                        metodoPago.hashCode),
-                                    numeroReferencia.hashCode),
-                                comprobante.hashCode),
-                            status.hashCode),
-                        cedula.hashCode),
-                    motivoCita.hashCode),
-                tipoTransferencia.hashCode),
-            nombrePaciente.hashCode),
+                                    $jc(
+                                        $jc($jc(0, paciente.hashCode),
+                                            metodoPago.hashCode),
+                                        numeroReferencia.hashCode),
+                                    comprobante.hashCode),
+                                status.hashCode),
+                            cedula.hashCode),
+                        motivoCita.hashCode),
+                    tipoTransferencia.hashCode),
+                nombrePaciente.hashCode),
+            numeroPaciente.hashCode),
         firestoreUtilData.hashCode));
   }
 
@@ -251,6 +267,7 @@ class _$PacientesStruct extends PacientesStruct {
           ..add('motivoCita', motivoCita)
           ..add('tipoTransferencia', tipoTransferencia)
           ..add('nombrePaciente', nombrePaciente)
+          ..add('numeroPaciente', numeroPaciente)
           ..add('firestoreUtilData', firestoreUtilData))
         .toString();
   }
@@ -300,6 +317,11 @@ class PacientesStructBuilder
   set nombrePaciente(String? nombrePaciente) =>
       _$this._nombrePaciente = nombrePaciente;
 
+  int? _numeroPaciente;
+  int? get numeroPaciente => _$this._numeroPaciente;
+  set numeroPaciente(int? numeroPaciente) =>
+      _$this._numeroPaciente = numeroPaciente;
+
   FirestoreUtilData? _firestoreUtilData;
   FirestoreUtilData? get firestoreUtilData => _$this._firestoreUtilData;
   set firestoreUtilData(FirestoreUtilData? firestoreUtilData) =>
@@ -321,6 +343,7 @@ class PacientesStructBuilder
       _motivoCita = $v.motivoCita;
       _tipoTransferencia = $v.tipoTransferencia;
       _nombrePaciente = $v.nombrePaciente;
+      _numeroPaciente = $v.numeroPaciente;
       _firestoreUtilData = $v.firestoreUtilData;
       _$v = null;
     }
@@ -353,6 +376,7 @@ class PacientesStructBuilder
             motivoCita: motivoCita,
             tipoTransferencia: tipoTransferencia,
             nombrePaciente: nombrePaciente,
+            numeroPaciente: numeroPaciente,
             firestoreUtilData: BuiltValueNullFieldError.checkNotNull(
                 firestoreUtilData, r'PacientesStruct', 'firestoreUtilData'));
     replace(_$result);

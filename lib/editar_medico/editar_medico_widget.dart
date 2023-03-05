@@ -1,7 +1,7 @@
 import '/auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
-import '/backend/firebase_storage/storage.dart';
+import '/components/cambiar_foto_medico_widget.dart';
 import '/components/loading_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
@@ -9,8 +9,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/upload_media.dart';
-import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -19,26 +17,24 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'crear_medico_model.dart';
-export 'crear_medico_model.dart';
+import 'editar_medico_model.dart';
+export 'editar_medico_model.dart';
 
-class CrearMedicoWidget extends StatefulWidget {
-  const CrearMedicoWidget({
+class EditarMedicoWidget extends StatefulWidget {
+  const EditarMedicoWidget({
     Key? key,
     this.medico,
-    this.listEspecialidades,
   }) : super(key: key);
 
   final MedicosRecord? medico;
-  final List<String>? listEspecialidades;
 
   @override
-  _CrearMedicoWidgetState createState() => _CrearMedicoWidgetState();
+  _EditarMedicoWidgetState createState() => _EditarMedicoWidgetState();
 }
 
-class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
+class _EditarMedicoWidgetState extends State<EditarMedicoWidget>
     with TickerProviderStateMixin {
-  late CrearMedicoModel _model;
+  late EditarMedicoModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
@@ -46,7 +42,14 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => CrearMedicoModel());
+    _model = createModel(context, () => EditarMedicoModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      setState(() {
+        _model.fotoMedico = _model.foto!;
+      });
+    });
 
     _model.nombreController ??=
         TextEditingController(text: currentUserDisplayName);
@@ -92,7 +95,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
             ),
           );
         }
-        final crearMedicoVerificarTelefonoResponse = snapshot.data!;
+        final editarMedicoVerificarTelefonoResponse = snapshot.data!;
         return Scaffold(
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -122,34 +125,15 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                   },
                 ).then((value) => setState(() {}));
 
-                await widget.medico!.reference.delete();
-
-                final ciudadesUpdateData = {
-                  'medicos': FieldValue.arrayRemove([widget.medico!.reference]),
-                };
-                await currentUserDocument!.dondeVive.ciudad!
-                    .update(ciudadesUpdateData);
-
                 context.goNamed('home');
               },
             ),
             actions: [
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 16.0, 0.0),
-                child: InkWell(
-                  onTap: () async {
-                    final especialidadesCreateData =
-                        createEspecialidadesRecordData(
-                      especialidad: random_data.randomName(true, false),
-                    );
-                    await EspecialidadesRecord.collection
-                        .doc()
-                        .set(especialidadesCreateData);
-                  },
-                  child: Text(
-                    'Tu Información',
-                    style: FlutterFlowTheme.of(context).title2,
-                  ),
+                child: Text(
+                  'Tu Información',
+                  style: FlutterFlowTheme.of(context).title2,
                 ),
               ),
             ],
@@ -245,117 +229,73 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                                         ),
                                               ),
                                             ),
-                                            InkWell(
-                                              onTap: () async {
-                                                final selectedMedia =
-                                                    await selectMediaWithSourceBottomSheet(
-                                                  context: context,
-                                                  allowPhoto: true,
-                                                );
-                                                if (selectedMedia != null &&
-                                                    selectedMedia.every((m) =>
-                                                        validateFileFormat(
-                                                            m.storagePath,
-                                                            context))) {
-                                                  setState(() => _model
-                                                      .isMediaUploading = true);
-                                                  var selectedUploadedFiles =
-                                                      <FFUploadedFile>[];
-                                                  var downloadUrls = <String>[];
-                                                  try {
-                                                    selectedUploadedFiles =
-                                                        selectedMedia
-                                                            .map((m) =>
-                                                                FFUploadedFile(
-                                                                  name: m
-                                                                      .storagePath
-                                                                      .split(
-                                                                          '/')
-                                                                      .last,
-                                                                  bytes:
-                                                                      m.bytes,
-                                                                  height: m
-                                                                      .dimensions
-                                                                      ?.height,
-                                                                  width: m
-                                                                      .dimensions
-                                                                      ?.width,
-                                                                ))
-                                                            .toList();
-
-                                                    downloadUrls = (await Future
-                                                            .wait(
-                                                      selectedMedia.map(
-                                                        (m) async =>
-                                                            await uploadData(
-                                                                m.storagePath,
-                                                                m.bytes),
-                                                      ),
-                                                    ))
-                                                        .where((u) => u != null)
-                                                        .map((u) => u!)
-                                                        .toList();
-                                                  } finally {
-                                                    _model.isMediaUploading =
-                                                        false;
-                                                  }
-                                                  if (selectedUploadedFiles
-                                                              .length ==
-                                                          selectedMedia
-                                                              .length &&
-                                                      downloadUrls.length ==
-                                                          selectedMedia
-                                                              .length) {
-                                                    setState(() {
-                                                      _model.uploadedLocalFile =
-                                                          selectedUploadedFiles
-                                                              .first;
-                                                      _model.uploadedFileUrl =
-                                                          downloadUrls.first;
-                                                    });
-                                                  } else {
-                                                    setState(() {});
-                                                    return;
-                                                  }
-                                                }
-                                              },
-                                              child: Image.network(
-                                                () {
-                                                  if (_model.uploadedFileUrl !=
-                                                          null &&
-                                                      _model.uploadedFileUrl !=
-                                                          '') {
-                                                    return _model
-                                                        .uploadedFileUrl;
-                                                  } else if (widget
-                                                              .medico!.foto !=
-                                                          null &&
-                                                      widget.medico!.foto !=
-                                                          '') {
-                                                    return widget.medico!.foto!;
-                                                  } else {
-                                                    return 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/guia-medica-venezuela-mnxqj1/assets/6ktpgk4rkwis/perfil.png';
-                                                  }
-                                                }(),
-                                                width: double.infinity,
-                                                height: 322.2,
-                                                fit: BoxFit.cover,
+                                            Image.network(
+                                              valueOrDefault<String>(
+                                                _model.foto != null &&
+                                                        _model.foto != ''
+                                                    ? _model.foto
+                                                    : widget.medico!.foto,
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/guia-medica-venezuela-mnxqj1/assets/6ktpgk4rkwis/perfil.png',
                                               ),
+                                              width: double.infinity,
+                                              height: 322.2,
+                                              fit: BoxFit.cover,
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 4.0, 0.0, 8.0),
-                                              child: Text(
-                                                'Click para cambiar',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .subtitle1
-                                                        .override(
-                                                          fontFamily: 'Lexend',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .grayIcon,
-                                                        ),
+                                                  .fromSTEB(0.0, 8.0, 0.0, 0.0),
+                                              child: FFButtonWidget(
+                                                onPressed: () async {
+                                                  await showModalBottomSheet(
+                                                    isScrollControlled: true,
+                                                    backgroundColor:
+                                                        Colors.transparent,
+                                                    enableDrag: false,
+                                                    context: context,
+                                                    builder: (context) {
+                                                      return Padding(
+                                                        padding: MediaQuery.of(
+                                                                context)
+                                                            .viewInsets,
+                                                        child:
+                                                            CambiarFotoMedicoWidget(),
+                                                      );
+                                                    },
+                                                  ).then((value) => setState(
+                                                      () =>
+                                                          _model.foto = value));
+
+                                                  setState(() {});
+                                                },
+                                                text: 'Cambiar',
+                                                options: FFButtonOptions(
+                                                  width: 130.0,
+                                                  height: 40.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 0.0),
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryColor,
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .subtitle2
+                                                      .override(
+                                                        fontFamily: 'DM Sans',
+                                                        color: Colors.white,
+                                                      ),
+                                                  borderSide: BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
                                               ),
                                             ),
                                           ],
@@ -1414,7 +1354,7 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                               return;
                             }
                             if (!VerificarTelefonoCall.verificarNumero(
-                              crearMedicoVerificarTelefonoResponse.jsonBody,
+                              editarMedicoVerificarTelefonoResponse.jsonBody,
                             )) {
                               await showDialog(
                                 context: context,
@@ -1459,10 +1399,12 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                               nombre: _model.nombreController.text,
                               mostrarWhatsapp: _model.switchListTileValue,
                               whatsapp: VerificarTelefonoCall.numero(
-                                crearMedicoVerificarTelefonoResponse.jsonBody,
+                                editarMedicoVerificarTelefonoResponse.jsonBody,
                               ).toString(),
                               foto: valueOrDefault<String>(
-                                _model.uploadedFileUrl,
+                                _model.foto != null && _model.foto != ''
+                                    ? _model.foto
+                                    : widget.medico!.foto,
                                 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/guia-medica-venezuela-mnxqj1/assets/6ktpgk4rkwis/perfil.png',
                               ),
                               email: currentUserEmail,
@@ -1470,11 +1412,6 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                             );
                             await widget.medico!.reference
                                 .update(medicosUpdateData);
-
-                            final usersUpdateData = createUsersRecordData(
-                              habilitado: false,
-                            );
-                            await currentUserReference!.update(usersUpdateData);
 
                             context.pushNamed('home');
 

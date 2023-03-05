@@ -251,7 +251,7 @@ class _EnviarMensajePacienteWidgetState
                                   triggerPushNotification(
                                     notificationTitle: '¡Nuevo Mensaje!',
                                     notificationText:
-                                        'Has recibido un mensaje, ve a tus notificaciones.',
+                                        'Has recibido un mensaje, ve a tus mensajes',
                                     notificationSound: 'default',
                                     userRefs: [widget.notificacion!.de!],
                                     initialPageName: 'home',

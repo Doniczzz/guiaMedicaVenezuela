@@ -200,10 +200,6 @@ class _MisCitasWidgetState extends State<MisCitasWidget> {
                                                           .retornarPaciente(
                                                               currentUserReference,
                                                               misCitasCompCitasRecord),
-                                                      numeroPaciente:
-                                                          functions.nPaciente(
-                                                              currentUserReference,
-                                                              misCitasCompCitasRecord),
                                                     ),
                                                   );
                                                 },

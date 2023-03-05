@@ -27,3 +27,4 @@ export '/seleccionar_especialidad/seleccionar_especialidad_widget.dart'
 export '/crear_medico/crear_medico_widget.dart' show CrearMedicoWidget;
 export '/buscar_medicos_especialidad/buscar_medicos_especialidad_widget.dart'
     show BuscarMedicosEspecialidadWidget;
+export '/editar_medico/editar_medico_widget.dart' show EditarMedicoWidget;

@@ -1,19 +1,21 @@
-import '/backend/backend.dart';
-import '/components/enviar_mensaje_medico_widget.dart';
-import '/components/mostrar_q_r_widget.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
+import '/flutter_flow/upload_media.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class CitaModel extends FlutterFlowModel {
+class CambiarFotoMedicoModel extends FlutterFlowModel {
+  ///  State fields for stateful widgets in this component.
+
+  bool isMediaUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
+
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {}

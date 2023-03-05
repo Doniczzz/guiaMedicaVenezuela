@@ -100,19 +100,6 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      showModalBottomSheet(
-        isScrollControlled: true,
-        backgroundColor: Colors.transparent,
-        enableDrag: false,
-        context: context,
-        builder: (context) {
-          return Padding(
-            padding: MediaQuery.of(context).viewInsets,
-            child: LoadingWidget(),
-          );
-        },
-      ).then((value) => setState(() {}));
-
       if (!valueOrDefault<bool>(currentUserDocument?.registro, false)) {
         context.pushNamed(
           'registro',
@@ -127,8 +114,6 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
         Navigator.pop(context);
         return;
       }
-      await Future.delayed(const Duration(milliseconds: 1000));
-      Navigator.pop(context);
     });
 
     setupAnimations(
@@ -618,75 +603,75 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 18.0, 0.0, 0.0),
-                                      child: Container(
-                                        width: double.infinity,
-                                        height: 50.0,
-                                        decoration: BoxDecoration(
-                                          color: Color(0xFF375D77),
-                                          borderRadius:
-                                              BorderRadius.circular(18.0),
-                                        ),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  8.0, 8.0, 8.0, 8.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            children: [
-                                              Expanded(
-                                                child: Padding(
+                                      child: InkWell(
+                                        onTap: () async {
+                                          context.pushNamed(
+                                            'editarMedico',
+                                            queryParams: {
+                                              'medico': serializeParam(
+                                                columnMedicosRecord,
+                                                ParamType.Document,
+                                              ),
+                                            }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              'medico': columnMedicosRecord,
+                                            },
+                                          );
+                                        },
+                                        child: Container(
+                                          width: double.infinity,
+                                          height: 50.0,
+                                          decoration: BoxDecoration(
+                                            color: Color(0xFF375D77),
+                                            borderRadius:
+                                                BorderRadius.circular(18.0),
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 8.0, 8.0, 8.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          18.0, 0.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    'Whatsapp',
-                                                    style: FlutterFlowTheme.of(
+                                                          20.0, 0.0, 0.0, 0.0),
+                                                  child: FaIcon(
+                                                    FontAwesomeIcons.userMd,
+                                                    color: FlutterFlowTheme.of(
                                                             context)
-                                                        .title3
-                                                        .override(
-                                                          fontFamily: 'Lexend',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          fontSize: 20.0,
-                                                        ),
+                                                        .secondaryText,
+                                                    size: 24.0,
                                                   ),
                                                 ),
-                                              ),
-                                              Switch(
-                                                value: _model.switchValue ??=
-                                                    columnMedicosRecord!
-                                                        .mostrarWhatsapp!,
-                                                onChanged: (newValue) async {
-                                                  setState(() => _model
-                                                      .switchValue = newValue!);
-                                                  if (newValue!) {
-                                                    final medicosUpdateData =
-                                                        createMedicosRecordData(
-                                                      mostrarWhatsapp: true,
-                                                    );
-                                                    await columnMedicosRecord!
-                                                        .reference
-                                                        .update(
-                                                            medicosUpdateData);
-                                                  } else {
-                                                    final medicosUpdateData =
-                                                        createMedicosRecordData(
-                                                      mostrarWhatsapp: false,
-                                                    );
-                                                    await columnMedicosRecord!
-                                                        .reference
-                                                        .update(
-                                                            medicosUpdateData);
-                                                  }
-                                                },
-                                                activeColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .tertiaryColor,
-                                              ),
-                                            ],
+                                                Expanded(
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(18.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: Text(
+                                                      'Editar',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .title3
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Lexend',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                fontSize: 20.0,
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -1260,7 +1245,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       Expanded(
                                         child: StreamBuilder<
                                             List<PublicidadesRecord>>(
-                                          stream: queryPublicidadesRecord(),
+                                          stream: queryPublicidadesRecord(
+                                            queryBuilder:
+                                                (publicidadesRecord) =>
+                                                    publicidadesRecord.where(
+                                                        'status',
+                                                        isEqualTo: true),
+                                          ),
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
                                             if (!snapshot.hasData) {
@@ -1281,6 +1272,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                 containerPublicidadesRecordList =
                                                 snapshot.data!;
                                             return Container(
+                                              width: 400.0,
+                                              height: 200.0,
                                               decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -1292,10 +1285,10 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                             .length >
                                                         0,
                                                 child: Container(
-                                                  width: double.infinity,
+                                                  width: 400.0,
                                                   height: 200.0,
                                                   child: custom_widgets.Test(
-                                                    width: double.infinity,
+                                                    width: 400.0,
                                                     height: 200.0,
                                                     imgLista: functions
                                                         .listaImagenes(
@@ -1513,10 +1506,6 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                             .retornarPaciente(
                                                                 currentUserReference,
                                                                 misCitasCompCitasRecord),
-                                                        numeroPaciente:
-                                                            functions.nPaciente(
-                                                                currentUserReference,
-                                                                misCitasCompCitasRecord),
                                                       ),
                                                     );
                                                   },
@@ -1718,7 +1707,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                             0.0,
                                                                             1.0,
                                                                             1.0,
-                                                                            1.0),
+                                                                            0.0),
                                                                     child: StreamBuilder<
                                                                         UsersRecord>(
                                                                       stream: UsersRecord.getDocument(
@@ -1750,7 +1739,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                           child:
                                                                               Image.network(
                                                                             valueOrDefault<String>(
-                                                                              imageUsersRecord.photoUrl,
+                                                                              menuItemMedicosRecord.foto,
                                                                               'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/guia-medica-venezuela-mnxqj1/assets/6ktpgk4rkwis/perfil.png',
                                                                             ),
                                                                             width:

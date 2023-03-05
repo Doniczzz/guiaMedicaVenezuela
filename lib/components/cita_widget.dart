@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -19,13 +20,10 @@ class CitaWidget extends StatefulWidget {
     Key? key,
     this.cita,
     this.paciente,
-    int? numeroPaciente,
-  })  : this.numeroPaciente = numeroPaciente ?? 0,
-        super(key: key);
+  }) : super(key: key);
 
   final DocumentReference? cita;
   final PacientesStruct? paciente;
-  final int numeroPaciente;
 
   @override
   _CitaWidgetState createState() => _CitaWidgetState();
@@ -218,10 +216,7 @@ class _CitaWidgetState extends State<CitaWidget> {
                                               ),
                                               onPressed: () async {
                                                 await launchURL(
-                                                    'https://api.whatsapp.com/send?phone=58${valueOrDefault<String>(
-                                                  citaMedicosRecord.whatsapp,
-                                                  '0',
-                                                )}&text=Hola!%20Soy%20el%20paciente%20con%20el%20número%20de%20referencia%3A%20${widget.paciente?.numeroReferencia}');
+                                                    'https://api.whatsapp.com/send?phone=${citaMedicosRecord.whatsapp}&text=Hola!%20Soy%20el%20paciente%20con%20el%20número%20de%20referencia%3A%20${widget.paciente?.numeroReferencia}');
                                               },
                                             ),
                                         ],
@@ -649,8 +644,83 @@ class _CitaWidgetState extends State<CitaWidget> {
                                                   .fromSTEB(
                                                       0.0, 15.0, 0.0, 0.0),
                                               child: Text(
-                                                widget.numeroPaciente
+                                                widget.paciente!.numeroPaciente!
                                                     .toString(),
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .title2
+                                                        .override(
+                                                          fontFamily: 'Lexend',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .fondoMenu,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 20.0, 0.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    elevation: 4.0,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(25.0),
+                                    ),
+                                    child: Container(
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .gray200,
+                                        borderRadius:
+                                            BorderRadius.circular(25.0),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            20.0, 20.0, 20.0, 20.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Text(
+                                              'Hora aproximada de llegada',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .subtitle1
+                                                      .override(
+                                                        fontFamily: 'Lexend',
+                                                        color:
+                                                            Color(0xBA262D34),
+                                                      ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 15.0, 0.0, 0.0),
+                                              child: Text(
+                                                dateTimeFormat(
+                                                  'jm',
+                                                  functions.horaLlegada(
+                                                      containerCitasRecord
+                                                          .fecha!,
+                                                      widget.paciente!
+                                                          .numeroPaciente!),
+                                                  locale: FFLocalizations.of(
+                                                          context)
+                                                      .languageCode,
+                                                ),
                                                 textAlign: TextAlign.center,
                                                 style:
                                                     FlutterFlowTheme.of(context)

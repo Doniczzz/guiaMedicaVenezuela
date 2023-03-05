@@ -30,8 +30,6 @@ class HomeModel extends FlutterFlowModel {
 
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for Switch widget.
-  bool? switchValue;
   // Stores action output result for [Backend Call - Create Document] action in Container widget.
   MedicosRecord? med;
   // Model for mindscodeLogo component.

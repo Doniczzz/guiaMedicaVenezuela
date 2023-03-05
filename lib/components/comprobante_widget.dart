@@ -21,10 +21,12 @@ class ComprobanteWidget extends StatefulWidget {
     Key? key,
     this.paciente,
     this.cita,
+    this.test,
   }) : super(key: key);
 
   final PacientesStruct? paciente;
   final DocumentReference? cita;
+  final List<PacientesStruct>? test;
 
   @override
   _ComprobanteWidgetState createState() => _ComprobanteWidgetState();
@@ -193,6 +195,20 @@ class _ComprobanteWidgetState extends State<ComprobanteWidget> {
                     FFButtonWidget(
                       onPressed: () async {
                         final citasUpdateData1 = {
+                          'pacientes': FieldValue.arrayRemove([
+                            getPacientesFirestoreData(
+                              updatePacientesStruct(
+                                widget.paciente,
+                                clearUnsetFields: false,
+                              ),
+                              true,
+                            )
+                          ]),
+                        };
+                        await containerCitasRecord.reference
+                            .update(citasUpdateData1);
+
+                        final citasUpdateData2 = {
                           'pacientes': FieldValue.arrayUnion([
                             getPacientesFirestoreData(
                               createPacientesStruct(
@@ -207,26 +223,15 @@ class _ComprobanteWidgetState extends State<ComprobanteWidget> {
                                 tipoTransferencia:
                                     widget.paciente?.tipoTransferencia,
                                 nombrePaciente: widget.paciente?.nombrePaciente,
+                                numeroPaciente: widget.paciente?.numeroPaciente,
                                 clearUnsetFields: false,
                               ),
                               true,
                             )
                           ]),
                         };
-                        await widget.cita!.update(citasUpdateData1);
-
-                        final citasUpdateData2 = {
-                          'pacientes': FieldValue.arrayRemove([
-                            getPacientesFirestoreData(
-                              updatePacientesStruct(
-                                widget.paciente,
-                                clearUnsetFields: false,
-                              ),
-                              true,
-                            )
-                          ]),
-                        };
-                        await widget.cita!.update(citasUpdateData2);
+                        await containerCitasRecord.reference
+                            .update(citasUpdateData2);
                         if (columnUsersRecord.pushNotification!) {
                           triggerPushNotification(
                             notificationTitle: '¡Tu cita ha sido confirmada!',

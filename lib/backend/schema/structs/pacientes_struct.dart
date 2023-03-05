@@ -29,6 +29,8 @@ abstract class PacientesStruct
 
   String? get nombrePaciente;
 
+  int? get numeroPaciente;
+
   /// Utility class for Firestore updates
   FirestoreUtilData get firestoreUtilData;
 
@@ -41,6 +43,7 @@ abstract class PacientesStruct
     ..motivoCita = ''
     ..tipoTransferencia = ''
     ..nombrePaciente = ''
+    ..numeroPaciente = 0
     ..firestoreUtilData = FirestoreUtilData();
 
   PacientesStruct._();
@@ -58,6 +61,7 @@ PacientesStruct createPacientesStruct({
   String? motivoCita,
   String? tipoTransferencia,
   String? nombrePaciente,
+  int? numeroPaciente,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
@@ -74,6 +78,7 @@ PacientesStruct createPacientesStruct({
         ..motivoCita = motivoCita
         ..tipoTransferencia = tipoTransferencia
         ..nombrePaciente = nombrePaciente
+        ..numeroPaciente = numeroPaciente
         ..firestoreUtilData = FirestoreUtilData(
           clearUnsetFields: clearUnsetFields,
           create: create,

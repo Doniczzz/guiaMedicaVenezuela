@@ -235,7 +235,7 @@ class _EnviarMensajeMedicoWidgetState extends State<EnviarMensajeMedicoWidget> {
                                   notificationTitle:
                                       '¡Nuevo Mensaje de Paciente!',
                                   notificationText:
-                                      'Has recibido un mensaje, ve a tus notificaciones.',
+                                      'Has recibido un mensaje, ve a tus mensajes.',
                                   notificationSound: 'default',
                                   userRefs: [widget.medico!],
                                   initialPageName: 'home',

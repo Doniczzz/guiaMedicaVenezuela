@@ -129,7 +129,7 @@ class _MisCitasCompWidgetState extends State<MisCitasCompWidget> {
                               ),
                               child: Image.network(
                                 valueOrDefault<String>(
-                                  rowUsersRecord.photoUrl,
+                                  columnMedicosRecord.foto,
                                   'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/guia-medica-venezuela-mnxqj1/assets/6ktpgk4rkwis/perfil.png',
                                 ),
                                 fit: BoxFit.contain,

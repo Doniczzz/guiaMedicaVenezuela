@@ -274,6 +274,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 especialidad:
                     params.getParam('especialidad', ParamType.Document),
               ),
+            ),
+            FFRoute(
+              name: 'editarMedico',
+              path: 'editarMedico',
+              asyncParams: {
+                'medico':
+                    getDoc(['users', 'medicos'], MedicosRecord.serializer),
+              },
+              builder: (context, params) => EditarMedicoWidget(
+                medico: params.getParam('medico', ParamType.Document),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

@@ -176,8 +176,6 @@ class _PacientesWidgetState extends State<PacientesWidget>
                                                           .viewInsets,
                                                   child: PacienteWidget(
                                                     paciente: pacientesItem,
-                                                    numeroPaciente:
-                                                        pacientesIndex + 1,
                                                   ),
                                                 );
                                               },
@@ -213,7 +211,7 @@ class _PacientesWidgetState extends State<PacientesWidget>
                                                     size: 34.0,
                                                   ),
                                                   Text(
-                                                    '#${(pacientesIndex + 1).toString()}',
+                                                    '#${pacientesItem.numeroPaciente?.toString()}',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyText1

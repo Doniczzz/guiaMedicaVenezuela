@@ -1440,6 +1440,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                               cedula: int.tryParse(_model.cedulaController.text),
                                                                               motivoCita: _model.motivoCitaController.text,
                                                                               nombrePaciente: _model.paraQuienCitaValue == 'Para mi' ? currentUserDisplayName : _model.nombreController.text,
+                                                                              numeroPaciente: pageViewCitasRecord.pacientes!.toList().length + 1,
                                                                               clearUnsetFields: false,
                                                                             ),
                                                                             true,
@@ -1909,6 +1910,11 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                         : _model
                                                                             .nombreController
                                                                             .text,
+                                                                    numeroPaciente: pageViewCitasRecord
+                                                                            .pacientes!
+                                                                            .toList()
+                                                                            .length +
+                                                                        1,
                                                                     clearUnsetFields:
                                                                         false,
                                                                   ),

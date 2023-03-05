@@ -3,12 +3,14 @@ import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/components/eliminar_cuenta_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -479,42 +481,125 @@ class _EditarMiCuentaWidgetState extends State<EditarMiCuentaWidget>
                                       children: [
                                         Expanded(
                                           child: AuthUserStreamWidget(
-                                            builder: (context) => TextFormField(
-                                              controller:
-                                                  _model.whatsController,
-                                              onChanged: (_) =>
-                                                  EasyDebounce.debounce(
-                                                '_model.whatsController',
-                                                Duration(milliseconds: 1000),
-                                                () => setState(() {}),
-                                              ),
-                                              obscureText: false,
-                                              decoration: InputDecoration(
-                                                hintText:
-                                                    valueOrDefault<String>(
-                                                  currentPhoneNumber,
-                                                  'Ej.  580416123456',
-                                                ),
-                                                hintStyle:
-                                                    FlutterFlowTheme.of(context)
+                                            builder: (context) =>
+                                                Autocomplete<String>(
+                                              initialValue: TextEditingValue(),
+                                              optionsBuilder:
+                                                  (textEditingValue) {
+                                                if (textEditingValue.text ==
+                                                    '') {
+                                                  return const Iterable<
+                                                      String>.empty();
+                                                }
+                                                return (VerificarTelefonoCall
+                                                        .numero(
+                                                  inputWhatsVerificarTelefonoResponse
+                                                      .jsonBody,
+                                                ) as List)
+                                                    .map<String>(
+                                                        (s) => s.toString())
+                                                    .toList()!
+                                                    .toList()
+                                                    .where((option) {
+                                                  final lowercaseOption =
+                                                      option.toLowerCase();
+                                                  return lowercaseOption
+                                                      .contains(textEditingValue
+                                                          .text
+                                                          .toLowerCase());
+                                                });
+                                              },
+                                              optionsViewBuilder: (context,
+                                                  onSelected, options) {
+                                                return AutocompleteOptionsList(
+                                                  textFieldKey: _model.whatsKey,
+                                                  textController:
+                                                      _model.whatsController!,
+                                                  options: options.toList(),
+                                                  onSelected: onSelected,
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyText1,
+                                                  textHighlightStyle:
+                                                      TextStyle(),
+                                                  elevation: 4.0,
+                                                  optionBackgroundColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryBackground,
+                                                  optionHighlightColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryBackground,
+                                                  maxHeight: 200.0,
+                                                );
+                                              },
+                                              onSelected: (String selection) {
+                                                setState(() =>
+                                                    _model.whatsSelectedOption =
+                                                        selection);
+                                                FocusScope.of(context)
+                                                    .unfocus();
+                                              },
+                                              fieldViewBuilder: (
+                                                context,
+                                                textEditingController,
+                                                focusNode,
+                                                onEditingComplete,
+                                              ) {
+                                                _model.whatsController =
+                                                    textEditingController;
+                                                return TextFormField(
+                                                  key: _model.whatsKey,
+                                                  controller:
+                                                      textEditingController,
+                                                  focusNode: focusNode,
+                                                  onEditingComplete:
+                                                      onEditingComplete,
+                                                  onChanged: (_) =>
+                                                      EasyDebounce.debounce(
+                                                    '_model.whatsController',
+                                                    Duration(
+                                                        milliseconds: 1000),
+                                                    () => setState(() {}),
+                                                  ),
+                                                  obscureText: false,
+                                                  decoration: InputDecoration(
+                                                    hintText:
+                                                        valueOrDefault<String>(
+                                                      currentPhoneNumber,
+                                                      'Ej.  580416123456',
+                                                    ),
+                                                    hintStyle: FlutterFlowTheme
+                                                            .of(context)
                                                         .bodyText2
                                                         .override(
                                                           fontFamily: 'DM Sans',
                                                           color:
                                                               Color(0xFF606060),
                                                         ),
-                                                enabledBorder: InputBorder.none,
-                                                focusedBorder: InputBorder.none,
-                                                errorBorder: InputBorder.none,
-                                                focusedErrorBorder:
-                                                    InputBorder.none,
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
+                                                    enabledBorder:
+                                                        InputBorder.none,
+                                                    focusedBorder:
+                                                        InputBorder.none,
+                                                    errorBorder:
+                                                        InputBorder.none,
+                                                    focusedErrorBorder:
+                                                        InputBorder.none,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .bodyText1,
-                                              validator: _model
-                                                  .whatsControllerValidator
-                                                  .asValidator(context),
+                                                  validator: _model
+                                                      .whatsControllerValidator
+                                                      .asValidator(context),
+                                                  inputFormatters: [
+                                                    FilteringTextInputFormatter
+                                                        .allow(RegExp('[0-9]'))
+                                                  ],
+                                                );
+                                              },
                                             ),
                                           ),
                                         ),

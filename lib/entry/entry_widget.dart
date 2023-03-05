@@ -198,7 +198,7 @@ class _EntryWidgetState extends State<EntryWidget>
                                     },
                                   );
                                 },
-                                text: 'Buscar Medicos',
+                                text: 'Buscar Médicos',
                                 icon: FaIcon(
                                   FontAwesomeIcons.mapMarkerAlt,
                                 ),

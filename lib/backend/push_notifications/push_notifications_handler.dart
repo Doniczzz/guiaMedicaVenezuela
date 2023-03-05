@@ -209,6 +209,12 @@ final parametersBuilderMap =
               data, 'especialidad', EspecialidadesRecord.serializer),
         },
       ),
+  'editarMedico': (data) async => ParameterData(
+        allParams: {
+          'medico': await getDocumentParameter<MedicosRecord>(
+              data, 'medico', MedicosRecord.serializer),
+        },
+      ),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

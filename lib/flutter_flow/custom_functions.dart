@@ -177,19 +177,6 @@ String? retornarMes(DateTime? dates) {
   return (DateFormat.MMMM('es').format(dates!));
 }
 
-int nPaciente(
-  DocumentReference? authenticatedUser,
-  CitasRecord? cita,
-) {
-  var paciente;
-  for (var i = 0; i < cita!.pacientes!.length; i++) {
-    if (cita.pacientes![i].paciente == authenticatedUser) {
-      return i + 1;
-    }
-  }
-  return 0;
-}
-
 PacientesStruct retornarPacienteReferencia(
   String? referencia,
   CitasRecord? cita,
@@ -231,4 +218,16 @@ bool? pacienteEnCita(
     }
   }
   return false;
+}
+
+DateTime horaLlegada(
+  DateTime fechaCita,
+  int numeroPaciente,
+) {
+  // Cálculo de los minutos a agregar
+  int minutosAgregar = (numeroPaciente > 1) ? (numeroPaciente - 1) * 30 : 0;
+
+  // Agregando los minutos a la fecha de la cita
+  final nuevaFecha = fechaCita.add(Duration(minutes: minutosAgregar));
+  return nuevaFecha;
 }

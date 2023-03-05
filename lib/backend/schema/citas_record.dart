@@ -83,6 +83,9 @@ abstract class CitasRecord implements Built<CitasRecord, CitasRecordBuilder> {
                         (data as Map<String, dynamic>)['tipoTransferencia'],
                     nombrePaciente:
                         (data as Map<String, dynamic>)['nombrePaciente'],
+                    numeroPaciente:
+                        (data as Map<String, dynamic>)['numeroPaciente']
+                            ?.round(),
                     create: true,
                     clearUnsetFields: false,
                   ).toBuilder())))

@@ -170,7 +170,7 @@ class _MedicoWidgetState extends State<MedicoWidget>
                             alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 10.0, 0.0, 15.0),
+                                  0.0, 10.0, 0.0, 0.0),
                               child: StreamBuilder<UsersRecord>(
                                 stream: UsersRecord.getDocument(
                                     medicoMedicosRecord.parentReference),

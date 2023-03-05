@@ -3,12 +3,14 @@ import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/components/eliminar_cuenta_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -22,7 +24,9 @@ class EditarMiCuentaModel extends FlutterFlowModel {
   TextEditingController? nombreController;
   String? Function(BuildContext, String?)? nombreControllerValidator;
   // State field(s) for whats widget.
+  final whatsKey = GlobalKey();
   TextEditingController? whatsController;
+  String? whatsSelectedOption;
   String? Function(BuildContext, String?)? whatsControllerValidator;
 
   /// Initialization and disposal methods.
@@ -31,7 +35,6 @@ class EditarMiCuentaModel extends FlutterFlowModel {
 
   void dispose() {
     nombreController?.dispose();
-    whatsController?.dispose();
   }
 
   /// Additional helper methods are added here.
