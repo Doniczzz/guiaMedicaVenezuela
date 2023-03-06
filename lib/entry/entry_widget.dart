@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -81,7 +82,7 @@ class _EntryWidgetState extends State<EntryWidget>
         ),
       ],
     ),
-    'imageOnPageLoadAnimation1': AnimationInfo(
+    'imageOnPageLoadAnimation': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
         FadeEffect(
@@ -97,18 +98,6 @@ class _EntryWidgetState extends State<EntryWidget>
           duration: 800.ms,
           begin: Offset(0.0, -100.0),
           end: Offset(0.0, 0.0),
-        ),
-      ],
-    ),
-    'imageOnPageLoadAnimation2': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
         ),
       ],
     ),
@@ -264,20 +253,47 @@ class _EntryWidgetState extends State<EntryWidget>
                           width: 300.0,
                           fit: BoxFit.contain,
                         ).animateOnPageLoad(
-                            animationsMap['imageOnPageLoadAnimation1']!),
+                            animationsMap['imageOnPageLoadAnimation']!),
                       ),
                     ],
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                  child: Image.asset(
-                    'assets/images/letrasnetry.png',
-                    width: double.infinity,
-                    height: 100.0,
-                    fit: BoxFit.contain,
-                  ).animateOnPageLoad(
-                      animationsMap['imageOnPageLoadAnimation2']!),
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: 'GUÍA',
+                        style: TextStyle(
+                          color: FlutterFlowTheme.of(context).secondaryColor,
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
+                      TextSpan(
+                        text: 'MÉDICA',
+                        style: TextStyle(),
+                      )
+                    ],
+                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                          fontFamily: 'Roboto',
+                          fontSize: 60.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                ),
+                GradientText(
+                  'VENEZUELA',
+                  style: FlutterFlowTheme.of(context).title1.override(
+                        fontFamily: 'Lexend Deca',
+                        color: FlutterFlowTheme.of(context).fondoMenu,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                  colors: [
+                    FlutterFlowTheme.of(context).fondoMenu,
+                    FlutterFlowTheme.of(context).secondaryColor
+                  ],
+                  gradientDirection: GradientDirection.ltr,
+                  gradientType: GradientType.linear,
                 ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 80.0, 0.0, 25.0),

@@ -2001,7 +2001,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                     Container(
                       width: double.infinity,
                       height: double.infinity,
-                      child: custom_widgets.Upgrader(
+                      child: custom_widgets.UpgraderWidget(
                         width: double.infinity,
                         height: double.infinity,
                       ),

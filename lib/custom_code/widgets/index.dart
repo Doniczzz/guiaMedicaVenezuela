@@ -1,2 +1,2 @@
 export 'test.dart' show Test;
-export 'upgrader.dart' show Upgrader;
+export 'upgrader_widget.dart' show UpgraderWidget;

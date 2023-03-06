@@ -4,7 +4,6 @@ import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/components/loading_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -42,31 +41,84 @@ class CrearMedicoModel extends FlutterFlowModel {
   // State field(s) for nombre widget.
   TextEditingController? nombreController;
   String? Function(BuildContext, String?)? nombreControllerValidator;
+  String? _nombreControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Este campo es requerido.';
+    }
+
+    return null;
+  }
+
   // State field(s) for instagram widget.
   TextEditingController? instagramController;
   String? Function(BuildContext, String?)? instagramControllerValidator;
+  String? _instagramControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Este campo es requerido.';
+    }
+
+    return null;
+  }
+
   // State field(s) for whats widget.
-  final whatsKey = GlobalKey();
   TextEditingController? whatsController;
-  String? whatsSelectedOption;
   String? Function(BuildContext, String?)? whatsControllerValidator;
+  String? _whatsControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Este campo es requerido.';
+    }
+
+    return null;
+  }
+
   // State field(s) for calle widget.
   TextEditingController? calleController;
   String? Function(BuildContext, String?)? calleControllerValidator;
+  String? _calleControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Este campo es requerido.';
+    }
+
+    return null;
+  }
+
   // State field(s) for altura widget.
   TextEditingController? alturaController;
   String? Function(BuildContext, String?)? alturaControllerValidator;
+  String? _alturaControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Este campo es requerido.';
+    }
+
+    return null;
+  }
+
   // State field(s) for referencia widget.
   TextEditingController? referenciaController;
   String? Function(BuildContext, String?)? referenciaControllerValidator;
+  String? _referenciaControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Este campo es requerido.';
+    }
+
+    return null;
+  }
 
   /// Initialization and disposal methods.
 
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    nombreControllerValidator = _nombreControllerValidator;
+    instagramControllerValidator = _instagramControllerValidator;
+    whatsControllerValidator = _whatsControllerValidator;
+    calleControllerValidator = _calleControllerValidator;
+    alturaControllerValidator = _alturaControllerValidator;
+    referenciaControllerValidator = _referenciaControllerValidator;
+  }
 
   void dispose() {
     nombreController?.dispose();
     instagramController?.dispose();
+    whatsController?.dispose();
     calleController?.dispose();
     alturaController?.dispose();
     referenciaController?.dispose();

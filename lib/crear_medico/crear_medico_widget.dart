@@ -4,7 +4,6 @@ import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/components/loading_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -792,249 +791,145 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 8.0, 0.0, 0.0),
-                                                  child: Autocomplete<String>(
-                                                    initialValue:
-                                                        TextEditingValue(
-                                                            text: widget.medico!
-                                                                .whatsapp!),
-                                                    optionsBuilder:
-                                                        (textEditingValue) {
-                                                      if (textEditingValue
-                                                              .text ==
-                                                          '') {
-                                                        return const Iterable<
-                                                            String>.empty();
-                                                      }
-                                                      return (VerificarTelefonoCall
-                                                              .numero(
-                                                        taskDetailsVerificarTelefonoResponse
-                                                            .jsonBody,
-                                                      ) as List)
-                                                          .map<String>((s) =>
-                                                              s.toString())
-                                                          .toList()!
-                                                          .toList()
-                                                          .where((option) {
-                                                        final lowercaseOption =
-                                                            option
-                                                                .toLowerCase();
-                                                        return lowercaseOption
-                                                            .contains(
-                                                                textEditingValue
-                                                                    .text
-                                                                    .toLowerCase());
-                                                      });
-                                                    },
-                                                    optionsViewBuilder:
-                                                        (context, onSelected,
-                                                            options) {
-                                                      return AutocompleteOptionsList(
-                                                        textFieldKey:
-                                                            _model.whatsKey,
-                                                        textController: _model
-                                                            .whatsController!,
-                                                        options:
-                                                            options.toList(),
-                                                        onSelected: onSelected,
-                                                        textStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyText1,
-                                                        textHighlightStyle:
-                                                            TextStyle(),
-                                                        elevation: 4.0,
-                                                        optionBackgroundColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBackground,
-                                                        optionHighlightColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryBackground,
-                                                        maxHeight: 200.0,
-                                                      );
-                                                    },
-                                                    onSelected:
-                                                        (String selection) {
-                                                      setState(() => _model
-                                                              .whatsSelectedOption =
-                                                          selection);
-                                                      FocusScope.of(context)
-                                                          .unfocus();
-                                                    },
-                                                    fieldViewBuilder: (
-                                                      context,
-                                                      textEditingController,
-                                                      focusNode,
-                                                      onEditingComplete,
-                                                    ) {
-                                                      _model.whatsController =
-                                                          textEditingController;
-                                                      return TextFormField(
-                                                        key: _model.whatsKey,
-                                                        controller:
-                                                            textEditingController,
-                                                        focusNode: focusNode,
-                                                        onEditingComplete:
-                                                            onEditingComplete,
-                                                        onChanged: (_) =>
-                                                            EasyDebounce
-                                                                .debounce(
-                                                          '_model.whatsController',
-                                                          Duration(
-                                                              milliseconds:
-                                                                  800),
-                                                          () => setState(() {}),
+                                                  child: TextFormField(
+                                                    controller:
+                                                        _model.whatsController,
+                                                    onChanged: (_) =>
+                                                        EasyDebounce.debounce(
+                                                      '_model.whatsController',
+                                                      Duration(
+                                                          milliseconds: 800),
+                                                      () => setState(() {}),
+                                                    ),
+                                                    autofillHints: [
+                                                      AutofillHints
+                                                          .telephoneNumberCountryCode
+                                                    ],
+                                                    textCapitalization:
+                                                        TextCapitalization.none,
+                                                    obscureText: false,
+                                                    decoration: InputDecoration(
+                                                      labelStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText1
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Lexend Deca',
+                                                                color: Color(
+                                                                    0xFF57636C),
+                                                                fontSize: 14.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                              ),
+                                                      hintText:
+                                                          'Ej. +58 414 1234567',
+                                                      hintStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText1
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Lexend Deca',
+                                                                color: Color(
+                                                                    0xFF57636C),
+                                                                fontSize: 14.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                              ),
+                                                      enabledBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color:
+                                                              Color(0xFFDBE2E7),
+                                                          width: 2.0,
                                                         ),
-                                                        autofillHints: [
-                                                          AutofillHints
-                                                              .telephoneNumberCountryCode
-                                                        ],
-                                                        textCapitalization:
-                                                            TextCapitalization
-                                                                .none,
-                                                        obscureText: false,
-                                                        decoration:
-                                                            InputDecoration(
-                                                          labelStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyText1
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Lexend Deca',
-                                                                    color: Color(
-                                                                        0xFF57636C),
-                                                                    fontSize:
-                                                                        14.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .normal,
-                                                                  ),
-                                                          hintText:
-                                                              'Ej. +58 414 1234567',
-                                                          hintStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyText1
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Lexend Deca',
-                                                                    color: Color(
-                                                                        0xFF57636C),
-                                                                    fontSize:
-                                                                        14.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .normal,
-                                                                  ),
-                                                          enabledBorder:
-                                                              OutlineInputBorder(
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: Color(
-                                                                  0xFFDBE2E7),
-                                                              width: 2.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        40.0),
-                                                          ),
-                                                          focusedBorder:
-                                                              OutlineInputBorder(
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: Color(
-                                                                  0x00000000),
-                                                              width: 2.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        40.0),
-                                                          ),
-                                                          errorBorder:
-                                                              OutlineInputBorder(
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: Color(
-                                                                  0x00000000),
-                                                              width: 2.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        40.0),
-                                                          ),
-                                                          focusedErrorBorder:
-                                                              OutlineInputBorder(
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: Color(
-                                                                  0x00000000),
-                                                              width: 2.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        40.0),
-                                                          ),
-                                                          filled: true,
-                                                          fillColor:
-                                                              Colors.white,
-                                                          contentPadding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      24.0,
-                                                                      24.0,
-                                                                      20.0,
-                                                                      24.0),
-                                                          suffixIcon: _model
-                                                                  .whatsController!
-                                                                  .text
-                                                                  .isNotEmpty
-                                                              ? InkWell(
-                                                                  onTap:
-                                                                      () async {
-                                                                    _model
-                                                                        .whatsController
-                                                                        ?.clear();
-                                                                    setState(
-                                                                        () {});
-                                                                  },
-                                                                  child: Icon(
-                                                                    Icons.clear,
-                                                                    color: Color(
-                                                                        0xFF757575),
-                                                                    size: 22.0,
-                                                                  ),
-                                                                )
-                                                              : null,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(40.0),
+                                                      ),
+                                                      focusedBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color:
+                                                              Color(0x00000000),
+                                                          width: 2.0,
                                                         ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyText1
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Lexend Deca',
-                                                              color: Color(
-                                                                  0xFF1D2429),
-                                                              fontSize: 14.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .normal,
-                                                            ),
-                                                        maxLines: null,
-                                                        keyboardType:
-                                                            TextInputType
-                                                                .number,
-                                                        validator: _model
-                                                            .whatsControllerValidator
-                                                            .asValidator(
-                                                                context),
-                                                      );
-                                                    },
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(40.0),
+                                                      ),
+                                                      errorBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color:
+                                                              Color(0x00000000),
+                                                          width: 2.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(40.0),
+                                                      ),
+                                                      focusedErrorBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color:
+                                                              Color(0x00000000),
+                                                          width: 2.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(40.0),
+                                                      ),
+                                                      filled: true,
+                                                      fillColor: Colors.white,
+                                                      contentPadding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  24.0,
+                                                                  24.0,
+                                                                  20.0,
+                                                                  24.0),
+                                                      suffixIcon: _model
+                                                              .whatsController!
+                                                              .text
+                                                              .isNotEmpty
+                                                          ? InkWell(
+                                                              onTap: () async {
+                                                                _model
+                                                                    .whatsController
+                                                                    ?.clear();
+                                                                setState(() {});
+                                                              },
+                                                              child: Icon(
+                                                                Icons.clear,
+                                                                color: Color(
+                                                                    0xFF757575),
+                                                                size: 22.0,
+                                                              ),
+                                                            )
+                                                          : null,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily:
+                                                              'Lexend Deca',
+                                                          color:
+                                                              Color(0xFF1D2429),
+                                                          fontSize: 14.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                                    maxLines: null,
+                                                    keyboardType:
+                                                        TextInputType.number,
+                                                    validator: _model
+                                                        .whatsControllerValidator
+                                                        .asValidator(context),
                                                   ),
                                                 ),
                                                 Text(
@@ -1411,6 +1306,26 @@ class _CrearMedicoWidgetState extends State<CrearMedicoWidget>
                           onPressed: () async {
                             if (_model.formKey.currentState == null ||
                                 !_model.formKey.currentState!.validate()) {
+                              return;
+                            }
+                            if (_model.uploadedFileUrl == null ||
+                                _model.uploadedFileUrl.isEmpty) {
+                              await showDialog(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: Text('¡Error!'),
+                                    content: Text('Debes subir una foto.'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: Text('Ok'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
                               return;
                             }
                             if (!VerificarTelefonoCall.verificarNumero(

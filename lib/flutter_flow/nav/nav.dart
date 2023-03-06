@@ -458,9 +458,9 @@ class FFRoute {
               : builder(context, ffParams);
           final child = appStateNotifier.loading
               ? Container(
-                  color: FlutterFlowTheme.of(context).primaryBtnText,
+                  color: Colors.transparent,
                   child: Image.asset(
-                    'assets/images/splash.png',
+                    'assets/images/splashfinal.png',
                     fit: BoxFit.contain,
                   ),
                 )

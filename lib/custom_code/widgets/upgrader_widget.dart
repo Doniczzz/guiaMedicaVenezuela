@@ -9,10 +9,10 @@ import 'package:flutter/material.dart';
 // Begin custom widget code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import 'package:upgrader/upgrader.dart';
+import 'package:upgrader/upgrader.dart' as upg;
 
-class Upgrader extends StatefulWidget {
-  const Upgrader({
+class UpgraderWidget extends StatefulWidget {
+  const UpgraderWidget({
     Key? key,
     this.width,
     this.height,
@@ -22,12 +22,22 @@ class Upgrader extends StatefulWidget {
   final double? height;
 
   @override
-  _UpgraderState createState() => _UpgraderState();
+  _UpgraderWidgetState createState() => _UpgraderWidgetState();
 }
 
-class _UpgraderState extends State<Upgrader> {
+class _UpgraderWidgetState extends State<UpgraderWidget> {
   @override
   Widget build(BuildContext context) {
-    return UpgradeAlert();
+    final appcastURL =
+        'https://doniczzz.github.io/guiaMedicaVenezuela/appcast.xml';
+    final cfg =
+        upg.AppcastConfiguration(url: appcastURL, supportedOS: ['android']);
+    return upg.UpgradeAlert(
+      upgrader: upg.Upgrader(
+          appcastConfig: cfg,
+          canDismissDialog: false,
+          showIgnore: false,
+          showLater: false),
+    );
   }
 }

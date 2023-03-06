@@ -313,7 +313,7 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                   children: [
                                                     Expanded(
                                                       child: Text(
-                                                        '¿Para quien es la cita?',
+                                                        '¿Para quién es la cita?',
                                                         textAlign:
                                                             TextAlign.center,
                                                         style:
@@ -1464,8 +1464,13 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                             buttonUsersRecord.reference
                                                                           ],
                                                                           initialPageName:
-                                                                              'home',
-                                                                          parameterData: {},
+                                                                              'pacienteBuscado',
+                                                                          parameterData: {
+                                                                            'cita':
+                                                                                widget.cita,
+                                                                            'nReferencia':
+                                                                                _model.nReferencia,
+                                                                          },
                                                                         );
                                                                       }
 
@@ -2004,10 +2009,13 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                     .reference
                                                               ],
                                                               initialPageName:
-                                                                  'pacientes',
+                                                                  'pacienteBuscado',
                                                               parameterData: {
                                                                 'cita':
                                                                     widget.cita,
+                                                                'nReferencia':
+                                                                    _model
+                                                                        .nReferencia,
                                                               },
                                                             );
                                                           }
