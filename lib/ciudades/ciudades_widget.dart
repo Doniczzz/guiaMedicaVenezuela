@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/components/loading_estado_widget.dart';
+import '/components/shimmer_v_widget.dart';
 import '/components/soporte_estado_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -115,15 +116,7 @@ class _CiudadesWidgetState extends State<CiudadesWidget>
                         // Customize what your widget looks like when it's loading.
                         if (!snapshot.hasData) {
                           return Center(
-                            child: SizedBox(
-                              width: 50.0,
-                              height: 50.0,
-                              child: SpinKitFoldingCube(
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryColor,
-                                size: 50.0,
-                              ),
-                            ),
+                            child: ShimmerVWidget(),
                           );
                         }
                         List<CiudadesRecord> listViewCiudadesRecordList =
@@ -320,9 +313,8 @@ class _CiudadesWidgetState extends State<CiudadesWidget>
                     },
                     text: '¿Tu ciudad no está en la lista?',
                     options: FFButtonOptions(
-                      height: 50.0,
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(
+                          15.0, 15.0, 15.0, 15.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primaryColor,

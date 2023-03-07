@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/components/loading_estado_widget.dart';
+import '/components/shimmer_v_widget.dart';
 import '/components/soporte_estado_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';

@@ -53,7 +53,7 @@ class _PublicidadWidgetState extends State<PublicidadWidget> {
       padding: EdgeInsetsDirectional.fromSTEB(16.0, 100.0, 16.0, 0.0),
       child: Container(
         width: double.infinity,
-        height: double.infinity,
+        height: 388.9,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
         ),
@@ -93,12 +93,15 @@ class _PublicidadWidgetState extends State<PublicidadWidget> {
                           child: Icon(
                             Icons.close,
                             color: Colors.black,
-                            size: 34.0,
+                            size: 20.0,
                           ),
                         ),
                         Text(
                           'CERRAR',
-                          style: FlutterFlowTheme.of(context).title1,
+                          style: FlutterFlowTheme.of(context).title1.override(
+                                fontFamily: 'Lexend',
+                                fontSize: 20.0,
+                              ),
                         ),
                       ],
                     ),
@@ -137,9 +140,8 @@ class _PublicidadWidgetState extends State<PublicidadWidget> {
                           size: 15.0,
                         ),
                         options: FFButtonOptions(
-                          height: 40.0,
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
+                              15.0, 15.0, 15.0, 15.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primaryColor,
@@ -164,9 +166,8 @@ class _PublicidadWidgetState extends State<PublicidadWidget> {
                           FontAwesomeIcons.instagram,
                         ),
                         options: FFButtonOptions(
-                          height: 40.0,
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
+                              15.0, 15.0, 15.0, 15.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primaryColor,

@@ -313,9 +313,8 @@ class _EstadosWidgetState extends State<EstadosWidget>
                     },
                     text: '¿Tu Estado no está en la lista?',
                     options: FFButtonOptions(
-                      height: 50.0,
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(
+                          15.0, 15.0, 15.0, 15.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primaryColor,

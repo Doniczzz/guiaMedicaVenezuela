@@ -12,6 +12,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_media.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -1472,6 +1473,22 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                                 _model.nReferencia,
                                                                           },
                                                                         );
+                                                                        triggerPushNotification(
+                                                                          notificationTitle:
+                                                                              '¡Hoy es tu cita!',
+                                                                          notificationText:
+                                                                              'Este es un recordatorio de tu cita, es en 5 horas.',
+                                                                          scheduledTime:
+                                                                              functions.notificacionCita(pageViewCitasRecord.fecha!),
+                                                                          notificationSound:
+                                                                              'default',
+                                                                          userRefs: [
+                                                                            currentUserReference!
+                                                                          ],
+                                                                          initialPageName:
+                                                                              'misCitas',
+                                                                          parameterData: {},
+                                                                        );
                                                                       }
 
                                                                       context
@@ -1517,15 +1534,11 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                     ),
                                                                     options:
                                                                         FFButtonOptions(
-                                                                      width:
-                                                                          130.0,
-                                                                      height:
-                                                                          40.0,
                                                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          15.0,
+                                                                          15.0,
+                                                                          15.0,
+                                                                          15.0),
                                                                       iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1640,13 +1653,12 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                 ),
                                                                 options:
                                                                     FFButtonOptions(
-                                                                  height: 40.0,
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          15.0,
+                                                                          15.0,
+                                                                          15.0,
+                                                                          15.0),
                                                                   iconPadding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
@@ -2018,6 +2030,24 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                                         .nReferencia,
                                                               },
                                                             );
+                                                            triggerPushNotification(
+                                                              notificationTitle:
+                                                                  '¡Hoy es tu cita!',
+                                                              notificationText:
+                                                                  'Este es un recordatorio de tu cita, es en 5 horas.',
+                                                              scheduledTime: functions
+                                                                  .notificacionCita(
+                                                                      pageViewCitasRecord
+                                                                          .fecha!),
+                                                              notificationSound:
+                                                                  'default',
+                                                              userRefs: [
+                                                                currentUserReference!
+                                                              ],
+                                                              initialPageName:
+                                                                  'misCitas',
+                                                              parameterData: {},
+                                                            );
                                                           }
                                                         },
                                                         text:
@@ -2028,14 +2058,13 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                         ),
                                                         options:
                                                             FFButtonOptions(
-                                                          height: 40.0,
                                                           padding:
                                                               EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                      15.0,
+                                                                      15.0,
+                                                                      15.0,
+                                                                      15.0),
                                                           iconPadding:
                                                               EdgeInsetsDirectional
                                                                   .fromSTEB(
@@ -2449,6 +2478,56 @@ class _CitaClienteWidgetState extends State<CitaClienteWidget>
                                                           'assets/images/zelle-logo-5.png',
                                                           fit: BoxFit.cover,
                                                         ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          RichText(
+                                                            text: TextSpan(
+                                                              children: [
+                                                                TextSpan(
+                                                                  text:
+                                                                      'Total a pagar: ',
+                                                                  style:
+                                                                      TextStyle(),
+                                                                ),
+                                                                TextSpan(
+                                                                  text:
+                                                                      'USD ${pageViewCitasRecord.precio?.toString()}',
+                                                                  style:
+                                                                      TextStyle(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .tertiary400,
+                                                                  ),
+                                                                )
+                                                              ],
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .title3
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Lexend',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBtnText,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ),
                                                     Padding(

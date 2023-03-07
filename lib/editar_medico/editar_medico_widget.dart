@@ -52,7 +52,7 @@ class _EditarMedicoWidgetState extends State<EditarMedicoWidget>
     });
 
     _model.nombreController ??=
-        TextEditingController(text: currentUserDisplayName);
+        TextEditingController(text: widget.medico!.nombre);
     _model.instagramController ??=
         TextEditingController(text: widget.medico!.instagram);
     _model.whatsController ??=
@@ -351,134 +351,121 @@ class _EditarMedicoWidgetState extends State<EditarMedicoWidget>
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 8.0, 0.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) =>
-                                                    TextFormField(
-                                                  controller:
-                                                      _model.nombreController,
-                                                  onChanged: (_) =>
-                                                      EasyDebounce.debounce(
-                                                    '_model.nombreController',
-                                                    Duration(
-                                                        milliseconds: 2000),
-                                                    () => setState(() {}),
-                                                  ),
-                                                  obscureText: false,
-                                                  decoration: InputDecoration(
-                                                    labelStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .bodyText1
-                                                        .override(
-                                                          fontFamily:
-                                                              'Lexend Deca',
-                                                          color:
-                                                              Color(0xFF57636C),
-                                                          fontSize: 14.0,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
-                                                    hintStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .bodyText1
-                                                        .override(
-                                                          fontFamily:
-                                                              'Lexend Deca',
-                                                          color:
-                                                              Color(0xFF57636C),
-                                                          fontSize: 14.0,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
-                                                    enabledBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            Color(0xFFDBE2E7),
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              40.0),
-                                                    ),
-                                                    focusedBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            Color(0x00000000),
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              40.0),
-                                                    ),
-                                                    errorBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            Color(0x00000000),
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              40.0),
-                                                    ),
-                                                    focusedErrorBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            Color(0x00000000),
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              40.0),
-                                                    ),
-                                                    filled: true,
-                                                    fillColor: Colors.white,
-                                                    contentPadding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                24.0,
-                                                                24.0,
-                                                                20.0,
-                                                                24.0),
-                                                    suffixIcon: _model
-                                                            .nombreController!
-                                                            .text
-                                                            .isNotEmpty
-                                                        ? InkWell(
-                                                            onTap: () async {
-                                                              _model
-                                                                  .nombreController
-                                                                  ?.clear();
-                                                              setState(() {});
-                                                            },
-                                                            child: Icon(
-                                                              Icons.clear,
-                                                              color: Color(
-                                                                  0xFF757575),
-                                                              size: 22.0,
-                                                            ),
-                                                          )
-                                                        : null,
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
+                                              child: TextFormField(
+                                                controller:
+                                                    _model.nombreController,
+                                                onChanged: (_) =>
+                                                    EasyDebounce.debounce(
+                                                  '_model.nombreController',
+                                                  Duration(milliseconds: 2000),
+                                                  () => setState(() {}),
+                                                ),
+                                                obscureText: false,
+                                                decoration: InputDecoration(
+                                                  labelStyle: FlutterFlowTheme
+                                                          .of(context)
                                                       .bodyText1
                                                       .override(
                                                         fontFamily:
                                                             'Lexend Deca',
                                                         color:
-                                                            Color(0xFF1D2429),
+                                                            Color(0xFF57636C),
                                                         fontSize: 14.0,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
-                                                  maxLines: null,
-                                                  validator: _model
-                                                      .nombreControllerValidator
-                                                      .asValidator(context),
+                                                  hintStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .bodyText1
+                                                      .override(
+                                                        fontFamily:
+                                                            'Lexend Deca',
+                                                        color:
+                                                            Color(0xFF57636C),
+                                                        fontSize: 14.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                      ),
+                                                  enabledBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color: Color(0xFFDBE2E7),
+                                                      width: 2.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            40.0),
+                                                  ),
+                                                  focusedBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color: Color(0x00000000),
+                                                      width: 2.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            40.0),
+                                                  ),
+                                                  errorBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color: Color(0x00000000),
+                                                      width: 2.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            40.0),
+                                                  ),
+                                                  focusedErrorBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color: Color(0x00000000),
+                                                      width: 2.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            40.0),
+                                                  ),
+                                                  filled: true,
+                                                  fillColor: Colors.white,
+                                                  contentPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(24.0, 24.0,
+                                                              20.0, 24.0),
+                                                  suffixIcon: _model
+                                                          .nombreController!
+                                                          .text
+                                                          .isNotEmpty
+                                                      ? InkWell(
+                                                          onTap: () async {
+                                                            _model
+                                                                .nombreController
+                                                                ?.clear();
+                                                            setState(() {});
+                                                          },
+                                                          child: Icon(
+                                                            Icons.clear,
+                                                            color: Color(
+                                                                0xFF757575),
+                                                            size: 22.0,
+                                                          ),
+                                                        )
+                                                      : null,
                                                 ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyText1
+                                                    .override(
+                                                      fontFamily: 'Lexend Deca',
+                                                      color: Color(0xFF1D2429),
+                                                      fontSize: 14.0,
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                    ),
+                                                maxLines: null,
+                                                validator: _model
+                                                    .nombreControllerValidator
+                                                    .asValidator(context),
                                               ),
                                             ),
                                           ],

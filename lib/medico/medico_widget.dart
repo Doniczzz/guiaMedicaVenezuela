@@ -321,76 +321,153 @@ class _MedicoWidgetState extends State<MedicoWidget>
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Expanded(
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Text(
-                                        'Dirección',
-                                        style: FlutterFlowTheme.of(context)
-                                            .title2
-                                            .override(
-                                              fontFamily: 'Lexend',
-                                              color: Color(0xF2F2F2F2),
+                                  child: StreamBuilder<EstadosRecord>(
+                                    stream: EstadosRecord.getDocument(
+                                        medicoMedicosRecord.ubicacion.estado!),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: SpinKitFoldingCube(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryColor,
+                                              size: 50.0,
                                             ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 40.0),
-                                        child: Text(
-                                          '${medicoMedicosRecord.direccion.calleAvenida}, ${medicoMedicosRecord.direccion.altura}, ${medicoMedicosRecord.direccion.referencia}',
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .subtitle1
-                                              .override(
-                                                fontFamily: 'Lexend',
-                                                color: Color(0x95DBE2E7),
-                                              ),
-                                        ),
-                                      ),
-                                      Text(
-                                        medicoMedicosRecord.nombre!,
-                                        style: FlutterFlowTheme.of(context)
-                                            .title2
-                                            .override(
-                                              fontFamily: 'Lexend',
-                                              color: Color(0xF2F2F2F2),
+                                          ),
+                                        );
+                                      }
+                                      final columnEstadosRecord =
+                                          snapshot.data!;
+                                      return Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Text(
+                                            'Dirección',
+                                            style: FlutterFlowTheme.of(context)
+                                                .title2
+                                                .override(
+                                                  fontFamily: 'Lexend',
+                                                  color: Color(0xF2F2F2F2),
+                                                ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 10.0),
+                                            child: Text(
+                                              '${medicoMedicosRecord.direccion.calleAvenida}, ${medicoMedicosRecord.direccion.altura}, ${medicoMedicosRecord.direccion.referencia}',
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .subtitle1
+                                                      .override(
+                                                        fontFamily: 'Lexend',
+                                                        color:
+                                                            Color(0x95DBE2E7),
+                                                      ),
                                             ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 40.0),
-                                        child: Text(
-                                          functions.listaToString(
-                                              medicoMedicosRecord
-                                                  .especialidades!
-                                                  .toList()),
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .subtitle1
-                                              .override(
-                                                fontFamily: 'Lexend',
-                                                color: Color(0x95DBE2E7),
-                                              ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 8.0),
-                                        child: Text(
-                                          'Selecciona una cita',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyText1
-                                              .override(
-                                                fontFamily: 'DM Sans',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 40.0),
+                                            child:
+                                                StreamBuilder<CiudadesRecord>(
+                                              stream:
+                                                  CiudadesRecord.getDocument(
+                                                      medicoMedicosRecord
+                                                          .ubicacion.ciudad!),
+                                              builder: (context, snapshot) {
+                                                // Customize what your widget looks like when it's loading.
+                                                if (!snapshot.hasData) {
+                                                  return Center(
+                                                    child: SizedBox(
+                                                      width: 50.0,
+                                                      height: 50.0,
+                                                      child: SpinKitFoldingCube(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryColor,
+                                                        size: 50.0,
+                                                      ),
+                                                    ),
+                                                  );
+                                                }
+                                                final textCiudadesRecord =
+                                                    snapshot.data!;
+                                                return Text(
+                                                  '${columnEstadosRecord.estado}, ${textCiudadesRecord.ciudad}',
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .subtitle1
+                                                      .override(
+                                                        fontFamily: 'Lexend',
+                                                        color:
+                                                            Color(0xFFD3D2D2),
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
+                                                );
+                                              },
+                                            ),
+                                          ),
+                                          Text(
+                                            medicoMedicosRecord.nombre!,
+                                            style: FlutterFlowTheme.of(context)
+                                                .title2
+                                                .override(
+                                                  fontFamily: 'Lexend',
+                                                  color: Color(0xF2F2F2F2),
+                                                ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 40.0),
+                                            child: Text(
+                                              functions.listaToString(
+                                                  medicoMedicosRecord
+                                                      .especialidades!
+                                                      .toList()),
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .subtitle1
+                                                      .override(
+                                                        fontFamily: 'Lexend',
+                                                        color:
+                                                            Color(0x95DBE2E7),
+                                                      ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 8.0),
+                                            child: Text(
+                                              'Selecciona una cita',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyText1
+                                                  .override(
+                                                    fontFamily: 'DM Sans',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
                                                         .primaryBtnText,
-                                                fontSize: 18.0,
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
+                                                    fontSize: 18.0,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                            ),
+                                          ),
+                                        ],
+                                      );
+                                    },
                                   ),
                                 ),
                               ],

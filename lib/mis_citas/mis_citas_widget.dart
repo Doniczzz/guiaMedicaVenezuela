@@ -46,7 +46,9 @@ class _MisCitasWidgetState extends State<MisCitasWidget> {
 
     return StreamBuilder<List<CitasRecord>>(
       stream: queryCitasRecord(
-        queryBuilder: (citasRecord) => citasRecord.orderBy('fecha'),
+        queryBuilder: (citasRecord) => citasRecord
+            .where('fecha', isGreaterThanOrEqualTo: getCurrentTimestamp)
+            .orderBy('fecha'),
       ),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.

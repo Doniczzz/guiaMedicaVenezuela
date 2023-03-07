@@ -231,3 +231,8 @@ DateTime horaLlegada(
   final nuevaFecha = fechaCita.add(Duration(minutes: minutosAgregar));
   return nuevaFecha;
 }
+
+DateTime notificacionCita(DateTime fechaCita) {
+  // retornar una nueva fecha igual que fechaCita pero con 5 horas menos.
+  return fechaCita.subtract(Duration(hours: 5));
+}
