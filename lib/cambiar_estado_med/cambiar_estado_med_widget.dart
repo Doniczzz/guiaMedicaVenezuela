@@ -14,19 +14,24 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
-import 'estados_model.dart';
-export 'estados_model.dart';
+import 'cambiar_estado_med_model.dart';
+export 'cambiar_estado_med_model.dart';
 
-class EstadosWidget extends StatefulWidget {
-  const EstadosWidget({Key? key}) : super(key: key);
+class CambiarEstadoMedWidget extends StatefulWidget {
+  const CambiarEstadoMedWidget({
+    Key? key,
+    this.medico,
+  }) : super(key: key);
+
+  final MedicosRecord? medico;
 
   @override
-  _EstadosWidgetState createState() => _EstadosWidgetState();
+  _CambiarEstadoMedWidgetState createState() => _CambiarEstadoMedWidgetState();
 }
 
-class _EstadosWidgetState extends State<EstadosWidget>
+class _CambiarEstadoMedWidgetState extends State<CambiarEstadoMedWidget>
     with TickerProviderStateMixin {
-  late EstadosModel _model;
+  late CambiarEstadoMedModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
@@ -34,7 +39,7 @@ class _EstadosWidgetState extends State<EstadosWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => EstadosModel());
+    _model = createModel(context, () => CambiarEstadoMedModel());
   }
 
   @override
@@ -89,16 +94,6 @@ class _EstadosWidgetState extends State<EstadosWidget>
                                 color: FlutterFlowTheme.of(context).fondoMenu,
                               ),
                         ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              5.0, 0.0, 0.0, 0.0),
-                          child: Image.asset(
-                            'assets/images/perfil.png',
-                            width: 30.0,
-                            height: 30.0,
-                            fit: BoxFit.contain,
-                          ),
-                        ),
                       ],
                     ),
                   ),
@@ -144,13 +139,20 @@ class _EstadosWidgetState extends State<EstadosWidget>
                               child: InkWell(
                                 onTap: () async {
                                   context.pushNamed(
-                                    'ciudades',
+                                    'cambiarCiudadMed',
                                     queryParams: {
                                       'estado': serializeParam(
                                         listViewEstadosRecord.reference,
                                         ParamType.DocumentReference,
                                       ),
+                                      'medico': serializeParam(
+                                        widget.medico,
+                                        ParamType.Document,
+                                      ),
                                     }.withoutNulls,
+                                    extra: <String, dynamic>{
+                                      'medico': widget.medico,
+                                    },
                                   );
                                 },
                                 child: Container(

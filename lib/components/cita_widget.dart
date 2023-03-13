@@ -564,7 +564,7 @@ class _CitaWidgetState extends State<CitaWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Text(
-                                              'Motivo de tu cida',
+                                              'Motivo de tu cita',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .subtitle1

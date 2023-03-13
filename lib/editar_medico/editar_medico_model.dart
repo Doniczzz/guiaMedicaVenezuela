@@ -1,16 +1,15 @@
 import '/auth/auth_util.dart';
-import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/components/cambiar_foto_medico_widget.dart';
 import '/components/loading_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -38,9 +37,7 @@ class EditarMedicoModel extends FlutterFlowModel {
   TextEditingController? instagramController;
   String? Function(BuildContext, String?)? instagramControllerValidator;
   // State field(s) for whats widget.
-  final whatsKey = GlobalKey();
   TextEditingController? whatsController;
-  String? whatsSelectedOption;
   String? Function(BuildContext, String?)? whatsControllerValidator;
   // State field(s) for calle widget.
   TextEditingController? calleController;
@@ -86,6 +83,7 @@ class EditarMedicoModel extends FlutterFlowModel {
   void dispose() {
     nombreController?.dispose();
     instagramController?.dispose();
+    whatsController?.dispose();
     calleController?.dispose();
     alturaController?.dispose();
     referenciaController?.dispose();

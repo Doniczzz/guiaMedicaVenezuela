@@ -162,7 +162,7 @@ class _EntryWidgetState extends State<EntryWidget>
                                     fontFamily: 'Lexend Deca',
                                     color:
                                         FlutterFlowTheme.of(context).fondoMenu,
-                                    fontSize: 48.0,
+                                    fontSize: 44.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                               colors: [
@@ -275,10 +275,11 @@ class _EntryWidgetState extends State<EntryWidget>
                     ],
                     style: FlutterFlowTheme.of(context).bodyText1.override(
                           fontFamily: 'Roboto',
-                          fontSize: 60.0,
+                          fontSize: 50.0,
                           fontWeight: FontWeight.bold,
                         ),
                   ),
+                  textAlign: TextAlign.center,
                 ),
                 GradientText(
                   'VENEZUELA',

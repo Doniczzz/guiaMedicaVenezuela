@@ -1135,7 +1135,7 @@ class _CrearCitaWidgetState extends State<CrearCitaWidget>
                                                           color: Colors.black,
                                                         ),
                                                     hintText:
-                                                        '¿Dólares o Bolivares¡',
+                                                        '¿Dólares o Bolívares?',
                                                     fillColor: Colors.white,
                                                     elevation: 2.0,
                                                     borderColor:

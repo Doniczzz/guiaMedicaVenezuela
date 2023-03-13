@@ -76,6 +76,7 @@ class _EnviarMensajePacienteWidgetState
           final postCreateUsersRecord = snapshot.data!;
           return Container(
             width: double.infinity,
+            height: 245.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
               boxShadow: [

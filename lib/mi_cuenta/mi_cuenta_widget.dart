@@ -262,7 +262,7 @@ class _MiCuentaWidgetState extends State<MiCuentaWidget>
                                 }
                               },
                               title: Text(
-                                'Recibir Notificaciones',
+                                'Recibir notificaciones',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyText2
                                     .override(

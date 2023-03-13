@@ -1,9 +1,7 @@
 import '/auth/auth_util.dart';
-import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/components/eliminar_cuenta_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -443,321 +441,152 @@ class _EditarMiCuentaWidgetState extends State<EditarMiCuentaWidget>
                               animationsMap[
                                   'containerOnActionTriggerAnimation3']!,
                             ),
-                            FutureBuilder<ApiCallResponse>(
-                              future: VerificarTelefonoCall.call(
-                                phone: _model.whatsController.text,
+                            Container(
+                              width: double.infinity,
+                              height: 46.5,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(40.0),
+                                border: Border.all(
+                                  color: Color(0xFFC2C7CC),
+                                ),
                               ),
-                              builder: (context, snapshot) {
-                                // Customize what your widget looks like when it's loading.
-                                if (!snapshot.hasData) {
-                                  return Center(
-                                    child: SizedBox(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      child: SpinKitFoldingCube(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryColor,
-                                        size: 50.0,
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    8.0, 8.0, 8.0, 8.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Expanded(
+                                      child: AuthUserStreamWidget(
+                                        builder: (context) => TextFormField(
+                                          controller: _model.whatsController,
+                                          onChanged: (_) =>
+                                              EasyDebounce.debounce(
+                                            '_model.whatsController',
+                                            Duration(milliseconds: 1000),
+                                            () => setState(() {}),
+                                          ),
+                                          obscureText: false,
+                                          decoration: InputDecoration(
+                                            hintText: valueOrDefault<String>(
+                                              currentPhoneNumber,
+                                              'Ej.  580416123456',
+                                            ),
+                                            hintStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText2
+                                                    .override(
+                                                      fontFamily: 'DM Sans',
+                                                      color: Color(0xFF606060),
+                                                    ),
+                                            enabledBorder: InputBorder.none,
+                                            focusedBorder: InputBorder.none,
+                                            errorBorder: InputBorder.none,
+                                            focusedErrorBorder:
+                                                InputBorder.none,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1,
+                                          validator: _model
+                                              .whatsControllerValidator
+                                              .asValidator(context),
+                                          inputFormatters: [
+                                            FilteringTextInputFormatter.allow(
+                                                RegExp('[0-9]'))
+                                          ],
+                                        ),
                                       ),
                                     ),
-                                  );
-                                }
-                                final inputWhatsVerificarTelefonoResponse =
-                                    snapshot.data!;
-                                return Container(
-                                  width: double.infinity,
-                                  height: 46.5,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(40.0),
-                                    border: Border.all(
-                                      color: Color(0xFFC2C7CC),
-                                    ),
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 8.0, 8.0, 8.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Expanded(
-                                          child: AuthUserStreamWidget(
-                                            builder: (context) =>
-                                                Autocomplete<String>(
-                                              initialValue: TextEditingValue(),
-                                              optionsBuilder:
-                                                  (textEditingValue) {
-                                                if (textEditingValue.text ==
-                                                    '') {
-                                                  return const Iterable<
-                                                      String>.empty();
-                                                }
-                                                return (VerificarTelefonoCall
-                                                        .numero(
-                                                  inputWhatsVerificarTelefonoResponse
-                                                      .jsonBody,
-                                                ) as List)
-                                                    .map<String>(
-                                                        (s) => s.toString())
-                                                    .toList()!
-                                                    .toList()
-                                                    .where((option) {
-                                                  final lowercaseOption =
-                                                      option.toLowerCase();
-                                                  return lowercaseOption
-                                                      .contains(textEditingValue
-                                                          .text
-                                                          .toLowerCase());
-                                                });
-                                              },
-                                              optionsViewBuilder: (context,
-                                                  onSelected, options) {
-                                                return AutocompleteOptionsList(
-                                                  textFieldKey: _model.whatsKey,
-                                                  textController:
-                                                      _model.whatsController!,
-                                                  options: options.toList(),
-                                                  onSelected: onSelected,
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyText1,
-                                                  textHighlightStyle:
-                                                      TextStyle(),
-                                                  elevation: 4.0,
-                                                  optionBackgroundColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryBackground,
-                                                  optionHighlightColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .secondaryBackground,
-                                                  maxHeight: 200.0,
-                                                );
-                                              },
-                                              onSelected: (String selection) {
-                                                setState(() =>
-                                                    _model.whatsSelectedOption =
-                                                        selection);
-                                                FocusScope.of(context)
-                                                    .unfocus();
-                                              },
-                                              fieldViewBuilder: (
-                                                context,
-                                                textEditingController,
-                                                focusNode,
-                                                onEditingComplete,
-                                              ) {
-                                                _model.whatsController =
-                                                    textEditingController;
-                                                return TextFormField(
-                                                  key: _model.whatsKey,
-                                                  controller:
-                                                      textEditingController,
-                                                  focusNode: focusNode,
-                                                  onEditingComplete:
-                                                      onEditingComplete,
-                                                  onChanged: (_) =>
-                                                      EasyDebounce.debounce(
-                                                    '_model.whatsController',
-                                                    Duration(
-                                                        milliseconds: 1000),
-                                                    () => setState(() {}),
-                                                  ),
-                                                  obscureText: false,
-                                                  decoration: InputDecoration(
-                                                    hintText:
-                                                        valueOrDefault<String>(
-                                                      currentPhoneNumber,
-                                                      'Ej.  580416123456',
-                                                    ),
-                                                    hintStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .bodyText2
-                                                        .override(
-                                                          fontFamily: 'DM Sans',
-                                                          color:
-                                                              Color(0xFF606060),
-                                                        ),
-                                                    enabledBorder:
-                                                        InputBorder.none,
-                                                    focusedBorder:
-                                                        InputBorder.none,
-                                                    errorBorder:
-                                                        InputBorder.none,
-                                                    focusedErrorBorder:
-                                                        InputBorder.none,
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyText1,
-                                                  validator: _model
-                                                      .whatsControllerValidator
-                                                      .asValidator(context),
-                                                  inputFormatters: [
-                                                    FilteringTextInputFormatter
-                                                        .allow(RegExp('[0-9]'))
-                                                  ],
-                                                );
-                                              },
-                                            ),
-                                          ),
+                                    if (_model.whatsController.text != null &&
+                                        _model.whatsController.text != '')
+                                      InkWell(
+                                        onTap: () async {
+                                          final usersUpdateData =
+                                              createUsersRecordData(
+                                            phoneNumber:
+                                                _model.whatsController.text,
+                                          );
+                                          await currentUserReference!
+                                              .update(usersUpdateData);
+                                          if (animationsMap[
+                                                  'containerOnActionTriggerAnimation3'] !=
+                                              null) {
+                                            animationsMap[
+                                                    'containerOnActionTriggerAnimation3']!
+                                                .controller
+                                                .forward()
+                                                .whenComplete(animationsMap[
+                                                        'containerOnActionTriggerAnimation3']!
+                                                    .controller
+                                                    .reverse);
+                                          }
+                                          setState(() {
+                                            _model.whatsController?.clear();
+                                          });
+                                          if (animationsMap[
+                                                  'containerOnActionTriggerAnimation4'] !=
+                                              null) {
+                                            animationsMap[
+                                                    'containerOnActionTriggerAnimation4']!
+                                                .controller
+                                                .forward()
+                                                .whenComplete(animationsMap[
+                                                        'containerOnActionTriggerAnimation4']!
+                                                    .controller
+                                                    .reverse);
+                                          }
+                                        },
+                                        child: Icon(
+                                          Icons.check_circle,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryColor,
+                                          size: 24.0,
                                         ),
-                                        if ((_model.whatsController.text !=
-                                                    null &&
-                                                _model.whatsController.text !=
-                                                    '') &&
-                                            valueOrDefault<bool>(
-                                              VerificarTelefonoCall
-                                                  .verificarNumero(
-                                                inputWhatsVerificarTelefonoResponse
-                                                    .jsonBody,
-                                              ),
-                                              false,
-                                            ))
-                                          InkWell(
-                                            onTap: () async {
-                                              if (VerificarTelefonoCall
-                                                  .verificarNumero(
-                                                inputWhatsVerificarTelefonoResponse
-                                                    .jsonBody,
-                                              )) {
-                                                final usersUpdateData =
-                                                    createUsersRecordData(
-                                                  phoneNumber:
-                                                      VerificarTelefonoCall
-                                                          .numero(
-                                                    inputWhatsVerificarTelefonoResponse
-                                                        .jsonBody,
-                                                  ).toString(),
-                                                );
-                                                await currentUserReference!
-                                                    .update(usersUpdateData);
-                                                ScaffoldMessenger.of(context)
-                                                    .showSnackBar(
-                                                  SnackBar(
-                                                    content: Text(
-                                                      'Nombre cambiado',
-                                                      style: TextStyle(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
-                                                      ),
-                                                    ),
-                                                    duration: Duration(
-                                                        milliseconds: 4000),
-                                                    backgroundColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryColor,
-                                                  ),
-                                                );
-                                              } else {
-                                                await showDialog(
-                                                  context: context,
-                                                  builder:
-                                                      (alertDialogContext) {
-                                                    return AlertDialog(
-                                                      title: Text('Error!'),
-                                                      content: Text(
-                                                          'Número incorrecto, debes colocarlo con código de país, Ej. +58426111222'),
-                                                      actions: [
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext),
-                                                          child: Text('Ok'),
-                                                        ),
-                                                      ],
-                                                    );
-                                                  },
-                                                );
-                                              }
-
-                                              setState(() {
-                                                _model.whatsController?.clear();
-                                              });
-                                              if (animationsMap[
-                                                      'containerOnActionTriggerAnimation3'] !=
-                                                  null) {
-                                                animationsMap[
+                                      ),
+                                    if (_model.whatsController.text == null ||
+                                        _model.whatsController.text == '')
+                                      InkWell(
+                                        onTap: () async {
+                                          setState(() {
+                                            _model.whatsController?.clear();
+                                          });
+                                          if (animationsMap[
+                                                  'containerOnActionTriggerAnimation3'] !=
+                                              null) {
+                                            animationsMap[
+                                                    'containerOnActionTriggerAnimation3']!
+                                                .controller
+                                                .forward()
+                                                .whenComplete(animationsMap[
                                                         'containerOnActionTriggerAnimation3']!
                                                     .controller
-                                                    .forward()
-                                                    .whenComplete(animationsMap[
-                                                            'containerOnActionTriggerAnimation3']!
-                                                        .controller
-                                                        .reverse);
-                                              }
-                                              if (animationsMap[
-                                                      'containerOnActionTriggerAnimation4'] !=
-                                                  null) {
-                                                animationsMap[
+                                                    .reverse);
+                                          }
+                                          if (animationsMap[
+                                                  'containerOnActionTriggerAnimation4'] !=
+                                              null) {
+                                            animationsMap[
+                                                    'containerOnActionTriggerAnimation4']!
+                                                .controller
+                                                .forward()
+                                                .whenComplete(animationsMap[
                                                         'containerOnActionTriggerAnimation4']!
                                                     .controller
-                                                    .forward()
-                                                    .whenComplete(animationsMap[
-                                                            'containerOnActionTriggerAnimation4']!
-                                                        .controller
-                                                        .reverse);
-                                              }
-                                            },
-                                            child: Icon(
-                                              Icons.check_circle,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryColor,
-                                              size: 24.0,
-                                            ),
-                                          ),
-                                        if (_model.whatsController.text ==
-                                                null ||
-                                            _model.whatsController.text == '')
-                                          InkWell(
-                                            onTap: () async {
-                                              setState(() {
-                                                _model.whatsController?.clear();
-                                              });
-                                              if (animationsMap[
-                                                      'containerOnActionTriggerAnimation3'] !=
-                                                  null) {
-                                                animationsMap[
-                                                        'containerOnActionTriggerAnimation3']!
-                                                    .controller
-                                                    .forward()
-                                                    .whenComplete(animationsMap[
-                                                            'containerOnActionTriggerAnimation3']!
-                                                        .controller
-                                                        .reverse);
-                                              }
-                                              if (animationsMap[
-                                                      'containerOnActionTriggerAnimation4'] !=
-                                                  null) {
-                                                animationsMap[
-                                                        'containerOnActionTriggerAnimation4']!
-                                                    .controller
-                                                    .forward()
-                                                    .whenComplete(animationsMap[
-                                                            'containerOnActionTriggerAnimation4']!
-                                                        .controller
-                                                        .reverse);
-                                              }
-                                            },
-                                            child: Icon(
-                                              Icons.arrow_right_outlined,
-                                              color: Color(0xFF868E97),
-                                              size: 24.0,
-                                            ),
-                                          ),
-                                      ],
-                                    ),
-                                  ),
-                                ).animateOnActionTrigger(
-                                  animationsMap[
-                                      'containerOnActionTriggerAnimation4']!,
-                                );
-                              },
+                                                    .reverse);
+                                          }
+                                        },
+                                        child: Icon(
+                                          Icons.arrow_right_outlined,
+                                          color: Color(0xFF868E97),
+                                          size: 24.0,
+                                        ),
+                                      ),
+                                  ],
+                                ),
+                              ),
+                            ).animateOnActionTrigger(
+                              animationsMap[
+                                  'containerOnActionTriggerAnimation4']!,
                             ),
                           ],
                         ),

@@ -1116,6 +1116,8 @@ class _CitasCaducadasWidgetState extends State<CitasCaducadasWidget>
                                                               cita: _model
                                                                   .citaSeleccionada!
                                                                   .reference,
+                                                              medico:
+                                                                  widget.medico,
                                                             ),
                                                           );
                                                         },

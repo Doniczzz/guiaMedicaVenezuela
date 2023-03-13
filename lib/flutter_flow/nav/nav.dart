@@ -285,10 +285,34 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => EditarMedicoWidget(
                 medico: params.getParam('medico', ParamType.Document),
               ),
+            ),
+            FFRoute(
+              name: 'cambiarEstadoMed',
+              path: 'cambiarEstadoMed',
+              asyncParams: {
+                'medico':
+                    getDoc(['users', 'medicos'], MedicosRecord.serializer),
+              },
+              builder: (context, params) => CambiarEstadoMedWidget(
+                medico: params.getParam('medico', ParamType.Document),
+              ),
+            ),
+            FFRoute(
+              name: 'cambiarCiudadMed',
+              path: 'cambiarCiudadMed',
+              asyncParams: {
+                'medico':
+                    getDoc(['users', 'medicos'], MedicosRecord.serializer),
+              },
+              builder: (context, params) => CambiarCiudadMedWidget(
+                estado: params.getParam(
+                    'estado', ParamType.DocumentReference, false, ['estados']),
+                medico: params.getParam('medico', ParamType.Document),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
-        ).toRoute(appStateNotifier),
-      ],
+        ),
+      ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,
     );
 
@@ -334,6 +358,16 @@ extension NavigationExtensions on BuildContext {
               queryParams: queryParams,
               extra: extra,
             );
+
+  void safePop() {
+    // If there is only one route on the stack, navigate to the initial
+    // page instead of popping.
+    if (GoRouter.of(this).routerDelegate.matches.length <= 1) {
+      go('/');
+    } else {
+      pop();
+    }
+  }
 }
 
 extension GoRouterExtensions on GoRouter {

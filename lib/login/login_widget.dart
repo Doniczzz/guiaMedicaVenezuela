@@ -203,7 +203,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 animationsMap['rowOnPageLoadAnimation']!),
                           ),
                           Container(
-                            height: 500.0,
+                            height: 404.9,
                             decoration: BoxDecoration(),
                             child: DefaultTabController(
                               length: 2,
@@ -1356,9 +1356,11 @@ class _LoginWidgetState extends State<LoginWidget>
                                         if (user == null) {
                                           return;
                                         }
-                                        if (!(currentUserDocument!
+                                        if (currentUserDocument!
                                                 .dondeVive.estado !=
-                                            null)) {
+                                            null) {
+                                          context.goNamedAuth('home', mounted);
+                                        } else {
                                           context.goNamedAuth(
                                             'registro',
                                             mounted,

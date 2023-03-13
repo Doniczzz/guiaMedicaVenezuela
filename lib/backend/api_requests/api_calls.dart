@@ -30,38 +30,6 @@ class CambioDolarCall {
       );
 }
 
-class VerificarTelefonoCall {
-  static Future<ApiCallResponse> call({
-    String? phone = '+584147523942',
-  }) {
-    return ApiManager.instance.makeApiCall(
-      callName: 'verificar telefono',
-      apiUrl: 'https://veriphone.p.rapidapi.com/verify',
-      callType: ApiCallType.GET,
-      headers: {
-        'X-RapidAPI-Key': '44b01ef0a6msh65986950157ca8ep109066jsn06a616fab3a8',
-        'X-RapidAPI-Host': 'veriphone.p.rapidapi.com',
-      },
-      params: {
-        'phone': phone,
-      },
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-    );
-  }
-
-  static dynamic verificarNumero(dynamic response) => getJsonField(
-        response,
-        r'''$.phone_valid''',
-      );
-  static dynamic numero(dynamic response) => getJsonField(
-        response,
-        r'''$.e164''',
-      );
-}
-
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

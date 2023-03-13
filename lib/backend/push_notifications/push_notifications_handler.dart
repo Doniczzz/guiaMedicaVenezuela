@@ -215,6 +215,19 @@ final parametersBuilderMap =
               data, 'medico', MedicosRecord.serializer),
         },
       ),
+  'cambiarEstadoMed': (data) async => ParameterData(
+        allParams: {
+          'medico': await getDocumentParameter<MedicosRecord>(
+              data, 'medico', MedicosRecord.serializer),
+        },
+      ),
+  'cambiarCiudadMed': (data) async => ParameterData(
+        allParams: {
+          'estado': getParameter<DocumentReference>(data, 'estado'),
+          'medico': await getDocumentParameter<MedicosRecord>(
+              data, 'medico', MedicosRecord.serializer),
+        },
+      ),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

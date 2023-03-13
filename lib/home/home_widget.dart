@@ -1472,7 +1472,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           fontFamily: 'DM Sans',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .alternate,
+                                                              .secondaryColor,
                                                         ),
                                               ),
                                             ),
@@ -1611,7 +1611,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .alternate,
+                                                                .secondaryColor,
                                                       ),
                                                 ),
                                               ),
@@ -1626,8 +1626,6 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                             builder: (context) {
                                               final medicosEnEstado =
                                                   inicioCiudadesRecord.medicos!
-                                                      .toList()
-                                                      .map((e) => e)
                                                       .toList()
                                                       .take(5)
                                                       .toList();
@@ -1900,7 +1898,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                     0)
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 20.0, 16.0, 0.0),
+                                        16.0, 20.0, 16.0, 20.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:

@@ -49,14 +49,20 @@ class _PublicidadWidgetState extends State<PublicidadWidget> {
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 
-    return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(16.0, 100.0, 16.0, 0.0),
-      child: Container(
-        width: double.infinity,
-        height: 388.9,
-        decoration: BoxDecoration(
-          color: FlutterFlowTheme.of(context).secondaryBackground,
+    return Container(
+      width: double.infinity,
+      height: 420.1,
+      decoration: BoxDecoration(
+        color: FlutterFlowTheme.of(context).secondaryBackground,
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(0.0),
+          bottomRight: Radius.circular(0.0),
+          topLeft: Radius.circular(30.0),
+          topRight: Radius.circular(30.0),
         ),
+      ),
+      child: Padding(
+        padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
         child: StreamBuilder<PublicidadesRecord>(
           stream: PublicidadesRecord.getDocument(widget.publicidad!),
           builder: (context, snapshot) {
@@ -111,14 +117,14 @@ class _PublicidadWidgetState extends State<PublicidadWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
                   child: Container(
                     width: 400.0,
-                    height: 200.0,
+                    height: 257.9,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                     child: Image.network(
                       columnPublicidadesRecord.img!,
                       width: 400.0,
-                      height: 200.0,
+                      height: 202.9,
                       fit: BoxFit.contain,
                     ),
                   ),

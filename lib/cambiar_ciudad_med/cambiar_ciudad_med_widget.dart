@@ -1,11 +1,13 @@
+import '/auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/components/loading_estado_widget.dart';
 import '/components/shimmer_v_widget.dart';
 import '/components/soporte_estado_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -14,19 +16,26 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
-import 'estados_model.dart';
-export 'estados_model.dart';
+import 'cambiar_ciudad_med_model.dart';
+export 'cambiar_ciudad_med_model.dart';
 
-class EstadosWidget extends StatefulWidget {
-  const EstadosWidget({Key? key}) : super(key: key);
+class CambiarCiudadMedWidget extends StatefulWidget {
+  const CambiarCiudadMedWidget({
+    Key? key,
+    this.estado,
+    this.medico,
+  }) : super(key: key);
+
+  final DocumentReference? estado;
+  final MedicosRecord? medico;
 
   @override
-  _EstadosWidgetState createState() => _EstadosWidgetState();
+  _CambiarCiudadMedWidgetState createState() => _CambiarCiudadMedWidgetState();
 }
 
-class _EstadosWidgetState extends State<EstadosWidget>
+class _CambiarCiudadMedWidgetState extends State<CambiarCiudadMedWidget>
     with TickerProviderStateMixin {
-  late EstadosModel _model;
+  late CambiarCiudadMedModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
@@ -34,7 +43,7 @@ class _EstadosWidgetState extends State<EstadosWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => EstadosModel());
+    _model = createModel(context, () => CambiarCiudadMedModel());
   }
 
   @override
@@ -51,7 +60,31 @@ class _EstadosWidgetState extends State<EstadosWidget>
 
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+      appBar: AppBar(
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        automaticallyImplyLeading: false,
+        title: Column(
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Selecciona tu ciudad',
+              style: FlutterFlowTheme.of(context).title3,
+            ),
+            Text(
+              'Busca médicos en tu ciudad',
+              style: FlutterFlowTheme.of(context).bodyText2.override(
+                    fontFamily: 'DM Sans',
+                    fontSize: 12.0,
+                  ),
+            ),
+          ],
+        ),
+        actions: [],
+        centerTitle: false,
+        elevation: 0.0,
+      ),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
@@ -61,47 +94,6 @@ class _EstadosWidgetState extends State<EstadosWidget>
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    width: double.infinity,
-                    height: 76.3,
-                    decoration: BoxDecoration(),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
-                          borderRadius: 30.0,
-                          borderWidth: 1.0,
-                          buttonSize: 60.0,
-                          icon: Icon(
-                            Icons.arrow_back_ios_outlined,
-                            color: FlutterFlowTheme.of(context).fondoMenu,
-                            size: 30.0,
-                          ),
-                          onPressed: () async {
-                            context.pop();
-                          },
-                        ),
-                        Text(
-                          'Estados',
-                          style: FlutterFlowTheme.of(context).title2.override(
-                                fontFamily: 'Lexend',
-                                color: FlutterFlowTheme.of(context).fondoMenu,
-                              ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              5.0, 0.0, 0.0, 0.0),
-                          child: Image.asset(
-                            'assets/images/perfil.png',
-                            width: 30.0,
-                            height: 30.0,
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: LinearPercentIndicator(
@@ -119,8 +111,10 @@ class _EstadosWidgetState extends State<EstadosWidget>
                   Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                    child: StreamBuilder<List<EstadosRecord>>(
-                      stream: queryEstadosRecord(),
+                    child: StreamBuilder<List<CiudadesRecord>>(
+                      stream: queryCiudadesRecord(
+                        parent: widget.estado,
+                      ),
                       builder: (context, snapshot) {
                         // Customize what your widget looks like when it's loading.
                         if (!snapshot.hasData) {
@@ -128,29 +122,79 @@ class _EstadosWidgetState extends State<EstadosWidget>
                             child: ShimmerVWidget(),
                           );
                         }
-                        List<EstadosRecord> listViewEstadosRecordList =
+                        List<CiudadesRecord> listViewCiudadesRecordList =
                             snapshot.data!;
                         return ListView.builder(
                           padding: EdgeInsets.zero,
                           shrinkWrap: true,
                           scrollDirection: Axis.vertical,
-                          itemCount: listViewEstadosRecordList.length,
+                          itemCount: listViewCiudadesRecordList.length,
                           itemBuilder: (context, listViewIndex) {
-                            final listViewEstadosRecord =
-                                listViewEstadosRecordList[listViewIndex];
+                            final listViewCiudadesRecord =
+                                listViewCiudadesRecordList[listViewIndex];
                             return Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 10.0),
                               child: InkWell(
                                 onTap: () async {
-                                  context.pushNamed(
-                                    'ciudades',
-                                    queryParams: {
-                                      'estado': serializeParam(
-                                        listViewEstadosRecord.reference,
-                                        ParamType.DocumentReference,
+                                  showModalBottomSheet(
+                                    isScrollControlled: true,
+                                    backgroundColor: Colors.transparent,
+                                    isDismissible: false,
+                                    enableDrag: false,
+                                    context: context,
+                                    builder: (context) {
+                                      return Padding(
+                                        padding:
+                                            MediaQuery.of(context).viewInsets,
+                                        child: LoadingEstadoWidget(),
+                                      );
+                                    },
+                                  ).then((value) => setState(() {}));
+
+                                  final ciudadesUpdateData1 = {
+                                    'medicos': FieldValue.arrayRemove(
+                                        [widget.medico!.reference]),
+                                  };
+                                  await widget.medico!.ubicacion.ciudad!
+                                      .update(ciudadesUpdateData1);
+
+                                  final medicosUpdateData =
+                                      createMedicosRecordData(
+                                    ubicacion: createDondeViveStruct(
+                                      estado: widget.estado,
+                                      ciudad: listViewCiudadesRecord.reference,
+                                      clearUnsetFields: false,
+                                    ),
+                                  );
+                                  await widget.medico!.reference
+                                      .update(medicosUpdateData);
+
+                                  final ciudadesUpdateData2 = {
+                                    'medicos': FieldValue.arrayUnion(
+                                        [widget.medico!.reference]),
+                                  };
+                                  await listViewCiudadesRecord.reference
+                                      .update(ciudadesUpdateData2);
+                                  await Future.delayed(
+                                      const Duration(milliseconds: 1000));
+
+                                  context.goNamed('home');
+
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        'Ubicación de tu consultorio cambiado.',
+                                        style: TextStyle(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                        ),
                                       ),
-                                    }.withoutNulls,
+                                      duration: Duration(milliseconds: 4000),
+                                      backgroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryColor,
+                                    ),
                                   );
                                 },
                                 child: Container(
@@ -187,7 +231,8 @@ class _EstadosWidgetState extends State<EstadosWidget>
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  listViewEstadosRecord.estado!,
+                                                  listViewCiudadesRecord
+                                                      .ciudad!,
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .subtitle1
@@ -200,56 +245,31 @@ class _EstadosWidgetState extends State<EstadosWidget>
                                                             FontWeight.w500,
                                                       ),
                                                 ),
-                                                FutureBuilder<int>(
-                                                  future:
-                                                      queryCiudadesRecordCount(
-                                                    parent:
-                                                        listViewEstadosRecord
-                                                            .reference,
-                                                  ),
-                                                  builder: (context, snapshot) {
-                                                    // Customize what your widget looks like when it's loading.
-                                                    if (!snapshot.hasData) {
-                                                      return Center(
-                                                        child: SizedBox(
-                                                          width: 50.0,
-                                                          height: 50.0,
-                                                          child:
-                                                              SpinKitFoldingCube(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryColor,
-                                                            size: 50.0,
-                                                          ),
-                                                        ),
-                                                      );
-                                                    }
-                                                    int richTextCount =
-                                                        snapshot.data!;
-                                                    return RichText(
-                                                      text: TextSpan(
-                                                        children: [
-                                                          TextSpan(
-                                                            text: 'Ciudades:  ',
-                                                            style: TextStyle(),
-                                                          ),
-                                                          TextSpan(
-                                                            text: richTextCount
-                                                                .toString(),
-                                                            style: TextStyle(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryColor,
-                                                            ),
-                                                          )
-                                                        ],
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyText1,
+                                                RichText(
+                                                  text: TextSpan(
+                                                    children: [
+                                                      TextSpan(
+                                                        text: 'Médicos:  ',
+                                                        style: TextStyle(),
                                                       ),
-                                                    );
-                                                  },
+                                                      TextSpan(
+                                                        text:
+                                                            listViewCiudadesRecord
+                                                                .medicos!
+                                                                .toList()
+                                                                .length
+                                                                .toString(),
+                                                        style: TextStyle(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryColor,
+                                                        ),
+                                                      )
+                                                    ],
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyText1,
+                                                  ),
                                                 ),
                                               ],
                                             ),
@@ -321,7 +341,7 @@ class _EstadosWidgetState extends State<EstadosWidget>
                         },
                       ).then((value) => setState(() {}));
                     },
-                    text: '¿Tu Estado no está en la lista?',
+                    text: '¿Tu ciudad no está en la lista?',
                     options: FFButtonOptions(
                       padding: EdgeInsetsDirectional.fromSTEB(
                           15.0, 15.0, 15.0, 15.0),

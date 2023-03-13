@@ -28,3 +28,7 @@ export '/crear_medico/crear_medico_widget.dart' show CrearMedicoWidget;
 export '/buscar_medicos_especialidad/buscar_medicos_especialidad_widget.dart'
     show BuscarMedicosEspecialidadWidget;
 export '/editar_medico/editar_medico_widget.dart' show EditarMedicoWidget;
+export '/cambiar_estado_med/cambiar_estado_med_widget.dart'
+    show CambiarEstadoMedWidget;
+export '/cambiar_ciudad_med/cambiar_ciudad_med_widget.dart'
+    show CambiarCiudadMedWidget;

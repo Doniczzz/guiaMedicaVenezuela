@@ -177,6 +177,7 @@ class _RecuperarContrasenaWidgetState extends State<RecuperarContrasenaWidget> {
                 email: _model.emailAddressController.text,
                 context: context,
               );
+              Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: Text(
